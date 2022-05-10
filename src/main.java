@@ -96,7 +96,7 @@ class Character {
     int[] jab1 = new int[4];
     int[] jab2 = new int[4]; 
     int[] jab3 = new int[4]; 
-    int[] ftilt = new int[4]; 
+    int[] ftilt = new int[4];  
     int[] utilt = new int[4]; 
     int[] dtilt = new int[4]; 
     int[] dashAttack = new int[4]; 
