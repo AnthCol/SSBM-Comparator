@@ -5,13 +5,74 @@ import java.awt.*;
 import java.io.File; 
 import java.io.FileNotFoundException;
 import java.util.Scanner; 
+/* FIX ME recreate character class and have main extend it. 
 
-class Main extends Character{
+do all of the readfile stuff inside of Main's main. */
+
+
+class Main extends readFile{
+    // if a character does not have a value that some sort of substitute value will be used. 
+    // 0 = strong hit dmg 
+    // 1 = Startup Frames
+    // 2 = active frames (duration)
+    // 3 = ending frames 
+
+    /* the plan is to add a file in the source files, where the program will retrieve the data in that by calling the population function, 
+    and fill out the array. I will need to manually input the data into the file, unforunately */ 
+
+    String charName;
+    int[] jab1 = new int[4];
+    int[] jab2 = new int[4]; 
+    int[] jab3 = new int[4]; 
+    int[] ftilt = new int[4];  
+    int[] utilt = new int[4]; 
+    int[] dtilt = new int[4]; 
+    int[] dashAttack = new int[4]; 
+    int[] fsmash = new int[4]; 
+    int[] usmash = new int[4]; 
+    int[] dsmash = new int[4]; 
+    int[] nair = new int[4]; 
+    int[] fair = new int[4]; 
+    int[] bair = new int[4]; 
+    int[] uair = new int[4]; 
+    int[] dair = new int[4]; 
+    int[] neutralBGrounded = new int[4]; 
+    int[] neutralBAerial = new int[4]; 
+    int[] sideBGrounded = new int[4]; 
+    int[] sideBAerial = new int[4]; 
+    int[] upBGrounded = new int[4]; 
+    int[] upBAerial = new int[4]; 
+    int[] downBGrounded = new int[4]; 
+    int[] downBAerial = new int[4]; 
+    // for the grabs, 0 = startup, 1 = total frames
+    int[] standGrab = new int[2]; 
+    int[] dashGrab = new int[2]; 
+    int[] fthrow = new int[4]; 
+    int[] bthrow = new int[4]; 
+    int[] dthrow = new int[4]; 
+    int[] uthrow = new int[4]; 
+    /* in the following cases: 
+    0 = startup
+    1 = invuln frames (active)
+    2 = end frames */
+    int[] spotDodge = new int[3];      
+    int[] backRoll = new int[3]; 
+    int[] forwardRoll = new int[3]; 
+    int[] airDodge = new int[4]; 
+    // for air dodge, 0 = startup, 1 = active/invuln, 2 = end lag, 3 = special land lag 
+    int weight; 
+    double ffSpeed; 
+    double dashSpeed; 
+    double runSpeed; 
+    int wavedashLen; // rank
+    int pldif; // perfect ledgedash intangibility frames 
+    int jumpSquat; 
+    boolean wallJump; // 1 = yes, 0 = no. 
 
     public static void main(String args[]) {
         
-        Character[] characters = new Character[26]; 
-        populate(characters); 
+        Main[] characters = new Main[26]; 
+        readFromFile(characters); 
 
         // so stuff will be accessed like characters.utiltEnding[0] for fox utilt end lag for example
 
@@ -82,73 +143,6 @@ class Main extends Character{
 }
 
 
-
-class Character extends readFile {
-
-    // if a character does not have a value that some sort of substitute value will be used. 
-    // 0 = strong hit dmg 
-    // 1 = Startup Frames
-    // 2 = active frames (duration)
-    // 3 = ending frames 
-
-    /* the plan is to add a file in the source files, where the program will retrieve the data in that by calling the population function, 
-    and fill out the array. I will need to manually input the data into the file, unforunately */ 
-
-    String charName; 
-    int[] jab1 = new int[4];
-    int[] jab2 = new int[4]; 
-    int[] jab3 = new int[4]; 
-    int[] ftilt = new int[4];  
-    int[] utilt = new int[4]; 
-    int[] dtilt = new int[4]; 
-    int[] dashAttack = new int[4]; 
-    int[] fsmash = new int[4]; 
-    int[] usmash = new int[4]; 
-    int[] dsmash = new int[4]; 
-    int[] nair = new int[4]; 
-    int[] fair = new int[4]; 
-    int[] bair = new int[4]; 
-    int[] uair = new int[4]; 
-    int[] dair = new int[4]; 
-    int[] neutralBGrounded = new int[4]; 
-    int[] neutralBAerial = new int[4]; 
-    int[] sideBGrounded = new int[4]; 
-    int[] sideBAerial = new int[4]; 
-    int[] upBGrounded = new int[4]; 
-    int[] upBAerial = new int[4]; 
-    int[] downBGrounded = new int[4]; 
-    int[] downBAerial = new int[4]; 
-    // for the grabs, 0 = startup, 1 = total frames
-    int[] standGrab = new int[2]; 
-    int[] dashGrab = new int[2]; 
-    int[] fthrow = new int[4]; 
-    int[] bthrow = new int[4]; 
-    int[] dthrow = new int[4]; 
-    int[] uthrow = new int[4]; 
-    /* in the following cases: 
-    0 = startup
-    1 = invuln frames (active)
-    2 = end frames */
-    int[] spotDodge = new int[3];      
-    int[] backRoll = new int[3]; 
-    int[] forwardRoll = new int[3]; 
-    int[] airDodge = new int[4]; 
-    // for air dodge, 0 = startup, 1 = active/invuln, 2 = end lag, 3 = special land lag 
-    int weight; 
-    double ffSpeed; 
-    double dashSpeed; 
-    double runSpeed; 
-    int wavedashLen; // rank
-    int pldif; // perfect ledgedash intangibility frames 
-    int jumpSquat; 
-    boolean wallJump; // 1 = yes, 0 = no. 
-
-    public static void populate(Character[] characters){
-        readFromFile(characters); 
-    }
-}
-
-
 class readFile {
      /*
         Indices (alphabetical order):
@@ -156,14 +150,18 @@ class readFile {
         7 = mew2, 14 = g&w, 15 = ness, 16 = peach, 17 = pichu, 18 = pika, 19 = puff, 20 = roy, 21 = samus, 22 = sheik, 23 = yoshi, 24 = yink, 25 = zelda
     */
 
-    // VALUE WILL BE SET AS NEGATIVE ONE IF IT IS UNAVAILABLE
+    // VALUE WILL BE SET AS NEGATIVE ONE IF IT IS UNAVAILABLE/INCALCULABLE
     static int index = 0; 
-    static void readFromFile(Character[]characters){
+
+    static void readFromFile(Main[] characters){
         try{
-            File file = new File ("/src/charData.txt"); 
+            //C:/Users/tonyc/OneDrive/University Files/Personal Projects/SSBM COMPARATOR/src/
+            File file = new File ("charData.txt"); 
             Scanner fileReader = new Scanner(file); 
+
             while (fileReader.hasNextLine()){
                 characters[index].charName = fileReader.nextLine(); 
+                System.out.println(characters[index].charName + "PRINTING CHARNAME"); 
                 for (int i = 0; i < 4; i++){
                     characters[index].jab1[i] = fileReader.nextInt(); 
                 }
