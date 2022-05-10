@@ -124,7 +124,7 @@ class Character {
     2 = end frames */
     int[]  spotDodgeDmg= new int[3];      
     int[] backRoll = new int[3]; 
-    int[] forward = new int[3]; 
+    int[] forwardRoll = new int[3]; 
     int[] airDodge = new int[3]; 
  
 
