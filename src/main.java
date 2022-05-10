@@ -2,6 +2,9 @@ package src;
 
 import javax.swing.*;
 import java.awt.*;
+import java.io.File; 
+import java.io.FileNotFoundException;
+import java.util.Scanner; 
 
 class Main extends Character{
 
@@ -80,8 +83,7 @@ class Main extends Character{
 
 
 
-class Character {
-    /*THERE IS NO WAY THERE IS NOT A BETTER WAY TO DO THIS LMFAO*/
+class Character extends readFile {
 
     // if a character does not have a value that some sort of substitute value will be used. 
     // 0 = strong hit dmg 
@@ -118,24 +120,146 @@ class Character {
     int[] downBAerial = new int[4]; 
     int[] standGrab = new int[4]; 
     int[] dashGrab = new int[4]; 
+    int[] fthrow = new int[4]; 
+    int[] bthrow = new int[4]; 
+    int[] dthrow = new int[4]; 
+    int[] uthrow = new int[4]; 
     /* in the following cases: 
     0 = startup
     1 = invuln frames (active)
     2 = end frames */
-    int[]  spotDodgeDmg= new int[3];      
+    int[] spotDodge = new int[3];      
     int[] backRoll = new int[3]; 
     int[] forwardRoll = new int[3]; 
     int[] airDodge = new int[3]; 
  
 
     public static void populate(Character[] characters){
-        /*
+        readFromFile(characters); 
+    }
+}
+
+
+class readFile {
+     /*
         Indices (alphabetical order):
         0 = captain falcon, 1 = dk, 2 = doc, 3 = falco, 4 = fox, 5 = ganon, 6 = ICs, 7 = kirby, 8 = bowser, 9 = link, 10 = luigi, 11 = mario, 12 = marth, 
         7 = mew2, 14 = g&w, 15 = ness, 16 = peach, 17 = pichu, 18 = pika, 19 = puff, 20 = roy, 21 = samus, 22 = sheik, 23 = yoshi, 24 = yink, 25 = zelda
-        */
-       
-        // NEED TO READ FROM A FILE HERE, the file will be downloaded by the user in a folder. 
-
+    */
+    static int index = 0; 
+    static void readFromFile(Character[]characters){
+        try{
+            File file = new File ("charData.txt"); 
+            Scanner fileReader = new Scanner(file); 
+            while (fileReader.hasNextLine()){
+                characters[index].charName = fileReader.nextLine(); 
+                for (int i = 0; i < 4; i++){
+                    characters[index].jab1[i] = fileReader.nextInt(); 
+                }
+                for (int i = 0; i < 4; i++){
+                    characters[index].jab2[i] = fileReader.nextInt(); 
+                }
+                for (int i = 0; i < 4; i++){
+                    characters[index].jab3[i] = fileReader.nextInt(); 
+                }
+                for (int i = 0; i < 4; i++){
+                    characters[index].ftilt[i] = fileReader.nextInt(); 
+                }
+                for (int i = 0; i < 4; i++){
+                    characters[index].utilt[i] = fileReader.nextInt(); 
+                }
+                for (int i = 0; i < 4; i++){
+                    characters[index].dtilt[i] = fileReader.nextInt(); 
+                }
+                for (int i = 0; i < 4; i++){
+                    characters[index].dashAttack[i] = fileReader.nextInt(); 
+                }
+                for (int i = 0; i < 4; i++){
+                    characters[index].fsmash[i] = fileReader.nextInt(); 
+                }
+                for (int i = 0; i < 4; i++){
+                    characters[index].usmash[i] = fileReader.nextInt(); 
+                }
+                for (int i = 0; i < 4; i++){
+                    characters[index].dsmash[i] = fileReader.nextInt(); 
+                }
+                for (int i = 0; i < 4; i++){
+                    characters[index].nair[i] = fileReader.nextInt(); 
+                }
+                for (int i = 0; i < 4; i++){
+                    characters[index].fair[i] = fileReader.nextInt(); 
+                }
+                for (int i = 0; i < 4; i++){
+                    characters[index].bair[i] = fileReader.nextInt(); 
+                }
+                for (int i = 0; i < 4; i++){
+                    characters[index].uair[i] = fileReader.nextInt(); 
+                }
+                for (int i = 0; i < 4; i++){
+                    characters[index].dair[i] = fileReader.nextInt(); 
+                }
+                for (int i = 0; i < 4; i++){
+                    characters[index].neutralBGrounded[i] = fileReader.nextInt(); 
+                }
+                for (int i = 0; i < 4; i++){
+                    characters[index].neutralBAerial[i] = fileReader.nextInt(); 
+                }
+                for (int i = 0; i < 4; i++){
+                    characters[index].sideBGrounded[i] = fileReader.nextInt(); 
+                }
+                for (int i = 0; i < 4; i++){
+                    characters[index].sideBAerial[i] = fileReader.nextInt(); 
+                }
+                for (int i = 0; i < 4; i++){
+                    characters[index].upBGrounded[i] = fileReader.nextInt(); 
+                }
+                for (int i = 0; i < 4; i++){
+                    characters[index].upBAerial[i] = fileReader.nextInt(); 
+                }
+                for (int i = 0; i < 4; i++){
+                    characters[index].downBGrounded[i] = fileReader.nextInt(); 
+                }
+                for (int i = 0; i < 4; i++){
+                    characters[index].downBAerial[i] = fileReader.nextInt(); 
+                }
+                for (int i = 0; i < 4; i++){
+                    characters[index].standGrab[i] = fileReader.nextInt(); 
+                }
+                for (int i = 0; i < 4; i++){
+                    characters[index].dashGrab[i] = fileReader.nextInt(); 
+                }
+                for (int i = 0; i < 4; i++){
+                    characters[index].fthrow[i] = fileReader.nextInt(); 
+                }
+                for (int i = 0; i < 4; i++){
+                    characters[index].bthrow[i] = fileReader.nextInt(); 
+                }
+                for (int i = 0; i < 4; i++){
+                    characters[index].dthrow[i] = fileReader.nextInt(); 
+                }
+                for (int i = 0; i < 4; i++){
+                    characters[index].uthrow[i] = fileReader.nextInt(); 
+                }
+                for (int i = 0; i < 3; i++){
+                    characters[index].spotDodge[i] = fileReader.nextInt(); 
+                }
+                for (int i = 0; i < 3; i++){
+                    characters[index].backRoll[i] = fileReader.nextInt(); 
+                }
+                for (int i = 0; i < 3; i++){
+                    characters[index].forwardRoll[i] = fileReader.nextInt(); 
+                }
+                for (int i = 0; i < 3; i++){
+                    characters[index].airDodge[i] = fileReader.nextInt(); 
+                }
+                index += 1; 
+            }
+        fileReader.close(); 
+        } catch (FileNotFoundException error){
+            System.out.println("File was unable to be read"); // need to make this some sort of pop-up in the gui  ** FIX ME **
+            error.printStackTrace();
+        }
     }
 }
+
+
