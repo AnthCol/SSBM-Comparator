@@ -14,8 +14,6 @@ class Main extends Character{
 
         /* This array will contain all of the character data and will be passed to functions for manipulation
         The characters at the beginning here, will be */
-        
-
 
         JFrame frame = new JFrame("SSBM Comparator"); 
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -120,7 +118,7 @@ class Character {
     int[] downBAerial = new int[4]; 
     int[] standGrab = new int[4]; 
     int[] dashGrab = new int[4]; 
-    /* in the following cases:
+    /* in the following cases: 
     0 = startup
     1 = invuln frames (active)
     2 = end frames */
