@@ -152,7 +152,7 @@ class Character extends readFile {
 class readFile {
      /*
         Indices (alphabetical order):
-        0 = captain falcon, 1 = dk, 2 = doc, 3 = falco, 4 = fox, 5 = ganon, 6 = ICs, 7 = kirby, 8 = bowser, 9 = link, 10 = luigi, 11 = mario, 12 = marth, 
+        0 = bowser, 1 = captain falcon, 2 = doc, 3 = dk, 4 = falco, 5 = fox, 6 = ganon, 7 = ICs, 8 = kirby, 9 = link, 10 = luigi, 11 = mario, 12 = marth, 
         7 = mew2, 14 = g&w, 15 = ness, 16 = peach, 17 = pichu, 18 = pika, 19 = puff, 20 = roy, 21 = samus, 22 = sheik, 23 = yoshi, 24 = yink, 25 = zelda
     */
 
