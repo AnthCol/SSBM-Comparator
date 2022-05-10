@@ -118,8 +118,9 @@ class Character extends readFile {
     int[] upBAerial = new int[4]; 
     int[] downBGrounded = new int[4]; 
     int[] downBAerial = new int[4]; 
-    int[] standGrab = new int[4]; 
-    int[] dashGrab = new int[4]; 
+    // for the grabs, 0 = startup, 1 = total frames
+    int[] standGrab = new int[2]; 
+    int[] dashGrab = new int[2]; 
     int[] fthrow = new int[4]; 
     int[] bthrow = new int[4]; 
     int[] dthrow = new int[4]; 
@@ -131,8 +132,16 @@ class Character extends readFile {
     int[] spotDodge = new int[3];      
     int[] backRoll = new int[3]; 
     int[] forwardRoll = new int[3]; 
-    int[] airDodge = new int[3]; 
- 
+    int[] airDodge = new int[4]; 
+    // for air dodge, 0 = startup, 1 = active/invuln, 2 = end lag, 3 = special land lag 
+    int weight; 
+    double ffSpeed; 
+    double dashSpeed; 
+    double runSpeed; 
+    int wavedashLen; // rank
+    int pldif; // perfect ledgedash intangibility frames 
+    int jumpSquat; 
+    boolean wallJump; // 1 = yes, 0 = no. 
 
     public static void populate(Character[] characters){
         readFromFile(characters); 
@@ -146,10 +155,12 @@ class readFile {
         0 = captain falcon, 1 = dk, 2 = doc, 3 = falco, 4 = fox, 5 = ganon, 6 = ICs, 7 = kirby, 8 = bowser, 9 = link, 10 = luigi, 11 = mario, 12 = marth, 
         7 = mew2, 14 = g&w, 15 = ness, 16 = peach, 17 = pichu, 18 = pika, 19 = puff, 20 = roy, 21 = samus, 22 = sheik, 23 = yoshi, 24 = yink, 25 = zelda
     */
+
+    // VALUE WILL BE SET AS NEGATIVE ONE IF IT IS UNAVAILABLE
     static int index = 0; 
     static void readFromFile(Character[]characters){
         try{
-            File file = new File ("charData.txt"); 
+            File file = new File ("/src/charData.txt"); 
             Scanner fileReader = new Scanner(file); 
             while (fileReader.hasNextLine()){
                 characters[index].charName = fileReader.nextLine(); 
@@ -222,10 +233,10 @@ class readFile {
                 for (int i = 0; i < 4; i++){
                     characters[index].downBAerial[i] = fileReader.nextInt(); 
                 }
-                for (int i = 0; i < 4; i++){
+                for (int i = 0; i < 2; i++){
                     characters[index].standGrab[i] = fileReader.nextInt(); 
                 }
-                for (int i = 0; i < 4; i++){
+                for (int i = 0; i < 2; i++){
                     characters[index].dashGrab[i] = fileReader.nextInt(); 
                 }
                 for (int i = 0; i < 4; i++){
@@ -249,9 +260,18 @@ class readFile {
                 for (int i = 0; i < 3; i++){
                     characters[index].forwardRoll[i] = fileReader.nextInt(); 
                 }
-                for (int i = 0; i < 3; i++){
+                for (int i = 0; i < 4; i++){
                     characters[index].airDodge[i] = fileReader.nextInt(); 
                 }
+                characters[index].weight = fileReader.nextInt(); 
+                characters[index].ffSpeed = fileReader.nextDouble(); 
+                characters[index].dashSpeed = fileReader.nextDouble(); 
+                characters[index].runSpeed = fileReader.nextDouble(); 
+                characters[index].wavedashLen = fileReader.nextInt();  // rank
+                characters[index].pldif = fileReader.nextInt(); 
+                characters[index].jumpSquat = fileReader.nextInt(); 
+                characters[index].wallJump = fileReader.nextBoolean(); 
+        
                 index += 1; 
             }
         fileReader.close(); 
