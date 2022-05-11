@@ -158,6 +158,13 @@ class Main extends Character{
         //ArrayList<Character> characters = new ArrayList<Character>(); 
         Character[] characters = new Character[26]; 
         int x = 0; 
+       /* double y = 5; 
+        System.out.println(String.format("%.0f", y));  */
+        
+        // need to create a massive array of floats NOT DOUBLES 
+
+
+
         /* this is an absolute fucking abomination of a way to initialize variables, but I currently do not know of any other way to do it :P, will 
         refactor in the future hopefully */
         for (int i = 0; i < 26; i++){
