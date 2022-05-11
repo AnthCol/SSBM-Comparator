@@ -17,6 +17,11 @@ do all of the readfile stuff inside of Main's main. */
 
 // VALUE WILL BE SET AS NEGATIVE ONE IF IT IS UNAVAILABLE/INCALCULABLE
 
+/* TO DO:
+    Create the GUI with functional buttons. 
+    Finish the charData.txt file (cringe! but needs to be done), hopefully can be done in a day 
+*/
+
 class Main extends Character{
 
 
@@ -152,42 +157,42 @@ class Character {
     24 - 27 -> dashAttack
     28 - 31 -> fsmash
     32 - 35 -> usmash
-    26 - 29 -> dsmash
-    30 - 33 -> nair
-    34 - 37 -> fair 
-    38 - 41 -> bair
-    42 - 45 -> uair
-    46 - 49 -> dair
-    50 - 53 -> neutralBGrounded
-    54 - 57 -> neutralBAerial
-    58 - 61 -> sideBGrounded
-    52 - 65 -> sideBAerial
-    66 - 69 -> upBGrounded
-    70 - 73 -> upBAerial
-    74 - 77 -> downBGrounded
-    78 - 81 -> downBAerial
+    36 - 39 -> dsmash  
+    40 - 43 -> nair
+    44 - 47 -> fair 
+    48 - 51 -> bair
+    52 - 55 -> uair
+    56 - 59 -> dair
+    60 - 63 -> neutralBGrounded
+    64 - 67 -> neutralBAerial
+    68 - 71 -> sideBGrounded
+    72 - 75 -> sideBAerial
+    76 - 79 -> upBGrounded
+    80 - 83 -> upBAerial
+    84 - 87 -> downBGrounded
+    88 - 91 -> downBAerial
     // for the grabs 0 = startup, 1 = total frames
-    82 - 83 -> standGrab
-    84 - 85 -> dashGrab
+    92 - 93 -> standGrab
+    94 - 95 -> dashGrab
     // back to normal now
-    86 - 89 -> fthrow
-    90 - 93 -> bthrow
-    94 - 97 -> dthrow
-    98 - 101 -> uthrow
+    96 - 99 -> fthrow
+    100 - 103 -> bthrow
+    104 - 107 -> dthrow
+    108 - 111 -> uthrow
     // in the following: 0 = startup, 1 = invuln (Active), 2 = end
-    102 - 104 -> spotDodge
-    105 - 107 -> backRoll
-    108 - 110 -> forwardroll
+    112 - 114 -> spotDodge
+    115 - 117 -> backRoll
+    118 - 120 -> forwardroll
     // for airdodge, 0 = startup, 1 = active, 2 = end, 3 = special land lag 
-    111 - 114 -> airDodge
-    115 -> weight
-    116 -> ffSpeed
-    117 -> dashSpeed
-    118 -> runSpeed
-    119 -> wavedashLen // rank
-    120 -> pldif // perfect ledgefash intangibility frames
-    121 -> jumpSquat
-    123 -> wallJump // 1 yes, 0 no. 
+    121 - 124 -> airDodge
+    125 -> weight
+    126 -> ffSpeed
+    127 -> dashSpeed
+    128 -> runSpeed
+    129 -> wavedashLen // rank
+    130 -> pldif // perfect ledgefash intangibility frames
+    131 -> jumpSquat
+    132 -> wallJump // 1 yes, 0 no. 
     */
     
 
