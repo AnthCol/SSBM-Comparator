@@ -23,39 +23,6 @@ do all of the readfile stuff inside of Main's main. */
 */
 
 class Main extends Character{
-
-
-    static void readFile (Character[] characters){
-        //Character character = new Character(); 
-        int index = 0; 
-        try{
-            //C:/Users/tonyc/OneDrive/University Files/Personal Projects/SSBM COMPARATOR/src/
-            File file = new File ("./src/charData.txt"); 
-            Scanner fileReader = new Scanner(file);
-            while (index < 2 && fileReader.hasNextLine()){ 
-                if (index == 1 || index == 2 || index == 3 || index == 7 || index == 14 || index == 24){ // indices for chars with more than one word in their name
-                    characters[index].charName = fileReader.next(); 
-                    characters[index].charName = characters[index].charName.concat(" "); 
-                    characters[index].charName = characters[index].charName.concat(fileReader.next()); 
-                }
-                else{
-                    characters[index].charName = fileReader.next(); 
-                }
-                for (int i = 0; i < 133; i++){
-                    characters[index].values[i] = fileReader.nextFloat(); 
-                }
-                
-                index += 1; 
-            }
-            fileReader.close(); 
-        }   
-        catch (FileNotFoundException error){
-            System.out.println("File was unable to be read"); // need to make this some sort of pop-up in the gui  ** FIX ME **
-            error.printStackTrace();
-        } 
-        return; 
-    }
-    
     public static void main(String args[]) {
         //ArrayList<Character> characters = new ArrayList<Character>(); 
         Character[] characters = new Character[26]; 
@@ -139,9 +106,45 @@ class Main extends Character{
     }
 }
 
+
+
+
+
+
 class Character {
     String charName; 
     float[] values = new float[133]; 
+
+    static void readFile (Character[] characters){
+        //Character character = new Character(); 
+        int index = 0; 
+        try{
+            //C:/Users/tonyc/OneDrive/University Files/Personal Projects/SSBM COMPARATOR/src/
+            File file = new File ("./src/charData.txt"); 
+            Scanner fileReader = new Scanner(file);
+            while (index < 2 && fileReader.hasNextLine()){ 
+                if (index == 1 || index == 2 || index == 3 || index == 7 || index == 14 || index == 24){ // indices for chars with more than one word in their name
+                    characters[index].charName = fileReader.next(); 
+                    characters[index].charName = characters[index].charName.concat(" "); 
+                    characters[index].charName = characters[index].charName.concat(fileReader.next()); 
+                }
+                else{
+                    characters[index].charName = fileReader.next(); 
+                }
+                for (int i = 0; i < 133; i++){
+                    characters[index].values[i] = fileReader.nextFloat(); 
+                }
+                
+                index += 1; 
+            }
+            fileReader.close(); 
+        }   
+        catch (FileNotFoundException error){
+            System.out.println("File was unable to be read"); // need to make this some sort of pop-up in the gui  ** FIX ME **
+            error.printStackTrace();
+        } 
+        return; 
+    }
 }
     /*
     indices for float array:
@@ -193,8 +196,4 @@ class Character {
     130 -> pldif // perfect ledgefash intangibility frames
     131 -> jumpSquat
     132 -> wallJump // 1 yes, 0 no. 
-    */
-    
-
-
-
+*/
