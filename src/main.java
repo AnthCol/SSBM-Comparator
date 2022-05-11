@@ -28,7 +28,15 @@ class Main extends Character{
             File file = new File ("C:/Users/tonyc/OneDrive/University Files/Personal Projects/SSBM COMPARATOR/src/charData.txt"); 
             Scanner fileReader = new Scanner(file);
             while (fileReader.hasNextLine()){
-                characters[index].charName = fileReader.nextLine();
+                if (index == 1){
+                    characters[index].charName = fileReader.next(); 
+                    characters[index].charName = characters[index].charName.concat(" "); 
+                    characters[index].charName = characters[index].charName.concat(fileReader.next()); 
+                }
+                else{
+                    characters[index].charName = fileReader.next(); 
+                }
+               // characters[index].charName = fileReader.next();
                 System.out.println("PRINTING CHAR NAME: " + characters[index].charName); 
                 for (int i = 0; i < 4; i++){
                     characters[index].jab1[i] = fileReader.nextInt(); 
@@ -139,7 +147,7 @@ class Main extends Character{
                 characters[index].pldif = fileReader.nextInt(); 
                 characters[index].jumpSquat = fileReader.nextInt(); 
                 characters[index].wallJump = fileReader.nextInt(); 
-                System.out.println("PRINTING WALLJUMP: " + characters[index].wallJump); 
+                System.out.println("PRINTING WALLJUMP: " + characters[index].wallJump + "PRINTING INDEX: " + index); 
                 index += 1; 
             }
             fileReader.close(); 
