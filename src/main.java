@@ -11,7 +11,7 @@ import java.util.Scanner;
 do all of the readfile stuff inside of Main's main. */
 /*
         Indices (alphabetical order):
-        0 = bowser, 1 = captain falcon, 2 = doc, 3 = dk, 4 = falco, 5 = fox, 6 = ganon, 7 = ICs, 8 = kirby, 9 = link, 10 = luigi, 11 = mario, 12 = marth, 
+        0 = bowser, 1 = captain falcon, 2 = donkey kong, 3 = dr. mario, 4 = falco, 5 = fox, 6 = ganon, 7 = ICs, 8 = kirby, 9 = link, 10 = luigi, 11 = mario, 12 = marth, 
         7 = mew2, 14 = g&w, 15 = ness, 16 = peach, 17 = pichu, 18 = pika, 19 = puff, 20 = roy, 21 = samus, 22 = sheik, 23 = yoshi, 24 = yink, 25 = zelda
 */
 
@@ -20,15 +20,15 @@ do all of the readfile stuff inside of Main's main. */
 class Main extends Character{
 
 
-    static Character[] readFile (Character[] characters){
+    static void readFile (Character[] characters){
         //Character character = new Character(); 
         int index = 0; 
         try{
             //C:/Users/tonyc/OneDrive/University Files/Personal Projects/SSBM COMPARATOR/src/
-            File file = new File ("C:/Users/tonyc/OneDrive/University Files/Personal Projects/SSBM COMPARATOR/src/charData.txt"); 
+            File file = new File ("./src/charData.txt"); 
             Scanner fileReader = new Scanner(file);
-            while (fileReader.hasNextLine()){
-                if (index == 1){
+            while (index < 2 && fileReader.hasNextLine()){ 
+                if (index == 1 || index == 2 || index == 3 || index == 7 || index == 14 || index == 24){ // indices for chars with more than one word in their name
                     characters[index].charName = fileReader.next(); 
                     characters[index].charName = characters[index].charName.concat(" "); 
                     characters[index].charName = characters[index].charName.concat(fileReader.next()); 
@@ -36,12 +36,8 @@ class Main extends Character{
                 else{
                     characters[index].charName = fileReader.next(); 
                 }
-               // characters[index].charName = fileReader.next();
-                System.out.println("PRINTING CHAR NAME: " + characters[index].charName); 
                 for (int i = 0; i < 4; i++){
                     characters[index].jab1[i] = fileReader.nextInt(); 
-                    System.out.println("PRINTING " + index + " JAB1[" + i + "]"); 
-                    System.out.println(characters[index].jab1[i]); 
                 }
                 for (int i = 0; i < 4; i++){
                     characters[index].jab2[i] = fileReader.nextInt(); 
@@ -147,7 +143,6 @@ class Main extends Character{
                 characters[index].pldif = fileReader.nextInt(); 
                 characters[index].jumpSquat = fileReader.nextInt(); 
                 characters[index].wallJump = fileReader.nextInt(); 
-                System.out.println("PRINTING WALLJUMP: " + characters[index].wallJump + "PRINTING INDEX: " + index); 
                 index += 1; 
             }
             fileReader.close(); 
@@ -155,10 +150,8 @@ class Main extends Character{
         catch (FileNotFoundException error){
             System.out.println("File was unable to be read"); // need to make this some sort of pop-up in the gui  ** FIX ME **
             error.printStackTrace();
-        }
-        System.out.println("PRINTING INDEX: " + index);
-        
-        return characters; 
+        } 
+        return; 
     }
     
     public static void main(String args[]) {
@@ -280,7 +273,6 @@ class Main extends Character{
         }
 
         readFile(characters);  
-        System.out.println("PRINTING IN MAIN: " + characters[0].charName); 
         // so stuff will be accessed like characters.utiltEnding[0] for fox utilt end lag for example
 
         /* This array will contain all of the character data and will be passed to functions for manipulation
