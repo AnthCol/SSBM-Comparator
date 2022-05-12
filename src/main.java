@@ -23,9 +23,13 @@ do all of the readfile stuff inside of Main's main. */
     Finish the charData.txt file (cringe! but needs to be done), hopefully can be done in a day 
 */
 
-class Main extends Character{
+public class Main extends Character {
+
+    public void actionPerformed (ActionEvent event) {
+        System.out.println("Button clicked"); 
+    }
     public static void main(String args[]) {
-        
+   
         Character[] characters = new Character[26]; 
        /* double y = 5; 
         System.out.println(String.format("%.0f", y));  for a value without decimals */
@@ -37,73 +41,58 @@ class Main extends Character{
                 characters[i].values[x] = 0; 
             }
         }
-        readFile(characters);  
+        readFile(characters); 
         
-    
-    
-        
-
         JFrame frame = new JFrame("SSBM Comparator"); 
+        JMenuBar menuBar = new JMenuBar();
+        ImageIcon icon = new ImageIcon("./images/icon.png"); 
+        
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(1000, 600);
         frame.setMinimumSize(new Dimension(450, 450)); 
-
-        ImageIcon icon = new ImageIcon("./images/icon.png");                
         frame.setIconImage(icon.getImage()); 
-        JMenuBar menuBar = new JMenuBar();
 
-        JMenu choiceOne = new JMenu("Compare Characters");
-        JMenu choiceTwo = new JMenu("View");
-        JMenu choiceThree = new JMenu ("Rank"); 
-        JMenu choiceFour = new JMenu("Help"); 
+        JMenu compare = new JMenu("Compare Characters");
+        JMenu view = new JMenu("View");
+        JMenu rank = new JMenu ("Rank"); 
+        JMenu help = new JMenu("Help"); 
+ 
+        menuBar.add(compare);
+        menuBar.add(view);
+        menuBar.add(rank); 
+        menuBar.add(help); 
 
-        menuBar.add(choiceOne);
-        menuBar.add(choiceTwo);
-        menuBar.add(choiceThree); 
-        menuBar.add(choiceFour); 
-
-
-
-        JMenuItem choiceTwoOne = new JMenuItem("Tier List"); 
-        JMenuItem choiceTwoTwo = new JMenuItem("Individual Character Data");  
-
-        JMenuItem choiceThreeOne = new JMenuItem("Base Damage");  // pick a move when they click
-        JMenuItem choiceThreeTwo = new JMenuItem ("Startup Frames");  // pick a move when they click
-        JMenuItem choiceThreeThree = new JMenuItem ("Active Frames (Length)"); // pick a move when they click
-        JMenuItem choiceThreeFour = new JMenuItem ("Ending Frames");  // pick a move when they click
+        JMenuItem tierList = new JMenuItem("Tier List"); 
+        tierList.addActionListener (new ActionListener(){
+            public void actionPerformed(ActionEvent event){
+                System.out.println("Button clicked"); 
+            }
+        }); 
+        JMenuItem indivData = new JMenuItem("Individual Character Data");  
+        JMenuItem baseDmg = new JMenuItem("Base Damage");  // pick a move when they click
+        JMenuItem startingF = new JMenuItem ("Startup Frames");  // pick a move when they click
+        JMenuItem activeF = new JMenuItem ("Active Frames (Length)"); // pick a move when they click
+        JMenuItem endingF = new JMenuItem ("Ending Frames");  // pick a move when they click
+    
+        view.add(tierList); 
         
-
-        choiceTwo.add(choiceTwoOne); 
-        choiceTwo.add(choiceTwoTwo); 
-
-
-        choiceThree.add(choiceThreeOne); 
-        choiceThree.add(choiceThreeTwo); 
-        choiceThree.add(choiceThreeThree); 
-        choiceThree.add(choiceThreeFour); 
-        
-        
+        view.add(indivData); 
+        rank.add(baseDmg); 
+        rank.add(startingF); 
+        rank.add(activeF); 
+        rank.add(endingF);
 
         JPanel panel = new JPanel(); 
         JLabel label = new JLabel("Created by Anthony Colaiacovo, May 2022");
         panel.add(label); 
-       /* JTextField tf = new JTextField(10); 
-        JButton send = new JButton("Send");
-        JButton reset = new JButton("Reset");
-        
-        panel.add(tf);
-        panel.add(send);
-        panel.add(reset); */
 
-    
         JTextArea ta = new JTextArea();
 
-       
         frame.getContentPane().add(BorderLayout.SOUTH, panel);
         frame.getContentPane().add(BorderLayout.NORTH, menuBar);
         frame.getContentPane().add(BorderLayout.CENTER, ta);
         frame.setVisible(true);
-
+  
     }
 }
 
