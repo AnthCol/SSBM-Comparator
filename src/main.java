@@ -47,8 +47,8 @@ class Main extends Character{
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(1000, 600);
 
-       // ImageIcon icon = new ImageIcon("images/icon.png");                ****UNCOMMENT LATER****
-        
+        ImageIcon icon = new ImageIcon("./images/icon.png");                
+        frame.setIconImage(icon.getImage()); 
         JMenuBar menuBar = new JMenuBar();
 
         JMenu choiceOne = new JMenu("Compare Characters");
