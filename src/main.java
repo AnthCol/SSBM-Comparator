@@ -6,6 +6,7 @@ import java.awt.*;
 import java.io.File; 
 import java.io.FileNotFoundException;
 import java.util.Scanner; 
+import java.awt.event.*; 
 /* FIX ME recreate character class and have main extend it. 
 
 do all of the readfile stuff inside of Main's main. */
@@ -24,7 +25,7 @@ do all of the readfile stuff inside of Main's main. */
 
 class Main extends Character{
     public static void main(String args[]) {
-        //ArrayList<Character> characters = new ArrayList<Character>(); 
+        
         Character[] characters = new Character[26]; 
        /* double y = 5; 
         System.out.println(String.format("%.0f", y));  for a value without decimals */
@@ -37,15 +38,15 @@ class Main extends Character{
             }
         }
         readFile(characters);  
-     
-        // so stuff will be accessed like characters.utiltEnding[0] for fox utilt end lag for example
-
-        /* This array will contain all of the character data and will be passed to functions for manipulation
-        The characters at the beginning here, will be */
+        
+    
+    
+        
 
         JFrame frame = new JFrame("SSBM Comparator"); 
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(1000, 600);
+        frame.setMinimumSize(new Dimension(450, 450)); 
 
         ImageIcon icon = new ImageIcon("./images/icon.png");                
         frame.setIconImage(icon.getImage()); 
@@ -106,12 +107,7 @@ class Main extends Character{
     }
 }
 
-
-
-
-
-
-class Character {
+class Character{
     String charName; 
     float[] values = new float[133]; 
 
@@ -146,7 +142,10 @@ class Character {
         return; 
     }
 }
-    /*
+
+
+
+/*
     indices for float array:
     0 - jab1 dmg
     1 - jab1 startup
