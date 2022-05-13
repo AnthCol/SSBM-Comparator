@@ -2,6 +2,9 @@
 package src; 
 
 import javax.swing.*;
+import javax.swing.event.MenuEvent;
+import javax.swing.event.MenuListener;
+
 import java.awt.*;
 import java.io.File; 
 import java.io.FileNotFoundException;
@@ -52,7 +55,10 @@ public class Main extends Character {
         JMenu view = new JMenu("View");
         JMenu rank = new JMenu ("Rank"); 
         JMenu help = new JMenu("Help"); 
- 
+        
+        help.addMenuListener(new menuListen()); 
+           
+
         menuBar.add(compare);
         menuBar.add(view);
         menuBar.add(rank); 
@@ -111,63 +117,14 @@ public class Main extends Character {
         0 = bowser, 1 = captain falcon, 2 = donkey kong, 3 = dr. mario, 4 = falco, 5 = fox, 6 = ganon, 7 = ICs, 8 = kirby, 9 = link, 10 = luigi, 11 = mario, 12 = marth, 
         7 = mew2, 14 = g&w, 15 = ness, 16 = peach, 17 = pichu, 18 = pika, 19 = puff, 20 = roy, 21 = samus, 22 = sheik, 23 = yoshi, 24 = yink, 25 = zelda
 */
-        JMenu indivData = new JMenu("Individual Character Data");  
-        // sub menu needs to be here, then you select a character                       ** FIX ME **
-        JMenuItem charBowser = new JMenuItem("Bowser"); 
-        JMenuItem charCaptainFalcon = new JMenuItem("Captain Falcon    "); 
-        JMenuItem charDonkeyKong = new JMenuItem("Donkey Kong"); 
-        JMenuItem charDrMario = new JMenuItem("Dr. Mario"); 
-        JMenuItem charFalco = new JMenuItem ("Falco"); 
-        JMenuItem charFox = new JMenuItem("Fox"); 
-        JMenuItem charGanon = new JMenuItem("Ganondorf"); 
-        JMenuItem charICs = new JMenuItem("Ice Climbers"); 
-        JMenuItem charKirby = new JMenuItem("Kirby"); 
-        JMenuItem charLink = new JMenuItem("Link"); 
-        JMenuItem charLuigi = new JMenuItem("Luigi"); 
-        JMenuItem charMario = new JMenuItem("Mario"); 
-        JMenuItem charMarth = new JMenuItem("Marth"); 
-        JMenuItem charMew2 = new JMenuItem("Mewtwo"); 
-        JMenuItem charGW = new JMenuItem("Mr. Game&Watch"); 
-        JMenuItem charNess = new JMenuItem("Ness"); 
-        JMenuItem charPeach = new JMenuItem("Peach"); 
-        JMenuItem charPichu = new JMenuItem("Pichu"); 
-        JMenuItem charPikachu = new JMenuItem("Pikachu"); 
-        JMenuItem charPuff = new JMenuItem("Jigglypuff"); 
-        JMenuItem charRoy = new JMenuItem("Roy"); 
-        JMenuItem charSamus = new JMenuItem("Samus"); 
-        JMenuItem charSheik = new JMenuItem ("Sheik");
-        JMenuItem charYoshi = new JMenuItem ("Yoshi"); 
-        JMenuItem charYink = new JMenuItem ("Young Link"); 
-        JMenuItem charZelda = new JMenuItem ("Zelda"); 
+        JMenuItem indivData = new JMenuItem("Individual Character Data");  
+        indivData.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent event){
+                System.out.println("indivData clicked"); 
+            }
+        });
 
-        indivData.add(charFox); 
-        indivData.add(charMarth); 
-        indivData.add(charPuff); 
-        indivData.add(charFalco); 
-        indivData.add(charSheik); 
-        indivData.add(charCaptainFalcon); 
-        indivData.add(charPeach); 
-        indivData.add(charICs); 
-        indivData.add(charPikachu); 
-        indivData.add(charYoshi); 
-        indivData.add(charSamus); 
-        indivData.add(charLuigi); 
-        indivData.add(charDrMario); 
-        indivData.add(charGanon); 
-        indivData.add(charMario); 
-        indivData.add(charDonkeyKong); 
-        indivData.add(charYink); 
-        indivData.add(charLink); 
-        indivData.add(charGW); 
-        indivData.add(charMew2); 
-        indivData.add(charRoy); 
-        indivData.add(charPichu); 
-        indivData.add(charNess); 
-        indivData.add(charZelda);
-        indivData.add(charKirby); 
-        indivData.add(charBowser); 
-
-
+    
 
         JMenuItem baseDmg = new JMenuItem("Base Damage");  // pick a move when they click
         baseDmg.addActionListener (new ActionListener(){
@@ -210,7 +167,7 @@ public class Main extends Character {
             }
         });
 
-
+      
         view.add(tierList); 
         view.add(indivData); 
 
@@ -224,11 +181,11 @@ public class Main extends Character {
 
       
 
-     //   JTextArea ta = new JTextArea();
+        JTextArea ta = new JTextArea();
 
         frame.getContentPane().add(BorderLayout.SOUTH, panel);
         frame.getContentPane().add(BorderLayout.NORTH, menuBar);
-    //    frame.getContentPane().add(BorderLayout.CENTER, ta);
+        frame.getContentPane().add(BorderLayout.CENTER, ta);
         frame.setVisible(true);
   
     }
@@ -271,7 +228,23 @@ class Character{
 }
 
 
+class menuListen implements MenuListener{
+    @Override
+    public void menuSelected(MenuEvent event) {
+        System.out.println("help selected");
+        // will need to put some JFrame shit in here, if that doesn't work, will need to make the help tab a menu with a submenu
+    }
 
+    @Override
+    public void menuDeselected(MenuEvent event) {
+        System.out.println("help deselected");
+    }
+
+    @Override
+    public void menuCanceled(MenuEvent event) {
+        System.out.println("help cancel");
+    }
+}
 /*
     indices for float array:
     0 - jab1 dmg
