@@ -58,16 +58,30 @@ public class Main extends Character {
         menuBar.add(rank); 
         menuBar.add(help); 
 
+        JMenuItem twoChars = new JMenuItem ("Two Characters"); 
+        JMenuItem threeChars = new JMenuItem("Three Characters"); 
+        JMenuItem fourChars = new JMenuItem("Four Characters"); 
+        compare.add(twoChars); 
+        compare.add(threeChars); 
+        compare.add(fourChars); 
+
         compare.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent event){
                 System.out.println("Compare clicked"); 
             }
         });
+
         /* make a sub menu for compare and ask two, three, or four characters? */
         JMenuItem tierList = new JMenuItem("Tier List"); 
         tierList.addActionListener (new ActionListener(){
             public void actionPerformed(ActionEvent event){
                 System.out.println("tier list clicked"); 
+                JTextPane tierListPane = new JTextPane(); 
+                tierListPane.setContentType("text/html");
+                tierListPane.setText("13th Official SSBM Tier List\n As of March 29th, 2021");
+                tierListPane.setEditable(false);
+                frame.getContentPane().add(BorderLayout.CENTER, tierListPane);  
+                frame.setVisible(true); 
             }
         }); 
 
@@ -77,6 +91,12 @@ public class Main extends Character {
         JMenuItem baseDmg = new JMenuItem("Base Damage");  // pick a move when they click
         baseDmg.addActionListener (new ActionListener(){
             public void actionPerformed(ActionEvent event){
+                JTextPane baseDmgPane = new JTextPane(); 
+                baseDmgPane.setContentType("text/html");
+                baseDmgPane.setText("Which move would you like to look at?");
+                baseDmgPane.setEditable(false);
+                frame.getContentPane().add(BorderLayout.CENTER, baseDmgPane);  
+                frame.setVisible(true); 
                 System.out.println("baseDmg clicked"); 
             }
         }); 
@@ -118,11 +138,11 @@ public class Main extends Character {
         JLabel label = new JLabel("Created by Anthony Colaiacovo, May 2022");
         panel.add(label); 
 
-        JTextArea ta = new JTextArea();
+     //   JTextArea ta = new JTextArea();
 
         frame.getContentPane().add(BorderLayout.SOUTH, panel);
         frame.getContentPane().add(BorderLayout.NORTH, menuBar);
-        frame.getContentPane().add(BorderLayout.CENTER, ta);
+    //    frame.getContentPane().add(BorderLayout.CENTER, ta);
         frame.setVisible(true);
   
     }
