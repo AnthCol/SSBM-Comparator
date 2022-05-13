@@ -65,9 +65,28 @@ public class Main extends Character {
         compare.add(threeChars); 
         compare.add(fourChars); 
 
-        compare.addActionListener(new ActionListener(){
+
+
+
+        JPanel panel = new JPanel(); 
+        JLabel label = new JLabel("Created by Anthony Colaiacovo, May 2022");
+        panel.add(label); 
+
+
+        
+        twoChars.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent event){
-                System.out.println("Compare clicked"); 
+                System.out.println("2 clicked"); 
+            }
+        });
+        threeChars.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent event){
+                System.out.println("3 clicked"); 
+            }
+        });
+        fourChars.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent event){
+                System.out.println("4 clicked"); 
             }
         });
 
@@ -78,28 +97,97 @@ public class Main extends Character {
                 System.out.println("tier list clicked"); 
                 JTextPane tierListPane = new JTextPane(); 
                 tierListPane.setContentType("text/html");
-                tierListPane.setText("13th Official SSBM Tier List\n As of March 29th, 2021");
+                tierListPane.setText("13th Official SSBM Tier List\r\n As of March 29th, 2021");
                 tierListPane.setEditable(false);
+                frame.getContentPane().removeAll();
+                frame.getContentPane().add(BorderLayout.SOUTH, panel);
+                frame.getContentPane().add(BorderLayout.NORTH, menuBar);
                 frame.getContentPane().add(BorderLayout.CENTER, tierListPane);  
                 frame.setVisible(true); 
             }
         }); 
-
-        JMenuItem indivData = new JMenuItem("Individual Character Data");  
+        /*
+        Indices (alphabetical order):
+        0 = bowser, 1 = captain falcon, 2 = donkey kong, 3 = dr. mario, 4 = falco, 5 = fox, 6 = ganon, 7 = ICs, 8 = kirby, 9 = link, 10 = luigi, 11 = mario, 12 = marth, 
+        7 = mew2, 14 = g&w, 15 = ness, 16 = peach, 17 = pichu, 18 = pika, 19 = puff, 20 = roy, 21 = samus, 22 = sheik, 23 = yoshi, 24 = yink, 25 = zelda
+*/
+        JMenu indivData = new JMenu("Individual Character Data");  
         // sub menu needs to be here, then you select a character                       ** FIX ME **
+        JMenuItem charBowser = new JMenuItem("Bowser"); 
+        JMenuItem charCaptainFalcon = new JMenuItem("Captain Falcon    "); 
+        JMenuItem charDonkeyKong = new JMenuItem("Donkey Kong"); 
+        JMenuItem charDrMario = new JMenuItem("Dr. Mario"); 
+        JMenuItem charFalco = new JMenuItem ("Falco"); 
+        JMenuItem charFox = new JMenuItem("Fox"); 
+        JMenuItem charGanon = new JMenuItem("Ganondorf"); 
+        JMenuItem charICs = new JMenuItem("Ice Climbers"); 
+        JMenuItem charKirby = new JMenuItem("Kirby"); 
+        JMenuItem charLink = new JMenuItem("Link"); 
+        JMenuItem charLuigi = new JMenuItem("Luigi"); 
+        JMenuItem charMario = new JMenuItem("Mario"); 
+        JMenuItem charMarth = new JMenuItem("Marth"); 
+        JMenuItem charMew2 = new JMenuItem("Mewtwo"); 
+        JMenuItem charGW = new JMenuItem("Mr. Game&Watch"); 
+        JMenuItem charNess = new JMenuItem("Ness"); 
+        JMenuItem charPeach = new JMenuItem("Peach"); 
+        JMenuItem charPichu = new JMenuItem("Pichu"); 
+        JMenuItem charPikachu = new JMenuItem("Pikachu"); 
+        JMenuItem charPuff = new JMenuItem("Jigglypuff"); 
+        JMenuItem charRoy = new JMenuItem("Roy"); 
+        JMenuItem charSamus = new JMenuItem("Samus"); 
+        JMenuItem charSheik = new JMenuItem ("Sheik");
+        JMenuItem charYoshi = new JMenuItem ("Yoshi"); 
+        JMenuItem charYink = new JMenuItem ("Young Link"); 
+        JMenuItem charZelda = new JMenuItem ("Zelda"); 
+
+        indivData.add(charFox); 
+        indivData.add(charMarth); 
+        indivData.add(charPuff); 
+        indivData.add(charFalco); 
+        indivData.add(charSheik); 
+        indivData.add(charCaptainFalcon); 
+        indivData.add(charPeach); 
+        indivData.add(charICs); 
+        indivData.add(charPikachu); 
+        indivData.add(charYoshi); 
+        indivData.add(charSamus); 
+        indivData.add(charLuigi); 
+        indivData.add(charDrMario); 
+        indivData.add(charGanon); 
+        indivData.add(charMario); 
+        indivData.add(charDonkeyKong); 
+        indivData.add(charYink); 
+        indivData.add(charLink); 
+        indivData.add(charGW); 
+        indivData.add(charMew2); 
+        indivData.add(charRoy); 
+        indivData.add(charPichu); 
+        indivData.add(charNess); 
+        indivData.add(charZelda);
+        indivData.add(charKirby); 
+        indivData.add(charBowser); 
+
+
 
         JMenuItem baseDmg = new JMenuItem("Base Damage");  // pick a move when they click
         baseDmg.addActionListener (new ActionListener(){
             public void actionPerformed(ActionEvent event){
                 JTextPane baseDmgPane = new JTextPane(); 
                 baseDmgPane.setContentType("text/html");
-                baseDmgPane.setText("Which move would you like to look at?");
+                baseDmgPane.setText("Select a move: ");
                 baseDmgPane.setEditable(false);
+                frame.getContentPane().removeAll(); 
+                frame.getContentPane().add(BorderLayout.SOUTH, panel);
+                frame.getContentPane().add(BorderLayout.NORTH, menuBar);
                 frame.getContentPane().add(BorderLayout.CENTER, baseDmgPane);  
                 frame.setVisible(true); 
                 System.out.println("baseDmg clicked"); 
             }
         }); 
+        
+   
+     
+
 
         JMenuItem startingF = new JMenuItem ("Startup Frames");  // pick a move when they click
         startingF.addActionListener(new ActionListener(){
@@ -134,9 +222,7 @@ public class Main extends Character {
 
 
 
-        JPanel panel = new JPanel(); 
-        JLabel label = new JLabel("Created by Anthony Colaiacovo, May 2022");
-        panel.add(label); 
+      
 
      //   JTextArea ta = new JTextArea();
 
