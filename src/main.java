@@ -24,10 +24,6 @@ do all of the readfile stuff inside of Main's main. */
 */
 
 public class Main extends Character {
-
-    public void actionPerformed (ActionEvent event) {
-        System.out.println("Button clicked"); 
-    }
     public static void main(String args[]) {
    
         Character[] characters = new Character[26]; 
@@ -62,25 +58,61 @@ public class Main extends Character {
         menuBar.add(rank); 
         menuBar.add(help); 
 
+        compare.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent event){
+                System.out.println("Compare clicked"); 
+            }
+        });
+        /* make a sub menu for compare and ask two, three, or four characters? */
         JMenuItem tierList = new JMenuItem("Tier List"); 
         tierList.addActionListener (new ActionListener(){
             public void actionPerformed(ActionEvent event){
-                System.out.println("Button clicked"); 
+                System.out.println("tier list clicked"); 
             }
         }); 
+
         JMenuItem indivData = new JMenuItem("Individual Character Data");  
+        // sub menu needs to be here, then you select a character                       ** FIX ME **
+
         JMenuItem baseDmg = new JMenuItem("Base Damage");  // pick a move when they click
+        baseDmg.addActionListener (new ActionListener(){
+            public void actionPerformed(ActionEvent event){
+                System.out.println("baseDmg clicked"); 
+            }
+        }); 
+
         JMenuItem startingF = new JMenuItem ("Startup Frames");  // pick a move when they click
+        startingF.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent event){
+                System.out.println("starting frames clicked"); 
+            }
+        });
+
         JMenuItem activeF = new JMenuItem ("Active Frames (Length)"); // pick a move when they click
+        activeF.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent event){
+                System.out.println("active frames clicked"); 
+            }
+        });
+
         JMenuItem endingF = new JMenuItem ("Ending Frames");  // pick a move when they click
-    
+        endingF.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent event){
+                System.out.println("ending frames clicked"); 
+            }
+        });
+
+
         view.add(tierList); 
-        
         view.add(indivData); 
+
+
         rank.add(baseDmg); 
         rank.add(startingF); 
         rank.add(activeF); 
         rank.add(endingF);
+
+
 
         JPanel panel = new JPanel(); 
         JLabel label = new JLabel("Created by Anthony Colaiacovo, May 2022");
