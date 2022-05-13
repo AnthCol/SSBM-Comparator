@@ -2,9 +2,6 @@
 package src; 
 
 import javax.swing.*;
-import javax.swing.event.MenuEvent;
-import javax.swing.event.MenuListener;
-
 import java.awt.*;
 import java.io.File; 
 import java.io.FileNotFoundException;
@@ -55,10 +52,7 @@ public class Main extends Character {
         JMenu view = new JMenu("View");
         JMenu rank = new JMenu ("Rank"); 
         JMenu help = new JMenu("Help"); 
-        
-        help.addMenuListener(new menuListen()); 
-           
-
+    
         menuBar.add(compare);
         menuBar.add(view);
         menuBar.add(rank); 
@@ -70,9 +64,6 @@ public class Main extends Character {
         compare.add(twoChars); 
         compare.add(threeChars); 
         compare.add(fourChars); 
-
-
-
 
         JPanel panel = new JPanel(); 
         JLabel label = new JLabel("Created by Anthony Colaiacovo, May 2022");
@@ -123,8 +114,11 @@ public class Main extends Character {
                 System.out.println("indivData clicked"); 
             }
         });
-
+            
+        view.add(tierList); 
+        view.add(indivData); 
     
+
 
         JMenuItem baseDmg = new JMenuItem("Base Damage");  // pick a move when they click
         baseDmg.addActionListener (new ActionListener(){
@@ -141,9 +135,6 @@ public class Main extends Character {
                 System.out.println("baseDmg clicked"); 
             }
         }); 
-        
-   
-     
 
 
         JMenuItem startingF = new JMenuItem ("Startup Frames");  // pick a move when they click
@@ -167,16 +158,28 @@ public class Main extends Character {
             }
         });
 
-      
-        view.add(tierList); 
-        view.add(indivData); 
-
+  
 
         rank.add(baseDmg); 
         rank.add(startingF); 
         rank.add(activeF); 
         rank.add(endingF);
 
+        JMenuItem about = new JMenuItem ("About the Creator"); 
+        about.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent event){
+                System.out.println("about the creator clicked"); 
+            }
+        });
+        JMenuItem howToUse = new JMenuItem ("How To Use"); 
+        howToUse.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent event){
+                System.out.println("how to use clicked"); 
+            }
+        });
+        
+        help.add(howToUse); 
+        help.add(about); 
 
 
       
@@ -228,23 +231,6 @@ class Character{
 }
 
 
-class menuListen implements MenuListener{
-    @Override
-    public void menuSelected(MenuEvent event) {
-        System.out.println("help selected");
-        // will need to put some JFrame shit in here, if that doesn't work, will need to make the help tab a menu with a submenu
-    }
-
-    @Override
-    public void menuDeselected(MenuEvent event) {
-        System.out.println("help deselected");
-    }
-
-    @Override
-    public void menuCanceled(MenuEvent event) {
-        System.out.println("help cancel");
-    }
-}
 /*
     indices for float array:
     0 - jab1 dmg
