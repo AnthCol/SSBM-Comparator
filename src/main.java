@@ -2,6 +2,7 @@
 package src; 
 
 import javax.swing.*;
+import javax.swing.text.*;
 
 import java.awt.*;
 import java.io.File; 
@@ -189,16 +190,24 @@ public class Main extends Character {
       
         
         JTextPane defaultTP = new JTextPane();
-        
-        Font defaultFont = new Font("Tahoma", Font.PLAIN, 40); 
-        defaultTP.setBackground(Color.LIGHT_GRAY); 
-        defaultTP.setText("Welcome to SSBM Comparator"); 
-        defaultTP.setFont(defaultFont); 
+        Font defaultFont = new Font("Century Gothic", Font.PLAIN, 40); 
         defaultTP.getCaret().setVisible(false);
-
+         
+        
+        defaultTP.setBackground(Color.LIGHT_GRAY); 
+        defaultTP.setEditable(false);
+        defaultTP.setText("\n\n\n\nWelcome to SSBM Comparator\nSelect a menu option at the top to get started\n"); 
+        defaultTP.setFont(defaultFont); 
+        StyledDocument doc = defaultTP.getStyledDocument(); 
+        SimpleAttributeSet center = new SimpleAttributeSet(); 
+        StyleConstants.setAlignment(center, StyleConstants.ALIGN_CENTER);
+        doc.setParagraphAttributes(0, doc.getLength(), center, false); 
+        // https://stackoverflow.com/questions/24407190/center-alignment-of-a-word-in-jtextpane
+       // defaultTP.insertIcon(new ImageIcon("./images/FightingWireFramesHeadsSSBM.png")); 
         frame.getContentPane().add(BorderLayout.SOUTH, panel);
         frame.getContentPane().add(BorderLayout.NORTH, menuBar);
         frame.getContentPane().add(BorderLayout.CENTER, defaultTP);
+        
         frame.setVisible(true);
         
     }
