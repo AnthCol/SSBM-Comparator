@@ -45,12 +45,14 @@ public class Main extends Character {
         readFile(characters); 
         
         JFrame frame = new JFrame("SSBM Comparator"); 
+        JScrollBar vertical = new JScrollBar(JScrollBar.VERTICAL, 30, 40, 0, 500); 
+        vertical.addAdjustmentListener(new MyAdjustmentListener( )); // do something with scrollpane **FIXEME**
         JMenuBar menuBar = new JMenuBar();
         ImageIcon icon = new ImageIcon("./images/icon.png"); 
         
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(1000, 600);
-        frame.setMinimumSize(new Dimension(450, 450)); 
+        frame.setMinimumSize(new Dimension(750, 600)); 
         frame.setIconImage(icon.getImage()); 
 
         JMenu compare = new JMenu("Compare Characters");
@@ -202,12 +204,19 @@ public class Main extends Character {
         SimpleAttributeSet center = new SimpleAttributeSet(); 
         StyleConstants.setAlignment(center, StyleConstants.ALIGN_CENTER);
         doc.setParagraphAttributes(0, doc.getLength(), center, false); 
+
+       /* ImageIcon smashLogo = new ImageIcon("./images/FightingWireFramesHeadsSSBM.png"); 
+        defaultTP.add(smashLogo); 
         // https://stackoverflow.com/questions/24407190/center-alignment-of-a-word-in-jtextpane
-       // defaultTP.insertIcon(new ImageIcon("./images/FightingWireFramesHeadsSSBM.png")); 
+        // defaultTP.insertIcon(new ImageIcon("./images/FightingWireFramesHeadsSSBM.png")); 
+      /*  Style style = doc.addStyle("StyleName", null); 
+        StyleConstants.setIcon(style, new ImageIcon("./images/FightingWireFramesHeadsSSBM.png")); 
+        doc.insertString(doc.getLength(), "ignored text", style); */ 
+
         frame.getContentPane().add(BorderLayout.SOUTH, panel);
         frame.getContentPane().add(BorderLayout.NORTH, menuBar);
         frame.getContentPane().add(BorderLayout.CENTER, defaultTP);
-        
+        frame.getContentPane().add(BorderLayout.EAST, vertical); 
         frame.setVisible(true);
         
     }
