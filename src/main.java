@@ -2,9 +2,11 @@
 package src; 
 
 import javax.swing.*;
+
 import java.awt.*;
 import java.io.File; 
 import java.io.FileNotFoundException;
+
 import java.util.Scanner; 
 import java.awt.event.*; 
 /* FIX ME recreate character class and have main extend it. 
@@ -24,8 +26,10 @@ do all of the readfile stuff inside of Main's main. */
 */
 
 public class Main extends Character {
-    public static void main(String args[]) {
+
    
+    public static void main(String args[]) {
+        
         Character[] characters = new Character[26]; 
        /* double y = 5; 
         System.out.println(String.format("%.0f", y));  for a value without decimals */
@@ -97,7 +101,7 @@ public class Main extends Character {
                 tierListPane.setText("13th Official SSBM Tier List\r\n As of March 29th, 2021");
                 tierListPane.setEditable(false);
                 frame.getContentPane().removeAll();
-                frame.getContentPane().add(BorderLayout.SOUTH, panel);
+              //  frame.getContentPane().add(BorderLayout.SOUTH, panel);
                 frame.getContentPane().add(BorderLayout.NORTH, menuBar);
                 frame.getContentPane().add(BorderLayout.CENTER, tierListPane);  
                 frame.setVisible(true); 
@@ -128,7 +132,7 @@ public class Main extends Character {
                 baseDmgPane.setText("Select a move: ");
                 baseDmgPane.setEditable(false);
                 frame.getContentPane().removeAll(); 
-                frame.getContentPane().add(BorderLayout.SOUTH, panel);
+             //   frame.getContentPane().add(BorderLayout.SOUTH, panel);
                 frame.getContentPane().add(BorderLayout.NORTH, menuBar);
                 frame.getContentPane().add(BorderLayout.CENTER, baseDmgPane);  
                 frame.setVisible(true); 
@@ -183,15 +187,22 @@ public class Main extends Character {
 
 
       
-
-        JTextArea ta = new JTextArea();
+        
+        JTextPane defaultTP = new JTextPane();
+        
+        Font defaultFont = new Font("Tahoma", Font.PLAIN, 40); 
+        defaultTP.setBackground(Color.LIGHT_GRAY); 
+        defaultTP.setText("Welcome to SSBM Comparator"); 
+        defaultTP.setFont(defaultFont); 
+        defaultTP.getCaret().setVisible(false);
 
         frame.getContentPane().add(BorderLayout.SOUTH, panel);
         frame.getContentPane().add(BorderLayout.NORTH, menuBar);
-        frame.getContentPane().add(BorderLayout.CENTER, ta);
+        frame.getContentPane().add(BorderLayout.CENTER, defaultTP);
         frame.setVisible(true);
-  
+        
     }
+
 }
 
 class Character{
