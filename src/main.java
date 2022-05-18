@@ -45,14 +45,18 @@ public class Main extends Character {
         readFile(characters); 
         
         JFrame frame = new JFrame("SSBM Comparator"); 
-        JScrollBar vertical = new JScrollBar(JScrollBar.VERTICAL, 30, 40, 0, 500); 
-        vertical.addAdjustmentListener(new MyAdjustmentListener( )); // do something with scrollpane **FIXEME**
+        JViewport viewport = new JViewport();
+     /*   JScrollBar vertical = new JScrollBar(JScrollBar.VERTICAL, 30, 40, 0, 500); 
+        vertical.addAdjustmentListener(new MyAdjustmentListener( )); // do something with scrollpane **FIXEME** */
+        // somewith with JScrollPane and ViewPort
+
+        // will need JScrollPane for some of the other pages in the app 
         JMenuBar menuBar = new JMenuBar();
         ImageIcon icon = new ImageIcon("./images/icon.png"); 
         
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(1000, 600);
-        frame.setMinimumSize(new Dimension(750, 600)); 
+        frame.setSize(1000, 625);
+        frame.setMinimumSize(new Dimension(950, 625)); 
         frame.setIconImage(icon.getImage()); 
 
         JMenu compare = new JMenu("Compare Characters");
@@ -99,14 +103,64 @@ public class Main extends Character {
         tierList.addActionListener (new ActionListener(){
             public void actionPerformed(ActionEvent event){
                 System.out.println("tier list clicked"); 
+                JScrollBar scrollBar = new JScrollBar(); 
+                JScrollPane TLScroll = new JScrollPane(); 
+                TLScroll.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED); 
+                TLScroll.setViewport(viewport); 
                 JTextPane tierListPane = new JTextPane(); 
-                tierListPane.setContentType("text/html");
-                tierListPane.setText("13th Official SSBM Tier List\r\n As of March 29th, 2021");
+                TLScroll.setViewportView(tierListPane); 
+                Font tierListFont = new Font("Century Gothic", Font.PLAIN, 24); 
+                tierListPane.setBackground(Color.LIGHT_GRAY);
+                //tierListPane.setContentType("text/html");
+                // might need to use JScrollPane for the images                 **FIX ME**
                 tierListPane.setEditable(false);
+                tierListPane.setFont(tierListFont); 
+                tierListPane.setContentType("text/html"); 
+                String info = "<html><body><center><strong><u>13th Official SSBM Tier List - March 29th, 2021 (Ordered)</u></strong><center><br><br>";  
+                String info2 = "<center>(S)&nbsp" + 
+                "&nbsp&nbsp <img src='https://ssb.wiki.gallery/images/d/db/FoxHeadSSBM.png'>" + 
+                "&nbsp<img src='https://ssb.wiki.gallery/images/9/9b/MarthHeadSSBM.png'>" + 
+                "&nbsp<img src='https://ssb.wiki.gallery/images/5/5a/JigglypuffHeadSSBM.png'>" 
+                + "&nbsp<img src='https://ssb.wiki.gallery/images/d/d6/FalcoHeadSSBM.png'>" + 
+                "<br><br>(A)&nbsp" + 
+                "&nbsp<img src='https://ssb.wiki.gallery/images/7/76/SheikHeadSSBM.png'>" + 
+                "&nbsp<img src='https://ssb.wiki.gallery/images/5/5f/CaptainFalconHeadSSBM.png'>"
+                + "&nbsp<img src='https://ssb.wiki.gallery/images/3/3f/PeachHeadSSBM.png'>" + 
+                "<br><br>(B+)&nbsp" + 
+                "&nbsp<img src='https://ssb.wiki.gallery/images/d/d1/IceClimbersHeadSSBM.png'>" + 
+                "&nbsp<img src='https://ssb.wiki.gallery/images/8/88/PikachuHeadSSBM.png'>" +
+                "&nbsp<img src='https://ssb.wiki.gallery/images/6/6d/YoshiHeadSSBM.png'>" +
+                "&nbsp<img src='https://ssb.wiki.gallery/images/f/f6/SamusHeadSSBM.png'>" +
+                "<br><br>(B-)&nbsp"+
+                "&nbsp<img src='https://ssb.wiki.gallery/images/d/d1/LuigiHeadSSBM.png'>" +
+                "&nbsp<img src='https://ssb.wiki.gallery/images/6/61/DrMarioHeadSSBM.png'>" +
+                "<br><br>(C+)&nbsp"+
+                "&nbsp<img src='https://ssb.wiki.gallery/images/7/77/GanondorfHeadSSBM.png'>" +
+                "&nbsp<img src='https://ssb.wiki.gallery/images/e/ec/MarioHeadSSBM.png'>"+ 
+                "<br><br>(C-)&nbsp"+
+                "&nbsp<img src='https://ssb.wiki.gallery/images/9/9b/DonkeyKongHeadSSBM.png'>"+
+                "&nbsp<img src='https://ssb.wiki.gallery/images/a/ac/YoungLinkHeadSSBM.png'>"+
+                "&nbsp<img src='https://ssb.wiki.gallery/images/1/17/LinkHeadSSBM.png'>"+
+                "&nbsp<img src='https://ssb.wiki.gallery/images/b/ba/MrGame%26WatchHeadSSBM.png'>"+
+                "<br><br>(D)&nbsp"+
+                "&nbsp<img src='https://ssb.wiki.gallery/images/5/5b/MewtwoHeadSSBM.png'>"+
+                "&nbsp<img src='https://ssb.wiki.gallery/images/f/f2/RoyHeadSSBM.png'>"+
+                "&nbsp<img src='https://ssb.wiki.gallery/images/3/30/PichuHeadSSBM.png'>"+
+                "&nbsp<img src='https://ssb.wiki.gallery/images/4/47/NessHeadSSBM.png'>"+
+                "&nbsp<img src='https://ssb.wiki.gallery/images/2/29/ZeldaHeadSSBM.png'>"+
+                "<br><br>(F)&nbsp"+
+                "&nbsp<img src='https://ssb.wiki.gallery/images/7/7a/KirbyHeadSSBM.png'>"+
+                "&nbsp<img src='https://ssb.wiki.gallery/images/3/3b/BowserHeadSSBM.png'>"+
+                "<br><br><br><br><br>"+
+                "<strong>Source:</strong> https://www.ssbwiki.com/List_of_SSBM_tier_lists_(NTSC)"+
+                "<br>"+
+                "</center></body></html>"; 
+                tierListPane.setText(info + info2); 
                 frame.getContentPane().removeAll();
               //  frame.getContentPane().add(BorderLayout.SOUTH, panel);
                 frame.getContentPane().add(BorderLayout.NORTH, menuBar);
                 frame.getContentPane().add(BorderLayout.CENTER, tierListPane);  
+                frame.getContentPane().add(BorderLayout.EAST, scrollBar); 
                 frame.setVisible(true); 
             }
         }); 
@@ -194,11 +248,14 @@ public class Main extends Character {
         JTextPane defaultTP = new JTextPane();
         Font defaultFont = new Font("Century Gothic", Font.PLAIN, 40); 
         defaultTP.getCaret().setVisible(false);
-         
-        
         defaultTP.setBackground(Color.LIGHT_GRAY); 
         defaultTP.setEditable(false);
-        defaultTP.setText("\n\n\n\nWelcome to SSBM Comparator\nSelect a menu option at the top to get started\n"); 
+        /*defaultTP.setContentType("text/html"); 
+        String homeText = "<html><body><p style =\"color:red>" + "Welcome to SSBM Comparator</p>" + 
+        "<br><br>"+
+        "Select a menu option at the top to get started"+
+        "</body></html>"; */
+        defaultTP.setText("\n\n\n\nWelcome to SSBM Comparator\nSelect a menu option at the top to get started"); 
         defaultTP.setFont(defaultFont); 
         StyledDocument doc = defaultTP.getStyledDocument(); 
         SimpleAttributeSet center = new SimpleAttributeSet(); 
@@ -216,7 +273,7 @@ public class Main extends Character {
         frame.getContentPane().add(BorderLayout.SOUTH, panel);
         frame.getContentPane().add(BorderLayout.NORTH, menuBar);
         frame.getContentPane().add(BorderLayout.CENTER, defaultTP);
-        frame.getContentPane().add(BorderLayout.EAST, vertical); 
+     //   frame.getContentPane().add(BorderLayout.EAST, vertical); 
         frame.setVisible(true);
         
     }
