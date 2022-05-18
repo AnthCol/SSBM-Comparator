@@ -10,6 +10,7 @@ import java.io.FileNotFoundException;
 
 import java.util.Scanner; 
 import java.awt.event.*; 
+
 /* FIX ME recreate character class and have main extend it. 
 
 do all of the readfile stuff inside of Main's main. */
@@ -45,7 +46,7 @@ public class Main extends Character {
         readFile(characters); 
         
         JFrame frame = new JFrame("SSBM Comparator"); 
-        JViewport viewport = new JViewport();
+       // JViewport viewport = new JViewport();
      /*   JScrollBar vertical = new JScrollBar(JScrollBar.VERTICAL, 30, 40, 0, 500); 
         vertical.addAdjustmentListener(new MyAdjustmentListener( )); // do something with scrollpane **FIXEME** */
         // somewith with JScrollPane and ViewPort
@@ -55,8 +56,8 @@ public class Main extends Character {
         ImageIcon icon = new ImageIcon("./images/icon.png"); 
         
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(1000, 625);
-        frame.setMinimumSize(new Dimension(950, 625)); 
+        frame.setSize(1000, 615);
+        frame.setMinimumSize(new Dimension(950, 600)); 
         frame.setIconImage(icon.getImage()); 
 
         JMenu compare = new JMenu("Compare Characters");
@@ -71,10 +72,10 @@ public class Main extends Character {
 
         JMenuItem twoChars = new JMenuItem ("Two Characters"); 
         JMenuItem threeChars = new JMenuItem("Three Characters"); 
-        JMenuItem fourChars = new JMenuItem("Four Characters"); 
+    //    JMenuItem fourChars = new JMenuItem("Four Characters");             ** FIX ME, may not be capable of doing four cahracters, considering how java swing works, we'll see
         compare.add(twoChars); 
         compare.add(threeChars); 
-        compare.add(fourChars); 
+      //  compare.add(fourChars); 
 
         JPanel panel = new JPanel(); 
         JLabel label = new JLabel("Created by Anthony Colaiacovo, May 2022");
@@ -92,32 +93,40 @@ public class Main extends Character {
                 System.out.println("3 clicked"); 
             }
         });
-        fourChars.addActionListener(new ActionListener(){
+       /* fourChars.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent event){
                 System.out.println("4 clicked"); 
             }
-        });
+        }); */                                                                                                      // **REMEMBER THAT THIS IS HERE**
 
         /* make a sub menu for compare and ask two, three, or four characters? */
         JMenuItem tierList = new JMenuItem("Tier List"); 
         tierList.addActionListener (new ActionListener(){
             public void actionPerformed(ActionEvent event){
                 System.out.println("tier list clicked"); 
-                JScrollBar scrollBar = new JScrollBar(); 
-                JScrollPane TLScroll = new JScrollPane(); 
+             //   JScrollBar scrollBar = new JScrollBar(); 
+              //  JScrollPane TLScroll = new JScrollPane(); 
+              /*  TLScroll.add(scrollBar); 
                 TLScroll.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED); 
                 TLScroll.setViewport(viewport); 
+                scrollBar.addAdjustmentListener(new AdjustmentListener(){
+                    public void adjustment (AdjustmentEvent event){
+                        
+                    }
+                });  */
                 JTextPane tierListPane = new JTextPane(); 
-                TLScroll.setViewportView(tierListPane); 
-                Font tierListFont = new Font("Century Gothic", Font.PLAIN, 24); 
+              //  TLScroll.setViewportView(tierListPane); 
+                Font tierListFont = new Font("Century Gothic", Font.PLAIN, 24);   // THIS DOES NOT WORK ON TEXT/HTML CONTENT TYPE, AND NEITHER DOES CSS
+                tierListPane.setFont(tierListFont); 
                 tierListPane.setBackground(Color.LIGHT_GRAY);
                 //tierListPane.setContentType("text/html");
-                // might need to use JScrollPane for the images                 **FIX ME**
+                // might need to use JScrollPane for the images                 **FIX ME**     HOW THE FUCK DO YOU CHANGE THE FONT SIZE!?!?!!?!??!?!?!!??!?!?!
                 tierListPane.setEditable(false);
                 tierListPane.setFont(tierListFont); 
                 tierListPane.setContentType("text/html"); 
-                String info = "<html><body><center><strong><u>13th Official SSBM Tier List - March 29th, 2021 (Ordered)</u></strong><center><br><br>";  
-                String info2 = "<center>(S)&nbsp" + 
+                String info = "<html>"+
+                "<body><center><strong><u><font size=30px>13th Official SSBM Tier List - March 29th, 2021 (Ordered)</font></u></strong><center><br><br>"+ 
+                "<center>(S)&nbsp" + 
                 "&nbsp&nbsp <img src='https://ssb.wiki.gallery/images/d/db/FoxHeadSSBM.png'>" + 
                 "&nbsp<img src='https://ssb.wiki.gallery/images/9/9b/MarthHeadSSBM.png'>" + 
                 "&nbsp<img src='https://ssb.wiki.gallery/images/5/5a/JigglypuffHeadSSBM.png'>" 
@@ -155,12 +164,11 @@ public class Main extends Character {
                 "<strong>Source:</strong> https://www.ssbwiki.com/List_of_SSBM_tier_lists_(NTSC)"+
                 "<br>"+
                 "</center></body></html>"; 
-                tierListPane.setText(info + info2); 
+                tierListPane.setText(info); 
                 frame.getContentPane().removeAll();
               //  frame.getContentPane().add(BorderLayout.SOUTH, panel);
                 frame.getContentPane().add(BorderLayout.NORTH, menuBar);
                 frame.getContentPane().add(BorderLayout.CENTER, tierListPane);  
-                frame.getContentPane().add(BorderLayout.EAST, scrollBar); 
                 frame.setVisible(true); 
             }
         }); 
@@ -242,8 +250,6 @@ public class Main extends Character {
         help.add(howToUse); 
         help.add(about); 
 
-
-      
         
         JTextPane defaultTP = new JTextPane();
         Font defaultFont = new Font("Century Gothic", Font.PLAIN, 40); 
