@@ -193,6 +193,7 @@ public class Main extends Character{
                 System.out.println("indivData clicked"); 
             
                 JTextPane textPaneIndiv = new JTextPane(); 
+                
                 String[] charOptions = {"Fox", "Marth", "Jigglypuff", "Falco", 
                 "Sheik", "Captain Falcon",  "Peach",
                     "Ice Climbers", "Pikachu", "Yoshi", "Samus", 
@@ -202,15 +203,47 @@ public class Main extends Character{
                     "Roy",   "Pichu",  "Ness",    "Zelda", 
                     "Kirby",   "Bowser"
                 }; 
+                /*
+                if the charData.txt file reads in the characters in the order of the current tier list, then no second string needs to be created. 
+                Then you can just have the loop run, and have the index go in the order of the tier list. 
+
+                Advanta
+
+                */
+                String[] charOrders = {
+
+                }; 
                 JComboBox<String> charMenu = new JComboBox<>(charOptions); 
-                
-               
-                charMenu.addActionListener(charMenu); 
+                //charMenu.addActionListener(charMenu); 
                 frame.pack(); 
-                charMenu.setBounds((frame.getContentPane().getWidth() / 2 ) - 63, 65, 126, 30); 
+                charMenu.setBounds((frame.getContentPane().getWidth() / 2 ) - 65, 65, 130, 30); 
                 /* this is a bullshit solution to get the frame centred, it would be nice in the future to make it not an absolute position */
-                
                 charMenu.setSelectedIndex(1);
+                
+                charMenu.addActionListener(new ActionListener(){
+                    public void actionPerformed(ActionEvent event){
+                        String selection = charMenu.getSelectedItem().toString(); 
+                        int index = 0; 
+                        for (int i = 0; i < charOrders.length; i++){
+                            if (selection == charOrders[i]){
+                                index = i; 
+                                break; 
+                            }
+                        }
+
+                        textPaneIndiv.setText("<center><br>Select a character from the dropdown menu: </center>" +
+                        "<br><br><br><center>*Please Note: Any value that is -1 is either unavaiable, or does not exist*</center><br><br><br>" + 
+                        "Jab 1: <br>" + characters[index].values[0] + 
+                        "<br> Jab"
+                        
+                        );
+
+                        
+
+                        System.out.println("PRINTING INDEX" + index); 
+                    }
+                });
+
                 
                 textPaneIndiv.setContentType("text/html");
                 JScrollPane scrollPaneIndiv = new JScrollPane(textPaneIndiv, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED); 
@@ -366,7 +399,7 @@ class Character{
             File file = new File ("./src/charData.txt"); 
             Scanner fileReader = new Scanner(file);
             while (index < 2 && fileReader.hasNextLine()){ 
-                if (index == 1 || index == 2 || index == 3 || index == 7 || index == 14 || index == 24){ // indices for chars with more than one word in their name
+                if (index == 1 || index == 2 || index == 3 || index == 7 || index == 14 || index == 24){ // **FIX ME, MAKE IT RELATIVE TO THE TIER LIST**
                     characters[index].charName = fileReader.next(); 
                     characters[index].charName = characters[index].charName.concat(" "); 
                     characters[index].charName = characters[index].charName.concat(fileReader.next()); 
