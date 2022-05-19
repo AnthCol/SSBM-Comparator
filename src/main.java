@@ -27,7 +27,7 @@ do all of the readfile stuff inside of Main's main. */
     Finish the charData.txt file (cringe! but needs to be done), hopefully can be done in a day 
 */
 
-public class Main extends Character {
+public class Main extends Character{
 
    
     public static void main(String args[]) {
@@ -115,15 +115,19 @@ public class Main extends Character {
                     }
                 });  */
                 JTextPane tierListPane = new JTextPane(); 
+                JScrollPane tierListScroll = new JScrollPane(tierListPane, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED); 
               //  TLScroll.setViewportView(tierListPane); 
-                Font tierListFont = new Font("Century Gothic", Font.PLAIN, 24);   // THIS DOES NOT WORK ON TEXT/HTML CONTENT TYPE, AND NEITHER DOES CSS
-                tierListPane.setFont(tierListFont); 
+             //   Font tierListFont = new Font("Century Gothic", Font.PLAIN, 24);   // THIS DOES NOT WORK ON TEXT/HTML CONTENT TYPE, AND NEITHER DOES CSS
+               // tierListPane.setFont(tierListFont); 
                 tierListPane.setBackground(Color.LIGHT_GRAY);
+                tierListPane.setContentType("text/html"); 
                 //tierListPane.setContentType("text/html");
                 // might need to use JScrollPane for the images                 **FIX ME**     HOW THE FUCK DO YOU CHANGE THE FONT SIZE!?!?!!?!??!?!?!!??!?!?!
-                tierListPane.setEditable(false);
-                tierListPane.setFont(tierListFont); 
-                tierListPane.setContentType("text/html"); 
+                
+               // tierListPane.setFont(tierListFont); 
+                
+               
+
                 String info = "<html>"+
                 "<body><center><strong><u><font size=30px>13th Official SSBM Tier List - March 29th, 2021 (Ordered)</font></u></strong><center><br><br>"+ 
                 "<center>(S)&nbsp" + 
@@ -164,11 +168,14 @@ public class Main extends Character {
                 "<strong>Source:</strong> https://www.ssbwiki.com/List_of_SSBM_tier_lists_(NTSC)"+
                 "<br>"+
                 "</center></body></html>"; 
+                
                 tierListPane.setText(info); 
+                tierListPane.setEditable(false);
                 frame.getContentPane().removeAll();
               //  frame.getContentPane().add(BorderLayout.SOUTH, panel);
+                frame.add(tierListScroll); 
                 frame.getContentPane().add(BorderLayout.NORTH, menuBar);
-                frame.getContentPane().add(BorderLayout.CENTER, tierListPane);  
+                //frame.getContentPane().add(BorderLayout.CENTER, tierListPane);  
                 frame.setVisible(true); 
             }
         }); 
@@ -178,9 +185,61 @@ public class Main extends Character {
         7 = mew2, 14 = g&w, 15 = ness, 16 = peach, 17 = pichu, 18 = pika, 19 = puff, 20 = roy, 21 = samus, 22 = sheik, 23 = yoshi, 24 = yink, 25 = zelda
 */
         JMenuItem indivData = new JMenuItem("Individual Character Data");  
+
         indivData.addActionListener(new ActionListener(){
+
             public void actionPerformed(ActionEvent event){
+
                 System.out.println("indivData clicked"); 
+            
+                JTextPane textPaneIndiv = new JTextPane(); 
+                String[] charOptions = {"Fox", "Marth", "Jigglypuff", "Falco", 
+                "Sheik", "Captain Falcon",  "Peach",
+                    "Ice Climbers", "Pikachu", "Yoshi", "Samus", 
+                    "Luigi", "Dr. Mario", 
+                    "Ganondorf", "Mario", 
+                    "Donkey Kong", "Young Link", "Link",   "Mr. Game&Watch",  "Mewtwo", 
+                    "Roy",   "Pichu",  "Ness",    "Zelda", 
+                    "Kirby",   "Bowser"
+                }; 
+                JComboBox<String> charMenu = new JComboBox<>(charOptions); 
+                
+               
+                charMenu.addActionListener(charMenu); 
+                frame.pack(); 
+                charMenu.setBounds((frame.getContentPane().getWidth() / 2 ) - 63, 65, 126, 30); 
+                /* this is a bullshit solution to get the frame centred, it would be nice in the future to make it not an absolute position */
+                
+                charMenu.setSelectedIndex(1);
+                
+                textPaneIndiv.setContentType("text/html");
+                JScrollPane scrollPaneIndiv = new JScrollPane(textPaneIndiv, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED); 
+                textPaneIndiv.setBackground(Color.LIGHT_GRAY); 
+                textPaneIndiv.setText("<center><br>Select a character from the dropdown menu: </center>"); 
+            
+                /*
+                public void actionPerformed(ActionEvent event){
+                    if (event.getSource() == charMenu){
+                        String charInfo = (String)charMenu.getSelectedItem(); 
+                        for (int i = 0; i < 26; i++){
+                            if (charInfo == charOptions[i]){
+                                textPaneIndiv.setText("<center><br>Select a character from the dropdown menu: </center>"); 
+                                break; 
+                            }
+                        }
+                        
+                    }
+                }
+                */
+
+                textPaneIndiv.setEditable(false);
+                frame.getContentPane().removeAll(); 
+                
+                frame.add(scrollPaneIndiv); 
+                textPaneIndiv.add(charMenu); 
+                frame.getContentPane().add(BorderLayout.NORTH, menuBar); 
+                frame.setVisible(true); 
+
             }
         });
             
@@ -193,13 +252,22 @@ public class Main extends Character {
         baseDmg.addActionListener (new ActionListener(){
             public void actionPerformed(ActionEvent event){
                 JTextPane baseDmgPane = new JTextPane(); 
+          
+                // will need to do a JScrollPane here 
                 baseDmgPane.setContentType("text/html");
-                baseDmgPane.setText("Select a move: ");
+         
+                baseDmgPane.setBackground(Color.LIGHT_GRAY);
+                baseDmgPane.setText("<br><br><br><br><center>Select a move from the menu: </center>");
+           
                 baseDmgPane.setEditable(false);
+            
+                frame.add(baseDmgPane); 
+                
                 frame.getContentPane().removeAll(); 
              //   frame.getContentPane().add(BorderLayout.SOUTH, panel);
                 frame.getContentPane().add(BorderLayout.NORTH, menuBar);
                 frame.getContentPane().add(BorderLayout.CENTER, baseDmgPane);  
+           
                 frame.setVisible(true); 
                 System.out.println("baseDmg clicked"); 
             }
