@@ -43,7 +43,7 @@ public class Main extends Character{
                 characters[i].values[x] = 0; 
             }
         }
-        readFile(characters); 
+        readFile(characters); // the reason I chose to read from a file here instead of actually just hardcoding the values is to learn how files work in java. 
         
         JFrame frame = new JFrame("SSBM Comparator"); 
        // JViewport viewport = new JViewport();
@@ -210,9 +210,7 @@ public class Main extends Character{
                 Advanta
 
                 */
-                String[] charOrders = {
-
-                }; 
+                
                 JComboBox<String> charMenu = new JComboBox<>(charOptions); 
                 //charMenu.addActionListener(charMenu); 
                 frame.pack(); 
@@ -221,26 +219,61 @@ public class Main extends Character{
                 charMenu.setSelectedIndex(1);
                 
                 charMenu.addActionListener(new ActionListener(){
+                    
                     public void actionPerformed(ActionEvent event){
                         String selection = charMenu.getSelectedItem().toString(); 
+                        System.out.println(selection + "printing selection"); 
                         int index = 0; 
-                        for (int i = 0; i < charOrders.length; i++){
-                            if (selection == charOrders[i]){
-                                index = i; 
+                        for (int i = 0; i < 26; i++){  // check which character was selected 
+                            if (selection == characters[i].charName){
+                                index = i; // WHY IS THIS ALWAYS ZERO. MIGHT FIX ITSELF WHEN THE CHARDATAFILE IS FINISHED **FIX ME**
                                 break; 
+                                // to add the picture NEED TO ADD A STRING THAT HAS THE IMAGE DEPENDING ON INDEX. SWITCH STATMENT MAYBE **FIX ME**
+                                // so that is can be added properly to the set text statement below. 
                             }
                         }
+                        System.out.println("PRINTING I " + index + "PRINTING CHARNAME" + characters[index].charName); 
+                        String imageLocation = "empty"; 
+                        if (index == 0) imageLocation = "<center><img = ''> </center>"; 
+                        if (index == 1) imageLocation = ""; 
+                        if (index == 2) imageLocation = ""; 
+                        if (index == 3) imageLocation = ""; 
+                        if (index == 4) imageLocation = ""; 
+                        if (index == 5) imageLocation = ""; 
+                        if (index == 6) imageLocation = ""; 
+                        if (index == 7) imageLocation = ""; 
+                        if (index == 8) imageLocation = ""; 
+                        if (index == 9) imageLocation = ""; 
+                        if (index == 10) imageLocation = ""; 
+                        if (index == 11) imageLocation = ""; 
+                        if (index == 12) imageLocation = ""; 
+                        if (index == 13) imageLocation = ""; 
+                        if (index == 14) imageLocation = ""; 
+                        if (index == 15) imageLocation = ""; 
+                        if (index == 16) imageLocation = ""; 
+                        if (index == 17) imageLocation = ""; 
+                        if (index == 18) imageLocation = ""; 
+                        if (index == 19) imageLocation = ""; 
+                        if (index == 20) imageLocation = ""; 
+                        if (index == 21) imageLocation = ""; 
+                        if (index == 22) imageLocation = ""; 
+                        if (index == 23) imageLocation = ""; 
+                        if (index == 24) imageLocation = ""; 
+                        if (index == 25) imageLocation = ""; 
+                        if (index == 26) imageLocation = ""; 
+                        
+
 
                         textPaneIndiv.setText("<center><br>Select a character from the dropdown menu: </center>" +
-                        "<br><br><br><center>*Please Note: Any value that is -1 is either unavaiable, or does not exist*</center><br><br><br>" + 
-                        "Jab 1: <br>" + characters[index].values[0] + 
-                        "<br> Jab"
+                        "<br><br><br><br><center>*Please Note: Any value that is '-1' is either unavailable, or does not exist*</center><br><br>" + 
+                        imageLocation + 
+                        "<br><strong>&nbsp Jab 1:</strong>" + 
+                        "<br> &nbsp Damage: " + characters[index].values[0] + "%" + 
+                        "<br> &nbsp Startup Frames: " + characters[index].values[1] + 
+                        "<br> &nbsp Active Frames: " + characters[index].values[2] + 
+                        "<br> &nbsp Ending Frames: " + characters[index].values[3] 
                         
-                        );
-
-                        
-
-                        System.out.println("PRINTING INDEX" + index); 
+                        ); 
                     }
                 });
 
@@ -387,7 +420,7 @@ public class Main extends Character{
 
 }
 
-class Character{
+class Character {
     String charName; 
     float[] values = new float[133]; 
 
@@ -417,7 +450,18 @@ class Character{
         }   
         catch (FileNotFoundException error){
             System.out.println("File was unable to be read"); // need to make this some sort of pop-up in the gui  ** FIX ME **
+            JFrame errorFrame = new JFrame(); 
+            JTextPane errorText = new JTextPane(); 
+            errorText.setContentType("text/html"); 
+            errorText.setText("<center>ERROR IN READING FILE</center>");
+            errorFrame.getContentPane().add(BorderLayout.CENTER, errorText);
             error.printStackTrace();
+            for (int i = 0; i < 100000; i++){
+                // bootleg ass sleep timer
+            }
+
+            System.exit(0); 
+           
         } 
         return; 
     }
