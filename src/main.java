@@ -28,7 +28,7 @@ do all of the readfile stuff inside of Main's main. */
 */
 
 public class Main extends Character{
-
+    
    
     public static void main(String args[]) {
         
@@ -45,6 +45,44 @@ public class Main extends Character{
         }
         readFile(characters); // the reason I chose to read from a file here instead of actually just hardcoding the values is to learn how files work in java. 
         
+        String[] imageSources = new String[26]; 
+        imageSources[0] = "<img src='https://ssb.wiki.gallery/images/d/db/FoxHeadSSBM.png'>"; 
+        imageSources[1] = "<img src='https://ssb.wiki.gallery/images/9/9b/MarthHeadSSBM.png'>"; 
+        imageSources[2] = "<img src='https://ssb.wiki.gallery/images/5/5a/JigglypuffHeadSSBM.png'"; 
+        imageSources[3] = "<img src='https://ssb.wiki.gallery/images/d/d6/FalcoHeadSSBM.png'"; 
+
+        imageSources[4] = "<img src='https://ssb.wiki.gallery/images/7/76/SheikHeadSSBM.png'>"; 
+        imageSources[5] = "<img src='https://ssb.wiki.gallery/images/5/5f/CaptainFalconHeadSSBM.png'>"; 
+        imageSources[6] = "<img src='https://ssb.wiki.gallery/images/3/3f/PeachHeadSSBM.png'>"; 
+
+        imageSources[7] = "<img src='https://ssb.wiki.gallery/images/d/d1/IceClimbersHeadSSBM.png'>"; 
+        imageSources[8] = "<img src='https://ssb.wiki.gallery/images/8/88/PikachuHeadSSBM.png'>"; 
+        imageSources[9] = "<img src='https://ssb.wiki.gallery/images/6/6d/YoshiHeadSSBM.png'>"; 
+        imageSources[10] = "<img src='https://ssb.wiki.gallery/images/f/f6/SamusHeadSSBM.png'>"; 
+
+        imageSources[11] = "<img src='https://ssb.wiki.gallery/images/d/d1/LuigiHeadSSBM.png'>"; 
+        imageSources[12] = "<img src='https://ssb.wiki.gallery/images/6/61/DrMarioHeadSSBM.png'>"; 
+
+        imageSources[13] = "<img src='https://ssb.wiki.gallery/images/7/77/GanondorfHeadSSBM.png'>"; 
+        imageSources[14] = "<img src='https://ssb.wiki.gallery/images/e/ec/MarioHeadSSBM.png'>"; 
+
+        imageSources[15] = "<img src='https://ssb.wiki.gallery/images/9/9b/DonkeyKongHeadSSBM.png'>"; 
+        imageSources[16] = "<img src='https://ssb.wiki.gallery/images/a/ac/YoungLinkHeadSSBM.png'>"; 
+        imageSources[17] = "<img src='https://ssb.wiki.gallery/images/1/17/LinkHeadSSBM.png'>"; 
+        imageSources[18] = "<img src='https://ssb.wiki.gallery/images/b/ba/MrGame%26WatchHeadSSBM.png'>"; 
+
+        imageSources[19] = "<img src='https://ssb.wiki.gallery/images/5/5b/MewtwoHeadSSBM.png'>"; 
+        imageSources[20] = "<img src='https://ssb.wiki.gallery/images/f/f2/RoyHeadSSBM.png'>"; 
+        imageSources[21] = "<img src='https://ssb.wiki.gallery/images/3/30/PichuHeadSSBM.png'>"; 
+        imageSources[22] = "<img src='https://ssb.wiki.gallery/images/4/47/NessHeadSSBM.png'>"; 
+        imageSources[23] = "<img src='https://ssb.wiki.gallery/images/2/29/ZeldaHeadSSBM.png'>"; 
+
+        imageSources[24] = "<img src='https://ssb.wiki.gallery/images/7/7a/KirbyHeadSSBM.png'>"; 
+        imageSources[25] = "<img src='https://ssb.wiki.gallery/images/3/3b/BowserHeadSSBM.png'>"; 
+
+
+
+
         JFrame frame = new JFrame("SSBM Comparator"); 
        // JViewport viewport = new JViewport();
      /*   JScrollBar vertical = new JScrollBar(JScrollBar.VERTICAL, 30, 40, 0, 500); 
@@ -126,44 +164,16 @@ public class Main extends Character{
                 
                // tierListPane.setFont(tierListFont); 
                 
-               
-
                 String info = "<html>"+
                 "<body><center><strong><u><font size=30px>13th Official SSBM Tier List - March 29th, 2021 (Ordered)</font></u></strong><center><br><br>"+ 
-                "<center>(S)&nbsp" + 
-                "&nbsp&nbsp <img src='https://ssb.wiki.gallery/images/d/db/FoxHeadSSBM.png'>" + 
-                "&nbsp<img src='https://ssb.wiki.gallery/images/9/9b/MarthHeadSSBM.png'>" + 
-                "&nbsp<img src='https://ssb.wiki.gallery/images/5/5a/JigglypuffHeadSSBM.png'>" 
-                + "&nbsp<img src='https://ssb.wiki.gallery/images/d/d6/FalcoHeadSSBM.png'>" + 
-                "<br><br>(A)&nbsp" + 
-                "&nbsp<img src='https://ssb.wiki.gallery/images/7/76/SheikHeadSSBM.png'>" + 
-                "&nbsp<img src='https://ssb.wiki.gallery/images/5/5f/CaptainFalconHeadSSBM.png'>"
-                + "&nbsp<img src='https://ssb.wiki.gallery/images/3/3f/PeachHeadSSBM.png'>" + 
-                "<br><br>(B+)&nbsp" + 
-                "&nbsp<img src='https://ssb.wiki.gallery/images/d/d1/IceClimbersHeadSSBM.png'>" + 
-                "&nbsp<img src='https://ssb.wiki.gallery/images/8/88/PikachuHeadSSBM.png'>" +
-                "&nbsp<img src='https://ssb.wiki.gallery/images/6/6d/YoshiHeadSSBM.png'>" +
-                "&nbsp<img src='https://ssb.wiki.gallery/images/f/f6/SamusHeadSSBM.png'>" +
-                "<br><br>(B-)&nbsp"+
-                "&nbsp<img src='https://ssb.wiki.gallery/images/d/d1/LuigiHeadSSBM.png'>" +
-                "&nbsp<img src='https://ssb.wiki.gallery/images/6/61/DrMarioHeadSSBM.png'>" +
-                "<br><br>(C+)&nbsp"+
-                "&nbsp<img src='https://ssb.wiki.gallery/images/7/77/GanondorfHeadSSBM.png'>" +
-                "&nbsp<img src='https://ssb.wiki.gallery/images/e/ec/MarioHeadSSBM.png'>"+ 
-                "<br><br>(C-)&nbsp"+
-                "&nbsp<img src='https://ssb.wiki.gallery/images/9/9b/DonkeyKongHeadSSBM.png'>"+
-                "&nbsp<img src='https://ssb.wiki.gallery/images/a/ac/YoungLinkHeadSSBM.png'>"+
-                "&nbsp<img src='https://ssb.wiki.gallery/images/1/17/LinkHeadSSBM.png'>"+
-                "&nbsp<img src='https://ssb.wiki.gallery/images/b/ba/MrGame%26WatchHeadSSBM.png'>"+
-                "<br><br>(D)&nbsp"+
-                "&nbsp<img src='https://ssb.wiki.gallery/images/5/5b/MewtwoHeadSSBM.png'>"+
-                "&nbsp<img src='https://ssb.wiki.gallery/images/f/f2/RoyHeadSSBM.png'>"+
-                "&nbsp<img src='https://ssb.wiki.gallery/images/3/30/PichuHeadSSBM.png'>"+
-                "&nbsp<img src='https://ssb.wiki.gallery/images/4/47/NessHeadSSBM.png'>"+
-                "&nbsp<img src='https://ssb.wiki.gallery/images/2/29/ZeldaHeadSSBM.png'>"+
-                "<br><br>(F)&nbsp"+
-                "&nbsp<img src='https://ssb.wiki.gallery/images/7/7a/KirbyHeadSSBM.png'>"+
-                "&nbsp<img src='https://ssb.wiki.gallery/images/3/3b/BowserHeadSSBM.png'>"+
+                "<center>(S)&nbsp" + "&nbsp" + imageSources[0] +  "&nbsp" + imageSources[1] +  "&nbsp" + imageSources[2] + "&nbsp" + imageSources[3] + 
+                "<br><br>(A)&nbsp" + "&nbsp" + imageSources[4] + "&nbsp" + imageSources[5] + "&nbsp" + imageSources[6] + 
+                "<br><br>(B+)&nbsp" + "&nbsp" + imageSources[7] + "&nbsp" + imageSources[8] + "&nbsp" + imageSources[9] + "&nbsp" + imageSources[10] +
+                "<br><br>(B-)&nbsp" + "&nbsp" + imageSources[11] + "&nbsp" + imageSources[12] +
+                "<br><br>(C+)&nbsp" + "&nbsp" + imageSources[13] + "&nbsp" + imageSources[14] +
+                "<br><br>(C-)&nbsp" + "&nbsp" + imageSources[15] + "&nbsp" + imageSources[16] + "&nbsp" + imageSources[17] + "&nbsp" + imageSources[18] +
+                "<br><br>(D)&nbsp" + "&nbsp" + imageSources[19] + "&nbsp" + imageSources[20] + "&nbsp" + imageSources[21] + "&nbsp" + imageSources[22] + "&nbsp" + imageSources[23] +
+                "<br><br>(F)&nbsp" + "&nbsp" + imageSources[24] + "&nbsp" + imageSources[25] +
                 "<br><br><br><br><br>"+
                 "<strong>Source:</strong> https://www.ssbwiki.com/List_of_SSBM_tier_lists_(NTSC)"+
                 "<br>"+
@@ -233,40 +243,14 @@ public class Main extends Character{
                             }
                         }
                         System.out.println("PRINTING I " + index + "PRINTING CHARNAME" + characters[index].charName); 
-                        String imageLocation = "empty"; 
-                        if (index == 0) imageLocation = "<center><img = ''> </center>"; 
-                        if (index == 1) imageLocation = ""; 
-                        if (index == 2) imageLocation = ""; 
-                        if (index == 3) imageLocation = ""; 
-                        if (index == 4) imageLocation = ""; 
-                        if (index == 5) imageLocation = ""; 
-                        if (index == 6) imageLocation = ""; 
-                        if (index == 7) imageLocation = ""; 
-                        if (index == 8) imageLocation = ""; 
-                        if (index == 9) imageLocation = ""; 
-                        if (index == 10) imageLocation = ""; 
-                        if (index == 11) imageLocation = ""; 
-                        if (index == 12) imageLocation = ""; 
-                        if (index == 13) imageLocation = ""; 
-                        if (index == 14) imageLocation = ""; 
-                        if (index == 15) imageLocation = ""; 
-                        if (index == 16) imageLocation = ""; 
-                        if (index == 17) imageLocation = ""; 
-                        if (index == 18) imageLocation = ""; 
-                        if (index == 19) imageLocation = ""; 
-                        if (index == 20) imageLocation = ""; 
-                        if (index == 21) imageLocation = ""; 
-                        if (index == 22) imageLocation = ""; 
-                        if (index == 23) imageLocation = ""; 
-                        if (index == 24) imageLocation = ""; 
-                        if (index == 25) imageLocation = ""; 
-                        if (index == 26) imageLocation = ""; 
                         
-
-
+                        String tempString = imageSources[index].substring(0, imageSources[index].length() - 1); 
+                        tempString = tempString + "width='40' height='40'>"; 
+                        
+                        
                         textPaneIndiv.setText("<center><br>Select a character from the dropdown menu: </center>" +
-                        "<br><br><br><br><center>*Please Note: Any value that is '-1' is either unavailable, or does not exist*</center><br><br>" + 
-                        imageLocation + 
+                        "<br><br><br><br><center>*Please Note: Any value that is '-1' is either unavailable, or does not exist*</center><br>" + 
+                        "<center>" + tempString + "</center>" +
                         "<br><strong>&nbsp Jab 1:</strong>" + 
                         "<br> &nbsp Damage: " + characters[index].values[0] + "%" + 
                         "<br> &nbsp Startup Frames: " + characters[index].values[1] + 
@@ -387,7 +371,7 @@ public class Main extends Character{
         
         JTextPane defaultTP = new JTextPane();
         Font defaultFont = new Font("Century Gothic", Font.PLAIN, 40); 
-        defaultTP.getCaret().setVisible(false);
+        //defaultTP.getCaret().setVisible(false);
         defaultTP.setBackground(Color.LIGHT_GRAY); 
         defaultTP.setEditable(false);
         /*defaultTP.setContentType("text/html"); 
@@ -456,7 +440,7 @@ class Character {
             errorText.setText("<center>ERROR IN READING FILE</center>");
             errorFrame.getContentPane().add(BorderLayout.CENTER, errorText);
             error.printStackTrace();
-            for (int i = 0; i < 100000; i++){
+            for (int i = 0; i < 50000; i++){
                 // bootleg ass sleep timer
             }
 
