@@ -42,14 +42,23 @@ public class Main extends Character{
                 characters[i].values[x] = 0; 
             }
         }
+
         readFile(characters); // the reason I chose to read from a file here instead of actually just hardcoding the values is to learn how files work in java. 
-        
+
+        String[] charOptions = {
+            "Fox", "Marth", "Jigglypuff", "Falco", 
+            "Sheik", "Captain Falcon",  "Peach",
+            "Ice Climbers", "Pikachu", "Yoshi", "Samus", 
+            "Luigi", "Dr. Mario", 
+            "Ganondorf", "Mario", 
+            "Donkey Kong", "Young Link", "Link",   "Mr. Game&Watch",  "Mewtwo", 
+            "Roy",   "Pichu",  "Ness",    "Zelda", 
+            "Kirby",   "Bowser"
+        }; 
+
         String[] imageSources = new String[26]; 
         // ** FIX ME ** would be nice to make these load faster somehow. They don't load locally for some reason. 
         imageSources[0] = "<img src='https://ssb.wiki.gallery/images/d/db/FoxHeadSSBM.png'>"; 
-        
-        //"<img src=\"/images/FoxHeadSSBM.png\">"; 
-        
         imageSources[1] = "<img src='https://ssb.wiki.gallery/images/9/9b/MarthHeadSSBM.png'>"; 
         imageSources[2] = "<img src='https://ssb.wiki.gallery/images/5/5a/JigglypuffHeadSSBM.png'"; 
         imageSources[3] = "<img src='https://ssb.wiki.gallery/images/d/d6/FalcoHeadSSBM.png'"; 
@@ -108,12 +117,12 @@ public class Main extends Character{
         menuBar.add(rank); 
         menuBar.add(help); 
 
-        JMenuItem twoChars = new JMenuItem ("Two Characters"); 
-        JMenuItem threeChars = new JMenuItem("Three Characters"); 
+        JMenuItem charSelect = new JMenuItem ("Character Select"); 
+       // JMenuItem threeChars = new JMenuItem("Three Characters"); 
     //    JMenuItem fourChars = new JMenuItem("Four Characters");             ** FIX ME, may not be capable of doing four cahracters, considering how java swing works, we'll see
-        compare.add(twoChars); 
-        compare.add(threeChars); 
-      //  compare.add(fourChars); 
+        compare.add(charSelect); 
+       // compare.add(threeChars); 
+      //  compare.add(fourChars);  
 
         JPanel panel = new JPanel(); 
         JLabel label = new JLabel("Created by Anthony Colaiacovo, May 2022");
@@ -121,16 +130,85 @@ public class Main extends Character{
 
 
         
-        twoChars.addActionListener(new ActionListener(){
+        charSelect.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent event){
-                System.out.println("2 clicked"); 
+            
+                System.out.println("char select clicked"); 
+                JTextPane comparePane = new JTextPane(); 
+                JScrollPane compareScroll = new JScrollPane(comparePane, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED); 
+               // comparePane.add(compareScroll); 
+                comparePane.setLayout(new GridBagLayout()); 
+
+                GridBagConstraints constraints = new GridBagConstraints(); 
+                
+                JButton addChar1 = new JButton("+"); 
+                constraints.weightx = 0.5; 
+                constraints.fill = GridBagConstraints.HORIZONTAL;
+                constraints.gridx = 0; 
+                constraints.gridy = 0; 
+                comparePane.add(addChar1, constraints); 
+
+
+                JButton addChar2 = new JButton("+"); 
+                constraints.fill = GridBagConstraints.HORIZONTAL; 
+                constraints.weightx = 1.0; 
+                constraints.gridx = 1;
+                constraints.gridy = 0; 
+                comparePane.add(addChar2, constraints); 
+
+                JButton addChar3 = new JButton("+"); 
+                constraints.fill = GridBagConstraints.HORIZONTAL; 
+                constraints.weightx = 0.5; ; 
+                constraints.gridx = 2;
+                constraints.gridy = 0; 
+                comparePane.add(addChar3, constraints); 
+
+                JButton addChar4 = new JButton("+"); 
+                constraints.fill = GridBagConstraints.HORIZONTAL; 
+                constraints.weightx = 0.5; ; 
+                constraints.gridx = 3;
+                constraints.gridy = 0; 
+                comparePane.add(addChar4, constraints); 
+
+                JTextPane char1 = new JTextPane(); 
+                char1.setContentType("text/html"); 
+                
+                constraints.fill = GridBagConstraints.HORIZONTAL; 
+                constraints.ipady = 450; 
+                constraints.weightx = 0.5; 
+                constraints.gridx = 0; 
+                constraints.gridy = 1; 
+                comparePane.add(char1, constraints); 
+                char1.setBackground(Color.LIGHT_GRAY); 
+                char1.setText("FUCKING SWAG DUDE"); 
+
+                JTextPane char2 = new JTextPane(); 
+                JTextPane char3 = new JTextPane(); 
+                JTextPane char4 = new JTextPane(); 
+
+                
+
+                comparePane.setEditable(false);
+                comparePane.setBackground(Color.LIGHT_GRAY); 
+                frame.getContentPane().removeAll();
+        
+                comparePane.setEditable(false);
+                
+                //compareScroll.setEditable(false); not defined for scroll pane (already not editable); 
+                // USED TO BE HERE 
+              //  frame.getContentPane().add(BorderLayout.SOUTH, panel);
+                frame.add(comparePane); 
+                frame.getContentPane().add(BorderLayout.NORTH, menuBar);
+                //frame.getContentPane().add(BorderLayout.CENTER, tierListPane);  
+                frame.setVisible(true); 
+                
             }
         });
-        threeChars.addActionListener(new ActionListener(){
+      /*  threeChars.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent event){
                 System.out.println("3 clicked"); 
             }
-        });
+        });  */
        /* fourChars.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent event){
                 System.out.println("4 clicked"); 
@@ -184,9 +262,12 @@ public class Main extends Character{
                 
                // tierListPane.setFont(tierListFont); 
                 /*imageSources[0] */
+                
+                frame.getContentPane().removeAll();
+                
                 tierListPane.setText(info); 
                 tierListPane.setEditable(false);
-                frame.getContentPane().removeAll();
+                // USED TO BE HERE 
               //  frame.getContentPane().add(BorderLayout.SOUTH, panel);
                 frame.add(tierListScroll); 
                 frame.getContentPane().add(BorderLayout.NORTH, menuBar);
@@ -200,24 +281,26 @@ public class Main extends Character{
         7 = mew2, 14 = g&w, 15 = ness, 16 = peach, 17 = pichu, 18 = pika, 19 = puff, 20 = roy, 21 = samus, 22 = sheik, 23 = yoshi, 24 = yink, 25 = zelda
 */
         JMenuItem indivData = new JMenuItem("Individual Character Data");  
+        JTextPane textPaneIndiv = new JTextPane(); 
+                
+        JComboBox<String> charMenu = new JComboBox<>(charOptions); 
+                //charMenu.addActionListener(charMenu); 
+        frame.pack(); 
+        charMenu.setBounds((frame.getContentPane().getWidth() / 2 ) - 65, 65, 130, 30); 
+                /* this is a bullshit solution to get the frame centred, it would be nice in the future to make it not an absolute position 
+                
+                **FIX ME**
+                This also has an issue where if you resize the window from another option, and then click the option to view individual character data, 
+                then you end up with the window resizing back to the original size. 
+
+                */
+       // charMenu.setSelectedIndex(1);   is this really needed?
 
         indivData.addActionListener(new ActionListener(){
-
             public void actionPerformed(ActionEvent event){
-
                 System.out.println("indivData clicked"); 
-            
-                JTextPane textPaneIndiv = new JTextPane(); 
+                // **FIX ME**  MIGHT NEED TO CHANGE THIS TO GRID BAG TO MAKE IT SEXY
                 
-                String[] charOptions = {"Fox", "Marth", "Jigglypuff", "Falco", 
-                "Sheik", "Captain Falcon",  "Peach",
-                    "Ice Climbers", "Pikachu", "Yoshi", "Samus", 
-                    "Luigi", "Dr. Mario", 
-                    "Ganondorf", "Mario", 
-                    "Donkey Kong", "Young Link", "Link",   "Mr. Game&Watch",  "Mewtwo", 
-                    "Roy",   "Pichu",  "Ness",    "Zelda", 
-                    "Kirby",   "Bowser"
-                }; 
                 /*
                 if the charData.txt file reads in the characters in the order of the current tier list, then no second string needs to be created. 
                 Then you can just have the loop run, and have the index go in the order of the tier list. 
@@ -226,18 +309,7 @@ public class Main extends Character{
 
                 */
                 
-                JComboBox<String> charMenu = new JComboBox<>(charOptions); 
-                //charMenu.addActionListener(charMenu); 
-                frame.pack(); 
-                charMenu.setBounds((frame.getContentPane().getWidth() / 2 ) - 65, 65, 130, 30); 
-                /* this is a bullshit solution to get the frame centred, it would be nice in the future to make it not an absolute position 
                 
-                **FIX ME**
-                This also has an issue where if you resize the window from another option, and then click the option to view individual character data, 
-                then you end up with the window resizing back to the original size. 
-
-                */
-                charMenu.setSelectedIndex(1);
                 
                 charMenu.addActionListener(new ActionListener(){
                     
