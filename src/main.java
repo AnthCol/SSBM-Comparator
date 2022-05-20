@@ -7,7 +7,6 @@ import javax.swing.text.*;
 import java.awt.*;
 import java.io.File; 
 import java.io.FileNotFoundException;
-
 import java.util.Scanner; 
 import java.awt.event.*; 
 
@@ -46,7 +45,11 @@ public class Main extends Character{
         readFile(characters); // the reason I chose to read from a file here instead of actually just hardcoding the values is to learn how files work in java. 
         
         String[] imageSources = new String[26]; 
+        // ** FIX ME ** would be nice to make these load faster somehow. They don't load locally for some reason. 
         imageSources[0] = "<img src='https://ssb.wiki.gallery/images/d/db/FoxHeadSSBM.png'>"; 
+        
+        //"<img src=\"/images/FoxHeadSSBM.png\">"; 
+        
         imageSources[1] = "<img src='https://ssb.wiki.gallery/images/9/9b/MarthHeadSSBM.png'>"; 
         imageSources[2] = "<img src='https://ssb.wiki.gallery/images/5/5a/JigglypuffHeadSSBM.png'"; 
         imageSources[3] = "<img src='https://ssb.wiki.gallery/images/d/d6/FalcoHeadSSBM.png'"; 
@@ -79,9 +82,6 @@ public class Main extends Character{
 
         imageSources[24] = "<img src='https://ssb.wiki.gallery/images/7/7a/KirbyHeadSSBM.png'>"; 
         imageSources[25] = "<img src='https://ssb.wiki.gallery/images/3/3b/BowserHeadSSBM.png'>"; 
-
-
-
 
         JFrame frame = new JFrame("SSBM Comparator"); 
        // JViewport viewport = new JViewport();
@@ -139,32 +139,12 @@ public class Main extends Character{
 
         /* make a sub menu for compare and ask two, three, or four characters? */
         JMenuItem tierList = new JMenuItem("Tier List"); 
-        tierList.addActionListener (new ActionListener(){
-            public void actionPerformed(ActionEvent event){
-                System.out.println("tier list clicked"); 
-             //   JScrollBar scrollBar = new JScrollBar(); 
-              //  JScrollPane TLScroll = new JScrollPane(); 
-              /*  TLScroll.add(scrollBar); 
-                TLScroll.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED); 
-                TLScroll.setViewport(viewport); 
-                scrollBar.addAdjustmentListener(new AdjustmentListener(){
-                    public void adjustment (AdjustmentEvent event){
-                        
-                    }
-                });  */
-                JTextPane tierListPane = new JTextPane(); 
-                JScrollPane tierListScroll = new JScrollPane(tierListPane, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED); 
-              //  TLScroll.setViewportView(tierListPane); 
-             //   Font tierListFont = new Font("Century Gothic", Font.PLAIN, 24);   // THIS DOES NOT WORK ON TEXT/HTML CONTENT TYPE, AND NEITHER DOES CSS
-               // tierListPane.setFont(tierListFont); 
-                tierListPane.setBackground(Color.LIGHT_GRAY);
-                tierListPane.setContentType("text/html"); 
-                //tierListPane.setContentType("text/html");
-                // might need to use JScrollPane for the images                 **FIX ME**     HOW THE FUCK DO YOU CHANGE THE FONT SIZE!?!?!!?!??!?!?!!??!?!?!
-                
-               // tierListPane.setFont(tierListFont); 
-                
-                String info = "<html>"+
+        // lines below used to be in the action listener 
+        JTextPane tierListPane = new JTextPane(); 
+        JScrollPane tierListScroll = new JScrollPane(tierListPane, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED); 
+        tierListPane.setBackground(Color.LIGHT_GRAY);
+        tierListPane.setContentType("text/html"); 
+        String info = "<html>"+
                 "<body><center><strong><u><font size=30px>13th Official SSBM Tier List - March 29th, 2021 (Ordered)</font></u></strong><center><br><br>"+ 
                 "<center>(S)&nbsp" + "&nbsp" + imageSources[0] +  "&nbsp" + imageSources[1] +  "&nbsp" + imageSources[2] + "&nbsp" + imageSources[3] + 
                 "<br><br>(A)&nbsp" + "&nbsp" + imageSources[4] + "&nbsp" + imageSources[5] + "&nbsp" + imageSources[6] + 
@@ -179,6 +159,31 @@ public class Main extends Character{
                 "<br>"+
                 "</center></body></html>"; 
                 
+                
+
+        tierList.addActionListener (new ActionListener(){
+            public void actionPerformed(ActionEvent event){
+                System.out.println("tier list clicked"); 
+             //   JScrollBar scrollBar = new JScrollBar(); 
+              //  JScrollPane TLScroll = new JScrollPane(); 
+              /*  TLScroll.add(scrollBar); 
+                TLScroll.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED); 
+                TLScroll.setViewport(viewport); 
+                scrollBar.addAdjustmentListener(new AdjustmentListener(){
+                    public void adjustment (AdjustmentEvent event){
+                        
+                    }
+                });  */
+               
+              //  TLScroll.setViewportView(tierListPane); 
+             //   Font tierListFont = new Font("Century Gothic", Font.PLAIN, 24);   // THIS DOES NOT WORK ON TEXT/HTML CONTENT TYPE, AND NEITHER DOES CSS
+               // tierListPane.setFont(tierListFont); 
+               
+                // might need to use JScrollPane for the images                 **FIX ME**     HOW THE FUCK DO YOU CHANGE THE FONT SIZE!?!?!!?!??!?!?!!??!?!?!
+                // **FIX ME** MIGHT NEED TO COMPLETELY END UP TAKING OUT THE TEXT/HTML SHIT AND CHANGING IT TO DEFAULT ANDY AND LOAD IMAGES LOCALLY SOMEHOW
+                
+               // tierListPane.setFont(tierListFont); 
+                /*imageSources[0] */
                 tierListPane.setText(info); 
                 tierListPane.setEditable(false);
                 frame.getContentPane().removeAll();
@@ -225,7 +230,13 @@ public class Main extends Character{
                 //charMenu.addActionListener(charMenu); 
                 frame.pack(); 
                 charMenu.setBounds((frame.getContentPane().getWidth() / 2 ) - 65, 65, 130, 30); 
-                /* this is a bullshit solution to get the frame centred, it would be nice in the future to make it not an absolute position */
+                /* this is a bullshit solution to get the frame centred, it would be nice in the future to make it not an absolute position 
+                
+                **FIX ME**
+                This also has an issue where if you resize the window from another option, and then click the option to view individual character data, 
+                then you end up with the window resizing back to the original size. 
+
+                */
                 charMenu.setSelectedIndex(1);
                 
                 charMenu.addActionListener(new ActionListener(){
