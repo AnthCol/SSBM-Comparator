@@ -151,72 +151,57 @@ public class Main extends Character{
                 comparePane.add(addChar1, constraints); 
 
                 JButton addChar2 = new JButton("+"); 
-          //      constraints.fill = GridBagConstraints.HORIZONTAL; 
-          //      constraints.weightx = 0.5; 
                 constraints.gridx = 1;
                 constraints.gridy = 0; 
                 comparePane.add(addChar2, constraints); 
 
                 JButton addChar3 = new JButton("+"); 
-          //      constraints.fill = GridBagConstraints.HORIZONTAL; 
-           //     constraints.weightx = 0.5;  // might not need to  have all this, only change gridx and gridy 
                 constraints.gridx = 2;
                 constraints.gridy = 0; 
                 comparePane.add(addChar3, constraints); 
 
                 JButton addChar4 = new JButton("+"); 
-           //     constraints.fill = GridBagConstraints.HORIZONTAL; 
-           //     constraints.weightx = 0.5; 
                 constraints.gridx = 3;
                 constraints.gridy = 0; 
                 comparePane.add(addChar4, constraints);
 
                 JTextPane char1 = new JTextPane(); 
                 char1.setContentType("text/html"); 
-                constraints.fill = GridBagConstraints.HORIZONTAL; 
+             //   constraints.fill = GridBagConstraints.HORIZONTAL; 
                 constraints.ipady = 450; 
                 constraints.weightx = 0.5; 
                 constraints.gridx = 0; 
                 constraints.gridy = 1; 
-                comparePane.add(char1, constraints); 
+                comparePane.add(char1, constraints);  
                 char1.setBackground(Color.LIGHT_GRAY); 
-                char1.setText("Add Character"); 
+                char1.setText("<br>"); 
                 char1.setEditable(false);
 
                 JTextPane char2 = new JTextPane(); 
-                char2.setContentType("text/html"); 
-             //   constraints.fill = GridBagConstraints.HORIZONTAL; 
-             //   constraints.ipady = 700; 
-             //   constraints.weightx = 0.5; 
+                char2.setContentType("text/html");
                 constraints.gridx = 1; 
                 constraints.gridy = 1; 
                 comparePane.add(char2, constraints); 
                 char2.setBackground(Color.LIGHT_GRAY); 
-                char2.setText("Add Character"); 
+                char2.setText("<br>"); 
                 char2.setEditable(false);
 
                 JTextPane char3 = new JTextPane(); 
                 char3.setContentType("text/html"); 
-            //    constraints.fill = GridBagConstraints.HORIZONTAL; 
-            //    constraints.ipady = 700; 
-            //    constraints.weightx = 0.5; 
                 constraints.gridx = 2; 
                 constraints.gridy = 1; 
                 comparePane.add(char3, constraints); 
                 char3.setBackground(Color.LIGHT_GRAY); 
-                char3.setText("Add Character"); 
+                char3.setText("<br>"); 
                 char3.setEditable(false); 
 
                 JTextPane char4 = new JTextPane(); 
                 char4.setContentType("text/html"); 
-           //     constraints.fill = GridBagConstraints.HORIZONTAL; 
-           //     constraints.ipady = 700;   // **FIX ME ** might need to change this value to be much greater, so that the scroll pane works 
-           //     constraints.weightx = 0.5; 
                 constraints.gridx = 3; 
                 constraints.gridy = 1; 
                 comparePane.add(char4, constraints); 
                 char4.setBackground(Color.LIGHT_GRAY); 
-                char4.setText("Add Character"); 
+                char4.setText("<br>"); 
                 char4.setEditable(false);
                
                 // array of JComboBox's to make this less code????? is that possible???? **FIX ME**
@@ -230,7 +215,7 @@ public class Main extends Character{
                         constraints2.fill = GridBagConstraints.HORIZONTAL;  */
                         char1.removeAll(); //????????????????????????????????????????????????????????????????????????????????????????????
                         char1.setText(""); //????????????????????????????????????????????????????????????????????????????????????????????
-                        char1Combo.setBounds(40, 50, 130, 30); // get content pane of char1 width and divide it by two to centre it ?? **fix me** 
+                        char1Combo.setBounds((frame.getContentPane().getWidth() / 8 ) - 65, 50, 130, 30); // get content pane of char1 width and divide it by two to centre it ?? **fix me** 
                         // OR WHOLE FRAME 1/4 OF IT LIKE DONE WITH INDIIVDIAUL CAR AND HALF OF IT 
                         char1.add(char1Combo); 
                         char1.setVisible(true); 
@@ -285,7 +270,7 @@ public class Main extends Character{
                         JComboBox<String> char2Combo = new JComboBox<>(charOptions); 
                         char2.removeAll(); 
                         char2.setText(""); 
-                        char2Combo.setBounds(30, 50, 130, 30); 
+                        char2Combo.setBounds((frame.getContentPane().getWidth() / 8 ) - 65, 50, 130, 30); 
                         char2.add(char2Combo); 
                         char2Combo.addActionListener(new ActionListener(){
 
@@ -326,7 +311,7 @@ public class Main extends Character{
                         JComboBox<String> char3Combo = new JComboBox<>(charOptions); 
                         char3.removeAll(); 
                         char3.setText(""); 
-                        char3Combo.setBounds(30, 50, 130, 30); 
+                        char3Combo.setBounds((frame.getContentPane().getWidth() / 8 ) - 65, 50, 130, 30); 
                         char3.add(char3Combo); 
                         char3Combo.addActionListener(new ActionListener(){
 
@@ -367,7 +352,7 @@ public class Main extends Character{
                         JComboBox<String> char4Combo = new JComboBox<>(charOptions); 
                         char4.removeAll(); 
                         char4.setText(""); 
-                        char4Combo.setBounds(30, 50, 130, 30); 
+                        char4Combo.setBounds((frame.getContentPane().getWidth() / 8 ) - 65, 50, 130, 30); 
                         char4.add(char4Combo); 
                         char4Combo.addActionListener(new ActionListener(){
 
@@ -658,7 +643,7 @@ public class Main extends Character{
 
         
         JTextPane defaultTP = new JTextPane();
-        Font defaultFont = new Font("Century Gothic", Font.PLAIN, 40); 
+        Font defaultFont = new Font("Century Gothic", Font.PLAIN, 36); 
         //defaultTP.getCaret().setVisible(false);
         defaultTP.setBackground(Color.LIGHT_GRAY); 
         defaultTP.setEditable(false);
@@ -667,6 +652,7 @@ public class Main extends Character{
         "<br><br>"+
         "Select a menu option at the top to get started"+
         "</body></html>"; */
+        
         defaultTP.setText("\n\n\n\nWelcome to SSBM Comparator\nSelect a menu option at the top to get started"); 
         defaultTP.setFont(defaultFont); 
         StyledDocument doc = defaultTP.getStyledDocument(); 
