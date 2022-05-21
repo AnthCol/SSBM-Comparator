@@ -151,7 +151,7 @@ public class Main extends Character{
 
                 JButton addChar2 = new JButton("+"); 
                 constraints.fill = GridBagConstraints.HORIZONTAL; 
-                constraints.weightx = 1.0; 
+                constraints.weightx = 0.5; 
                 constraints.gridx = 1;
                 constraints.gridy = 0; 
                 comparePane.add(addChar2, constraints); 
@@ -168,11 +168,12 @@ public class Main extends Character{
                 constraints.weightx = 0.5; ; 
                 constraints.gridx = 3;
                 constraints.gridy = 0; 
-                comparePane.add(addChar4, constraints); 
+                comparePane.add(addChar4, constraints);
+
+
 
                 JTextPane char1 = new JTextPane(); 
                 char1.setContentType("text/html"); 
-                
                 constraints.fill = GridBagConstraints.HORIZONTAL; 
                 constraints.ipady = 450; 
                 constraints.weightx = 0.5; 
@@ -181,27 +182,108 @@ public class Main extends Character{
                 comparePane.add(char1, constraints); 
                 char1.setBackground(Color.LIGHT_GRAY); 
                 char1.setText("FUCKING SWAG DUDE"); 
+                char1.setEditable(false);
 
                 JTextPane char2 = new JTextPane(); 
+                char2.setContentType("text/html"); 
+                constraints.fill = GridBagConstraints.HORIZONTAL; 
+                constraints.ipady = 450; 
+                constraints.weightx = 0.5; 
+                constraints.gridx = 1; 
+                constraints.gridy = 1; 
+                comparePane.add(char2, constraints); 
+                char2.setBackground(Color.LIGHT_GRAY); 
+                char2.setText("FUCKING SWAG DUDE"); 
+                char2.setEditable(false);
+
                 JTextPane char3 = new JTextPane(); 
+                char3.setContentType("text/html"); 
+                constraints.fill = GridBagConstraints.HORIZONTAL; 
+                constraints.ipady = 450; 
+                constraints.weightx = 0.5; 
+                constraints.gridx = 2; 
+                constraints.gridy = 1; 
+                comparePane.add(char3, constraints); 
+                char3.setBackground(Color.LIGHT_GRAY); 
+                char3.setText("FUCKING SWAG DUDE"); 
+                char3.setEditable(false); 
+
                 JTextPane char4 = new JTextPane(); 
-
-                
-
+                char4.setContentType("text/html"); 
+                constraints.fill = GridBagConstraints.HORIZONTAL; 
+                constraints.ipady = 450; 
+                constraints.weightx = 0.5; 
+                constraints.gridx = 3; 
+                constraints.gridy = 1; 
+                comparePane.add(char4, constraints); 
+                char4.setBackground(Color.LIGHT_GRAY); 
+                char4.setText("FUCKING SWAG DUDE"); 
+                char4.setEditable(false);
+               
+                // array of JComboBox's to make this less code????? is that possible???? **FIX ME**
                 comparePane.setEditable(false);
                 comparePane.setBackground(Color.LIGHT_GRAY); 
                 frame.getContentPane().removeAll();
-        
-                comparePane.setEditable(false);
-                
-                //compareScroll.setEditable(false); not defined for scroll pane (already not editable); 
-                // USED TO BE HERE 
-              //  frame.getContentPane().add(BorderLayout.SOUTH, panel);
-                frame.add(comparePane); 
+                frame.add(compareScroll);       
+               
                 frame.getContentPane().add(BorderLayout.NORTH, menuBar);
-                //frame.getContentPane().add(BorderLayout.CENTER, tierListPane);  
+            
                 frame.setVisible(true); 
-                
+
+
+                addChar1.addActionListener (new ActionListener(){
+                    public void actionPerformed(ActionEvent event){
+                        System.out.println("CHAR 1 ADDITION CLICKED"); 
+                        JComboBox<String> char1Combo = new JComboBox<>(charOptions); 
+                        
+                        char1Combo.setBounds(30, 50, 130, 30); 
+                        char1.add(char1Combo); 
+                        comparePane.add(addChar1, constraints); 
+                        // ADD ALL THE GARBO HERE **fix me
+                        frame.pack(); 
+                        char1Combo.addActionListener(new ActionListener(){
+                            public void actionPerformed(ActionEvent event){
+                                int index = 0; 
+                                String selection = char1Combo.getSelectedItem().toString(); // should it not alreayd be a string???? **FIX ME**
+                                for (int i = 0; i < 26; i++){
+                                    if (selection == characters[i].charName){
+                                        index = i; 
+                                        i = 26; 
+                                    }
+                                }
+
+                                String tempString = imageSources[index].substring(0, imageSources[index].length() - 1); 
+                                tempString = tempString + "width = '40' height ='40'>"; 
+                                // maybe turn this big thing into a string so it can be re-used **fix me**
+                                char1.setText("<center>" + "<br><br><br><br><br>" + tempString + "<br>" + 
+                                "<br><strong>&nbsp Jab 1:</strong>" + 
+                                "<br> &nbsp Damage: " + characters[index].values[0] + "%" + 
+                                "<br> &nbsp Startup Frames: " + characters[index].values[1] + 
+                                "<br> &nbsp Active Frames: " + characters[index].values[2] + 
+                                "<br> &nbsp Ending Frames: " + characters[index].values[3] + "<br><br><br><br><br><br><br><br><br><br><br><br><br><<br><br><br><br><<br><br><br><br><<br><br><br><br><<br><br><br><br><br><br> SWAG"
+                                ); 
+                                // SCROLL PANE DOES NOT WORK, AND THIS LOOKS AWFUL. NEED TO MAKE IT SO ADDITION BUTTONS DONT GO AWAY WHEN YOU SELECT A CHARACTER. 
+                            }
+                        }); 
+
+                    }
+                }); 
+                addChar2.addActionListener (new ActionListener(){
+                    public void actionPerformed(ActionEvent event){
+                        
+                    }
+                }); 
+                addChar3.addActionListener (new ActionListener(){
+                    public void actionPerformed(ActionEvent event){
+                        
+                    }
+                }); 
+                addChar4.addActionListener (new ActionListener(){
+                    public void actionPerformed(ActionEvent event){
+                        
+                    }
+                }); 
+            
             }
         });
       /*  threeChars.addActionListener(new ActionListener(){
@@ -320,7 +402,7 @@ public class Main extends Character{
                         for (int i = 0; i < 26; i++){  // check which character was selected 
                             if (selection == characters[i].charName){
                                 index = i; // WHY IS THIS ALWAYS ZERO. MIGHT FIX ITSELF WHEN THE CHARDATAFILE IS FINISHED **FIX ME**
-                                break; 
+                                i = 26; // break should also work
                                 // to add the picture NEED TO ADD A STRING THAT HAS THE IMAGE DEPENDING ON INDEX. SWITCH STATMENT MAYBE **FIX ME**
                                 // so that is can be added properly to the set text statement below. 
                             }
