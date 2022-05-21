@@ -151,28 +151,28 @@ public class Main extends Character{
                 comparePane.add(addChar1, constraints); 
 
                 JButton addChar2 = new JButton("+"); 
-                constraints.fill = GridBagConstraints.HORIZONTAL; 
-                constraints.weightx = 0.5; 
+          //      constraints.fill = GridBagConstraints.HORIZONTAL; 
+          //      constraints.weightx = 0.5; 
                 constraints.gridx = 1;
                 constraints.gridy = 0; 
                 comparePane.add(addChar2, constraints); 
 
                 JButton addChar3 = new JButton("+"); 
-                constraints.fill = GridBagConstraints.HORIZONTAL; 
-                constraints.weightx = 0.5; ; 
+          //      constraints.fill = GridBagConstraints.HORIZONTAL; 
+           //     constraints.weightx = 0.5;  // might not need to  have all this, only change gridx and gridy 
                 constraints.gridx = 2;
                 constraints.gridy = 0; 
                 comparePane.add(addChar3, constraints); 
 
                 JButton addChar4 = new JButton("+"); 
-                constraints.fill = GridBagConstraints.HORIZONTAL; 
-                constraints.weightx = 0.5; ; 
+           //     constraints.fill = GridBagConstraints.HORIZONTAL; 
+           //     constraints.weightx = 0.5; 
                 constraints.gridx = 3;
                 constraints.gridy = 0; 
                 comparePane.add(addChar4, constraints);
 
                 JTextPane char1 = new JTextPane(); 
-              //  char1.setContentType("text/html"); 
+                char1.setContentType("text/html"); 
                 constraints.fill = GridBagConstraints.HORIZONTAL; 
                 constraints.ipady = 450; 
                 constraints.weightx = 0.5; 
@@ -180,43 +180,43 @@ public class Main extends Character{
                 constraints.gridy = 1; 
                 comparePane.add(char1, constraints); 
                 char1.setBackground(Color.LIGHT_GRAY); 
-              //  char1.setText("Add Character"); 
-              //  char1.setEditable(false);
+                char1.setText("Add Character"); 
+                char1.setEditable(false);
 
                 JTextPane char2 = new JTextPane(); 
                 char2.setContentType("text/html"); 
-                constraints.fill = GridBagConstraints.HORIZONTAL; 
-                constraints.ipady = 450; 
-                constraints.weightx = 0.5; 
+             //   constraints.fill = GridBagConstraints.HORIZONTAL; 
+             //   constraints.ipady = 700; 
+             //   constraints.weightx = 0.5; 
                 constraints.gridx = 1; 
                 constraints.gridy = 1; 
                 comparePane.add(char2, constraints); 
                 char2.setBackground(Color.LIGHT_GRAY); 
-              //  char2.setText("Add Character"); 
+                char2.setText("Add Character"); 
                 char2.setEditable(false);
 
                 JTextPane char3 = new JTextPane(); 
                 char3.setContentType("text/html"); 
-                constraints.fill = GridBagConstraints.HORIZONTAL; 
-                constraints.ipady = 450; 
-                constraints.weightx = 0.5; 
+            //    constraints.fill = GridBagConstraints.HORIZONTAL; 
+            //    constraints.ipady = 700; 
+            //    constraints.weightx = 0.5; 
                 constraints.gridx = 2; 
                 constraints.gridy = 1; 
                 comparePane.add(char3, constraints); 
                 char3.setBackground(Color.LIGHT_GRAY); 
-             //   char3.setText("Add Character"); 
+                char3.setText("Add Character"); 
                 char3.setEditable(false); 
 
                 JTextPane char4 = new JTextPane(); 
                 char4.setContentType("text/html"); 
-                constraints.fill = GridBagConstraints.HORIZONTAL; 
-                constraints.ipady = 450;   // **FIX ME ** might need to change this value to be much greater, so that the scroll pane works 
-                constraints.weightx = 0.5; 
+           //     constraints.fill = GridBagConstraints.HORIZONTAL; 
+           //     constraints.ipady = 700;   // **FIX ME ** might need to change this value to be much greater, so that the scroll pane works 
+           //     constraints.weightx = 0.5; 
                 constraints.gridx = 3; 
                 constraints.gridy = 1; 
                 comparePane.add(char4, constraints); 
                 char4.setBackground(Color.LIGHT_GRAY); 
-              //  char4.setText("Add Character"); 
+                char4.setText("Add Character"); 
                 char4.setEditable(false);
                
                 // array of JComboBox's to make this less code????? is that possible???? **FIX ME**
@@ -228,10 +228,12 @@ public class Main extends Character{
                         
                         /*GridBagConstraints constraints2 = new GridBagConstraints(); 
                         constraints2.fill = GridBagConstraints.HORIZONTAL;  */
-                      //  char1.removeAll(); ????????????????????????????????????????????????????????????????????????????????????????????
-                       // char1.setText(""); ????????????????????????????????????????????????????????????????????????????????????????????
-                        char1Combo.setBounds(40, 50, 130, 30); 
+                        char1.removeAll(); //????????????????????????????????????????????????????????????????????????????????????????????
+                        char1.setText(""); //????????????????????????????????????????????????????????????????????????????????????????????
+                        char1Combo.setBounds(40, 50, 130, 30); // get content pane of char1 width and divide it by two to centre it ?? **fix me** 
+                        // OR WHOLE FRAME 1/4 OF IT LIKE DONE WITH INDIIVDIAUL CAR AND HALF OF IT 
                         char1.add(char1Combo); 
+                        char1.setVisible(true); 
 
                            /*
                         constraints.fill = GridBagConstraints.HORIZONTAL; 
@@ -245,7 +247,7 @@ public class Main extends Character{
                         char1.add(char1Combo); 
                         comparePane.add(char1, constraints);  */
                         // ADD ALL THE GARBO HERE **fix me
-                      //  frame.pack();  // something with frame pack here is weird. 
+                        frame.pack();  // something with frame pack here is weird. 
                         char1Combo.addActionListener(new ActionListener(){
                             public void actionPerformed(ActionEvent event){
                                 System.out.println("CHAR1 COMPARISION COMBO BOX CLICKED"); 
