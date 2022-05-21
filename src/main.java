@@ -306,7 +306,7 @@ public class Main extends Character{
         tierListPane.setContentType("text/html"); 
         String info = "<html>"+
                 "<body><center><strong><u><font size=30px>13th Official SSBM Tier List - March 29th, 2021 (Ordered)</font></u></strong><center><br><br>"+ 
-                "<center>(S)&nbsp" + "&nbsp" + imageSources[0] +  "&nbsp" + imageSources[1] +  "&nbsp" + imageSources[2] + "&nbsp" + imageSources[3] + 
+                "<center>(S)&nbsp" + "&nbsp" + /*imageSources[0]*/ "<img src='file:images/FoxHeadSSBM.png'>" +  "&nbsp" + imageSources[1] +  "&nbsp" + imageSources[2] + "&nbsp" + imageSources[3] + 
                 "<br><br>(A)&nbsp" + "&nbsp" + imageSources[4] + "&nbsp" + imageSources[5] + "&nbsp" + imageSources[6] + 
                 "<br><br>(B+)&nbsp" + "&nbsp" + imageSources[7] + "&nbsp" + imageSources[8] + "&nbsp" + imageSources[9] + "&nbsp" + imageSources[10] +
                 "<br><br>(B-)&nbsp" + "&nbsp" + imageSources[11] + "&nbsp" + imageSources[12] +
@@ -318,7 +318,7 @@ public class Main extends Character{
                 "<strong>Source:</strong> https://www.ssbwiki.com/List_of_SSBM_tier_lists_(NTSC)"+
                 "<br>"+
                 "</center></body></html>"; 
-                
+                /* FINALLY FIGURED OUT HOW TO LOAD SHIT LOCALLY THANK FUCK HOPEFULLY IT WILL BE A LOT FASTER NOW SWAG SWAG 360 SWAG FIX ME */
                 
 
         tierList.addActionListener (new ActionListener(){
