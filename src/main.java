@@ -45,6 +45,8 @@ public class Main extends Character{
 
         readFile(characters); // the reason I chose to read from a file here instead of actually just hardcoding the values is to learn how files work in java. 
 
+    
+
         String[] charOptions = {
             "Fox", "Marth", "Jigglypuff", "Falco", 
             "Sheik", "Captain Falcon",  "Peach",
@@ -58,39 +60,39 @@ public class Main extends Character{
 
         String[] imageSources = new String[26]; 
         // ** FIX ME ** would be nice to make these load faster somehow. They don't load locally for some reason. 
-        imageSources[0] = "<img src='https://ssb.wiki.gallery/images/d/db/FoxHeadSSBM.png'>"; 
-        imageSources[1] = "<img src='https://ssb.wiki.gallery/images/9/9b/MarthHeadSSBM.png'>"; 
-        imageSources[2] = "<img src='https://ssb.wiki.gallery/images/5/5a/JigglypuffHeadSSBM.png'"; 
-        imageSources[3] = "<img src='https://ssb.wiki.gallery/images/d/d6/FalcoHeadSSBM.png'"; 
+        imageSources[0] = "<img src='file:images/FoxHeadSSBM.png'>"; 
+        imageSources[1] = "<img src='file:images/MarthHeadSSBM.png'>"; 
+        imageSources[2] = "<img src='file:images/JigglypuffHeadSSBM.png'>"; 
+        imageSources[3] = "<img src='file:images/FalcoHeadSSBM.png'>"; 
 
-        imageSources[4] = "<img src='https://ssb.wiki.gallery/images/7/76/SheikHeadSSBM.png'>"; 
-        imageSources[5] = "<img src='https://ssb.wiki.gallery/images/5/5f/CaptainFalconHeadSSBM.png'>"; 
-        imageSources[6] = "<img src='https://ssb.wiki.gallery/images/3/3f/PeachHeadSSBM.png'>"; 
+        imageSources[4] = "<img src='file:images/SheikHeadSSBM.png'>"; 
+        imageSources[5] = "<img src='file:images/CaptainFalconHeadSSBM.png'>"; 
+        imageSources[6] = "<img src='file:images/PeachHeadSSBM.png'>"; 
 
-        imageSources[7] = "<img src='https://ssb.wiki.gallery/images/d/d1/IceClimbersHeadSSBM.png'>"; 
-        imageSources[8] = "<img src='https://ssb.wiki.gallery/images/8/88/PikachuHeadSSBM.png'>"; 
-        imageSources[9] = "<img src='https://ssb.wiki.gallery/images/6/6d/YoshiHeadSSBM.png'>"; 
-        imageSources[10] = "<img src='https://ssb.wiki.gallery/images/f/f6/SamusHeadSSBM.png'>"; 
+        imageSources[7] = "<img src='file:images/IceClimbersHeadSSBM.png'>"; 
+        imageSources[8] = "<img src='file:images/PikachuHeadSSBM.png'>"; 
+        imageSources[9] = "<img src='file:images/YoshiHeadSSBM.png'>"; 
+        imageSources[10] = "<img src='file:images/SamusHeadSSBM.png'>"; 
 
-        imageSources[11] = "<img src='https://ssb.wiki.gallery/images/d/d1/LuigiHeadSSBM.png'>"; 
-        imageSources[12] = "<img src='https://ssb.wiki.gallery/images/6/61/DrMarioHeadSSBM.png'>"; 
+        imageSources[11] = "<img src='file:images/LuigiHeadSSBM.png'>"; 
+        imageSources[12] = "<img src='file:images/DrMarioHeadSSBM.png'>"; 
 
-        imageSources[13] = "<img src='https://ssb.wiki.gallery/images/7/77/GanondorfHeadSSBM.png'>"; 
-        imageSources[14] = "<img src='https://ssb.wiki.gallery/images/e/ec/MarioHeadSSBM.png'>"; 
+        imageSources[13] = "<img src='file:images/GanondorfHeadSSBM.png'>"; 
+        imageSources[14] = "<img src='file:images/MarioHeadSSBM.png'>"; 
 
-        imageSources[15] = "<img src='https://ssb.wiki.gallery/images/9/9b/DonkeyKongHeadSSBM.png'>"; 
-        imageSources[16] = "<img src='https://ssb.wiki.gallery/images/a/ac/YoungLinkHeadSSBM.png'>"; 
-        imageSources[17] = "<img src='https://ssb.wiki.gallery/images/1/17/LinkHeadSSBM.png'>"; 
-        imageSources[18] = "<img src='https://ssb.wiki.gallery/images/b/ba/MrGame%26WatchHeadSSBM.png'>"; 
+        imageSources[15] = "<img src='file:images/DonkeyKongHeadSSBM.png'>"; 
+        imageSources[16] = "<img src='file:images/YoungLinkHeadSSBM.png'>"; 
+        imageSources[17] = "<img src='file:images/LinkHeadSSBM.png'>"; 
+        imageSources[18] = "<img src='file:images/MrGame&WatchHeadSSBM.png'>"; 
 
-        imageSources[19] = "<img src='https://ssb.wiki.gallery/images/5/5b/MewtwoHeadSSBM.png'>"; 
-        imageSources[20] = "<img src='https://ssb.wiki.gallery/images/f/f2/RoyHeadSSBM.png'>"; 
-        imageSources[21] = "<img src='https://ssb.wiki.gallery/images/3/30/PichuHeadSSBM.png'>"; 
-        imageSources[22] = "<img src='https://ssb.wiki.gallery/images/4/47/NessHeadSSBM.png'>"; 
-        imageSources[23] = "<img src='https://ssb.wiki.gallery/images/2/29/ZeldaHeadSSBM.png'>"; 
+        imageSources[19] = "<img src='file:images/MewtwoHeadSSBM.png'>"; 
+        imageSources[20] = "<img src='file:images/RoyHeadSSBM.png'>"; 
+        imageSources[21] = "<img src='file:images/PichuHeadSSBM.png'>"; 
+        imageSources[22] = "<img src='file:images/NessHeadSSBM.png'>"; 
+        imageSources[23] = "<img src='file:images/ZeldaHeadSSBM.png'>"; 
 
-        imageSources[24] = "<img src='https://ssb.wiki.gallery/images/7/7a/KirbyHeadSSBM.png'>"; 
-        imageSources[25] = "<img src='https://ssb.wiki.gallery/images/3/3b/BowserHeadSSBM.png'>"; 
+        imageSources[24] = "<img src='file:images/KirbyHeadSSBM.png'>"; 
+        imageSources[25] = "<img src='file:images/BowserHeadSSBM.png'>"; 
 
         JFrame frame = new JFrame("SSBM Comparator"); 
        // JViewport viewport = new JViewport();
@@ -148,7 +150,6 @@ public class Main extends Character{
                 constraints.gridy = 0; 
                 comparePane.add(addChar1, constraints); 
 
-
                 JButton addChar2 = new JButton("+"); 
                 constraints.fill = GridBagConstraints.HORIZONTAL; 
                 constraints.weightx = 0.5; 
@@ -169,8 +170,6 @@ public class Main extends Character{
                 constraints.gridx = 3;
                 constraints.gridy = 0; 
                 comparePane.add(addChar4, constraints);
-
-
 
                 JTextPane char1 = new JTextPane(); 
                 char1.setContentType("text/html"); 
@@ -211,7 +210,7 @@ public class Main extends Character{
                 JTextPane char4 = new JTextPane(); 
                 char4.setContentType("text/html"); 
                 constraints.fill = GridBagConstraints.HORIZONTAL; 
-                constraints.ipady = 450; 
+                constraints.ipady = 450;   // **FIX ME ** might need to change this value to be much greater, so that the scroll pane works 
                 constraints.weightx = 0.5; 
                 constraints.gridx = 3; 
                 constraints.gridy = 1; 
@@ -221,28 +220,25 @@ public class Main extends Character{
                 char4.setEditable(false);
                
                 // array of JComboBox's to make this less code????? is that possible???? **FIX ME**
-                comparePane.setEditable(false);
-                comparePane.setBackground(Color.LIGHT_GRAY); 
-                frame.getContentPane().removeAll();
-                frame.add(compareScroll);       
-               
-                frame.getContentPane().add(BorderLayout.NORTH, menuBar);
-            
-                frame.setVisible(true); 
-
-
+                
                 addChar1.addActionListener (new ActionListener(){
                     public void actionPerformed(ActionEvent event){
                         System.out.println("CHAR 1 ADDITION CLICKED"); 
                         JComboBox<String> char1Combo = new JComboBox<>(charOptions); 
                         
                         char1Combo.setBounds(30, 50, 130, 30); 
+                        char1Combo.setVisible(true); 
+                        char1.setText(""); 
                         char1.add(char1Combo); 
-                        comparePane.add(addChar1, constraints); 
+                    
                         // ADD ALL THE GARBO HERE **fix me
-                        frame.pack(); 
+                        frame.pack();  // something with frame pack here is weird. 
                         char1Combo.addActionListener(new ActionListener(){
                             public void actionPerformed(ActionEvent event){
+                                System.out.println("CHAR1 COMPARISION COMBO BOX CLICKED"); 
+                          /* when this is clicked, all of the buttons get removed, do i need
+                          to add them back? */
+                              
                                 int index = 0; 
                                 String selection = char1Combo.getSelectedItem().toString(); // should it not alreayd be a string???? **FIX ME**
                                 for (int i = 0; i < 26; i++){
@@ -252,16 +248,70 @@ public class Main extends Character{
                                     }
                                 }
 
+                        
                                 String tempString = imageSources[index].substring(0, imageSources[index].length() - 1); 
                                 tempString = tempString + "width = '40' height ='40'>"; 
-                                // maybe turn this big thing into a string so it can be re-used **fix me**
-                                char1.setText("<center>" + "<br><br><br><br><br>" + tempString + "<br>" + 
+                                String compareText = "<center>" + "<br><br><br><br><br>" + tempString + "<br>" + 
                                 "<br><strong>&nbsp Jab 1:</strong>" + 
                                 "<br> &nbsp Damage: " + characters[index].values[0] + "%" + 
                                 "<br> &nbsp Startup Frames: " + characters[index].values[1] + 
                                 "<br> &nbsp Active Frames: " + characters[index].values[2] + 
-                                "<br> &nbsp Ending Frames: " + characters[index].values[3] + "<br><br><br><br><br><br><br><br><br><br><br><br><br><<br><br><br><br><<br><br><br><br><<br><br><br><br><<br><br><br><br><br><br> SWAG"
-                                ); 
+                                "<br> &nbsp Ending Frames: " + characters[index].values[3];  
+                                // maybe turn this big thing into a string so it can be re-used **fix me**
+                                char1.setText(compareText); 
+                                
+                                
+                                constraints.fill = GridBagConstraints.HORIZONTAL; 
+                                constraints.weightx = 0.5; 
+                                constraints.gridx = 0; 
+                                constraints.gridy = 0; 
+                                char1.add(addChar1, constraints); 
+
+                                constraints.fill = GridBagConstraints.HORIZONTAL; 
+                                constraints.weightx = 0.5; 
+                                constraints.gridx = 1; 
+                                constraints.gridy = 0; 
+                                char2.add(addChar2, constraints); 
+
+                                constraints.fill = GridBagConstraints.HORIZONTAL; 
+                                constraints.weightx = 0.5; 
+                                constraints.gridx = 2; 
+                                constraints.gridy = 0; 
+                                char3.add(addChar3, constraints); 
+
+                                constraints.fill = GridBagConstraints.HORIZONTAL; 
+                                constraints.weightx = 0.5; 
+                                constraints.gridx = 3; 
+                                constraints.gridy = 0; 
+                                char4.add(addChar4, constraints); 
+
+                                constraints.fill = GridBagConstraints.HORIZONTAL; 
+                                constraints.ipady = 450; 
+                                constraints.gridx = 0; 
+                                constraints.gridy = 1; 
+                                constraints.ipady = 450; 
+                                comparePane.add(char1, constraints); 
+
+                                constraints.fill = GridBagConstraints.HORIZONTAL; 
+                                constraints.ipady = 450; 
+                                constraints.gridx = 1; 
+                                constraints.gridy = 1; 
+                                constraints.ipady = 450; 
+                                comparePane.add(char2, constraints); 
+
+                                constraints.fill = GridBagConstraints.HORIZONTAL; 
+                                constraints.ipady = 450; 
+                                constraints.gridx = 2; 
+                                constraints.ipady = 450; 
+                                constraints.gridy = 1; 
+                                comparePane.add(char3, constraints); 
+                                
+                                constraints.fill = GridBagConstraints.HORIZONTAL; 
+                                constraints.ipady = 450; 
+                                constraints.gridx = 3; 
+                                constraints.gridy = 1; 
+                                constraints.ipady = 450; 
+                                comparePane.add(char4, constraints); 
                                 // SCROLL PANE DOES NOT WORK, AND THIS LOOKS AWFUL. NEED TO MAKE IT SO ADDITION BUTTONS DONT GO AWAY WHEN YOU SELECT A CHARACTER. 
                             }
                         }); 
@@ -283,21 +333,26 @@ public class Main extends Character{
                         
                     }
                 }); 
-            
-            }
-        });
-      /*  threeChars.addActionListener(new ActionListener(){
-            public void actionPerformed(ActionEvent event){
-                System.out.println("3 clicked"); 
-            }
-        });  */
-       /* fourChars.addActionListener(new ActionListener(){
-            public void actionPerformed(ActionEvent event){
-                System.out.println("4 clicked"); 
-            }
-        }); */                                                                                                      // **REMEMBER THAT THIS IS HERE**
+                comparePane.setEditable(false);
+                comparePane.setBackground(Color.LIGHT_GRAY); 
+                frame.getContentPane().removeAll();
+                frame.add(comparePane); 
+               // frame.add(compareScroll);      ????????????? **FIX ME** 
+                frame.getContentPane().add(BorderLayout.NORTH, menuBar);
+                frame.setVisible(true); 
 
-        /* make a sub menu for compare and ask two, three, or four characters? */
+            }
+            
+        });
+   
+        
+
+
+
+
+
+
+
         JMenuItem tierList = new JMenuItem("Tier List"); 
         // lines below used to be in the action listener 
         JTextPane tierListPane = new JTextPane(); 
@@ -306,7 +361,7 @@ public class Main extends Character{
         tierListPane.setContentType("text/html"); 
         String info = "<html>"+
                 "<body><center><strong><u><font size=30px>13th Official SSBM Tier List - March 29th, 2021 (Ordered)</font></u></strong><center><br><br>"+ 
-                "<center>(S)&nbsp" + "&nbsp" + /*imageSources[0]*/ "<img src='file:images/FoxHeadSSBM.png'>" +  "&nbsp" + imageSources[1] +  "&nbsp" + imageSources[2] + "&nbsp" + imageSources[3] + 
+                "<center>(S)&nbsp" + "&nbsp" + imageSources[0] +  "&nbsp" + imageSources[1] +  "&nbsp" + imageSources[2] + "&nbsp" + imageSources[3] + 
                 "<br><br>(A)&nbsp" + "&nbsp" + imageSources[4] + "&nbsp" + imageSources[5] + "&nbsp" + imageSources[6] + 
                 "<br><br>(B+)&nbsp" + "&nbsp" + imageSources[7] + "&nbsp" + imageSources[8] + "&nbsp" + imageSources[9] + "&nbsp" + imageSources[10] +
                 "<br><br>(B-)&nbsp" + "&nbsp" + imageSources[11] + "&nbsp" + imageSources[12] +
