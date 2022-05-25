@@ -9,6 +9,9 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner; 
 import java.awt.event.*; 
+//import javax.swing.plaf.metal.MetalLookAndFeel;
+
+
 
 /* FIX ME recreate character class and have main extend it. 
 
@@ -44,8 +47,17 @@ public class Main extends Character{
         }
 
         readFile(characters); // the reason I chose to read from a file here instead of actually just hardcoding the values is to learn how files work in java. 
+      /*  try{
+            UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
+        }
+        catch(Exception ex) {
+            // swag
+        } */
+        
 
-    
+        // **FIX ME** BE ABLE TO COMPARE CHARACTERS TO AVERAGES 
+
+
 
         String[] charOptions = {
             "Fox", "Marth", "Jigglypuff", "Falco", 
@@ -109,9 +121,9 @@ public class Main extends Character{
         frame.setMinimumSize(new Dimension(950, 600)); 
         frame.setIconImage(icon.getImage()); 
 
-        JMenu compare = new JMenu("Compare Characters");
+        JMenu compare = new JMenu("Compare");
         JMenu view = new JMenu("View");
-        JMenu rank = new JMenu ("Rank"); 
+        JMenu rank = new JMenu ("Rank Moves"); 
         JMenu help = new JMenu("Help"); 
     
         menuBar.add(compare);
@@ -119,10 +131,13 @@ public class Main extends Character{
         menuBar.add(rank); 
         menuBar.add(help); 
 
-        JMenuItem charSelect = new JMenuItem ("Character Select"); 
+        JMenuItem vsCharacters = new JMenuItem ("vs Characters"); 
+        JMenuItem vsAverage = new JMenuItem("vs Averages"); 
        // JMenuItem threeChars = new JMenuItem("Three Characters"); 
     //    JMenuItem fourChars = new JMenuItem("Four Characters");             ** FIX ME, may not be capable of doing four cahracters, considering how java swing works, we'll see
-        compare.add(charSelect); 
+        compare.add(vsCharacters); 
+        compare.add(vsAverage); 
+
        // compare.add(threeChars); 
       //  compare.add(fourChars);  
 
@@ -132,7 +147,7 @@ public class Main extends Character{
 
 
         
-        charSelect.addActionListener(new ActionListener(){
+        vsCharacters.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent event){
             
                 System.out.println("char select clicked"); 
@@ -232,7 +247,7 @@ public class Main extends Character{
                         char1.add(char1Combo); 
                         comparePane.add(char1, constraints);  */
                         // ADD ALL THE GARBO HERE **fix me
-                        frame.pack();  // something with frame pack here is weird. 
+                      //  frame.pack();  // something with frame pack here is weird. 
                         char1Combo.addActionListener(new ActionListener(){
                             public void actionPerformed(ActionEvent event){
                                 System.out.println("CHAR1 COMPARISION COMBO BOX CLICKED"); 
@@ -520,6 +535,7 @@ public class Main extends Character{
                         String tempString = imageSources[index].substring(0, imageSources[index].length() - 1); 
                         tempString = tempString + "width='40' height='40'>"; 
                         
+                        // TEST TO SEE IF THE FILE: TYPE SHIT IN IMAGESOURCES WILL WORK WITH CSS HERE. **FIX ME** MAYBE IT WONT LOOK SO UGLY THAT WAY 
                         
                         textPaneIndiv.setText("<center><br>Select a character from the dropdown menu: </center>" +
                         "<br><br><br><br><center>*Please Note: Any value that is '-1' is either unavailable, or does not exist*</center><br>" + 
@@ -714,7 +730,7 @@ class Character {
             errorText.setText("<center>ERROR IN READING FILE</center>");
             errorFrame.getContentPane().add(BorderLayout.CENTER, errorText);
             error.printStackTrace();
-            for (int i = 0; i < 50000; i++){
+            for (int i = 0; i < 500000; i++){
                 // bootleg ass sleep timer
             }
 
