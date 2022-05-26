@@ -413,6 +413,65 @@ public class Main extends Character{
             
         });
    
+
+        vsAverage.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent event){
+                System.out.println("vs averages clicked"); 
+                JTextPane averagePane = new JTextPane(); 
+                averagePane.setLayout(new GridBagLayout());
+                averagePane.setContentType("text/html"); 
+                averagePane.setBackground(Color.LIGHT_GRAY);
+                averagePane.setEditable(false); 
+                JScrollPane averageScroll = new JScrollPane(averagePane, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+                GridBagConstraints constraints = new GridBagConstraints();  
+                JComboBox<String> charSelect = new JComboBox<>(charOptions); 
+
+                JTextPane left = new JTextPane(); 
+                JTextPane right = new JTextPane(); 
+                constraints.weightx = 0.5; 
+                constraints.fill = GridBagConstraints.HORIZONTAL;
+                constraints.ipady = 400; 
+                constraints.ipadx = 70; 
+                constraints.gridx = 0; 
+                constraints.gridy = 0;
+                left.setContentType("text/html"); 
+                left.setBackground(Color.LIGHT_GRAY); 
+                left.setText("<center>                 Select a character                 </center>"); 
+                left.setEditable(false); 
+                averagePane.add(left, constraints); 
+
+
+                constraints.gridx = 1; 
+                constraints.gridy = 0; 
+                right.setContentType("text/html"); 
+                right.setBackground(Color.LIGHT_GRAY); 
+                right.setEditable(false); 
+                right.setText("<center> STRING TO REPRESENT THE AVERAGES HERE with default smash logo or something so that everything matches up </center>"); 
+                averagePane.add(right, constraints); 
+
+                
+                frame.getContentPane().removeAll(); 
+                left.setVisible(true);
+                right.setVisible(true); 
+                frame.add(averageScroll);  // which to use here? pane or scroll?
+                frame.getContentPane().add(BorderLayout.NORTH, menuBar); 
+                frame.setVisible(true); 
+
+
+                /* 
+
+                    comparePane.setEditable(false);
+                comparePane.setBackground(Color.LIGHT_GRAY); 
+                frame.getContentPane().removeAll();
+                frame.add(comparePane); 
+               // frame.add(compareScroll);      ????????????? **FIX ME** 
+                frame.getContentPane().add(BorderLayout.NORTH, menuBar);
+                frame.setVisible(true); 
+
+                */
+
+            }
+        }); 
         
 
 
