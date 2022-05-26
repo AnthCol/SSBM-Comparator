@@ -428,6 +428,8 @@ public class Main extends Character{
 
                 JTextPane left = new JTextPane(); 
                 JTextPane right = new JTextPane(); 
+
+                
                 constraints.weightx = 0.5; 
                 constraints.fill = GridBagConstraints.HORIZONTAL;
                 constraints.ipady = 400; 
@@ -436,20 +438,60 @@ public class Main extends Character{
                 constraints.gridy = 0;
                 left.setContentType("text/html"); 
                 left.setBackground(Color.LIGHT_GRAY); 
-                left.setText("<center>                 Select a character                 </center>"); 
+                left.setText("<center><b><br>Select a character</b></center>"); 
                 left.setEditable(false); 
+                
+                charSelect.setBounds(left.getWidth() + 177, 60, 130, 30); 
+                left.add(charSelect); 
                 averagePane.add(left, constraints); 
-
 
                 constraints.gridx = 1; 
                 constraints.gridy = 0; 
                 right.setContentType("text/html"); 
                 right.setBackground(Color.LIGHT_GRAY); 
                 right.setEditable(false); 
-                right.setText("<center> STRING TO REPRESENT THE AVERAGES HERE with default smash logo or something so that everything matches up </center>"); 
+                right.setText("<center> <b>Averages: </b></center>"); 
+
+                // ** FIX ME ** need to add the code to calculate the averages here so it can be done. 
                 averagePane.add(right, constraints); 
 
-                
+      
+
+                charSelect.addActionListener(new ActionListener(){
+                    public void actionPerformed(ActionEvent event){
+
+                        String selection = charSelect.getSelectedItem().toString(); 
+                        System.out.println(selection + "printing selection"); 
+                        int index = 0; 
+                        for (int i = 0; i < 26; i++){  
+                            if (selection == characters[i].charName){
+                                index = i; // WHY IS THIS ALWAYS ZERO. MIGHT FIX ITSELF WHEN THE CHARDATAFILE IS FINISHED **FIX ME**
+                                i = 26; 
+                            }
+                        }
+                       
+                        System.out.println("PRINTING I " + index + "PRINTING CHARNAME" + characters[index].charName); 
+                        
+                        String tempString = imageSources[index].substring(0, imageSources[index].length() - 1); 
+                        tempString = tempString + "width='40' height='40'>"; 
+                        
+                        left.setText("<br><br><br><br><br><center>*Please Note: Any value that is '-1' is either unavailable, or does not exist*</center><br>" + 
+                        "<center>" + tempString +
+                        "<br><strong>&nbsp Jab 1:</strong>" + 
+                        "<br> &nbsp Damage: " + characters[index].values[0] + "%" + 
+                        "<br> &nbsp Startup Frames: " + characters[index].values[1] + 
+                        "<br> &nbsp Active Frames: " + characters[index].values[2] + 
+                        "<br> &nbsp Ending Frames: " + characters[index].values[3] +
+                        "</center>"
+                        
+                        ); 
+                        left.setVisible(true); 
+                    }
+                });
+
+
+
+
                 frame.getContentPane().removeAll(); 
                 left.setVisible(true);
                 right.setVisible(true); 
@@ -457,18 +499,8 @@ public class Main extends Character{
                 frame.getContentPane().add(BorderLayout.NORTH, menuBar); 
                 frame.setVisible(true); 
 
-
-                /* 
-
-                    comparePane.setEditable(false);
-                comparePane.setBackground(Color.LIGHT_GRAY); 
-                frame.getContentPane().removeAll();
-                frame.add(comparePane); 
-               // frame.add(compareScroll);      ????????????? **FIX ME** 
-                frame.getContentPane().add(BorderLayout.NORTH, menuBar);
-                frame.setVisible(true); 
-
-                */
+               
+               
 
             }
         }); 
