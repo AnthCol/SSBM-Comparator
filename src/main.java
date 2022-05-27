@@ -732,21 +732,44 @@ public class Main extends Character{
         rank.add(activeF); 
         rank.add(endingF);
 
-        JMenuItem about = new JMenuItem ("About the Creator"); 
-        about.addActionListener(new ActionListener(){
-            public void actionPerformed(ActionEvent event){
-                System.out.println("about the creator clicked"); 
-            }
-        });
+       
         JMenuItem howToUse = new JMenuItem ("How To Use"); 
         howToUse.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent event){
                 System.out.println("how to use clicked"); 
+                JTextPane howPane = new JTextPane(); 
+                JScrollPane howScroll = new JScrollPane(howPane, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED); 
+
+                howPane.setContentType("text/html"); 
+                howPane.setBackground(Color.LIGHT_GRAY); 
+                howPane.setEditable(false);
+                howPane.setText("<center><b><u>How to Use</u></b></center>" + "<br><br>" + 
+                "<center><b>Compare Tab</b></center><br>" + "<b>vs Characters</b> <br> To use this option, simply select the " +
+                "number of characters you would like to compare, and then select them from the dropdown menu. You can do this by clicking, or typing" + 
+                "the characters name. If you misclick or mistype, you can re-select from the dropdown menu.<br>" +
+                "<br><b>vs Averages </b> <br> On the left side of this tab, you will see a dropdown menu, with the average values on the right side." + 
+                "After selecting a character, you can compare the traits of each move of the character you picked to the averages. <br><br>" + 
+                "<center><b>View Tab</b></center><br>" + "<b>Tier List </b> <br> Press this to view the tier list. Character icons are ordered within the tiers.<br>" + 
+                "<br><b> Individual Character Data </b><br>" + "To use this option, simply select a character from the dropdown menu by scrolling and clicking on" + 
+                "a character or typing their name. You can re-select a character if you misclick or mistype." + "<br><br>" +
+                "<center><b> Rank Moves </b></center> <br>" + "<b> All Options </b> <br>" + "All of the options in this submenu work the same way." + 
+                "Simply select a character by clicking on, or typing a characters name after interacting with the dropdown menu. After doing so, you" + 
+                "will see data show up for the character that you selected. You can re-select a character if you misclick or mistype. <br>"
+                
+                ); 
+
+                frame.getContentPane().removeAll(); 
+                
+                
+                frame.getContentPane().add(BorderLayout.NORTH, menuBar); 
+                frame.getContentPane().add(BorderLayout.CENTER, howScroll); 
+                frame.setVisible(true); 
+
             }
         });
         
         help.add(howToUse); 
-        help.add(about); 
+        
 
         
         JTextPane defaultTP = new JTextPane();
