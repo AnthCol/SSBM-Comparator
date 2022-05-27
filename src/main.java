@@ -61,12 +61,10 @@ public class Main extends Character{
             "Jab 1", "Jab 2", "Jab 3", "Forward Tilt", "Up Tilt", "Down Tilt", 
             "Dash Attack", "Forward Smash", "Up Smash", "Down Smash", "Neutral Air", "Forward Air", "Back Air", "Up Air", "Down Air", 
             "Grounded Neutral B", "Aerial Neutral B", "Grounded Side B", "Aerial Side B", "Grounded Up B", "Aerial Up B", "Grounded Down B", "Aerial Down B", 
-            "Standing Grab", "Dash Grab", "Forward Throw", "Back Throw", "Down Throw", "Up Throw"
+            "Standing Grab", "Dash Grab", "Forward Throw", "Back Throw", "Down Throw", "Up Throw", "Spot Dodge", "Backwards Roll", "Forward Roll", "Air Dodge"
         }; 
-        String[] nonDamagingMoves = {
-            "Spot Dodge", "Backwards Roll", "Forwards Roll", "Air Dodge"
-        }; 
-        String[] charAttributes = {
+
+        String[] attributesList = {
             "Weight", "Fast Fall Speed", "Dash Speed", "Run Speed", "Wavedash Length (rank/26)", 
             "Perfect Ledgedash Intangibility Frames", "Jump Squat", "Wall Jump"
         }; 
@@ -142,7 +140,7 @@ public class Main extends Character{
 
         JMenu compare = new JMenu("Compare");
         JMenu view = new JMenu("View");
-        JMenu rank = new JMenu ("Rank Moves"); 
+        JMenu rank = new JMenu ("Rank"); 
         JMenu help = new JMenu("Help"); 
     
         menuBar.add(compare);
@@ -656,18 +654,18 @@ public class Main extends Character{
         view.add(indivData); 
     
 
-        JMenuItem damaging = new JMenuItem("Damaging Moves"); 
-        damaging.addActionListener(new ActionListener(){
+        JMenuItem charMoves = new JMenuItem("Moves"); 
+        charMoves.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent event){
-                JTextPane damagingPane = new JTextPane(); 
-                JScrollPane damagingScroll = new JScrollPane(damagingPane, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED); 
-                damagingPane.setContentType("text/html"); 
-                damagingPane.setBackground(Color.LIGHT_GRAY); 
-                damagingPane.setText("<br><br> <br><center><b> Select the type of attribute that you would like to rank. </b> </center>"); 
+                JTextPane movePane = new JTextPane(); 
+                JScrollPane moveScroll = new JScrollPane(movePane, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED); 
+                movePane.setContentType("text/html"); 
+                movePane.setBackground(Color.LIGHT_GRAY); 
+                movePane.setText("<br><br> <br><center><b> Select the category that you would like to rank. </b> </center>"); 
                 JComboBox<String> rankOptions = new JComboBox<>(rankingOptions); 
                 rankOptions.setBounds((frame.getContentPane().getWidth() / 2 ) - 65, 85, 130, 30); 
-                damagingPane.add(rankOptions); 
-                damagingPane.setEditable(false);
+                movePane.add(rankOptions); 
+                movePane.setEditable(false);
                 rankOptions.addActionListener(new ActionListener(){
                     public void actionPerformed(ActionEvent event){
                         String selection = rankOptions.getSelectedItem().toString(); 
@@ -682,10 +680,10 @@ public class Main extends Character{
                         System.out.println("PRINTING I " + index + "PRINTING CHARNAME" + characters[index].charName); 
                         System.out.println(selection); 
                         JComboBox<String> moveOptions = new JComboBox<>(damagingMoves); 
-                        damagingPane.setText("<center><b><br><br>" + "'" + selection + "'" + " selected. </b><br>Please select a move. " + "</center>"); 
-                        damagingPane.remove(rankOptions); 
+                        movePane.setText("<center><b><br><br>" + "'" + selection + "'" + " selected. </b><br>Please select a move. " + "</center>"); 
+                        movePane.remove(rankOptions); 
                         moveOptions.setBounds((frame.getContentPane().getWidth() / 2 ) - 75, 85, 145, 30); 
-                        damagingPane.add(moveOptions); 
+                        movePane.add(moveOptions); 
                         moveOptions.addActionListener(new ActionListener(){
                             public void actionPerformed(ActionEvent event){
                                 String selection = rankOptions.getSelectedItem().toString(); 
@@ -710,23 +708,66 @@ public class Main extends Character{
 
                         frame.getContentPane().removeAll(); 
                         frame.getContentPane().add(BorderLayout.NORTH, menuBar); 
-                        frame.getContentPane().add(BorderLayout.CENTER, damagingScroll); 
+                        frame.getContentPane().add(BorderLayout.CENTER, moveScroll); 
                         frame.setVisible(true); 
                         // ADD ANOTHER COMBOBOX HERE WITH THE DAMAGING MOVES, INSIDE OF THE PUBLIC VOID, AND FIX IT SO THAT IT DOES THE THING ** FIX ME** 
                     }
                 });
                 frame.getContentPane().removeAll(); 
                 frame.getContentPane().add(BorderLayout.NORTH, menuBar);
-                frame.getContentPane().add(BorderLayout.CENTER, damagingScroll);  
+                frame.getContentPane().add(BorderLayout.CENTER, moveScroll);  
                 frame.setVisible(true); 
                 
 
             }
         }); 
-        JMenuItem nonDamaging = new JMenuItem("Non-Damaging Moves"); 
 
-        rank.add(damaging); 
-        rank.add(nonDamaging); 
+        JMenuItem charAttributes = new JMenuItem("Attributes"); 
+        charAttributes.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent event){
+                JTextPane attributePane = new JTextPane(); 
+                attributePane.setContentType("text/html"); 
+                attributePane.setBackground(Color.LIGHT_GRAY); 
+                attributePane.setEditable(false); 
+                attributePane.setText("<center><b><br><br>Please select the character attribute you would like to rank.</b> </center>"); 
+                JScrollPane attributeScroll = new JScrollPane(attributePane, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED); 
+                JComboBox<String> attributeCombo = new JComboBox<>(attributesList); 
+
+                attributeCombo.setBounds((frame.getContentPane().getWidth() / 2 ) - 128, 85, 250, 30); 
+
+                attributePane.add(attributeCombo);
+
+                attributeCombo.addActionListener(new ActionListener(){
+                    public void actionPerformed(ActionEvent event){
+                        String selection = attributeCombo.getSelectedItem().toString(); 
+                        System.out.println(selection + "printing selection"); 
+                        int index = 0; 
+                        for (int i = 0; i < 4; i++){  // check which character was selected 
+                            if (selection == attributesList[i]){
+                                index = i; 
+                                i = 4; // break should also work
+                            }
+                        }
+                        System.out.println("PRINTING I " + index + "PRINTING CHARNAME" + characters[index].charName); 
+                        System.out.println(selection); 
+                                /*
+                                
+                                                    NEED TO MAKE IT DISPLAY SOMETHING AT THIS POINT HERE **FIX ME**
+
+                                */
+                    }
+                }); 
+
+                frame.getContentPane().removeAll(); 
+                frame.getContentPane().add(BorderLayout.NORTH, menuBar); 
+                frame.getContentPane().add(BorderLayout.CENTER, attributeScroll); 
+                frame.setVisible(true); 
+            }
+        }); 
+
+
+        rank.add(charMoves); 
+        rank.add(charAttributes); 
 
         JMenuItem howToUse = new JMenuItem ("How To Use"); 
         howToUse.addActionListener(new ActionListener(){
