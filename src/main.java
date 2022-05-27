@@ -57,6 +57,19 @@ public class Main extends Character{
 
         // **FIX ME** BE ABLE TO COMPARE CHARACTERS TO AVERAGES 
 
+        String[] moveOptions = {
+            "Jab 1", "Jab 2", "Jab 3", "Forward Tilt", "Up Tilt", "Down Tilt", 
+            "Dash Attack", "Forward Smash", "Up Smash", "Down Smash", "Neutral Air", "Forward Air", "Back Air", "Up Air", "Down Air", 
+            "Grounded Neutral B", "Aerial Neutral B", "Grounded Side B", "Aerial Side B", "Grounded Up B", "Aerial Up B", "Grounded Down B", "Aerial Down B", 
+            "Standing Grab", "Dash Grab", "Forward Throw", "Back Throw", "Down Throw", "Up Throw"
+        }; 
+        String[] miscOptions = {
+            "Spot Dodge", "Backwards Roll", "Forwards Roll", "Air Dodge", "Weight", "Fast Fall Speed", "Dash Speed", "Run Speed", "Wavedash Length (rank/26)", 
+            "Perfect Ledgedash Intangibility Frames", "Jump Squat", "Wall Jump"
+        }; 
+
+        // might need to move backwards and fowards roll around with air dodge so that spot dodge and air dodge are next to one another
+        // and that way it will be less scuffed, this involves using the charData.txt file entry properly as well. 
 
 
         String[] charOptions = {
