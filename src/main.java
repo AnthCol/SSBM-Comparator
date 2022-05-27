@@ -52,7 +52,7 @@ public class Main extends Character{
         }
         catch(Exception ex) {
             // swag
-        } */
+        }  */
         
 
         // **FIX ME** BE ABLE TO COMPARE CHARACTERS TO AVERAGES 
@@ -404,8 +404,7 @@ public class Main extends Character{
                 comparePane.setEditable(false);
                 comparePane.setBackground(Color.LIGHT_GRAY); 
                 frame.getContentPane().removeAll();
-                frame.add(comparePane); 
-               // frame.add(compareScroll);      ????????????? **FIX ME** 
+                frame.add(compareScroll);      
                 frame.getContentPane().add(BorderLayout.NORTH, menuBar);
                 frame.setVisible(true); 
 
