@@ -525,61 +525,33 @@ public class Main extends Character{
 
 
         JMenuItem tierList = new JMenuItem("Tier List"); 
-        // lines below used to be in the action listener 
-        JTextPane tierListPane = new JTextPane(); 
-        JScrollPane tierListScroll = new JScrollPane(tierListPane, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED); 
-        tierListPane.setBackground(Color.LIGHT_GRAY);
-        tierListPane.setContentType("text/html"); 
-        String info = "<html>"+
-                "<body><center><strong><u><font size=30px>13th Official SSBM Tier List - March 29th, 2021 (Ordered)</font></u></strong><center><br><br>"+ 
-                "<center>(S)&nbsp" + "&nbsp" + imageSources[0] +  "&nbsp" + imageSources[1] +  "&nbsp" + imageSources[2] + "&nbsp" + imageSources[3] + 
-                "<br><br>(A)&nbsp" + "&nbsp" + imageSources[4] + "&nbsp" + imageSources[5] + "&nbsp" + imageSources[6] + 
-                "<br><br>(B+)&nbsp" + "&nbsp" + imageSources[7] + "&nbsp" + imageSources[8] + "&nbsp" + imageSources[9] + "&nbsp" + imageSources[10] +
-                "<br><br>(B-)&nbsp" + "&nbsp" + imageSources[11] + "&nbsp" + imageSources[12] +
-                "<br><br>(C+)&nbsp" + "&nbsp" + imageSources[13] + "&nbsp" + imageSources[14] +
-                "<br><br>(C-)&nbsp" + "&nbsp" + imageSources[15] + "&nbsp" + imageSources[16] + "&nbsp" + imageSources[17] + "&nbsp" + imageSources[18] +
-                "<br><br>(D)&nbsp" + "&nbsp" + imageSources[19] + "&nbsp" + imageSources[20] + "&nbsp" + imageSources[21] + "&nbsp" + imageSources[22] + "&nbsp" + imageSources[23] +
-                "<br><br>(F)&nbsp" + "&nbsp" + imageSources[24] + "&nbsp" + imageSources[25] +
-                "<br><br><br><br><br>"+
-                "<strong>Source:</strong> https://www.ssbwiki.com/List_of_SSBM_tier_lists_(NTSC)"+
-                "<br>"+
-                "</center></body></html>"; 
-                /* FINALLY FIGURED OUT HOW TO LOAD SHIT LOCALLY THANK FUCK HOPEFULLY IT WILL BE A LOT FASTER NOW SWAG SWAG 360 SWAG FIX ME */
-                
-
+       
         tierList.addActionListener (new ActionListener(){
             public void actionPerformed(ActionEvent event){
                 System.out.println("tier list clicked"); 
-             //   JScrollBar scrollBar = new JScrollBar(); 
-              //  JScrollPane TLScroll = new JScrollPane(); 
-              /*  TLScroll.add(scrollBar); 
-                TLScroll.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED); 
-                TLScroll.setViewport(viewport); 
-                scrollBar.addAdjustmentListener(new AdjustmentListener(){
-                    public void adjustment (AdjustmentEvent event){
-                        
-                    }
-                });  */
-               
-              //  TLScroll.setViewportView(tierListPane); 
-             //   Font tierListFont = new Font("Century Gothic", Font.PLAIN, 24);   // THIS DOES NOT WORK ON TEXT/HTML CONTENT TYPE, AND NEITHER DOES CSS
-               // tierListPane.setFont(tierListFont); 
-               
-                // might need to use JScrollPane for the images                 **FIX ME**     HOW THE FUCK DO YOU CHANGE THE FONT SIZE!?!?!!?!??!?!?!!??!?!?!
-                // **FIX ME** MIGHT NEED TO COMPLETELY END UP TAKING OUT THE TEXT/HTML SHIT AND CHANGING IT TO DEFAULT ANDY AND LOAD IMAGES LOCALLY SOMEHOW
-                
-               // tierListPane.setFont(tierListFont); 
-                /*imageSources[0] */
-                
+                // lines below used to be in the action listener 
+                JTextPane tierListPane = new JTextPane(); 
+                JScrollPane tierListScroll = new JScrollPane(tierListPane, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED); 
+                tierListPane.setBackground(Color.LIGHT_GRAY);
+                tierListPane.setContentType("text/html"); 
+                     String info = "<html>"+
+                        "<body><center><strong><u><font size=30px>13th Official SSBM Tier List - March 29th, 2021 (Ordered)</font></u></strong><center><br><br>"+ 
+                        "<center>(S)&nbsp" + "&nbsp" + imageSources[0] +  "&nbsp" + imageSources[1] +  "&nbsp" + imageSources[2] + "&nbsp" + imageSources[3] + 
+                        "<br><br>(A)&nbsp" + "&nbsp" + imageSources[4] + "&nbsp" + imageSources[5] + "&nbsp" + imageSources[6] + 
+                        "<br><br>(B+)&nbsp" + "&nbsp" + imageSources[7] + "&nbsp" + imageSources[8] + "&nbsp" + imageSources[9] + "&nbsp" + imageSources[10] +
+                        "<br><br>(B-)&nbsp" + "&nbsp" + imageSources[11] + "&nbsp" + imageSources[12] +
+                        "<br><br>(C+)&nbsp" + "&nbsp" + imageSources[13] + "&nbsp" + imageSources[14] +
+                        "<br><br>(C-)&nbsp" + "&nbsp" + imageSources[15] + "&nbsp" + imageSources[16] + "&nbsp" + imageSources[17] + "&nbsp" + imageSources[18] +
+                        "<br><br>(D)&nbsp" + "&nbsp" + imageSources[19] + "&nbsp" + imageSources[20] + "&nbsp" + imageSources[21] + "&nbsp" + imageSources[22] + "&nbsp" + imageSources[23] +
+                        "<br><br>(F)&nbsp" + "&nbsp" + imageSources[24] + "&nbsp" + imageSources[25] +
+                        "<br><br><br><br><br>" +
+                        "<strong>Source:</strong> https://www.ssbwiki.com/List_of_SSBM_tier_lists_(NTSC)" +
+                        "<br>" + "</center></body></html>"; 
                 frame.getContentPane().removeAll();
-                
                 tierListPane.setText(info); 
                 tierListPane.setEditable(false);
-                // USED TO BE HERE 
-              //  frame.getContentPane().add(BorderLayout.SOUTH, panel);
                 frame.add(tierListScroll); 
                 frame.getContentPane().add(BorderLayout.NORTH, menuBar);
-                //frame.getContentPane().add(BorderLayout.CENTER, tierListPane);  
                 frame.setVisible(true); 
             }
         }); 
@@ -602,7 +574,7 @@ public class Main extends Character{
                 then you end up with the window resizing back to the original size. 
 
                 */
-       // charMenu.setSelectedIndex(1);   is this really needed?
+       
 
         indivData.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent event){
@@ -611,14 +583,9 @@ public class Main extends Character{
                 
                 /*
                 if the charData.txt file reads in the characters in the order of the current tier list, then no second string needs to be created. 
-                Then you can just have the loop run, and have the index go in the order of the tier list. 
-
-                Advanta
-
+                Then you can just have the loop run, and have the index go in the order of the tier list.
                 */
-                
-                
-                
+
                 charMenu.addActionListener(new ActionListener(){
                     
                     public void actionPerformed(ActionEvent event){
@@ -696,7 +663,7 @@ public class Main extends Character{
                 JScrollPane damagingScroll = new JScrollPane(damagingPane, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED); 
                 damagingPane.setContentType("text/html"); 
                 damagingPane.setBackground(Color.LIGHT_GRAY); 
-                damagingPane.setText("SWAG SWAG"); 
+                damagingPane.setText("<br><br> <br><center><b> Select the type of attribute that you would like to rank. </b> </center>"); 
                 JComboBox<String> rankOptions = new JComboBox<>(rankingOptions); 
                 rankOptions.setBounds((frame.getContentPane().getWidth() / 2 ) - 65, 85, 130, 30); 
                 damagingPane.add(rankOptions); 
@@ -714,7 +681,37 @@ public class Main extends Character{
                         }
                         System.out.println("PRINTING I " + index + "PRINTING CHARNAME" + characters[index].charName); 
                         System.out.println(selection); 
+                        JComboBox<String> moveOptions = new JComboBox<>(damagingMoves); 
+                        damagingPane.setText("<center><b><br><br>" + "'" + selection + "'" + " selected. </b><br>Please select a move. " + "</center>"); 
+                        damagingPane.remove(rankOptions); 
+                        moveOptions.setBounds((frame.getContentPane().getWidth() / 2 ) - 75, 85, 145, 30); 
+                        damagingPane.add(moveOptions); 
+                        moveOptions.addActionListener(new ActionListener(){
+                            public void actionPerformed(ActionEvent event){
+                                String selection = rankOptions.getSelectedItem().toString(); 
+                                    System.out.println(selection + "printing selection"); 
+                                    int index = 0; 
+                                     for (int i = 0; i < 4; i++){  // check which character was selected 
+                                        if (selection == rankingOptions[i]){
+                                            index = i; 
+                                            i = 4; // break should also work
+                                        }
+                                    }
+                                System.out.println("PRINTING I " + index + "PRINTING CHARNAME" + characters[index].charName); 
+                                System.out.println(selection); 
+                                /*
+                                
+                                                    NEED TO MAKE IT DISPLAY SOMETHING AT THIS POINT HERE **FIX ME**
 
+                                */
+                            }
+                        }); 
+                        
+
+                        frame.getContentPane().removeAll(); 
+                        frame.getContentPane().add(BorderLayout.NORTH, menuBar); 
+                        frame.getContentPane().add(BorderLayout.CENTER, damagingScroll); 
+                        frame.setVisible(true); 
                         // ADD ANOTHER COMBOBOX HERE WITH THE DAMAGING MOVES, INSIDE OF THE PUBLIC VOID, AND FIX IT SO THAT IT DOES THE THING ** FIX ME** 
                     }
                 });
@@ -741,19 +738,19 @@ public class Main extends Character{
                 howPane.setContentType("text/html"); 
                 howPane.setBackground(Color.LIGHT_GRAY); 
                 howPane.setEditable(false);
-                howPane.setText("<center><b><u>How to Use</u></b></center>" + "<br><br>" + 
-                "<center><b>Compare Tab</b></center><br>" + "<b>vs Characters</b> <br> To use this option, simply select the " +
+                howPane.setText("<center><b><u>HOW TO USE</u></b></center>" + "<br><br>" + 
+                "<center><b><u>Compare Tab</u></b></center><br>" + "<b>vs Characters</b> <br> To use this option, simply select the " +
                 "number of characters you would like to compare, and then select them from the dropdown menu. You can do this by clicking, or typing" + 
                 "the characters name. If you misclick or mistype, you can re-select from the dropdown menu.<br>" +
                 "<br><b>vs Averages </b> <br> On the left side of this tab, you will see a dropdown menu, with the average values on the right side." + 
                 "After selecting a character, you can compare the traits of each move of the character you picked to the averages. <br><br>" + 
-                "<center><b>View Tab</b></center><br>" + "<b>Tier List </b> <br> Press this to view the tier list. Character icons are ordered within the tiers.<br>" + 
+                "<center><b><u>View Tab</u></b></center><br>" + "<b>Tier List </b> <br> Press this to view the tier list. Character icons are ordered within the tiers.<br>" + 
                 "<br><b> Individual Character Data </b><br>" + "To use this option, simply select a character from the dropdown menu by scrolling and clicking on" + 
                 "a character or typing their name. You can re-select a character if you misclick or mistype." + "<br><br>" +
-                "<center><b> Rank Moves </b></center> <br>" + "<b> All Options </b> <br>" + "All of the options in this submenu work the same way." + 
+                "<center><b><u>Rank Moves</u></b></center> <br>" + "<b> All Options </b> <br>" + "All of the options in this submenu work the same way." + 
                 "Simply select a character by clicking on, or typing a characters name after interacting with the dropdown menu. After doing so, you" + 
-                "will see data show up for the character that you selected. You can re-select a character if you misclick or mistype. <br>"
-                
+                "will see data show up for the character that you selected. FIX ME FIX ME FIX ME You can re-select a character if you misclick or mistype. <br>"
+                            // ** FIX ME ** THIS NEEDS TO BE FIXED FOR THE RANKING PART SINCE THAT WAS CHANGED FROM THE ORIGINAL DESIGN 
                 ); 
 
                 frame.getContentPane().removeAll(); 
