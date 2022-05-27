@@ -694,23 +694,42 @@ public class Main extends Character{
         baseDmg.addActionListener (new ActionListener(){
             public void actionPerformed(ActionEvent event){
                 JTextPane baseDmgPane = new JTextPane(); 
-          
-                // will need to do a JScrollPane here 
+                JScrollPane baseDmgScroll = new JScrollPane(baseDmgPane, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
                 baseDmgPane.setContentType("text/html");
-         
                 baseDmgPane.setBackground(Color.LIGHT_GRAY);
-                baseDmgPane.setText("<br><br><br><br><center>Select a move from the menu: </center>");
-           
-                baseDmgPane.setEditable(false);
-            
-                frame.add(baseDmgPane); 
+                baseDmgPane.setText("<br><br><br><center>Select a move from the menu: </center>");
                 
+                JComboBox<String> moves = new JComboBox<>(moveOptions); 
+
+                moves.addActionListener(new ActionListener(){
+                    public void actionPerformed(ActionEvent event){
+                        String selection = moves.getSelectedItem().toString(); 
+                        System.out.println(selection + "printing selection"); 
+                        int index = 0; 
+                        for (int i = 0; i < 26; i++){  // check which character was selected 
+                            if (selection == moveOptions[i]){
+                                index = i; // WHY IS THIS ALWAYS ZERO. MIGHT FIX ITSELF WHEN THE CHARDATAFILE IS FINISHED **FIX ME**
+                                i = 26; // break should also work
+                                // to add the picture NEED TO ADD A STRING THAT HAS THE IMAGE DEPENDING ON INDEX. SWITCH STATMENT MAYBE **FIX ME**
+                                // so that is can be added properly to the set text statement below. 
+                            }
+                        }
+                        System.out.println("PRINTING I " + index + "PRINTING CHARNAME" + characters[index].charName); 
+                        
+                        textPaneIndiv.setText("swag"); 
+                        System.out.println(selection); 
+                    }
+                });
+
+                moves.setBounds((frame.getContentPane().getWidth() / 2 ) - 65, 85, 130, 30); 
+                baseDmgPane.add(moves); 
+
+                baseDmgPane.setEditable(false);
                 frame.getContentPane().removeAll(); 
-             //   frame.getContentPane().add(BorderLayout.SOUTH, panel);
                 frame.getContentPane().add(BorderLayout.NORTH, menuBar);
-                frame.getContentPane().add(BorderLayout.CENTER, baseDmgPane);  
-           
+                frame.getContentPane().add(BorderLayout.CENTER, baseDmgScroll);  
                 frame.setVisible(true); 
+
                 System.out.println("baseDmg clicked"); 
             }
         }); 
@@ -720,6 +739,43 @@ public class Main extends Character{
         startingF.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent event){
                 System.out.println("starting frames clicked"); 
+                JTextPane baseDmgPane = new JTextPane(); 
+                JScrollPane baseDmgScroll = new JScrollPane(baseDmgPane, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+                baseDmgPane.setContentType("text/html");
+                baseDmgPane.setBackground(Color.LIGHT_GRAY);
+                baseDmgPane.setText("<br><br><br><center>Select a move from the menu: </center>");
+                
+                JComboBox<String> moves = new JComboBox<>(moveOptions); 
+
+                moves.addActionListener(new ActionListener(){
+                    public void actionPerformed(ActionEvent event){
+                        String selection = moves.getSelectedItem().toString(); 
+                        System.out.println(selection + "printing selection"); 
+                        int index = 0; 
+                        for (int i = 0; i < 100; i++){  // check which character was selected 
+                            if (selection == moveOptions[i]){
+                                index = i; // WHY IS THIS ALWAYS ZERO. MIGHT FIX ITSELF WHEN THE CHARDATAFILE IS FINISHED **FIX ME**
+                                i = 100; // break should also work
+                                // to add the picture NEED TO ADD A STRING THAT HAS THE IMAGE DEPENDING ON INDEX. SWITCH STATMENT MAYBE **FIX ME**
+                                // so that is can be added properly to the set text statement below. 
+                            }
+                        }
+                        System.out.println("PRINTING I " + index + "PRINTING CHARNAME" + characters[index].charName); 
+                        
+                        textPaneIndiv.setText("swag"); 
+                        System.out.println(selection); 
+                    }
+                });
+
+                moves.setBounds((frame.getContentPane().getWidth() / 2 ) - 65, 85, 130, 30); 
+                baseDmgPane.add(moves); 
+
+                baseDmgPane.setEditable(false);
+                frame.getContentPane().removeAll(); 
+                frame.getContentPane().add(BorderLayout.NORTH, menuBar);
+                frame.getContentPane().add(BorderLayout.CENTER, baseDmgScroll);  
+                frame.setVisible(true); 
+                
             }
         });
 
@@ -727,6 +783,43 @@ public class Main extends Character{
         activeF.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent event){
                 System.out.println("active frames clicked"); 
+                JTextPane baseDmgPane = new JTextPane(); 
+                JScrollPane baseDmgScroll = new JScrollPane(baseDmgPane, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+                baseDmgPane.setContentType("text/html");
+                baseDmgPane.setBackground(Color.LIGHT_GRAY);
+                baseDmgPane.setText("<br><br><br><center>Select a move from the menu: </center>");
+                
+                JComboBox<String> moves = new JComboBox<>(moveOptions); 
+
+                moves.addActionListener(new ActionListener(){
+                    public void actionPerformed(ActionEvent event){
+                        String selection = moves.getSelectedItem().toString(); 
+                        System.out.println(selection + "printing selection"); 
+                        int index = 0; 
+                        for (int i = 0; i < 100; i++){  // check which character was selected 
+                            if (selection == moveOptions[i]){
+                                index = i; // WHY IS THIS ALWAYS ZERO. MIGHT FIX ITSELF WHEN THE CHARDATAFILE IS FINISHED **FIX ME**
+                                i = 100; // break should also work
+                                // to add the picture NEED TO ADD A STRING THAT HAS THE IMAGE DEPENDING ON INDEX. SWITCH STATMENT MAYBE **FIX ME**
+                                // so that is can be added properly to the set text statement below. 
+                            }
+                        }
+                        System.out.println("PRINTING I " + index + "PRINTING CHARNAME" + characters[index].charName); 
+                        
+                        textPaneIndiv.setText("swag"); 
+                        System.out.println(selection); 
+                    }
+                });
+
+                moves.setBounds((frame.getContentPane().getWidth() / 2 ) - 65, 85, 130, 30); 
+                baseDmgPane.add(moves); 
+
+                baseDmgPane.setEditable(false);
+                frame.getContentPane().removeAll(); 
+                frame.getContentPane().add(BorderLayout.NORTH, menuBar);
+                frame.getContentPane().add(BorderLayout.CENTER, baseDmgScroll);  
+                frame.setVisible(true); 
+
             }
         });
 
@@ -734,8 +827,101 @@ public class Main extends Character{
         endingF.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent event){
                 System.out.println("ending frames clicked"); 
+                JTextPane baseDmgPane = new JTextPane(); 
+                JScrollPane baseDmgScroll = new JScrollPane(baseDmgPane, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+                baseDmgPane.setContentType("text/html");
+                baseDmgPane.setBackground(Color.LIGHT_GRAY);
+                baseDmgPane.setText("<br><br><br><center>Select a move from the menu: </center>");
+                
+                JComboBox<String> moves = new JComboBox<>(moveOptions); 
+
+                moves.addActionListener(new ActionListener(){
+                    public void actionPerformed(ActionEvent event){
+                        String selection = moves.getSelectedItem().toString(); 
+                        System.out.println(selection + "printing selection"); 
+                        int index = 0; 
+                        for (int i = 0; i < 100; i++){  // check which character was selected 
+                            if (selection == moveOptions[i]){
+                                index = i; // WHY IS THIS ALWAYS ZERO. MIGHT FIX ITSELF WHEN THE CHARDATAFILE IS FINISHED **FIX ME**
+                                i = 100; // break should also work
+                                // to add the picture NEED TO ADD A STRING THAT HAS THE IMAGE DEPENDING ON INDEX. SWITCH STATMENT MAYBE **FIX ME**
+                                // so that is can be added properly to the set text statement below. 
+                            }
+                        }
+                        System.out.println("PRINTING I " + index + "PRINTING CHARNAME" + characters[index].charName); 
+                        
+                        textPaneIndiv.setText("swag"); 
+                        System.out.println(selection); 
+                    }
+                });
+
+                moves.setBounds((frame.getContentPane().getWidth() / 2 ) - 65, 85, 130, 30); 
+                baseDmgPane.add(moves); 
+
+                baseDmgPane.setEditable(false);
+                frame.getContentPane().removeAll(); 
+                frame.getContentPane().add(BorderLayout.NORTH, menuBar);
+                frame.getContentPane().add(BorderLayout.CENTER, baseDmgScroll);  
+                frame.setVisible(true); 
+
             }
         });
+
+        JMenuItem misc = new JMenuItem ("Misc"); 
+        /*
+        The problem here is that maybe it would be better to have multiple options
+        -> Do you want to rank damaging moves?
+        
+        yes -> by waht 
+        no -> by what 
+
+        And make it a lot simpler that way. 
+
+
+        */
+        misc.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent event){
+                System.out.println("misc"); 
+                JTextPane baseDmgPane = new JTextPane(); 
+                JScrollPane baseDmgScroll = new JScrollPane(baseDmgPane, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+                baseDmgPane.setContentType("text/html");
+                baseDmgPane.setBackground(Color.LIGHT_GRAY);
+                baseDmgPane.setText("<br><br><br><center>Select a move from the menu: </center>");
+                
+                JComboBox<String> moves = new JComboBox<>(miscOptions); 
+
+                moves.addActionListener(new ActionListener(){
+                    public void actionPerformed(ActionEvent event){
+                        String selection = moves.getSelectedItem().toString(); 
+                        System.out.println(selection + "printing selection"); 
+                        int index = 0; 
+                        for (int i = 0; i < 100; i++){  // check which character was selected 
+                            if (selection == miscOptions[i]){
+                                index = i; // WHY IS THIS ALWAYS ZERO. MIGHT FIX ITSELF WHEN THE CHARDATAFILE IS FINISHED **FIX ME**
+                                i = 100; // break should also work
+                                // to add the picture NEED TO ADD A STRING THAT HAS THE IMAGE DEPENDING ON INDEX. SWITCH STATMENT MAYBE **FIX ME**
+                                // so that is can be added properly to the set text statement below. 
+                            }
+                        }
+                        System.out.println("PRINTING I " + index + "PRINTING CHARNAME" + characters[index].charName); 
+                        
+                        textPaneIndiv.setText("swag"); 
+                        System.out.println(selection); 
+                    }
+                });
+
+                moves.setBounds((frame.getContentPane().getWidth() / 2 ) - 65, 85, 130, 30); 
+                baseDmgPane.add(moves); 
+
+                baseDmgPane.setEditable(false);
+                frame.getContentPane().removeAll(); 
+                frame.getContentPane().add(BorderLayout.NORTH, menuBar);
+                frame.getContentPane().add(BorderLayout.CENTER, baseDmgScroll);  
+                frame.setVisible(true); 
+
+
+            }
+        }); 
 
   
 
@@ -743,6 +929,8 @@ public class Main extends Character{
         rank.add(startingF); 
         rank.add(activeF); 
         rank.add(endingF);
+        rank.add(misc); 
+
 
        
         JMenuItem howToUse = new JMenuItem ("How To Use"); 
