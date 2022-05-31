@@ -358,6 +358,17 @@ public class Main extends Character{
                 right.setEditable(false); 
                 right.setText("<center> <br><b>Averages: </b></center>"); 
 
+                // adding code to calcualtor averages
+
+                float[] averages = new float[133]; 
+
+                for (int i = 0; i < 133; i++){
+                    for (int x = 0; x < 26; x++){
+                        averages[i] += characters[x].values[i]; 
+                    }
+                    averages[i] /= 26; 
+                }
+
                 // ** FIX ME ** need to add the code to calculate the averages here so it can be done. 
                 averagePane.add(right, constraints); 
 
@@ -665,7 +676,7 @@ public class Main extends Character{
 
                         float tempFloat = 0; 
                         int tempInt = 0; 
-                        float[] attributeArray = new float[26]; 
+                        float[] attributeArray = new float[27]; 
                         
                         // bubble sort for now, switch to mergesort for the other things with th elarge values. 
 
@@ -681,12 +692,19 @@ public class Main extends Character{
                                     attributeArray[x+1] = tempFloat; 
     
                                     tempInt = charIndices[x]; 
-                                    charIndices [x] = charIndices[x+1]; 
+                                    charIndices[x] = charIndices[x+1]; 
                                     charIndices[x+1] = tempInt; 
                                 }
                             }
                         }
 
+                        // need a loop to reset charIndices at the end of this ** FIX ME **
+
+                        System.out.println("PRINTING SHIT"); 
+
+                        for (int i = 0; i < 26; i++){
+                            System.out.println(attributeArray[i]); 
+                        }
                         /*
                             At this point we need to create two arrays
                             one that tracks the character index, and one that sorts the values. 
