@@ -173,8 +173,8 @@ public class Main extends Character{
                        
                 JTextPane char1 = new JTextPane(); 
                 char1.setContentType("text/html"); 
-                constraints.ipady = 450; 
-                constraints.weightx = 0.5; 
+                constraints.ipady = 650; 
+                constraints.weightx = 5.0; 
                 constraints.fill = GridBagConstraints.HORIZONTAL;
                 constraints.gridx = 0; 
                 constraints.gridy = 0; 
@@ -331,18 +331,19 @@ public class Main extends Character{
                 JTextPane right = new JTextPane(); 
 
                 
-                constraints.weightx = 0.5; 
+                constraints.weightx = 5.0; 
                 constraints.fill = GridBagConstraints.HORIZONTAL;
                 constraints.ipady = 400; 
-                constraints.ipadx = 70; 
+                constraints.ipadx = 0; // 70 
                 constraints.gridx = 0; 
                 constraints.gridy = 0;
                 left.setContentType("text/html"); 
                 left.setBackground(Color.LIGHT_GRAY); 
-                left.setText("<center><b><br>Select a character</b></center>"); 
+                left.setText("<center><br><b>Select a character</b></center>"); 
                 left.setEditable(false); 
-                
-                charSelect.setBounds(left.getWidth() + 177, 60, 130, 30); 
+                //charSelect.setBounds(left.getWidth() + 170, 65, 150, 30); 
+                charSelect.setBounds((frame.getContentPane().getWidth() / 4 ) - 63, 65, 135, 30); 
+                // **FIX ME** this kind of thing still wont centre properly
                 left.add(charSelect); 
                 averagePane.add(left, constraints); 
 
@@ -351,7 +352,7 @@ public class Main extends Character{
                 right.setContentType("text/html"); 
                 right.setBackground(Color.LIGHT_GRAY); 
                 right.setEditable(false); 
-                right.setText("<center> <b>Averages: </b></center>"); 
+                right.setText("<center> <br><b>Averages: </b></center>"); 
 
                 // ** FIX ME ** need to add the code to calculate the averages here so it can be done. 
                 averagePane.add(right, constraints); 
@@ -360,7 +361,6 @@ public class Main extends Character{
 
                 charSelect.addActionListener(new ActionListener(){
                     public void actionPerformed(ActionEvent event){
-
                         String selection = charSelect.getSelectedItem().toString(); 
                         System.out.println(selection + "printing selection"); 
                         int index = 0; 
@@ -374,7 +374,7 @@ public class Main extends Character{
                         System.out.println("PRINTING I " + index + "PRINTING CHARNAME" + characters[index].charName); 
                         String tempString = imageSources[index].substring(0, imageSources[index].length() - 1); 
                         tempString = tempString + "width = '40' height ='40'>"; 
-                        String compareText = "<center>" + "<br><br><br><br><br>" + tempString + "<br>" + 
+                        String compareText = "<center>" + "<br><br><br><br><br><br>" + tempString + "<br>" + 
                             "<br><strong>&nbsp Jab 1:</strong>" + 
                             "<br> &nbsp Damage: " + characters[index].values[0] + "%" + 
                             "<br> &nbsp Startup Frames: " + characters[index].values[1] + 
@@ -389,9 +389,9 @@ public class Main extends Character{
 
 
                 frame.getContentPane().removeAll(); 
-                left.setVisible(true);
-                right.setVisible(true); 
-                frame.add(averageScroll);  // which to use here? pane or scroll?
+             //   left.setVisible(true);
+               // right.setVisible(true); 
+                frame.add(averageScroll);  
                 frame.getContentPane().add(BorderLayout.NORTH, menuBar); 
                 frame.setVisible(true); 
 
@@ -659,19 +659,19 @@ public class Main extends Character{
                 howPane.setContentType("text/html"); 
                 howPane.setBackground(Color.LIGHT_GRAY); 
                 howPane.setEditable(false);
-                howPane.setText("<center><b><u>HOW TO USE</u></b></center>" + "<br><br>" + 
-                "<center><b><u>Compare Tab</u></b></center><br>" + "<b>vs Characters</b> <br> To use this option, simply select the " +
-                "number of characters you would like to compare, and then select them from the dropdown menu. You can do this by clicking, or typing" + 
+                howPane.setText("<center><b><u>HOW TO USE</u></b></center>" + "" + 
+                "<center><b><i>Compare Tab</i></b></center><br>" + "<b>vs Characters</b> <br> To use this option, simply select the " +
+                "characters you want to compare from the dropdown menu. You can do this by clicking, or typing" + 
                 "the characters name. If you misclick or mistype, you can re-select from the dropdown menu.<br>" +
                 "<br><b>vs Averages </b> <br> On the left side of this tab, you will see a dropdown menu, with the average values on the right side." + 
                 "After selecting a character, you can compare the traits of each move of the character you picked to the averages. <br><br>" + 
-                "<center><b><u>View Tab</u></b></center><br>" + "<b>Tier List </b> <br> Press this to view the tier list. Character icons are ordered within the tiers.<br>" + 
+                "<center><b><i>View Tab</i></b></center><br>" + "<b>Tier List </b> <br> Press this to view the tier list. Character icons are ordered within the tiers.<br>" + 
                 "<br><b> Individual Character Data </b><br>" + "To use this option, simply select a character from the dropdown menu by scrolling and clicking on" + 
                 "a character or typing their name. You can re-select a character if you misclick or mistype." + "<br><br>" +
-                "<center><b><u>Rank Moves</u></b></center> <br>" + "<b> All Options </b> <br>" + "All of the options in this submenu work the same way." + 
-                "Simply select a character by clicking on, or typing a characters name after interacting with the dropdown menu. After doing so, you" + 
-                "will see data show up for the character that you selected. FIX ME FIX ME FIX ME You can re-select a character if you misclick or mistype. <br>"
-                            // ** FIX ME ** THIS NEEDS TO BE FIXED FOR THE RANKING PART SINCE THAT WAS CHANGED FROM THE ORIGINAL DESIGN 
+                "<center><b><i>Rank</i></b></center> <br>" + "<b> Moves </b> <br>" +
+                "First, select the attribute of the move you would like to compare, then the program will bring you to another menu where you can select a move.<br><br>" +
+                "<b>Attributes</b><br>" + 
+                "In this case, simply select an attribute from the dropdown menu, and data will appear. You can re-select if you misclick or mistype"
                 ); 
 
                 frame.getContentPane().removeAll(); 
