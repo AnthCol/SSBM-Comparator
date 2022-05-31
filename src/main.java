@@ -48,6 +48,10 @@ public class Main extends Character{
 
         readFile(characters); 
 
+        int[] charIndices = new int[26]; 
+        for (int i = 0; i < 26; i++){
+            charIndices[i] = i; 
+        }
         
         
 
@@ -659,12 +663,30 @@ public class Main extends Character{
                             break; 
                         }
 
-                        int tempVal = 0; 
-                        // bubble sort for now. 
+                        float tempFloat = 0; 
+                        int tempInt = 0; 
+                        float[] attributeArray = new float[26]; 
                         
-                        for (int i = 0; i < 26; i++){
+                        // bubble sort for now, switch to mergesort for the other things with th elarge values. 
 
+                        for (int i = 0; i < 26; i++){
+                            attributeArray[i] = characters[i].values[whichAttribute]; 
                         }
+
+                        for (int i = 0; i < 26 - 1; i++){
+                            for (int x = 0; x < 26-i-1; x++){
+                                if (attributeArray[x] > attributeArray[x+1]){
+                                    tempFloat = attributeArray[i]; 
+                                    attributeArray[x] = attributeArray[x+1]; 
+                                    attributeArray[x+1] = tempFloat; 
+    
+                                    tempInt = charIndices[x]; 
+                                    charIndices [x] = charIndices[x+1]; 
+                                    charIndices[x+1] = tempInt; 
+                                }
+                            }
+                        }
+
                         /*
                             At this point we need to create two arrays
                             one that tracks the character index, and one that sorts the values. 
