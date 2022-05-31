@@ -175,35 +175,14 @@ public class Main extends Character{
 
                 GridBagConstraints constraints = new GridBagConstraints(); 
                 
-                JButton addChar1 = new JButton("+"); 
+                       
+                JTextPane char1 = new JTextPane(); 
+                char1.setContentType("text/html"); 
+                constraints.ipady = 450; 
                 constraints.weightx = 0.5; 
                 constraints.fill = GridBagConstraints.HORIZONTAL;
                 constraints.gridx = 0; 
                 constraints.gridy = 0; 
-                comparePane.add(addChar1, constraints); 
-
-                JButton addChar2 = new JButton("+"); 
-                constraints.gridx = 1;
-                constraints.gridy = 0; 
-                comparePane.add(addChar2, constraints); 
-
-                JButton addChar3 = new JButton("+"); 
-                constraints.gridx = 2;
-                constraints.gridy = 0; 
-                comparePane.add(addChar3, constraints); 
-
-                JButton addChar4 = new JButton("+"); 
-                constraints.gridx = 3;
-                constraints.gridy = 0; 
-                comparePane.add(addChar4, constraints);
-
-                JTextPane char1 = new JTextPane(); 
-                char1.setContentType("text/html"); 
-             //   constraints.fill = GridBagConstraints.HORIZONTAL; 
-                constraints.ipady = 450; 
-                constraints.weightx = 0.5; 
-                constraints.gridx = 0; 
-                constraints.gridy = 1; 
                 comparePane.add(char1, constraints);  
                 char1.setBackground(Color.LIGHT_GRAY); 
                 char1.setText("<br>"); 
@@ -212,7 +191,7 @@ public class Main extends Character{
                 JTextPane char2 = new JTextPane(); 
                 char2.setContentType("text/html");
                 constraints.gridx = 1; 
-                constraints.gridy = 1; 
+                constraints.gridy = 0; 
                 comparePane.add(char2, constraints); 
                 char2.setBackground(Color.LIGHT_GRAY); 
                 char2.setText("<br>"); 
@@ -221,7 +200,7 @@ public class Main extends Character{
                 JTextPane char3 = new JTextPane(); 
                 char3.setContentType("text/html"); 
                 constraints.gridx = 2; 
-                constraints.gridy = 1; 
+                constraints.gridy = 0; 
                 comparePane.add(char3, constraints); 
                 char3.setBackground(Color.LIGHT_GRAY); 
                 char3.setText("<br>"); 
@@ -230,44 +209,26 @@ public class Main extends Character{
                 JTextPane char4 = new JTextPane(); 
                 char4.setContentType("text/html"); 
                 constraints.gridx = 3; 
-                constraints.gridy = 1; 
+                constraints.gridy = 0; 
                 comparePane.add(char4, constraints); 
                 char4.setBackground(Color.LIGHT_GRAY); 
                 char4.setText("<br>"); 
                 char4.setEditable(false);
                
-                // array of JComboBox's to make this less code????? is that possible???? **FIX ME**
                 
-                addChar1.addActionListener (new ActionListener(){
-                    public void actionPerformed(ActionEvent event){
-                        System.out.println("CHAR 1 ADDITION CLICKED"); 
-                        JComboBox<String> char1Combo = new JComboBox<>(charOptions); 
-                        
-                        /*GridBagConstraints constraints2 = new GridBagConstraints(); 
-                        constraints2.fill = GridBagConstraints.HORIZONTAL;  */
-                        char1.removeAll(); //????????????????????????????????????????????????????????????????????????????????????????????
-                        char1.setText(""); //????????????????????????????????????????????????????????????????????????????????????????????
-                        char1Combo.setBounds((frame.getContentPane().getWidth() / 8 ) - 65, 50, 130, 30); // get content pane of char1 width and divide it by two to centre it ?? **fix me** 
-                        // OR WHOLE FRAME 1/4 OF IT LIKE DONE WITH INDIIVDIAUL CAR AND HALF OF IT 
-                        char1.add(char1Combo); 
-                        char1.setVisible(true); 
+                
+        
+                System.out.println("CHAR 1 ADDITION CLICKED"); 
+                JComboBox<String> char1Combo = new JComboBox<>(charOptions); 
+                char1.removeAll(); 
+                char1.setText(""); 
+                char1Combo.setBounds((frame.getContentPane().getWidth() / 8 ) - 65, 50, 130, 30); // get content pane of char1 width and divide it by two to centre it ?? **fix me** 
+                char1.add(char1Combo); 
+                char1.setVisible(true); 
 
-                           /*
-                        constraints.fill = GridBagConstraints.HORIZONTAL; 
-                        constraints.ipady = 450; // remember, might need to change this value 
-                        constraints.weightx = 0.5; 
-                        constraints.gridx = 0; 
-                        constraints.gridy = 1; 
-                        char1Combo.setBounds(30, 50, 130, 30); 
-                        char1Combo.setVisible(true); 
-                        char1.setText(""); 
-                        char1.add(char1Combo); 
-                        comparePane.add(char1, constraints);  */
-                        // ADD ALL THE GARBO HERE **fix me
-                      //  frame.pack();  // something with frame pack here is weird. 
-                        char1Combo.addActionListener(new ActionListener(){
-                            public void actionPerformed(ActionEvent event){
-                                System.out.println("CHAR1 COMPARISION COMBO BOX CLICKED"); 
+                char1Combo.addActionListener(new ActionListener(){
+                    public void actionPerformed(ActionEvent event){
+                        System.out.println("CHAR1 COMPARISION COMBO BOX CLICKED"); 
                           /* when this is clicked, all of the buttons get removed, do i need
                           to add them back? */
                               
@@ -295,129 +256,108 @@ public class Main extends Character{
                             }
                         }); 
 
-                    }
-                }); 
-                addChar2.addActionListener (new ActionListener(){
+       
+                JComboBox<String> char2Combo = new JComboBox<>(charOptions); 
+                char2.removeAll(); 
+                char2.setText(""); 
+                char2Combo.setBounds((frame.getContentPane().getWidth() / 8 ) - 65, 50, 130, 30); 
+                char2.add(char2Combo); 
+                char2Combo.addActionListener(new ActionListener(){
                     public void actionPerformed(ActionEvent event){
-                        JComboBox<String> char2Combo = new JComboBox<>(charOptions); 
-                        char2.removeAll(); 
-                        char2.setText(""); 
-                        char2Combo.setBounds((frame.getContentPane().getWidth() / 8 ) - 65, 50, 130, 30); 
-                        char2.add(char2Combo); 
-                        char2Combo.addActionListener(new ActionListener(){
-
+                        System.out.println("CHAR1 COMPARISION COMBO BOX CLICKED"); 
                         
-
-                            public void actionPerformed(ActionEvent event){
-                                System.out.println("CHAR1 COMPARISION COMBO BOX CLICKED"); 
-                          /* when this is clicked, all of the buttons get removed, do i need
-                          to add them back? */
                               
-                                int index = 0; 
-                                String selection = char2Combo.getSelectedItem().toString(); // should it not alreayd be a string???? **FIX ME**
-                                for (int i = 0; i < 26; i++){
-                                    if (selection == characters[i].charName){
-                                        index = i; 
-                                        i = 26; 
-                                    }
-                                }
+                        int index = 0; 
+                        String selection = char2Combo.getSelectedItem().toString(); // should it not alreayd be a string???? **FIX ME**
+                        for (int i = 0; i < 26; i++){
+                            if (selection == characters[i].charName){
+                                index = i; 
+                                i = 26; 
+                            }
+                        }
                         
-                                String tempString = imageSources[index].substring(0, imageSources[index].length() - 1); 
-                                tempString = tempString + "width = '40' height ='40'>"; 
-                                String compareText = "<center>" + "<br><br><br><br><br>" + tempString + "<br>" + 
-                                "<br><strong>&nbsp Jab 1:</strong>" + 
-                                "<br> &nbsp Damage: " + characters[index].values[0] + "%" + 
-                                "<br> &nbsp Startup Frames: " + characters[index].values[1] + 
-                                "<br> &nbsp Active Frames: " + characters[index].values[2] + 
-                                "<br> &nbsp Ending Frames: " + characters[index].values[3];  
+                        String tempString = imageSources[index].substring(0, imageSources[index].length() - 1); 
+                        tempString = tempString + "width = '40' height ='40'>"; 
+                        String compareText = "<center>" + "<br><br><br><br><br>" + tempString + "<br>" + 
+                        "<br><strong>&nbsp Jab 1:</strong>" + 
+                        "<br> &nbsp Damage: " + characters[index].values[0] + "%" + 
+                        "<br> &nbsp Startup Frames: " + characters[index].values[1] + 
+                        "<br> &nbsp Active Frames: " + characters[index].values[2] + 
+                        "<br> &nbsp Ending Frames: " + characters[index].values[3];  
                                 // maybe turn this big thing into a string so it can be re-used **fix me**
-                                char2.setText(compareText); 
+                        char2.setText(compareText); 
                             
                                 // SCROLL PANE DOES NOT WORK, AND THIS LOOKS AWFUL. NEED TO MAKE IT SO ADDITION BUTTONS DONT GO AWAY WHEN YOU SELECT A CHARACTER. 
+                        }
+                    }); 
+
+                JComboBox<String> char3Combo = new JComboBox<>(charOptions); 
+                char3.removeAll(); 
+                char3.setText(""); 
+                char3Combo.setBounds((frame.getContentPane().getWidth() / 8 ) - 65, 50, 130, 30); 
+                char3.add(char3Combo); 
+                char3Combo.addActionListener(new ActionListener(){
+                     public void actionPerformed(ActionEvent event){
+                            System.out.println("CHAR1 COMPARISION COMBO BOX CLICKED"); 
+                            int index = 0; 
+                            String selection = char3Combo.getSelectedItem().toString(); // should it not alreayd be a string???? **FIX ME**
+                            for (int i = 0; i < 26; i++){
+                                if (selection == characters[i].charName){
+                                    index = i; 
+                                    i = 26; 
+                                }
                             }
-                        }); 
+                        
+                            String tempString = imageSources[index].substring(0, imageSources[index].length() - 1); 
+                            tempString = tempString + "width = '40' height ='40'>"; 
+                            String compareText = "<center>" + "<br><br><br><br><br>" + tempString + "<br>" + 
+                            "<br><strong>&nbsp Jab 1:</strong>" + 
+                            "<br> &nbsp Damage: " + characters[index].values[0] + "%" + 
+                            "<br> &nbsp Startup Frames: " + characters[index].values[1] + 
+                            "<br> &nbsp Active Frames: " + characters[index].values[2] + 
+                            "<br> &nbsp Ending Frames: " + characters[index].values[3];  
+                                // maybe turn this big thing into a string so it can be re-used **fix me**
+                            char3.setText(compareText); 
+                            
+                            
                     }
                 }); 
-                addChar3.addActionListener (new ActionListener(){
+           
+          
+                JComboBox<String> char4Combo = new JComboBox<>(charOptions); 
+                char4.removeAll(); 
+                char4.setText(""); 
+                char4Combo.setBounds((frame.getContentPane().getWidth() / 8 ) - 65, 50, 130, 30); 
+                char4.add(char4Combo); 
+                char4Combo.addActionListener(new ActionListener(){
                     public void actionPerformed(ActionEvent event){
-                        JComboBox<String> char3Combo = new JComboBox<>(charOptions); 
-                        char3.removeAll(); 
-                        char3.setText(""); 
-                        char3Combo.setBounds((frame.getContentPane().getWidth() / 8 ) - 65, 50, 130, 30); 
-                        char3.add(char3Combo); 
-                        char3Combo.addActionListener(new ActionListener(){
-
-                        
-
-                            public void actionPerformed(ActionEvent event){
-                                System.out.println("CHAR1 COMPARISION COMBO BOX CLICKED"); 
+                        System.out.println("CHAR1 COMPARISION COMBO BOX CLICKED"); 
                           /* when this is clicked, all of the buttons get removed, do i need
                           to add them back? */
-                              
-                                int index = 0; 
-                                String selection = char3Combo.getSelectedItem().toString(); // should it not alreayd be a string???? **FIX ME**
-                                for (int i = 0; i < 26; i++){
-                                    if (selection == characters[i].charName){
-                                        index = i; 
-                                        i = 26; 
-                                    }
-                                }
+                        int index = 0; 
+                        String selection = char4Combo.getSelectedItem().toString(); // should it not alreayd be a string???? **FIX ME**
+                        for (int i = 0; i < 26; i++){
+                            if (selection == characters[i].charName){
+                                index = i; 
+                                i = 26; 
+                            }
+                        }
                         
-                                String tempString = imageSources[index].substring(0, imageSources[index].length() - 1); 
-                                tempString = tempString + "width = '40' height ='40'>"; 
-                                String compareText = "<center>" + "<br><br><br><br><br>" + tempString + "<br>" + 
-                                "<br><strong>&nbsp Jab 1:</strong>" + 
-                                "<br> &nbsp Damage: " + characters[index].values[0] + "%" + 
-                                "<br> &nbsp Startup Frames: " + characters[index].values[1] + 
-                                "<br> &nbsp Active Frames: " + characters[index].values[2] + 
-                                "<br> &nbsp Ending Frames: " + characters[index].values[3];  
+                        String tempString = imageSources[index].substring(0, imageSources[index].length() - 1); 
+                        tempString = tempString + "width = '40' height ='40'>"; 
+                        String compareText = "<center>" + "<br><br><br><br><br>" + tempString + "<br>" + 
+                        "<br><strong>&nbsp Jab 1:</strong>" + 
+                        "<br> &nbsp Damage: " + characters[index].values[0] + "%" + 
+                        "<br> &nbsp Startup Frames: " + characters[index].values[1] + 
+                        "<br> &nbsp Active Frames: " + characters[index].values[2] + 
+                        "<br> &nbsp Ending Frames: " + characters[index].values[3];  
                                 // maybe turn this big thing into a string so it can be re-used **fix me**
-                                char3.setText(compareText); 
+                        char4.setText(compareText); 
                             
                                 // SCROLL PANE DOES NOT WORK, AND THIS LOOKS AWFUL. NEED TO MAKE IT SO ADDITION BUTTONS DONT GO AWAY WHEN YOU SELECT A CHARACTER. 
-                            }
-                        }); 
                     }
                 }); 
-                addChar4.addActionListener (new ActionListener(){
-                    public void actionPerformed(ActionEvent event){
-                        JComboBox<String> char4Combo = new JComboBox<>(charOptions); 
-                        char4.removeAll(); 
-                        char4.setText(""); 
-                        char4Combo.setBounds((frame.getContentPane().getWidth() / 8 ) - 65, 50, 130, 30); 
-                        char4.add(char4Combo); 
-                        char4Combo.addActionListener(new ActionListener(){
-
-                            public void actionPerformed(ActionEvent event){
-                                System.out.println("CHAR1 COMPARISION COMBO BOX CLICKED"); 
-                          /* when this is clicked, all of the buttons get removed, do i need
-                          to add them back? */
-                              
-                                int index = 0; 
-                                String selection = char4Combo.getSelectedItem().toString(); // should it not alreayd be a string???? **FIX ME**
-                                for (int i = 0; i < 26; i++){
-                                    if (selection == characters[i].charName){
-                                        index = i; 
-                                        i = 26; 
-                                    }
-                                }
-                        
-                                String tempString = imageSources[index].substring(0, imageSources[index].length() - 1); 
-                                tempString = tempString + "width = '40' height ='40'>"; 
-                                String compareText = "<center>" + "<br><br><br><br><br>" + tempString + "<br>" + 
-                                "<br><strong>&nbsp Jab 1:</strong>" + 
-                                "<br> &nbsp Damage: " + characters[index].values[0] + "%" + 
-                                "<br> &nbsp Startup Frames: " + characters[index].values[1] + 
-                                "<br> &nbsp Active Frames: " + characters[index].values[2] + 
-                                "<br> &nbsp Ending Frames: " + characters[index].values[3];  
-                                // maybe turn this big thing into a string so it can be re-used **fix me**
-                                char4.setText(compareText); 
-                            
-                                // SCROLL PANE DOES NOT WORK, AND THIS LOOKS AWFUL. NEED TO MAKE IT SO ADDITION BUTTONS DONT GO AWAY WHEN YOU SELECT A CHARACTER. 
-                            }
-                        }); 
-                    }
-                }); 
+            
                 comparePane.setEditable(false);
                 comparePane.setBackground(Color.LIGHT_GRAY); 
                 frame.getContentPane().removeAll();
