@@ -503,21 +503,6 @@ public class Main extends Character{
                 JScrollPane scrollPaneIndiv = new JScrollPane(textPaneIndiv, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED); 
                 textPaneIndiv.setBackground(Color.LIGHT_GRAY); 
                 textPaneIndiv.setText("<center><br>Select a character from the dropdown menu: </center>"); 
-            
-                /*
-                public void actionPerformed(ActionEvent event){
-                    if (event.getSource() == charMenu){
-                        String charInfo = (String)charMenu.getSelectedItem(); 
-                        for (int i = 0; i < 26; i++){
-                            if (charInfo == charOptions[i]){
-                                textPaneIndiv.setText("<center><br>Select a character from the dropdown menu: </center>"); 
-                                break; 
-                            }
-                        }
-                        
-                    }
-                }
-                */
 
                 textPaneIndiv.setEditable(false);
                 frame.getContentPane().removeAll(); 
@@ -550,13 +535,19 @@ public class Main extends Character{
                     public void actionPerformed(ActionEvent event){
                         String selection = rankOptions.getSelectedItem().toString(); 
                         System.out.println(selection + "printing selection"); 
-                        int index = 0; 
+                        
                         for (int i = 0; i < 4; i++){  // check which character was selected 
                             if (selection == rankingOptions[i]){
                                 index = i; 
                                 i = 4; // break should also work
                             }
                         }
+
+
+
+
+
+
                         System.out.println("PRINTING I " + index + "PRINTING CHARNAME" + characters[index].charName); 
                         System.out.println(selection); 
                         JComboBox<String> moveOptions = new JComboBox<>(damagingMoves); 
@@ -630,6 +621,59 @@ public class Main extends Character{
                         }
                         System.out.println("PRINTING I " + index + "PRINTING CHARNAME" + characters[index].charName); 
                         System.out.println(selection); 
+
+                        int whichAttribute = 0; 
+
+
+                        switch(selection){
+                            case "Weight":
+                            whichAttribute = 125; 
+                            break; 
+
+                            case "Fast Fall Speed":
+                                whichAttribute = 126; 
+                            break; 
+
+                            case "Dash Speed":
+                                whichAttribute = 127; 
+                            break; 
+
+                            case "Run Speed":
+                                whichAttribute = 128; 
+                            break; 
+
+                            case "Wavedash Length (rank/26)":
+                                whichAttribute = 129; 
+                            break; 
+
+                            case "Perfect Ledgedash Intangibility Frames":
+                                whichAttribute = 130; 
+                            break; 
+
+                            case "Jump Squat":
+                                whichAttribute = 131; 
+                            break; 
+
+                            case "Wall Jump":
+                                whichAttribute = 132; 
+                            break; 
+                        }
+
+                        int tempVal = 0; 
+                        // bubble sort for now. 
+                        
+                        for (int i = 0; i < 26; i++){
+
+                        }
+                        /*
+                            At this point we need to create two arrays
+                            one that tracks the character index, and one that sorts the values. 
+                            the indices need to be sorted alongside the values. 
+
+                            charIndices is found in main. 
+                            
+
+                        */
                                 /*
                                 
                                                     NEED TO MAKE IT DISPLAY SOMETHING AT THIS POINT HERE **FIX ME**
