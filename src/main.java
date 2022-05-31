@@ -31,12 +31,12 @@ do all of the readfile stuff inside of Main's main. */
 
 public class Main extends Character{
     
-   
+    static int index = 0; 
+    
     public static void main(String args[]) {
         
         Character[] characters = new Character[26]; 
-       /* double y = 5; 
-        System.out.println(String.format("%.0f", y));  for a value without decimals */
+        
         
         for (int i = 0; i < 26; i++){ // initialize everything so it can be passed to the readFile method
             characters[i] = new Character(); 
@@ -46,16 +46,11 @@ public class Main extends Character{
             }
         }
 
-        readFile(characters); // the reason I chose to read from a file here instead of actually just hardcoding the values is to learn how files work in java. 
-      /*  try{
-            UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
-        }
-        catch(Exception ex) {
-            // swag
-        }  */
+        readFile(characters); 
+
+        
         
 
-        // **FIX ME** BE ABLE TO COMPARE CHARACTERS TO AVERAGES 
 
         String[] damagingMoves = {
             "Jab 1", "Jab 2", "Jab 3", "Forward Tilt", "Up Tilt", "Down Tilt", 
@@ -225,14 +220,19 @@ public class Main extends Character{
                 char1Combo.setBounds((frame.getContentPane().getWidth() / 8 ) - 65, 50, 130, 30); // get content pane of char1 width and divide it by two to centre it ?? **fix me** 
                 char1.add(char1Combo); 
                 char1.setVisible(true); 
+                String tempString = imageSources[index].substring(0, imageSources[index].length() - 1); 
+                tempString = tempString + "width = '40' height ='40'>"; 
+                String compareText = "<center>" + "<br><br><br><br><br>" + tempString + "<br>" + 
+                    "<br><strong>&nbsp Jab 1:</strong>" + 
+                    "<br> &nbsp Damage: " + characters[index].values[0] + "%" + 
+                    "<br> &nbsp Startup Frames: " + characters[index].values[1] + 
+                    "<br> &nbsp Active Frames: " + characters[index].values[2] + 
+                    "<br> &nbsp Ending Frames: " + characters[index].values[3];  
+                
 
                 char1Combo.addActionListener(new ActionListener(){
                     public void actionPerformed(ActionEvent event){
                         System.out.println("CHAR1 COMPARISION COMBO BOX CLICKED"); 
-                          /* when this is clicked, all of the buttons get removed, do i need
-                          to add them back? */
-                              
-                                int index = 0; 
                                 String selection = char1Combo.getSelectedItem().toString(); // should it not alreayd be a string???? **FIX ME**
                                 for (int i = 0; i < 26; i++){
                                     if (selection == characters[i].charName){
@@ -240,19 +240,7 @@ public class Main extends Character{
                                         i = 26; 
                                     }
                                 }
-                        
-                                String tempString = imageSources[index].substring(0, imageSources[index].length() - 1); 
-                                tempString = tempString + "width = '40' height ='40'>"; 
-                                String compareText = "<center>" + "<br><br><br><br><br>" + tempString + "<br>" + 
-                                "<br><strong>&nbsp Jab 1:</strong>" + 
-                                "<br> &nbsp Damage: " + characters[index].values[0] + "%" + 
-                                "<br> &nbsp Startup Frames: " + characters[index].values[1] + 
-                                "<br> &nbsp Active Frames: " + characters[index].values[2] + 
-                                "<br> &nbsp Ending Frames: " + characters[index].values[3];  
-                                // maybe turn this big thing into a string so it can be re-used **fix me**
-                                char1.setText(compareText); 
-                            
-                                // SCROLL PANE DOES NOT WORK, AND THIS LOOKS AWFUL. NEED TO MAKE IT SO ADDITION BUTTONS DONT GO AWAY WHEN YOU SELECT A CHARACTER. 
+                                char1.setText(compareText);  
                             }
                         }); 
 
@@ -265,9 +253,6 @@ public class Main extends Character{
                 char2Combo.addActionListener(new ActionListener(){
                     public void actionPerformed(ActionEvent event){
                         System.out.println("CHAR1 COMPARISION COMBO BOX CLICKED"); 
-                        
-                              
-                        int index = 0; 
                         String selection = char2Combo.getSelectedItem().toString(); // should it not alreayd be a string???? **FIX ME**
                         for (int i = 0; i < 26; i++){
                             if (selection == characters[i].charName){
@@ -275,19 +260,7 @@ public class Main extends Character{
                                 i = 26; 
                             }
                         }
-                        
-                        String tempString = imageSources[index].substring(0, imageSources[index].length() - 1); 
-                        tempString = tempString + "width = '40' height ='40'>"; 
-                        String compareText = "<center>" + "<br><br><br><br><br>" + tempString + "<br>" + 
-                        "<br><strong>&nbsp Jab 1:</strong>" + 
-                        "<br> &nbsp Damage: " + characters[index].values[0] + "%" + 
-                        "<br> &nbsp Startup Frames: " + characters[index].values[1] + 
-                        "<br> &nbsp Active Frames: " + characters[index].values[2] + 
-                        "<br> &nbsp Ending Frames: " + characters[index].values[3];  
-                                // maybe turn this big thing into a string so it can be re-used **fix me**
                         char2.setText(compareText); 
-                            
-                                // SCROLL PANE DOES NOT WORK, AND THIS LOOKS AWFUL. NEED TO MAKE IT SO ADDITION BUTTONS DONT GO AWAY WHEN YOU SELECT A CHARACTER. 
                         }
                     }); 
 
@@ -299,7 +272,6 @@ public class Main extends Character{
                 char3Combo.addActionListener(new ActionListener(){
                      public void actionPerformed(ActionEvent event){
                             System.out.println("CHAR1 COMPARISION COMBO BOX CLICKED"); 
-                            int index = 0; 
                             String selection = char3Combo.getSelectedItem().toString(); // should it not alreayd be a string???? **FIX ME**
                             for (int i = 0; i < 26; i++){
                                 if (selection == characters[i].charName){
@@ -307,19 +279,7 @@ public class Main extends Character{
                                     i = 26; 
                                 }
                             }
-                        
-                            String tempString = imageSources[index].substring(0, imageSources[index].length() - 1); 
-                            tempString = tempString + "width = '40' height ='40'>"; 
-                            String compareText = "<center>" + "<br><br><br><br><br>" + tempString + "<br>" + 
-                            "<br><strong>&nbsp Jab 1:</strong>" + 
-                            "<br> &nbsp Damage: " + characters[index].values[0] + "%" + 
-                            "<br> &nbsp Startup Frames: " + characters[index].values[1] + 
-                            "<br> &nbsp Active Frames: " + characters[index].values[2] + 
-                            "<br> &nbsp Ending Frames: " + characters[index].values[3];  
-                                // maybe turn this big thing into a string so it can be re-used **fix me**
                             char3.setText(compareText); 
-                            
-                            
                     }
                 }); 
            
@@ -332,9 +292,6 @@ public class Main extends Character{
                 char4Combo.addActionListener(new ActionListener(){
                     public void actionPerformed(ActionEvent event){
                         System.out.println("CHAR1 COMPARISION COMBO BOX CLICKED"); 
-                          /* when this is clicked, all of the buttons get removed, do i need
-                          to add them back? */
-                        int index = 0; 
                         String selection = char4Combo.getSelectedItem().toString(); // should it not alreayd be a string???? **FIX ME**
                         for (int i = 0; i < 26; i++){
                             if (selection == characters[i].charName){
@@ -342,19 +299,7 @@ public class Main extends Character{
                                 i = 26; 
                             }
                         }
-                        
-                        String tempString = imageSources[index].substring(0, imageSources[index].length() - 1); 
-                        tempString = tempString + "width = '40' height ='40'>"; 
-                        String compareText = "<center>" + "<br><br><br><br><br>" + tempString + "<br>" + 
-                        "<br><strong>&nbsp Jab 1:</strong>" + 
-                        "<br> &nbsp Damage: " + characters[index].values[0] + "%" + 
-                        "<br> &nbsp Startup Frames: " + characters[index].values[1] + 
-                        "<br> &nbsp Active Frames: " + characters[index].values[2] + 
-                        "<br> &nbsp Ending Frames: " + characters[index].values[3];  
-                                // maybe turn this big thing into a string so it can be re-used **fix me**
                         char4.setText(compareText); 
-                            
-                                // SCROLL PANE DOES NOT WORK, AND THIS LOOKS AWFUL. NEED TO MAKE IT SO ADDITION BUTTONS DONT GO AWAY WHEN YOU SELECT A CHARACTER. 
                     }
                 }); 
             
@@ -427,20 +372,15 @@ public class Main extends Character{
                         }
                        
                         System.out.println("PRINTING I " + index + "PRINTING CHARNAME" + characters[index].charName); 
-                        
                         String tempString = imageSources[index].substring(0, imageSources[index].length() - 1); 
-                        tempString = tempString + "width='40' height='40'>"; 
-                        
-                        left.setText("<br><br><br><br><br><center>*Please Note: Any value that is '-1' is either unavailable, or does not exist*</center><br>" + 
-                        "<center>" + tempString +
-                        "<br><strong>&nbsp Jab 1:</strong>" + 
-                        "<br> &nbsp Damage: " + characters[index].values[0] + "%" + 
-                        "<br> &nbsp Startup Frames: " + characters[index].values[1] + 
-                        "<br> &nbsp Active Frames: " + characters[index].values[2] + 
-                        "<br> &nbsp Ending Frames: " + characters[index].values[3] +
-                        "</center>"
-                        
-                        ); 
+                        tempString = tempString + "width = '40' height ='40'>"; 
+                        String compareText = "<center>" + "<br><br><br><br><br>" + tempString + "<br>" + 
+                            "<br><strong>&nbsp Jab 1:</strong>" + 
+                            "<br> &nbsp Damage: " + characters[index].values[0] + "%" + 
+                            "<br> &nbsp Startup Frames: " + characters[index].values[1] + 
+                            "<br> &nbsp Active Frames: " + characters[index].values[2] + 
+                            "<br> &nbsp Ending Frames: " + characters[index].values[3];  
+                        left.setText(compareText); 
                         left.setVisible(true); 
                     }
                 });
