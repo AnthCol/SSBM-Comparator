@@ -358,7 +358,7 @@ public class Main extends Character{
                 right.setEditable(false); 
                 right.setText("<center> <br><b>Averages: </b></center>"); 
 
-                // adding code to calcualtor averages
+                
 
                 float[] averages = new float[133]; 
 
@@ -369,10 +369,12 @@ public class Main extends Character{
                     averages[i] /= 26; 
                 }
 
-                // ** FIX ME ** need to add the code to calculate the averages here so it can be done. 
-                averagePane.add(right, constraints); 
+                String averageString = ""; 
+                // NEED TO ADD ALL OF THE AVERAGES INTO THIS STRING LIKE : Jab 
+                // DAMAGE = ETC.  -> then add the numbers from the averages array into the string, then right.setText(averageString); and get rid of what
+                // is currently there. 
 
-      
+                averagePane.add(right, constraints); 
 
                 charSelect.addActionListener(new ActionListener(){
                     public void actionPerformed(ActionEvent event){
@@ -639,7 +641,7 @@ public class Main extends Character{
 
                         int whichAttribute = 0; 
 
-
+                        
                         switch(selection){
                             case "Weight":
                             whichAttribute = 125; 
@@ -698,8 +700,6 @@ public class Main extends Character{
                             }
                         }
 
-                        // need a loop to reset charIndices at the end of this ** FIX ME **
-
                         System.out.println("PRINTING SHIT"); 
 
                         for (int i = 0; i < 26; i++){
@@ -719,6 +719,11 @@ public class Main extends Character{
                                                     NEED TO MAKE IT DISPLAY SOMETHING AT THIS POINT HERE **FIX ME**
 
                                 */
+
+                        for (int i = 0; i < 26; i++){
+                            charIndices[i] = i; 
+                            // loop to reset this array for other use. 
+                        }
                     }
                 }); 
 
