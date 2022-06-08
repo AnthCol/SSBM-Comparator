@@ -24,10 +24,6 @@ do all of the readfile stuff inside of Main's main. */
 
 // VALUE WILL BE SET AS NEGATIVE ONE IF IT IS UNAVAILABLE/INCALCULABLE
 
-/* TO DO:
-    Create the GUI with functional buttons. 
-    Finish the charData.txt file (cringe! but needs to be done), hopefully can be done in a day 
-*/
 
 public class Main extends Character{
     
@@ -123,12 +119,6 @@ public class Main extends Character{
         imageSources[25] = "<img src='file:images/BowserHeadSSBM.png'>"; 
 
         JFrame frame = new JFrame("SSBM Comparator"); 
-       // JViewport viewport = new JViewport();
-     /*   JScrollBar vertical = new JScrollBar(JScrollBar.VERTICAL, 30, 40, 0, 500); 
-        vertical.addAdjustmentListener(new MyAdjustmentListener( )); // do something with scrollpane **FIXEME** */
-        // somewith with JScrollPane and ViewPort
-
-        // will need JScrollPane for some of the other pages in the app 
         JMenuBar menuBar = new JMenuBar();
         ImageIcon icon = new ImageIcon("./images/icon.png"); 
         
@@ -149,13 +139,9 @@ public class Main extends Character{
 
         JMenuItem vsCharacters = new JMenuItem ("vs Characters"); 
         JMenuItem vsAverage = new JMenuItem("vs Averages"); 
-       // JMenuItem threeChars = new JMenuItem("Three Characters"); 
-    //    JMenuItem fourChars = new JMenuItem("Four Characters");             ** FIX ME, may not be capable of doing four cahracters, considering how java swing works, we'll see
         compare.add(vsCharacters); 
         compare.add(vsAverage); 
 
-       // compare.add(threeChars); 
-      //  compare.add(fourChars);  
 
         JPanel panel = new JPanel(); 
         JLabel label = new JLabel("Created by Anthony Colaiacovo, May 2022");
@@ -356,10 +342,7 @@ public class Main extends Character{
                 right.setContentType("text/html"); 
                 right.setBackground(Color.LIGHT_GRAY); 
                 right.setEditable(false); 
-                right.setText("<center> <br><b>Averages: </b></center>"); 
-
-                
-
+               // right.setText("<center> <br><b>Averages: </b></center>");  // set this with average string
                 float[] averages = new float[133]; 
 
                 for (int i = 0; i < 133; i++){
@@ -369,10 +352,13 @@ public class Main extends Character{
                     averages[i] /= 26; 
                 }
 
-                String averageString = ""; 
+
+
+                String averageString = ("<center><br><b>Averages: </b></center>");  
                 // NEED TO ADD ALL OF THE AVERAGES INTO THIS STRING LIKE : Jab 
                 // DAMAGE = ETC.  -> then add the numbers from the averages array into the string, then right.setText(averageString); and get rid of what
                 // is currently there. 
+                right.setText(averageString); 
 
                 averagePane.add(right, constraints); 
 
@@ -705,20 +691,14 @@ public class Main extends Character{
                         for (int i = 0; i < 26; i++){
                             System.out.println(attributeArray[i]); 
                         }
-                        /*
-                            At this point we need to create two arrays
-                            one that tracks the character index, and one that sorts the values. 
-                            the indices need to be sorted alongside the values. 
 
-                            charIndices is found in main. 
-                            
-
-                        */
-                                /*
-                                
-                                                    NEED TO MAKE IT DISPLAY SOMETHING AT THIS POINT HERE **FIX ME**
-
-                                */
+                        // might not need images here tbh * perhaps unecessarily complex with the way i have set this up. would be easier to restart and do it that way 
+                        String ranking = "<center><br><br><br><br><br><br><br>"; 
+                        for (int i = 0; i < 26; i++){
+                            ranking += "<b>" + characters[charIndices[i]].charName + "</b>: " + attributeArray[i] + "<br>"; 
+                        }
+                        ranking += "</center>"; 
+                        attributePane.setText(ranking); 
 
                         for (int i = 0; i < 26; i++){
                             charIndices[i] = i; 
