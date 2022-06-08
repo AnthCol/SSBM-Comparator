@@ -690,18 +690,9 @@ public class Main extends Character{
                             }
                         }
 
-                        System.out.println("PRINTING SHIT"); 
-
-                     /*   for (int i = 0; i < 26; i++){
-                            System.out.println(attributeArray[i]); 
-                        } */
-
-                        // might not need images here tbh * perhaps unecessarily complex with the way i have set this up. would be easier to restart and do it that way 
-                        String ranking = "<font size = '4'><center><br><br><br>"; 
+                        String ranking = "<center><br><br><br>";  
                         String tempImage = ""; 
                         for (int i = 0; i < 26; i++){
-
-                            // add the images at the beginning 
                             
                             for (int x = 0; x < 26; x++){
                                 if (characters[charIndices[i]].charName.equals(charOptions[x])){
@@ -724,7 +715,7 @@ public class Main extends Character{
                             else{
                                 ranking += "#" + (i+1) + "<b>&nbsp&nbsp" + tempImage + "&nbsp" + "<i>" + characters[charIndices[i]].charName + "</i></b>: " + attributeArray[i] + "<br>"; 
                             }
-                            // maybe can add the images in here tbh
+                          
                         }
                         ranking += "</center><br>"; 
                         attributePane.setText(ranking); 
