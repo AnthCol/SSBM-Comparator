@@ -678,7 +678,7 @@ public class Main extends Character{
 
                         for (int i = 0; i < 26 - 1; i++){
                             for (int x = 0; x < 26-i-1; x++){
-                                if (attributeArray[x] > attributeArray[x+1]){
+                                if (attributeArray[x] >= attributeArray[x+1]){
                                     tempFloat = attributeArray[i]; 
                                     attributeArray[x] = attributeArray[x+1]; 
                                     attributeArray[x+1] = tempFloat; 
@@ -692,21 +692,41 @@ public class Main extends Character{
 
                         System.out.println("PRINTING SHIT"); 
 
-                        for (int i = 0; i < 26; i++){
+                     /*   for (int i = 0; i < 26; i++){
                             System.out.println(attributeArray[i]); 
-                        }
+                        } */
 
                         // might not need images here tbh * perhaps unecessarily complex with the way i have set this up. would be easier to restart and do it that way 
-                        String ranking = "<center><br><br><br>"; 
+                        String ranking = "<font size = '4'><center><br><br><br>"; 
+                        String tempImage = ""; 
                         for (int i = 0; i < 26; i++){
 
                             // add the images at the beginning 
+                            
+                            for (int x = 0; x < 26; x++){
+                                if (characters[charIndices[i]].charName.equals(charOptions[x])){
+                                    tempImage = imageSources[x]; 
+                                    break;
+                                }
+                            }
 
-                            ranking += "<b>" + characters[charIndices[i]].charName + "</b>: " + attributeArray[i] + "<br>"; 
 
+                            String walljump = ""; 
+                            if (whichAttribute == 132){
+                                if (attributeArray[i] == 1){
+                                    walljump = "Yes"; 
+                                }
+                                else{
+                                    walljump = "No"; 
+                                }
+                                ranking += "#" + (i+1) + "<b>&nbsp&nbsp" + tempImage + "&nbsp" + "<i>" + characters[charIndices[i]].charName + "</i></b>: " + walljump + "<br>";  
+                            } 
+                            else{
+                                ranking += "#" + (i+1) + "<b>&nbsp&nbsp" + tempImage + "&nbsp" + "<i>" + characters[charIndices[i]].charName + "</i></b>: " + attributeArray[i] + "<br>"; 
+                            }
                             // maybe can add the images in here tbh
                         }
-                        ranking += "</center>"; 
+                        ranking += "</center><br>"; 
                         attributePane.setText(ranking); 
 
                         for (int i = 0; i < 26; i++){
