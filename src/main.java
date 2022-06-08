@@ -613,6 +613,10 @@ public class Main extends Character{
 
                 attributeCombo.addActionListener(new ActionListener(){
                     public void actionPerformed(ActionEvent event){
+
+                        attributeCombo.setBounds((frame.getContentPane().getWidth() / 2 ) - 128, 25, 250, 30); 
+
+
                         String selection = attributeCombo.getSelectedItem().toString(); 
                         System.out.println(selection + "printing selection"); 
                         int index = 0; 
@@ -693,9 +697,14 @@ public class Main extends Character{
                         }
 
                         // might not need images here tbh * perhaps unecessarily complex with the way i have set this up. would be easier to restart and do it that way 
-                        String ranking = "<center><br><br><br><br><br><br><br>"; 
+                        String ranking = "<center><br><br><br>"; 
                         for (int i = 0; i < 26; i++){
+
+                            // add the images at the beginning 
+
                             ranking += "<b>" + characters[charIndices[i]].charName + "</b>: " + attributeArray[i] + "<br>"; 
+
+                            // maybe can add the images in here tbh
                         }
                         ranking += "</center>"; 
                         attributePane.setText(ranking); 
