@@ -44,6 +44,7 @@ public class Main extends Character{
 
         readFile(characters); 
 
+
         int[] charIndices = new int[26]; 
         for (int i = 0; i < 26; i++){
             charIndices[i] = i; 
@@ -123,8 +124,8 @@ public class Main extends Character{
         ImageIcon icon = new ImageIcon("./images/icon.png"); 
         
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(1000, 615);
-        frame.setMinimumSize(new Dimension(950, 600)); 
+        frame.setSize(1000, 650); // 615
+        frame.setMinimumSize(new Dimension(1000, 600)); 
         frame.setIconImage(icon.getImage()); 
 
         JMenu compare = new JMenu("Compare");
@@ -676,9 +677,9 @@ public class Main extends Character{
                             attributeArray[i] = characters[i].values[whichAttribute]; 
                         }
 
-                        for (int i = 0; i < 26 - 1; i++){
-                            for (int x = 0; x < 26-i-1; x++){
-                                if (attributeArray[x] >= attributeArray[x+1]){
+                        for (int i = 0; i < 26; i++){
+                            for (int x = 0; x < 26; x++){ // optimize this   **FIX ME SOMETHING IS WRONG HERE** 
+                                if (attributeArray[x] <= attributeArray[x+1]){
                                     tempFloat = attributeArray[i]; 
                                     attributeArray[x] = attributeArray[x+1]; 
                                     attributeArray[x+1] = tempFloat; 
@@ -824,8 +825,12 @@ class Character {
             //C:/Users/tonyc/OneDrive/University Files/Personal Projects/SSBM COMPARATOR/src/
             File file = new File ("./src/charData.txt"); 
             Scanner fileReader = new Scanner(file);
-            while (index < 2 && fileReader.hasNextLine()){ 
-                if (index == 1 || index == 2 || index == 3 || index == 7 || index == 14 || index == 24){ // **FIX ME, MAKE IT RELATIVE TO THE TIER LIST**
+            while (fileReader.hasNextLine()){  // index < 2
+
+                // **fIX ME ** NEEDS TO MAKE SURE IT READS PROPERLY 
+
+                //if (index == 1 || index == 2 || index == 3 || index == 7 || index == 14 || index == 24){ // **FIX ME, MAKE IT RELATIVE TO THE TIER LIST**
+                if (index >= 1){  
                     characters[index].charName = fileReader.next(); 
                     characters[index].charName = characters[index].charName.concat(" "); 
                     characters[index].charName = characters[index].charName.concat(fileReader.next()); 
