@@ -214,11 +214,11 @@ public class Main extends Character{
                 String tempString = imageSources[index].substring(0, imageSources[index].length() - 1); 
                 tempString = tempString + "width = '40' height ='40'>"; 
                 String compareText = "<center>" + "<br><br><br><br><br>" + tempString + "<br>" + 
-                    "<br><strong>&nbsp Jab 1:</strong>" + 
-                    "<br> &nbsp Damage: " + characters[index].values[0] + "%" + 
-                    "<br> &nbsp Startup Frames: " + characters[index].values[1] + 
-                    "<br> &nbsp Active Frames: " + characters[index].values[2] + 
-                    "<br> &nbsp Ending Frames: " + characters[index].values[3];  
+                    "<br><strong><i>&nbsp Jab 1:</i></strong>" + 
+                    "<br> &nbsp Damage: <b>" + characters[index].values[0] + "% </b>" + 
+                    "<br> &nbsp Startup Frames:<b> " + characters[index].values[1] + "</b>" +
+                    "<br> &nbsp Active Frames:<b> " + characters[index].values[2] + "</b>" +
+                    "<br> &nbsp Ending Frames:<b> " + characters[index].values[3] + "</b>";  
                 
 
                 char1Combo.addActionListener(new ActionListener(){
@@ -449,6 +449,7 @@ public class Main extends Character{
                 //charMenu.addActionListener(charMenu); 
         frame.pack(); 
         charMenu.setBounds((frame.getContentPane().getWidth() / 2 ) - 65, 65, 130, 30); 
+        
                 /* this is a bullshit solution to get the frame centred, it would be nice in the future to make it not an absolute position 
                 
                 **FIX ME**
@@ -474,6 +475,7 @@ public class Main extends Character{
                         String selection = charMenu.getSelectedItem().toString(); 
                         System.out.println(selection + "printing selection"); 
                         int index = 0; 
+                        charMenu.setBounds((frame.getContentPane().getWidth() / 2 ) - 65, 65, 130, 30); 
                         for (int i = 0; i < 26; i++){  // check which character was selected 
                             if (selection == characters[i].charName){
                                 index = i; // WHY IS THIS ALWAYS ZERO. MIGHT FIX ITSELF WHEN THE CHARDATAFILE IS FINISHED **FIX ME**
@@ -822,7 +824,6 @@ class Character {
         //Character character = new Character(); 
         int index = 0; 
         try{
-            //C:/Users/tonyc/OneDrive/University Files/Personal Projects/SSBM COMPARATOR/src/
             File file = new File ("./src/charData.txt"); 
             Scanner fileReader = new Scanner(file);
             while (fileReader.hasNextLine()){  // index < 2
