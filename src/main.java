@@ -208,7 +208,7 @@ public class Main extends Character{
                 JComboBox<String> char1Combo = new JComboBox<>(charOptions); 
                 char1.removeAll(); 
                 char1.setText(""); 
-                char1Combo.setBounds((frame.getContentPane().getWidth() / 8 ) - 65, 50, 130, 30); // get content pane of char1 width and divide it by two to centre it ?? **fix me** 
+                char1Combo.setBounds((frame.getContentPane().getWidth() / 8 ) - 65, 50, 130, 30); // get content  pane of char1 width and divide it by two to centre it ?? **fix me** 
                 char1.add(char1Combo); 
                 char1.setVisible(true); 
                 String tempString = imageSources[index].substring(0, imageSources[index].length() - 1); 
