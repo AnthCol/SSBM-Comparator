@@ -202,13 +202,15 @@ public class Main extends Character{
                 char4.setEditable(false);
                
                 
-                
+                String fillerData = "<center>" + "<br><br><br><br><br>" + "<img src='file:images/FightingWireFramesHeadSSBM.png'>" +
+                "<br><br> <b> Select a Character To See Data</b>"; 
         
                 System.out.println("CHAR 1 ADDITION CLICKED"); 
                 JComboBox<String> char1Combo = new JComboBox<>(charOptions); 
                 char1.removeAll(); 
-                char1.setText(""); 
-                char1Combo.setBounds((frame.getContentPane().getWidth() / 8 ) - 65, 50, 130, 30); // get content  pane of char1 width and divide it by two to centre it ?? **fix me** 
+                char1.setText(fillerData); 
+               // char1Combo.setBounds((frame.getContentPane().getWidth() / 8 ) - 65, 50, 130, 30); // get content  pane of char1 width and divide it by two to centre it ?? **fix me** 
+                char1Combo.setBounds(char1.getWidth() + 65, 50, 130, 30); 
                 char1.add(char1Combo); 
                 char1.setVisible(true); 
                 String tempString = imageSources[index].substring(0, imageSources[index].length() - 1); 
@@ -224,7 +226,8 @@ public class Main extends Character{
                 char1Combo.addActionListener(new ActionListener(){
                     public void actionPerformed(ActionEvent event){
                         System.out.println("CHAR1 COMPARISION COMBO BOX CLICKED"); 
-                                String selection = char1Combo.getSelectedItem().toString(); // should it not alreayd be a string???? **FIX ME**
+                        char1Combo.setBounds((frame.getContentPane().getWidth() / 8 ) - 65, 50, 130, 30);
+                                String selection = char1Combo.getSelectedItem().toString();
                                 for (int i = 0; i < 26; i++){
                                     if (selection == characters[i].charName){
                                         index = i; 
@@ -238,13 +241,14 @@ public class Main extends Character{
        
                 JComboBox<String> char2Combo = new JComboBox<>(charOptions); 
                 char2.removeAll(); 
-                char2.setText(""); 
+                char2.setText(fillerData); 
                 char2Combo.setBounds((frame.getContentPane().getWidth() / 8 ) - 65, 50, 130, 30); 
                 char2.add(char2Combo); 
                 char2Combo.addActionListener(new ActionListener(){
                     public void actionPerformed(ActionEvent event){
+                        
                         System.out.println("CHAR1 COMPARISION COMBO BOX CLICKED"); 
-                        String selection = char2Combo.getSelectedItem().toString(); // should it not alreayd be a string???? **FIX ME**
+                        String selection = char2Combo.getSelectedItem().toString();
                         for (int i = 0; i < 26; i++){
                             if (selection == characters[i].charName){
                                 index = i; 
@@ -257,33 +261,35 @@ public class Main extends Character{
 
                 JComboBox<String> char3Combo = new JComboBox<>(charOptions); 
                 char3.removeAll(); 
-                char3.setText(""); 
+                char3.setText(fillerData); 
                 char3Combo.setBounds((frame.getContentPane().getWidth() / 8 ) - 65, 50, 130, 30); 
                 char3.add(char3Combo); 
                 char3Combo.addActionListener(new ActionListener(){
                      public void actionPerformed(ActionEvent event){
-                            System.out.println("CHAR1 COMPARISION COMBO BOX CLICKED"); 
-                            String selection = char3Combo.getSelectedItem().toString(); // should it not alreayd be a string???? **FIX ME**
-                            for (int i = 0; i < 26; i++){
-                                if (selection == characters[i].charName){
-                                    index = i; 
-                                    i = 26; 
-                                }
+                        
+                        System.out.println("CHAR1 COMPARISION COMBO BOX CLICKED"); 
+                        String selection = char3Combo.getSelectedItem().toString(); 
+                        for (int i = 0; i < 26; i++){
+                            if (selection == characters[i].charName){
+                                index = i; 
+                                i = 26; 
                             }
-                            char3.setText(compareText); 
+                        }
+                        char3.setText(compareText); 
                     }
                 }); 
            
           
                 JComboBox<String> char4Combo = new JComboBox<>(charOptions); 
                 char4.removeAll(); 
-                char4.setText(""); 
+                char4.setText(fillerData); 
                 char4Combo.setBounds((frame.getContentPane().getWidth() / 8 ) - 65, 50, 130, 30); 
                 char4.add(char4Combo); 
                 char4Combo.addActionListener(new ActionListener(){
                     public void actionPerformed(ActionEvent event){
+                        
                         System.out.println("CHAR1 COMPARISION COMBO BOX CLICKED"); 
-                        String selection = char4Combo.getSelectedItem().toString(); // should it not alreayd be a string???? **FIX ME**
+                        String selection = char4Combo.getSelectedItem().toString();
                         for (int i = 0; i < 26; i++){
                             if (selection == characters[i].charName){
                                 index = i; 
