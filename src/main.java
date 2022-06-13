@@ -614,6 +614,7 @@ public class Main extends Character{
                 attributePane.setEditable(false); 
                 attributePane.setText("<center><b><br><br>Please select the character attribute you would like to rank.</b> </center>"); 
                 JScrollPane attributeScroll = new JScrollPane(attributePane, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED); 
+                attributeScroll.getVerticalScrollBar().setValue(0);
                 JComboBox<String> attributeCombo = new JComboBox<>(attributesList); 
 
                 attributeCombo.setBounds((frame.getContentPane().getWidth() / 2 ) - 128, 85, 250, 30); 
@@ -733,9 +734,13 @@ public class Main extends Character{
                             charIndices[i] = i; 
                             // loop to reset this array for other use. 
                         }
+
+                        attributePane.select(0, 0);   // ABSOLUTE GODSEND
+                        
                     }
                 }); 
-
+                
+                attributeScroll.getVerticalScrollBar().setValue(0);
                 frame.getContentPane().removeAll(); 
                 frame.getContentPane().add(BorderLayout.NORTH, menuBar); 
                 frame.getContentPane().add(BorderLayout.CENTER, attributeScroll); 
@@ -753,7 +758,7 @@ public class Main extends Character{
                 System.out.println("how to use clicked"); 
                 JTextPane howPane = new JTextPane(); 
                 JScrollPane howScroll = new JScrollPane(howPane, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED); 
-
+                
                 howPane.setContentType("text/html"); 
                 howPane.setBackground(Color.LIGHT_GRAY); 
                 howPane.setEditable(false);
