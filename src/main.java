@@ -28,6 +28,9 @@ do all of the readfile stuff inside of Main's main. */
 public class Main extends Character{
     
     static int index = 0; 
+    static int index2 = 0; 
+    static String selection = "";
+    static String selection2 = ""; 
     
     public static void main(String args[]) {
         
@@ -84,7 +87,7 @@ public class Main extends Character{
         }; 
 
         String[] imageSources = new String[26]; 
-        // ** FIX ME ** would be nice to make these load faster somehow. They don't load locally for some reason. 
+       
         imageSources[0] = "<img src='file:images/FoxHeadSSBM.png'>"; 
         imageSources[1] = "<img src='file:images/MarthHeadSSBM.png'>"; 
         imageSources[2] = "<img src='file:images/JigglypuffHeadSSBM.png'>"; 
@@ -538,64 +541,47 @@ public class Main extends Character{
                 JScrollPane moveScroll = new JScrollPane(movePane, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED); 
                 movePane.setContentType("text/html"); 
                 movePane.setBackground(Color.LIGHT_GRAY); 
-                movePane.setText("<br><br> <br><center><b> Select the category that you would like to rank. </b> </center>"); 
+                movePane.setText("<br><br> <br><center><b> Select the category that you would like to rank: <br><br><br> Select the move that you would like to rank:</center>"); 
                 JComboBox<String> rankOptions = new JComboBox<>(rankingOptions); 
                 rankOptions.setBounds((frame.getContentPane().getWidth() / 2 ) - 65, 85, 130, 30); 
+                JComboBox<String> moveOptions = new JComboBox<>(damagingMoves); 
+                moveOptions.setBounds((frame.getContentPane().getWidth() / 2) - 65, 145, 130, 30); 
                 movePane.add(rankOptions); 
+                movePane.add(moveOptions); 
                 movePane.setEditable(false);
+
+                
                 rankOptions.addActionListener(new ActionListener(){
                     public void actionPerformed(ActionEvent event){
-                        String selection = rankOptions.getSelectedItem().toString(); 
-                        System.out.println(selection + "printing selection"); 
-                        
+                        selection = rankOptions.getSelectedItem().toString(); 
                         for (int i = 0; i < 4; i++){  // check which character was selected 
                             if (selection == rankingOptions[i]){
                                 index = i; 
                                 i = 4; // break should also work
                             }
                         }
-
-
-
-
-
-
-                        System.out.println("PRINTING I " + index + "PRINTING CHARNAME" + characters[index].charName); 
-                        System.out.println(selection); 
-                        JComboBox<String> moveOptions = new JComboBox<>(damagingMoves); 
-                        movePane.setText("<center><b><br><br>" + "'" + selection + "'" + " selected. </b><br>Please select a move. " + "</center>"); 
-                        movePane.remove(rankOptions); 
-                        moveOptions.setBounds((frame.getContentPane().getWidth() / 2 ) - 75, 85, 145, 30); 
-                        movePane.add(moveOptions); 
-                        moveOptions.addActionListener(new ActionListener(){
-                            public void actionPerformed(ActionEvent event){
-                                String selection = rankOptions.getSelectedItem().toString(); 
-                                    System.out.println(selection + "printing selection"); 
-                                    int index = 0; 
-                                     for (int i = 0; i < 4; i++){  // check which character was selected 
-                                        if (selection == rankingOptions[i]){
-                                            index = i; 
-                                            i = 4; // break should also work
-                                        }
-                                    }
-                                System.out.println("PRINTING I " + index + "PRINTING CHARNAME" + characters[index].charName); 
-                                System.out.println(selection); 
-                                /*
-                                
-                                                    NEED TO MAKE IT DISPLAY SOMETHING AT THIS POINT HERE **FIX ME**
-
-                                */
-                            }
-                        }); 
-                        
-
-                        frame.getContentPane().removeAll(); 
-                        frame.getContentPane().add(BorderLayout.NORTH, menuBar); 
-                        frame.getContentPane().add(BorderLayout.CENTER, moveScroll); 
-                        frame.setVisible(true); 
-                        // ADD ANOTHER COMBOBOX HERE WITH THE DAMAGING MOVES, INSIDE OF THE PUBLIC VOID, AND FIX IT SO THAT IT DOES THE THING ** FIX ME** 
                     }
                 });
+                moveOptions.addActionListener(new ActionListener(){
+                    public void actionPerformed(ActionEvent event){
+                        selection2 = moveOptions.getSelectedItem().toString(); 
+                             for (int i = 0; i < 33; i++){  
+                                if (selection2 == damagingMoves[i]){
+                                    index2 = i; 
+                                    i = 33; 
+                                }
+                            }
+                        String temp = ""; 
+                        for (int i = 0; i <) // ***** INCOMPLETE FIX ME**********
+                        movePane.setText("<br><br><br><br><br><br><br><br><center>" 
+                        + "Ranking" + selection + "of" + selection2
+
+                        + "</center>"
+                        );
+                    }
+ 
+                }); 
+
                 frame.getContentPane().removeAll(); 
                 frame.getContentPane().add(BorderLayout.NORTH, menuBar);
                 frame.getContentPane().add(BorderLayout.CENTER, moveScroll);  
@@ -625,23 +611,8 @@ public class Main extends Character{
                     public void actionPerformed(ActionEvent event){
 
                         attributeCombo.setBounds((frame.getContentPane().getWidth() / 2 ) - 128, 25, 250, 30); 
-
-
-                        String selection = attributeCombo.getSelectedItem().toString(); 
-                        System.out.println(selection + "printing selection"); 
-                        int index = 0; 
-                        for (int i = 0; i < 4; i++){  // check which character was selected 
-                            if (selection == attributesList[i]){
-                                index = i; 
-                                i = 4; // break should also work
-                            }
-                        }
-                        System.out.println("PRINTING I " + index + "PRINTING CHARNAME" + characters[index].charName); 
-                        System.out.println(selection); 
-
-                        int whichAttribute = 0; 
-
-                        
+                        String selection = attributeCombo.getSelectedItem().toString();
+                        int whichAttribute = 0;
                         switch(selection){
                             case "Weight":
                             whichAttribute = 125; 
@@ -793,14 +764,9 @@ public class Main extends Character{
         
         JTextPane defaultTP = new JTextPane();
         Font defaultFont = new Font("Century Gothic", Font.PLAIN, 36); 
-        //defaultTP.getCaret().setVisible(false);
         defaultTP.setBackground(Color.LIGHT_GRAY); 
         defaultTP.setEditable(false);
-        /*defaultTP.setContentType("text/html"); 
-        String homeText = "<html><body><p style =\"color:red>" + "Welcome to SSBM Comparator</p>" + 
-        "<br><br>"+
-        "Select a menu option at the top to get started"+
-        "</body></html>"; */
+        
         
         defaultTP.setText("\n\n\n\nWelcome to SSBM Comparator\nSelect a menu option at the top to get started"); 
         defaultTP.setFont(defaultFont); 
@@ -809,13 +775,7 @@ public class Main extends Character{
         StyleConstants.setAlignment(center, StyleConstants.ALIGN_CENTER);
         doc.setParagraphAttributes(0, doc.getLength(), center, false); 
 
-       /* ImageIcon smashLogo = new ImageIcon("./images/FightingWireFramesHeadsSSBM.png"); 
-        defaultTP.add(smashLogo); 
-        // https://stackoverflow.com/questions/24407190/center-alignment-of-a-word-in-jtextpane
-        // defaultTP.insertIcon(new ImageIcon("./images/FightingWireFramesHeadsSSBM.png")); 
-      /*  Style style = doc.addStyle("StyleName", null); 
-        StyleConstants.setIcon(style, new ImageIcon("./images/FightingWireFramesHeadsSSBM.png")); 
-        doc.insertString(doc.getLength(), "ignored text", style); */ 
+      
 
         frame.getContentPane().add(BorderLayout.SOUTH, panel);
         frame.getContentPane().add(BorderLayout.NORTH, menuBar);
@@ -837,7 +797,7 @@ class Character {
         try{
             File file = new File ("./src/charData.txt"); 
             Scanner fileReader = new Scanner(file);
-            while (fileReader.hasNextLine()){  // index < 2
+            while (fileReader.hasNextLine()){  // index < 2 // THIS SHOULD PROBABLY BE HAS NEXT FLOAT 
 
                 // **fIX ME ** NEEDS TO MAKE SURE IT READS PROPERLY 
 
