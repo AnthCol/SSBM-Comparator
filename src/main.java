@@ -541,11 +541,11 @@ public class Main extends Character{
                 JScrollPane moveScroll = new JScrollPane(movePane, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED); 
                 movePane.setContentType("text/html"); 
                 movePane.setBackground(Color.LIGHT_GRAY); 
-                movePane.setText("<br><br> <br><center><b> Select the category that you would like to rank: <br><br><br> Select the move that you would like to rank:</center>"); 
+                movePane.setText("<br><center><b> Select the category that you would like to rank: <br><br><br> Select the move that you would like to rank:</center>"); 
                 JComboBox<String> rankOptions = new JComboBox<>(rankingOptions); 
-                rankOptions.setBounds((frame.getContentPane().getWidth() / 2 ) - 65, 85, 130, 30); 
+                rankOptions.setBounds((frame.getContentPane().getWidth() / 2 ) - 65, 45, 130, 30); 
                 JComboBox<String> moveOptions = new JComboBox<>(damagingMoves); 
-                moveOptions.setBounds((frame.getContentPane().getWidth() / 2) - 65, 145, 130, 30); 
+                moveOptions.setBounds((frame.getContentPane().getWidth() / 2) - 65, 105, 130, 30); 
                 movePane.add(rankOptions); 
                 movePane.add(moveOptions); 
                 movePane.setEditable(false);
@@ -560,6 +560,14 @@ public class Main extends Character{
                                 i = 4; // break should also work
                             }
                         }
+                        if (selection2.length() > 1){
+                            movePane.setText("<br><br><br><br><br><br><br><br><center>" 
+                            + "Ranking <b>" + selection + "</b> of <b>" + selection2 + "</b>"
+
+                            + "</center>"
+                        );
+                        }
+                        
                     }
                 });
                 moveOptions.addActionListener(new ActionListener(){
@@ -572,12 +580,15 @@ public class Main extends Character{
                                 }
                             }
                         String temp = ""; 
-                        for (int i = 0; i <) // ***** INCOMPLETE FIX ME**********
-                        movePane.setText("<br><br><br><br><br><br><br><br><center>" 
-                        + "Ranking" + selection + "of" + selection2
+                       // for (int i = 0; i <) // ***** INCOMPLETE FIX ME**********
+                        if (selection.length() > 1){
+                            movePane.setText("<br><br><br><br><br><br><br><br><center>" 
+                            + "Ranking <b>" + selection + "</b> of <b>" + selection2 + "</b>"
 
-                        + "</center>"
+                            + "</center>"
                         );
+                        }
+                        
                     }
  
                 }); 
