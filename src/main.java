@@ -549,6 +549,8 @@ public class Main extends Character{
                 movePane.add(rankOptions); 
                 movePane.add(moveOptions); 
                 movePane.setEditable(false);
+                selection = ""; 
+                selection2 = ""; 
 
                 
                 rankOptions.addActionListener(new ActionListener(){
@@ -586,7 +588,8 @@ public class Main extends Character{
                             + "Ranking <b>" + selection + "</b> of <b>" + selection2 + "</b>"
 
                             + "</center>"
-                        );
+                            );
+
                         }
                         
                     }
