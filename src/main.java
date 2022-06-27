@@ -587,7 +587,7 @@ public class Main extends Character{
 
                             for (int i = 0; i < 26; i++){
                                 for (int x = 0; x < 25; x++){ // maybe need to go to 25 here instead????**FIX ME**
-                                    if (index == 0){
+                                    if (index == 0 || index == 2){
                                         if (charVals[x] <= charVals[x+1]){
                                             tempFloat = charVals[x]; 
                                             charVals[x] = charVals[x+1]; 
@@ -672,7 +672,7 @@ public class Main extends Character{
 
                             for (int i = 0; i < 26; i++){
                                 for (int x = 0; x < 25; x++){ // maybe need to go to 25 here instead????**FIX ME**
-                                    if (index == 0){
+                                    if (index == 0 || index == 2){
                                         if (charVals[x] <= charVals[x+1]){
                                             tempFloat = charVals[x]; 
                                             charVals[x] = charVals[x+1]; 
