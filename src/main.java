@@ -573,17 +573,72 @@ public class Main extends Character{
                         }
                         // index in this case represents the 
                         // will need to go through all of the 26 charcters -> characters[i].values[values] index += index2;
-                        float[] values = new float[26];  // index i will be used here 
+                        float[] charVals = new float[26];  // index i will be used here 
+                        float tempFloat; 
+                        int tempInt; 
+
 
                         if (selection2.length() > 1){
                             
                             whichAttribute = index + index2; 
-                            System.out.println("printing which" + whichAttribute); 
-                            movePane.setText("<br><br><br><br><br><br><br><br><center>" 
-                            + "Ranking <b>" + selection + "</b> of <b>" + selection2 + "</b>"
+                            for (int i = 0; i < 26; i++){
+                                charVals[i] = characters[i].values[whichAttribute]; 
+                            }
 
-                            + "</center>"
-                            );
+                            for (int i = 0; i < 26; i++){
+                                for (int x = 0; x < 25; x++){ // maybe need to go to 25 here instead????**FIX ME**
+                                    if (index == 0){
+                                        if (charVals[x] <= charVals[x+1]){
+                                            tempFloat = charVals[x]; 
+                                            charVals[x] = charVals[x+1]; 
+                                            charVals[x+1] = tempFloat; 
+    
+                                            tempInt = charIndices[x]; 
+                                            charIndices[x] = charIndices[x+1]; 
+                                            charIndices[x+1] = tempInt; 
+                                        }
+                                    }
+                                    else{
+                                        if (charVals[x] >= charVals[x+1]){
+                                            tempFloat = charVals[x]; 
+                                            charVals[x] = charVals[x+1]; 
+                                            charVals[x+1] = tempFloat; 
+    
+                                            tempInt = charIndices[x]; 
+                                            charIndices[x] = charIndices[x+1]; 
+                                            charIndices[x+1] = tempInt; 
+                                        }
+                                    }
+                                    
+                                }
+                            }
+                            String tempImage = ""; 
+                            String ranking = "<br><br><br><br><br><br><br><br><center>" 
+                            + "Ranking <b>" + selection + "</b> of <b>" + selection2 + "</b><br><br>"; 
+
+                            for (int i = 0; i < 26; i++){
+                                for (int x = 0; x < 26; x++){
+                                    if (characters[charIndices[i]].charName.equals(charOptions[x])){
+                                        tempImage = imageSources[x]; 
+                                        break; 
+                                    }
+                                }
+                                ranking += "#" + (i+1) + "<b>&nbsp&nbsp" + tempImage + "&nbsp" + "<i>" + characters[charIndices[i]].charName + "</i></b>: " + charVals[i] + "<br>"; 
+                            }
+                    
+                            ranking += "</center>"; 
+
+
+                           // System.out.println("printing which " + whichAttribute); 
+                            movePane.setText(ranking); 
+                            
+                            
+
+                            for (int i = 0; i < 26; i++){
+                                charIndices[i] = i; 
+                                // reset array for future use. 
+                            }
+                            movePane.select(0, 0);
                         }
                         
                     }
@@ -603,16 +658,71 @@ public class Main extends Character{
                             index2 += 4; 
                         }
                        
-                        String temp = ""; 
+                        
+                        float[] charVals = new float[26]; 
+                        float tempFloat = 0; 
+                        int tempInt = 0; 
+                    
                        // for (int i = 0; i <) // ***** INCOMPLETE FIX ME**********
                         if (selection.length() > 1){
                             whichAttribute = index + index2; 
-                            System.out.println("printing which " + whichAttribute); 
-                            movePane.setText("<br><br><br><br><br><br><br><br><center>" 
-                            + "Ranking <b>" + selection + "</b> of <b>" + selection2 + "</b>"
+                            for (int i = 0; i < 26; i++){
+                                charVals[i] = characters[i].values[whichAttribute]; 
+                            }
 
-                            + "</center>"
-                            );
+                            for (int i = 0; i < 26; i++){
+                                for (int x = 0; x < 25; x++){ // maybe need to go to 25 here instead????**FIX ME**
+                                    if (index == 0){
+                                        if (charVals[x] <= charVals[x+1]){
+                                            tempFloat = charVals[x]; 
+                                            charVals[x] = charVals[x+1]; 
+                                            charVals[x+1] = tempFloat; 
+    
+                                            tempInt = charIndices[x]; 
+                                            charIndices[x] = charIndices[x+1]; 
+                                            charIndices[x+1] = tempInt; 
+                                        }
+                                    }
+                                    else{
+                                        if (charVals[x] >= charVals[x+1]){
+                                            tempFloat = charVals[x]; 
+                                            charVals[x] = charVals[x+1]; 
+                                            charVals[x+1] = tempFloat; 
+    
+                                            tempInt = charIndices[x]; 
+                                            charIndices[x] = charIndices[x+1]; 
+                                            charIndices[x+1] = tempInt; 
+                                        }
+                                    }
+                                }
+                            }
+                            String tempImage = ""; 
+                            String ranking = "<br><br><br><br><br><br><br><br><center>" 
+                            + "Ranking <b>" + selection + "</b> of <b>" + selection2 + "</b><br><br>"; 
+
+                            for (int i = 0; i < 26; i++){
+                                for (int x = 0; x < 26; x++){
+                                    if (characters[charIndices[i]].charName.equals(charOptions[x])){
+                                        tempImage = imageSources[x]; 
+                                        break; 
+                                    }
+                                }
+                                ranking += "#" + (i+1) + "<b>&nbsp&nbsp" + tempImage + "&nbsp" + "<i>" + characters[charIndices[i]].charName + "</i></b>: " + charVals[i] + "<br>"; 
+                            }
+                    
+                            ranking += "</center>"; 
+
+
+                           // System.out.println("printing which " + whichAttribute); 
+                            movePane.setText(ranking); 
+                            
+                            
+
+                            for (int i = 0; i < 26; i++){
+                                charIndices[i] = i; 
+                                // reset array for future use. 
+                            }
+                            movePane.select(0, 0);
 
                         }
                         
@@ -706,7 +816,11 @@ public class Main extends Character{
                         }
 
                         for (int i = 0; i < 26; i++){
-                            for (int x = 0; x < 26; x++){ // optimize this   **FIX ME SOMETHING IS WRONG HERE** 
+                            for (int x = 0; x < 25; x++){ // optimize this   **FIX ME SOMETHING IS WRONG HERE**  
+
+                                // this was changes to 25 to stop the build from failing, should work since 
+                                // we are not accessing out of bounds data anymore. 
+                                // **FIX ME** make sure all of the loops work. 
                                 if (attributeArray[x] <= attributeArray[x+1]){
                                     tempFloat = attributeArray[i]; 
                                     attributeArray[x] = attributeArray[x+1]; 
