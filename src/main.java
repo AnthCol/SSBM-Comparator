@@ -31,6 +31,9 @@ public class Main extends Character{
     static int index2 = 0; 
     static String selection = "";
     static String selection2 = ""; 
+    static int rankIndex = 0; 
+    static int moveIndex = 0; 
+    static int whichAttribute = 0; 
     
     public static void main(String args[]) {
         
@@ -60,8 +63,11 @@ public class Main extends Character{
             "Jab 1", "Jab 2", "Jab 3", "Forward Tilt", "Up Tilt", "Down Tilt", 
             "Dash Attack", "Forward Smash", "Up Smash", "Down Smash", "Neutral Air", "Forward Air", "Back Air", "Up Air", "Down Air", 
             "Grounded Neutral B", "Aerial Neutral B", "Grounded Side B", "Aerial Side B", "Grounded Up B", "Aerial Up B", "Grounded Down B", "Aerial Down B", 
-            "Standing Grab", "Dash Grab", "Forward Throw", "Back Throw", "Down Throw", "Up Throw", "Spot Dodge", "Backwards Roll", "Forward Roll", "Air Dodge"
+            "Forward Throw", "Back Throw", "Down Throw", "Up Throw"
+            
         }; 
+
+        // "Standing Grab", "Dash Grab", "Forward Throw", "Back Throw", "Down Throw", "Up Throw", "Spot Dodge", "Backwards Roll", "Forward Roll", "Air Dodge"
 
         String[] attributesList = {
             "Weight", "Fast Fall Speed", "Dash Speed", "Run Speed", "Wavedash Length (rank/26)", 
@@ -148,7 +154,7 @@ public class Main extends Character{
 
 
         JPanel panel = new JPanel(); 
-        JLabel label = new JLabel("Created by Anthony Colaiacovo, May 2022");
+        JLabel label = new JLabel("Created by Anthony Colaiacovo, May - July 2022");
         panel.add(label); 
 
 
@@ -487,10 +493,9 @@ public class Main extends Character{
                         charMenu.setBounds((frame.getContentPane().getWidth() / 2 ) - 65, 65, 130, 30); 
                         for (int i = 0; i < 26; i++){  // check which character was selected 
                             if (selection == characters[i].charName){
-                                index = i; // WHY IS THIS ALWAYS ZERO. MIGHT FIX ITSELF WHEN THE CHARDATAFILE IS FINISHED **FIX ME**
-                                i = 26; // break should also work
-                                // to add the picture NEED TO ADD A STRING THAT HAS THE IMAGE DEPENDING ON INDEX. SWITCH STATMENT MAYBE **FIX ME**
-                                // so that is can be added properly to the set text statement below. 
+                                index = i; 
+                                i = 26; 
+                                
                             }
                         }
                         System.out.println("PRINTING I " + index + "PRINTING CHARNAME" + characters[index].charName); 
@@ -534,7 +539,7 @@ public class Main extends Character{
         view.add(indivData); 
     
 
-        JMenuItem charMoves = new JMenuItem("Moves"); 
+        JMenuItem charMoves = new JMenuItem("Damaging Moves"); 
         charMoves.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent event){
                 JTextPane movePane = new JTextPane(); 
@@ -551,23 +556,34 @@ public class Main extends Character{
                 movePane.setEditable(false);
                 selection = ""; 
                 selection2 = ""; 
+                index = 0; 
+                index2 = 0; 
+                whichAttribute = 0; 
 
                 
                 rankOptions.addActionListener(new ActionListener(){
                     public void actionPerformed(ActionEvent event){
                         selection = rankOptions.getSelectedItem().toString(); 
-                        for (int i = 0; i < 4; i++){  // check which character was selected 
+                        for (int i = 0; i < 4; i++){  // check which ranking option was selected 
                             if (selection == rankingOptions[i]){
-                                index = i; 
+                                index = i;  // represents how many extra should be added to the original move. 
+
                                 i = 4; // break should also work
                             }
                         }
+                        // index in this case represents the 
+                        // will need to go through all of the 26 charcters -> characters[i].values[values] index += index2;
+                        float[] values = new float[26];  // index i will be used here 
+
                         if (selection2.length() > 1){
+                            
+                            whichAttribute = index + index2; 
+                            System.out.println("printing which" + whichAttribute); 
                             movePane.setText("<br><br><br><br><br><br><br><br><center>" 
                             + "Ranking <b>" + selection + "</b> of <b>" + selection2 + "</b>"
 
                             + "</center>"
-                        );
+                            );
                         }
                         
                     }
@@ -575,15 +591,23 @@ public class Main extends Character{
                 moveOptions.addActionListener(new ActionListener(){
                     public void actionPerformed(ActionEvent event){
                         selection2 = moveOptions.getSelectedItem().toString(); 
-                             for (int i = 0; i < 33; i++){  
-                                if (selection2 == damagingMoves[i]){
-                                    index2 = i; 
-                                    i = 33; 
-                                }
+                        for (int i = 0; i < 28; i++){  
+                            if (selection2 == damagingMoves[i]){
+                                index2 = i; 
+                                i = 33; 
                             }
+                        }
+                        index2 *= 4; 
+
+                        if (index2 >= 24){
+                            index2 += 4; 
+                        }
+                       
                         String temp = ""; 
                        // for (int i = 0; i <) // ***** INCOMPLETE FIX ME**********
                         if (selection.length() > 1){
+                            whichAttribute = index + index2; 
+                            System.out.println("printing which " + whichAttribute); 
                             movePane.setText("<br><br><br><br><br><br><br><br><center>" 
                             + "Ranking <b>" + selection + "</b> of <b>" + selection2 + "</b>"
 
@@ -601,11 +625,21 @@ public class Main extends Character{
                 frame.getContentPane().add(BorderLayout.CENTER, moveScroll);  
                 frame.setVisible(true); 
                 
+                /*
+                 FIX ME 
+                 This section now excludes things from grabs. 
+                 Will need to make another section for miscellaneous data, for things such as rolls, etc. 
+                 Maybe we acn just add this to the attributes tab, rather than the moves one and just make the switch statement longer?
+                 Make a bunch of menu options
+                 spotdodge startup
+                 spotdodge active
+                 etc. 
 
+                 */
             }
         }); 
 
-        JMenuItem charAttributes = new JMenuItem("Attributes"); 
+        JMenuItem charAttributes = new JMenuItem("Attributes and Non-Damaging Moves"); 
         charAttributes.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent event){
                 JTextPane attributePane = new JTextPane(); 
@@ -626,7 +660,7 @@ public class Main extends Character{
 
                         attributeCombo.setBounds((frame.getContentPane().getWidth() / 2 ) - 128, 25, 250, 30); 
                         String selection = attributeCombo.getSelectedItem().toString();
-                        int whichAttribute = 0;
+                        
                         switch(selection){
                             case "Weight":
                             whichAttribute = 125; 
