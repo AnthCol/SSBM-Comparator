@@ -4,7 +4,6 @@ package src;
 import javax.swing.*;
 import javax.swing.text.*;
 
-import java.math.RoundingMode; 
 import java.text.DecimalFormat; 
 import java.awt.*;
 import java.io.File; 
@@ -248,7 +247,10 @@ public class Main extends Character{
         // FIX ME  ^ remove the throws from here, and add the other stuff to the attributes list **FIX ME**
         String[] attributesList = {
             "Weight", "Fast Fall Speed", "Dash Speed", "Run Speed", "Wavedash Length (rank/26)", 
-            "Perfect Ledgedash Intangibility Frames", "Jump Squat", "Wall Jump"
+            "Perfect Ledgedash Intangibility Frames", "Jump Squat", "Wall Jump", "Standing Grab Startup Frames", "Standing Grab Total Frames", "Dash Grab Starting Frames", 
+            "Dash Grab Total Frames", "Spotdodge Startup Frames", "Spotdodge Active Frames", "Spotdodge Ending Frames", "Back Roll Startup Frames", "Back Roll Active Frames", 
+            "Back Roll Ending Frames", "Forward Roll Startup Frames", "Forward Roll Active Frames", "Forward Roll Ending Frames", "Air Dodge Startup Frames", "Air Dodge Active Frames", 
+            "Air Dodge Ending Frames", "Air Dodge Special Land Lag"
         }; 
 
         String[] rankingOptions = {
@@ -1135,7 +1137,7 @@ public class Main extends Character{
             }
         }); 
 
-        JMenuItem charAttributes = new JMenuItem("Attributes and Non-Damaging Moves"); 
+        JMenuItem charAttributes = new JMenuItem("Attributes & Non-Damaging Moves"); 
         charAttributes.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent event){
                 JTextPane attributePane = new JTextPane(); 
@@ -1188,7 +1190,76 @@ public class Main extends Character{
 
                             case "Wall Jump":
                                 whichAttribute = 132; 
-                            break; 
+                                break; 
+
+                            case "Standing Grab Startup Frames":
+                                whichAttribute = 92; 
+                                break; 
+                            
+                            case "Standing Grab Total Frames":
+                                whichAttribute = 93; 
+                                break; 
+                            
+                            case "Dash Grab Startup Frames":
+                                whichAttribute = 94; 
+                                break; 
+                            
+                            case "Dash Grab Total Frames":
+                                whichAttribute = 95; 
+                                break; 
+                            
+                            case "Spotdodge Startup Frames":
+                                whichAttribute = 112; 
+                                break; 
+                            
+                            case "Spotdodge Active Frames":
+                                whichAttribute = 113; 
+                                break; 
+                            
+                            case "Spotdodge Ending Frames":
+                                whichAttribute = 114; 
+                                break; 
+                            
+                            case "Back Roll Startup Frames":
+                                whichAttribute = 115; 
+                                break; 
+                            
+                            case "Back Roll Active Frames":
+                                whichAttribute = 116; 
+                                break; 
+                            
+                            case "Back Roll Ending Frames":
+                                whichAttribute = 117; 
+                                break; 
+                            
+                            case "Forward Roll Startup Frames":
+                                whichAttribute = 118; 
+                                break; 
+                            
+                            case "Forward Roll Active Frames":
+                                whichAttribute = 119; 
+                                break; 
+                            
+                            case "Forward Roll Ending Frames":
+                                whichAttribute = 120; 
+                                break; 
+                            
+                            case "Air Dodge Startup Frames":
+                                whichAttribute = 121; 
+                                break; 
+                            
+                            case "Air Dodge Active Frames":
+                                whichAttribute = 122; 
+                                break; 
+                            
+                            case "Air Dodge Ending Frames":
+                                whichAttribute = 123; 
+                                break; 
+
+                            case "Air Dodge Special Land Lag":
+                                whichAttribute = 123; 
+                                break; 
+                                
                         }
 
                         float tempFloat = 0; 
@@ -1201,23 +1272,43 @@ public class Main extends Character{
                             attributeArray[i] = characters[i].values[whichAttribute]; 
                         }
 
-                        for (int i = 0; i < 26; i++){
-                            for (int x = 0; x < 25; x++){ // optimize this   **FIX ME SOMETHING IS WRONG HERE**  
+                        // CHECK IF THESE LOOPS WORK WITH I+1 (THEY SHOULD) **FIX ME**
 
-                                // this was changes to 25 to stop the build from failing, should work since 
-                                // we are not accessing out of bounds data anymore. 
-                                // **FIX ME** make sure all of the loops work. 
-                                if (attributeArray[x] <= attributeArray[x+1]){
-                                    tempFloat = attributeArray[i]; 
-                                    attributeArray[x] = attributeArray[x+1]; 
-                                    attributeArray[x+1] = tempFloat; 
-    
-                                    tempInt = charIndices[x]; 
-                                    charIndices[x] = charIndices[x+1]; 
-                                    charIndices[x+1] = tempInt; 
+                        // THIS WHOLE SECTION MIGHT NEED FIXING IN GENERAL, WE'LL SEE **FIX ME**
+                        if (whichAttribute == 113 || whichAttribute == 116 || whichAttribute == 119 || whichAttribute == 122 ||
+                        whichAttribute == 125 || whichAttribute == 126 || whichAttribute == 127 || whichAttribute == 128 ||
+                        whichAttribute == 130){
+                            for (int i = 0; i < 26; i++){
+                                for (int x = 0; x < 25; x++){
+                                    if (attributeArray[x] >= attributeArray[x+1]){
+                                        tempFloat = attributeArray[i]; 
+                                        attributeArray[x] = attributeArray[x+1]; 
+                                        attributeArray[x+1] = tempFloat; 
+        
+                                        tempInt = charIndices[x]; 
+                                        charIndices[x] = charIndices[x+1]; 
+                                        charIndices[x+1] = tempInt; 
+                                    }
                                 }
                             }
+                            
                         }
+                        else {
+                            for (int i = 0; i < 26; i++){
+                                for (int x = 0; x < 25; x++){ // optimize this   **FIX ME SOMETHING IS WRONG HERE**  
+                                    if (attributeArray[x] <= attributeArray[x+1]){
+                                        tempFloat = attributeArray[i]; 
+                                        attributeArray[x] = attributeArray[x+1]; 
+                                        attributeArray[x+1] = tempFloat; 
+        
+                                        tempInt = charIndices[x]; 
+                                        charIndices[x] = charIndices[x+1]; 
+                                        charIndices[x+1] = tempInt; 
+                                    }   
+                                }     
+                            }
+                        }
+         
 
                         String ranking = "<center><br><br><br>";  
                         String tempImage = ""; 

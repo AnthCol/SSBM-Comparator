@@ -46,7 +46,16 @@ This project was my self-taught introduction to Java and OOP, before writing thi
     Any updates I make to it in the future will just be to the tier list which are pretty easy changes to make. 
     The rest of the data isn't going to change as the game and it's data has been around since late 2001. 
     The only changes I would consider going back to make are the ones in the limitations section below (but again, they
-     would likely come with a complete rework). 
+    would likely come with a complete rework). 
+
+
+
+<< WHAT DID I LEARN FROM MAKING THIS? >>
+
+Like mentioned before, this was my first introduction to Java, OOP, and GUI development. On top of those things, I think the most important thing I learned
+from this experience is that if I ever am developing something this large again, make sure to plan a large chunk (or all of it) out before
+going straight into coding. I found through making this that there were a lot of times that if I planned something before hand, I would have saved myself a
+lot of time that ended up being used to re-design things. 
 
 
 
