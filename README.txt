@@ -40,11 +40,13 @@ Link here: **unfinished**
 
 This project was my self-taught introduction to Java and OOP, before writing this I only had experience with C and HTML/CSS. As such it reflects my lack of experience. 
     -> Will I fix it?
-    Maybe. The app works as intended and runs at an acceptable speed, so there isn't a lot of motivation for me to go back and make it pretty. 
+    Maybe. The app works as intended and runs at an acceptable speed, so there isn't a lot of motivation for me to go back 
+    and make it pretty. 
     Honestly, I think if I were to fix it, I would rewrite the entire thing. 
     Any updates I make to it in the future will just be to the tier list which are pretty easy changes to make. 
     The rest of the data isn't going to change as the game and it's data has been around since late 2001. 
-    The only changes I would consider going back to make are the ones in the limitations section below (but again, they would likely come with a complete rework). 
+    The only changes I would consider going back to make are the ones in the limitations section below (but again, they
+     would likely come with a complete rework). 
 
 
 
