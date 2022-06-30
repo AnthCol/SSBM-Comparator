@@ -1160,106 +1160,31 @@ public class Main extends Character{
                         String selection = attributeCombo.getSelectedItem().toString();
                         
                         switch(selection){
-                            case "Weight":
-                            whichAttribute = 125; 
-                            break; 
-
-                            case "Fast Fall Speed":
-                                whichAttribute = 126; 
-                            break; 
-
-                            case "Dash Speed":
-                                whichAttribute = 127; 
-                            break; 
-
-                            case "Run Speed":
-                                whichAttribute = 128; 
-                            break; 
-
-                            case "Wavedash Length (rank/26)":
-                                whichAttribute = 129; 
-                            break; 
-
-                            case "Perfect Ledgedash Intangibility Frames":
-                                whichAttribute = 130; 
-                            break; 
-
-                            case "Jump Squat":
-                                whichAttribute = 131; 
-                            break; 
-
-                            case "Wall Jump":
-                                whichAttribute = 132; 
-                                break; 
-
-                            case "Standing Grab Startup Frames":
-                                whichAttribute = 92; 
-                                break; 
-                            
-                            case "Standing Grab Total Frames":
-                                whichAttribute = 93; 
-                                break; 
-                            
-                            case "Dash Grab Startup Frames":
-                                whichAttribute = 94; 
-                                break; 
-                            
-                            case "Dash Grab Total Frames":
-                                whichAttribute = 95; 
-                                break; 
-                            
-                            case "Spotdodge Startup Frames":
-                                whichAttribute = 112; 
-                                break; 
-                            
-                            case "Spotdodge Active Frames":
-                                whichAttribute = 113; 
-                                break; 
-                            
-                            case "Spotdodge Ending Frames":
-                                whichAttribute = 114; 
-                                break; 
-                            
-                            case "Back Roll Startup Frames":
-                                whichAttribute = 115; 
-                                break; 
-                            
-                            case "Back Roll Active Frames":
-                                whichAttribute = 116; 
-                                break; 
-                            
-                            case "Back Roll Ending Frames":
-                                whichAttribute = 117; 
-                                break; 
-                            
-                            case "Forward Roll Startup Frames":
-                                whichAttribute = 118; 
-                                break; 
-                            
-                            case "Forward Roll Active Frames":
-                                whichAttribute = 119; 
-                                break; 
-                            
-                            case "Forward Roll Ending Frames":
-                                whichAttribute = 120; 
-                                break; 
-                            
-                            case "Air Dodge Startup Frames":
-                                whichAttribute = 121; 
-                                break; 
-                            
-                            case "Air Dodge Active Frames":
-                                whichAttribute = 122; 
-                                break; 
-                            
-                            case "Air Dodge Ending Frames":
-                                whichAttribute = 123; 
-                                break; 
-
-                            case "Air Dodge Special Land Lag":
-                                whichAttribute = 123; 
-                                break; 
-                                
+                            case "Weight": whichAttribute = 125; break;
+                            case "Fast Fall Speed": whichAttribute = 126; break;
+                            case "Dash Speed": whichAttribute = 127;  break; 
+                            case "Run Speed":  whichAttribute = 128;  break; 
+                            case "Wavedash Length (rank/26)": whichAttribute = 129;   break; 
+                            case "Perfect Ledgedash Intangibility Frames": whichAttribute = 130;  break; 
+                            case "Jump Squat": whichAttribute = 131;   break; 
+                            case "Wall Jump":  whichAttribute = 132;  break; 
+                            case "Standing Grab Startup Frames":  whichAttribute = 92;    break; 
+                            case "Standing Grab Total Frames":  whichAttribute = 93;   break; 
+                            case "Dash Grab Startup Frames": whichAttribute = 94;    break; 
+                            case "Dash Grab Total Frames":    whichAttribute = 95;     break; 
+                            case "Spotdodge Startup Frames":  whichAttribute = 112;     break; 
+                            case "Spotdodge Active Frames":   whichAttribute = 113;    break; 
+                            case "Spotdodge Ending Frames":  whichAttribute = 114;    break; 
+                            case "Back Roll Startup Frames": whichAttribute = 115; break; 
+                            case "Back Roll Active Frames":  whichAttribute = 116;   break; 
+                            case "Back Roll Ending Frames":  whichAttribute = 117;  break; 
+                            case "Forward Roll Startup Frames": whichAttribute = 118;   break; 
+                            case "Forward Roll Active Frames": whichAttribute = 119;   break; 
+                            case "Forward Roll Ending Frames": whichAttribute = 120;   break; 
+                            case "Air Dodge Startup Frames":  whichAttribute = 121;  break; 
+                            case "Air Dodge Active Frames":  whichAttribute = 122;    break; 
+                            case "Air Dodge Ending Frames": whichAttribute = 123;    break; 
+                            case "Air Dodge Special Land Lag": whichAttribute = 123;    break;
                         }
 
                         float tempFloat = 0; 
