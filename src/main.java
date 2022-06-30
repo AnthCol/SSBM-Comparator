@@ -56,8 +56,182 @@ public class Main extends Character{
             charIndices[i] = i; 
         }
         
-        
-
+        String fullData = (
+            "<br><strong>&nbsp Jab 1:</strong>" + 
+                        "<br> &nbsp Damage: " + characters[index].values[0] + "%" + 
+                        "<br> &nbsp Startup Frames: " + characters[index].values[1] + 
+                        "<br> &nbsp Active Frames: " + characters[index].values[2] + 
+                        "<br> &nbsp Ending Frames: " + characters[index].values[3] +
+                        "<br><strong>&nbsp Jab 2:</strong>" + 
+                        "<br> &nbsp Damage: " + characters[index].values[0] + "%" + 
+                        "<br> &nbsp Startup Frames: " + characters[index].values[1] + 
+                        "<br> &nbsp Active Frames: " + characters[index].values[2] + 
+                        "<br> &nbsp Ending Frames: " + characters[index].values[3] +
+                        "<br><strong>&nbsp Jab 3:</strong>" + 
+                        "<br> &nbsp Damage: " + characters[index].values[0] + "%" + 
+                        "<br> &nbsp Startup Frames: " + characters[index].values[1] + 
+                        "<br> &nbsp Active Frames: " + characters[index].values[2] + 
+                        "<br> &nbsp Ending Frames: " + characters[index].values[3] +
+                        "<br><strong>&nbsp Forward Tilt:</strong>" + 
+                        "<br> &nbsp Damage: " + characters[index].values[0] + "%" + 
+                        "<br> &nbsp Startup Frames: " + characters[index].values[1] + 
+                        "<br> &nbsp Active Frames: " + characters[index].values[2] + 
+                        "<br> &nbsp Ending Frames: " + characters[index].values[3] +
+                        "<br><strong>&nbsp Up Tilt:</strong>" + 
+                        "<br> &nbsp Damage: " + characters[index].values[0] + "%" + 
+                        "<br> &nbsp Startup Frames: " + characters[index].values[1] + 
+                        "<br> &nbsp Active Frames: " + characters[index].values[2] + 
+                        "<br> &nbsp Ending Frames: " + characters[index].values[3] +
+                        "<br><strong>&nbsp Down Tilt:</strong>" + 
+                        "<br> &nbsp Damage: " + characters[index].values[0] + "%" + 
+                        "<br> &nbsp Startup Frames: " + characters[index].values[1] + 
+                        "<br> &nbsp Active Frames: " + characters[index].values[2] + 
+                        "<br> &nbsp Ending Frames: " + characters[index].values[3] +
+                        "<br><strong>&nbsp Dash Attack:</strong>" + 
+                        "<br> &nbsp Damage: " + characters[index].values[0] + "%" + 
+                        "<br> &nbsp Startup Frames: " + characters[index].values[1] + 
+                        "<br> &nbsp Active Frames: " + characters[index].values[2] + 
+                        "<br> &nbsp Ending Frames: " + characters[index].values[3] +
+                        "<br><strong>&nbsp Forward Smash:</strong>" + 
+                        "<br> &nbsp Damage: " + characters[index].values[0] + "%" + 
+                        "<br> &nbsp Startup Frames: " + characters[index].values[1] + 
+                        "<br> &nbsp Active Frames: " + characters[index].values[2] + 
+                        "<br> &nbsp Ending Frames: " + characters[index].values[3] +
+                        "<br><strong>&nbsp Up Smash:</strong>" + 
+                        "<br> &nbsp Damage: " + characters[index].values[0] + "%" + 
+                        "<br> &nbsp Startup Frames: " + characters[index].values[1] + 
+                        "<br> &nbsp Active Frames: " + characters[index].values[2] + 
+                        "<br> &nbsp Ending Frames: " + characters[index].values[3] +
+                        "<br><strong>&nbsp Down Smash:</strong>" + 
+                        "<br> &nbsp Damage: " + characters[index].values[0] + "%" + 
+                        "<br> &nbsp Startup Frames: " + characters[index].values[1] + 
+                        "<br> &nbsp Active Frames: " + characters[index].values[2] + 
+                        "<br> &nbsp Ending Frames: " + characters[index].values[3] +
+                        "<br><strong>&nbsp Neutral Air:</strong>" + 
+                        "<br> &nbsp Damage: " + characters[index].values[0] + "%" + 
+                        "<br> &nbsp Startup Frames: " + characters[index].values[1] + 
+                        "<br> &nbsp Active Frames: " + characters[index].values[2] + 
+                        "<br> &nbsp Ending Frames: " + characters[index].values[3] +
+                        "<br><strong>&nbsp Forward Air:</strong>" + 
+                        "<br> &nbsp Damage: " + characters[index].values[0] + "%" + 
+                        "<br> &nbsp Startup Frames: " + characters[index].values[1] + 
+                        "<br> &nbsp Active Frames: " + characters[index].values[2] + 
+                        "<br> &nbsp Ending Frames: " + characters[index].values[3] +
+                        "<br><strong>&nbsp Back Air:</strong>" + 
+                        "<br> &nbsp Damage: " + characters[index].values[0] + "%" + 
+                        "<br> &nbsp Startup Frames: " + characters[index].values[1] + 
+                        "<br> &nbsp Active Frames: " + characters[index].values[2] + 
+                        "<br> &nbsp Ending Frames: " + characters[index].values[3] +
+                        "<br><strong>&nbsp Up Air:</strong>" + 
+                        "<br> &nbsp Damage: " + characters[index].values[0] + "%" + 
+                        "<br> &nbsp Startup Frames: " + characters[index].values[1] + 
+                        "<br> &nbsp Active Frames: " + characters[index].values[2] + 
+                        "<br> &nbsp Ending Frames: " + characters[index].values[3] +
+                        "<br><strong>&nbsp Down Air:</strong>" + 
+                        "<br> &nbsp Damage: " + characters[index].values[0] + "%" + 
+                        "<br> &nbsp Startup Frames: " + characters[index].values[1] + 
+                        "<br> &nbsp Active Frames: " + characters[index].values[2] + 
+                        "<br> &nbsp Ending Frames: " + characters[index].values[3] +
+                        "<br><strong>&nbsp Grounded Neutral B:</strong>" + 
+                        "<br> &nbsp Damage: " + characters[index].values[0] + "%" + 
+                        "<br> &nbsp Startup Frames: " + characters[index].values[1] + 
+                        "<br> &nbsp Active Frames: " + characters[index].values[2] + 
+                        "<br> &nbsp Ending Frames: " + characters[index].values[3] +
+                        "<br><strong>&nbsp Aerial Neutral B:</strong>" + 
+                        "<br> &nbsp Damage: " + characters[index].values[0] + "%" + 
+                        "<br> &nbsp Startup Frames: " + characters[index].values[1] + 
+                        "<br> &nbsp Active Frames: " + characters[index].values[2] + 
+                        "<br> &nbsp Ending Frames: " + characters[index].values[3] +
+                        "<br><strong>&nbsp Grounded Side B:</strong>" + 
+                        "<br> &nbsp Damage: " + characters[index].values[0] + "%" + 
+                        "<br> &nbsp Startup Frames: " + characters[index].values[1] + 
+                        "<br> &nbsp Active Frames: " + characters[index].values[2] + 
+                        "<br> &nbsp Ending Frames: " + characters[index].values[3] +
+                        "<br><strong>&nbsp Aerial Side B:</strong>" + 
+                        "<br> &nbsp Damage: " + characters[index].values[0] + "%" + 
+                        "<br> &nbsp Startup Frames: " + characters[index].values[1] + 
+                        "<br> &nbsp Active Frames: " + characters[index].values[2] + 
+                        "<br> &nbsp Ending Frames: " + characters[index].values[3] +
+                        "<br><strong>&nbsp Grounded Up B:</strong>" + 
+                        "<br> &nbsp Damage: " + characters[index].values[0] + "%" + 
+                        "<br> &nbsp Startup Frames: " + characters[index].values[1] + 
+                        "<br> &nbsp Active Frames: " + characters[index].values[2] + 
+                        "<br> &nbsp Ending Frames: " + characters[index].values[3] +
+                        "<br><strong>&nbsp Aerial Up B:</strong>" + 
+                        "<br> &nbsp Damage: " + characters[index].values[0] + "%" + 
+                        "<br> &nbsp Startup Frames: " + characters[index].values[1] + 
+                        "<br> &nbsp Active Frames: " + characters[index].values[2] + 
+                        "<br> &nbsp Ending Frames: " + characters[index].values[3] +
+                        "<br><strong>&nbsp Grounded Down B:</strong>" + 
+                        "<br> &nbsp Damage: " + characters[index].values[0] + "%" + 
+                        "<br> &nbsp Startup Frames: " + characters[index].values[1] + 
+                        "<br> &nbsp Active Frames: " + characters[index].values[2] + 
+                        "<br> &nbsp Ending Frames: " + characters[index].values[3] +
+                        "<br><strong>&nbsp Aerial Down B:</strong>" + 
+                        "<br> &nbsp Damage: " + characters[index].values[0] + "%" + 
+                        "<br> &nbsp Startup Frames: " + characters[index].values[1] + 
+                        "<br> &nbsp Active Frames: " + characters[index].values[2] + 
+                        "<br> &nbsp Ending Frames: " + characters[index].values[3] +
+                        "<br><strong>&nbsp Standing Grab:</strong>" +
+                        "<br> &nbsp Startup Frames: " + characters[index].values[1] + 
+                        "<br> &nbsp Total Frames: " + characters[index].values[2] + 
+                        "<br><strong>&nbsp Dash Grab:</strong>" + 
+                        "<br> &nbsp Startup Frames: " + characters[index].values[1] + 
+                        "<br> &nbsp Total Frames: " + characters[index].values[2] + 
+                        "<br><strong>&nbsp Forward Throw:</strong>" + 
+                        "<br> &nbsp Damage: " + characters[index].values[0] + "%" + 
+                        "<br> &nbsp Startup Frames: " + characters[index].values[1] + 
+                        "<br> &nbsp Active Frames: " + characters[index].values[2] + 
+                        "<br> &nbsp Ending Frames: " + characters[index].values[3] +  
+                        "<br><strong>&nbsp Back Throw:</strong>" + 
+                        "<br> &nbsp Damage: " + characters[index].values[0] + "%" + 
+                        "<br> &nbsp Startup Frames: " + characters[index].values[1] + 
+                        "<br> &nbsp Active Frames: " + characters[index].values[2] + 
+                        "<br> &nbsp Ending Frames: " + characters[index].values[3] + 
+                        "<br><strong>&nbsp Down Throw:</strong>" + 
+                        "<br> &nbsp Damage: " + characters[index].values[0] + "%" + 
+                        "<br> &nbsp Startup Frames: " + characters[index].values[1] + 
+                        "<br> &nbsp Active Frames: " + characters[index].values[2] + 
+                        "<br> &nbsp Ending Frames: " + characters[index].values[3] +
+                        "<br><strong>&nbsp Up Throw:</strong>" + 
+                        "<br> &nbsp Damage: " + characters[index].values[0] + "%" + 
+                        "<br> &nbsp Startup Frames: " + characters[index].values[1] + 
+                        "<br> &nbsp Active Frames: " + characters[index].values[2] + 
+                        "<br> &nbsp Ending Frames: " + characters[index].values[3] +
+                        "<br><strong>&nbsp Spot Dodge:</strong>" + 
+                        "<br> &nbsp Startup Frames: " + characters[index].values[1] + 
+                        "<br> &nbsp Active Frames: " + characters[index].values[2] + 
+                        "<br> &nbsp Ending Frames: " + characters[index].values[3] +
+                        "<br><strong>&nbsp Backwards Roll:</strong>" +
+                        "<br> &nbsp Startup Frames: " + characters[index].values[1] + 
+                        "<br> &nbsp Active Frames: " + characters[index].values[2] + 
+                        "<br> &nbsp Ending Frames: " + characters[index].values[3] +
+                        "<br><strong>&nbsp Forwards Roll:</strong>" +
+                        "<br> &nbsp Startup Frames: " + characters[index].values[1] + 
+                        "<br> &nbsp Active Frames: " + characters[index].values[2] + 
+                        "<br> &nbsp Ending Frames: " + characters[index].values[3] +
+                        "<br><strong>&nbsp Air Dodge:</strong>" + 
+                        "<br> &nbsp Startup Frames: " + characters[index].values[1] + 
+                        "<br> &nbsp Active Frames: " + characters[index].values[2] + 
+                        "<br> &nbsp Ending Frames: " + characters[index].values[3] +
+                        "<br> &nbsp Special Land Lag (Frames): " + characters[index].values[3] +
+                        "<br><strong>&nbsp Weight:</strong>" + 
+                        characters[index].values[3] +
+                        "<br><strong>&nbsp Fast Fall Speed:</strong>" + 
+                        characters[index].values[3] +
+                        "<br><strong>&nbsp Dash Speed:</strong>" + 
+                        characters[index].values[3] +
+                        "<br><strong>&nbsp Run Speed:</strong>" + 
+                        characters[index].values[3] +
+                        "<br><strong>&nbsp Wavedash Length (rank/26):</strong>" + 
+                        characters[index].values[3] +
+                        "<br><strong>&nbsp PLDIF (Perfect Ledgedash Intangibility Frames):</strong>" + 
+                        characters[index].values[3] +
+                        "<br><strong>&nbsp Jump Squat Frames:</strong>" + 
+                        characters[index].values[3] +
+                        "<br><strong>&nbsp Wall Jump:</strong>" 
+                        
+        ); 
 
         String[] damagingMoves = {
             "Jab 1", "Jab 2", "Jab 3", "Forward Tilt", "Up Tilt", "Down Tilt", 
@@ -225,11 +399,7 @@ public class Main extends Character{
                 String tempString = imageSources[index].substring(0, imageSources[index].length() - 1); 
                 tempString = tempString + "width = '40' height ='40'>"; 
                 String compareText = "<center>" + "<br><br><br><br><br>" + tempString + "<br>" + 
-                    "<br><strong><i>&nbsp Jab 1:</i></strong>" + 
-                    "<br> &nbsp Damage: <b>" + characters[index].values[0] + "% </b>" + 
-                    "<br> &nbsp Startup Frames:<b> " + characters[index].values[1] + "</b>" +
-                    "<br> &nbsp Active Frames:<b> " + characters[index].values[2] + "</b>" +
-                    "<br> &nbsp Ending Frames:<b> " + characters[index].values[3] + "</b>";  
+                    fullData;  
                 
 
                 char1Combo.addActionListener(new ActionListener(){
@@ -243,7 +413,12 @@ public class Main extends Character{
                                         i = 26; 
                                     }
                                 }
-                                char1.setText(compareText);  
+                                String temp = compareText; 
+                                if (characters[index].values[132] == 1){
+                                    temp += "<br>Yes"; 
+                                }
+                                else temp += "<br>No"; 
+                                char1.setText(temp);  
                             }
                         }); 
 
@@ -264,7 +439,12 @@ public class Main extends Character{
                                 i = 26; 
                             }
                         }
-                        char2.setText(compareText); 
+                            String temp = compareText; 
+                            if (characters[index].values[132] == 1){
+                                temp += "<br>Yes"; 
+                            }
+                            else temp += "<br>No"; 
+                            char2.setText(temp);  
                         }
                     }); 
 
@@ -284,7 +464,12 @@ public class Main extends Character{
                                 i = 26; 
                             }
                         }
-                        char3.setText(compareText); 
+                        String temp = compareText; 
+                        if (characters[index].values[132] == 1){
+                            temp += "<br>Yes"; 
+                        }
+                        else temp += "<br>No"; 
+                        char3.setText(temp);  
                     }
                 }); 
            
@@ -305,7 +490,12 @@ public class Main extends Character{
                                 i = 26; 
                             }
                         }
-                        char4.setText(compareText); 
+                        String temp = compareText; 
+                        if (characters[index].values[132] == 1){
+                            temp += "<br>Yes"; 
+                        }
+                        else temp += "<br>No"; 
+                        char4.setText(temp);  
                     }
                 }); 
             
@@ -394,11 +584,11 @@ public class Main extends Character{
                         String tempString = imageSources[index].substring(0, imageSources[index].length() - 1); 
                         tempString = tempString + "width = '40' height ='40'>"; 
                         String compareText = "<center>" + "<br><br><br><br><br><br>" + tempString + "<br>" + 
-                            "<br><strong>&nbsp Jab 1:</strong>" + 
-                            "<br> &nbsp Damage: " + characters[index].values[0] + "%" + 
-                            "<br> &nbsp Startup Frames: " + characters[index].values[1] + 
-                            "<br> &nbsp Active Frames: " + characters[index].values[2] + 
-                            "<br> &nbsp Ending Frames: " + characters[index].values[3];  
+                            fullData;  
+                        if (characters[index].values[132] == 1){
+                            compareText += "<br>Yes"; 
+                        }
+                        else compareText += "<br>No"; 
                         left.setText(compareText); 
                         left.setVisible(true); 
                     }
@@ -408,14 +598,10 @@ public class Main extends Character{
 
 
                 frame.getContentPane().removeAll(); 
-             //   left.setVisible(true);
-               // right.setVisible(true); 
                 frame.add(averageScroll);  
                 frame.getContentPane().add(BorderLayout.NORTH, menuBar); 
                 frame.setVisible(true); 
 
-               
-               
 
             }
         }); 
@@ -513,7 +699,6 @@ public class Main extends Character{
                         "<br> &nbsp Startup Frames: " + characters[index].values[1] + 
                         "<br> &nbsp Active Frames: " + characters[index].values[2] + 
                         "<br> &nbsp Ending Frames: " + characters[index].values[3] 
-                        
                         ); 
                     }
                 });
@@ -586,7 +771,7 @@ public class Main extends Character{
                             }
 
                             for (int i = 0; i < 26; i++){
-                                for (int x = 0; x < 25; x++){ // maybe need to go to 25 here instead????**FIX ME**
+                                for (int x = 0; x < 25; x++){ // maybe need to go to 25 here instead????**FIX ME** might also only need to do x = i+1 rather than this bs
                                     if (index == 0 || index == 2){
                                         if (charVals[x] <= charVals[x+1]){
                                             tempFloat = charVals[x]; 
