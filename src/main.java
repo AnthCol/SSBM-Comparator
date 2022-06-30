@@ -4,6 +4,8 @@ package src;
 import javax.swing.*;
 import javax.swing.text.*;
 
+import java.math.RoundingMode; 
+import java.text.DecimalFormat; 
 import java.awt.*;
 import java.io.File; 
 import java.io.FileNotFoundException;
@@ -577,179 +579,181 @@ public class Main extends Character{
                     averages[i] /= 26; 
                 }
 
+                DecimalFormat df = new DecimalFormat("0.00"); 
+
                 String averageString = ("<center><br><br><br><br><br><b>Averages: </b><<br><br><img src='file:images/FightingWireFramesHeadSSBM.png'><br>" + 
                 "<br><strong>&nbsp Jab 1:</strong>" + 
-                        "<br> &nbsp Damage: " + averages[0] + "%" + 
-                        "<br> &nbsp Startup Frames: " + averages[1] + 
-                        "<br> &nbsp Active Frames: " + averages[2] + 
-                        "<br> &nbsp Ending Frames: " + averages[3] +
+                        "<br> &nbsp Damage: " + df.format(averages[0]) + "%" + 
+                        "<br> &nbsp Startup Frames: " + df.format(averages[1]) + 
+                        "<br> &nbsp Active Frames: " + df.format(averages[2]) + 
+                        "<br> &nbsp Ending Frames: " + df.format(averages[3]) +
                         "<br><strong>&nbsp Jab 2:</strong>" + 
-                        "<br> &nbsp Damage: " + averages[4] + "%" + 
-                        "<br> &nbsp Startup Frames: " + averages[5] + 
-                        "<br> &nbsp Active Frames: " + averages[6] + 
-                        "<br> &nbsp Ending Frames: " + averages[7] +
+                        "<br> &nbsp Damage: " + df.format(averages[4]) + "%" + 
+                        "<br> &nbsp Startup Frames: " + df.format(averages[5] )+ 
+                        "<br> &nbsp Active Frames: " + df.format(averages[6]) + 
+                        "<br> &nbsp Ending Frames: " + df.format(averages[7]) +
                         "<br><strong>&nbsp Jab 3:</strong>" + 
-                        "<br> &nbsp Damage: " + averages[8] + "%" + 
-                        "<br> &nbsp Startup Frames: " + averages[9] + 
-                        "<br> &nbsp Active Frames: " + averages[10] + 
-                        "<br> &nbsp Ending Frames: " + averages[11] +
+                        "<br> &nbsp Damage: " + df.format(averages[8]) + "%" + 
+                        "<br> &nbsp Startup Frames: " + df.format(averages[9]) + 
+                        "<br> &nbsp Active Frames: " + df.format(averages[10]) + 
+                        "<br> &nbsp Ending Frames: " + df.format(averages[11]) +
                         "<br><strong>&nbsp Forward Tilt:</strong>" + 
-                        "<br> &nbsp Damage: " + averages[12] + "%" + 
-                        "<br> &nbsp Startup Frames: " + averages[13] + 
-                        "<br> &nbsp Active Frames: " + averages[14] + 
-                        "<br> &nbsp Ending Frames: " + averages[15] +
+                        "<br> &nbsp Damage: " + df.format(averages[12]) + "%" + 
+                        "<br> &nbsp Startup Frames: " + df.format(averages[13]) + 
+                        "<br> &nbsp Active Frames: " + df.format(averages[14]) + 
+                        "<br> &nbsp Ending Frames: " + df.format(averages[15]) +
                         "<br><strong>&nbsp Up Tilt:</strong>" + 
-                        "<br> &nbsp Damage: " + averages[16] + "%" + 
-                        "<br> &nbsp Startup Frames: " + averages[17] + 
-                        "<br> &nbsp Active Frames: " + averages[18] + 
-                        "<br> &nbsp Ending Frames: " + averages[19] +
+                        "<br> &nbsp Damage: " + df.format(averages[16]) + "%" + 
+                        "<br> &nbsp Startup Frames: " + df.format(averages[17]) + 
+                        "<br> &nbsp Active Frames: " + df.format(averages[18]) + 
+                        "<br> &nbsp Ending Frames: " + df.format(averages[19]) +
                         "<br><strong>&nbsp Down Tilt:</strong>" + 
-                        "<br> &nbsp Damage: " + averages[20] + "%" + 
-                        "<br> &nbsp Startup Frames: " + averages[21] + 
-                        "<br> &nbsp Active Frames: " + averages[22] + 
-                        "<br> &nbsp Ending Frames: " + averages[23] +
+                        "<br> &nbsp Damage: " + df.format(averages[20]) + "%" + 
+                        "<br> &nbsp Startup Frames: " + df.format(averages[21] )+ 
+                        "<br> &nbsp Active Frames: " + df.format(averages[22] )+ 
+                        "<br> &nbsp Ending Frames: " + df.format(averages[23]) +
                         "<br><strong>&nbsp Dash Attack:</strong>" + 
-                        "<br> &nbsp Damage: " + averages[24] + "%" + 
-                        "<br> &nbsp Startup Frames: " + averages[25] + 
-                        "<br> &nbsp Active Frames: " + averages[26] + 
-                        "<br> &nbsp Ending Frames: " + averages[27] +
+                        "<br> &nbsp Damage: " + df.format(averages[24]) + "%" + 
+                        "<br> &nbsp Startup Frames: " + df.format(averages[25] )+ 
+                        "<br> &nbsp Active Frames: " + df.format(averages[26]) + 
+                        "<br> &nbsp Ending Frames: " + df.format(averages[27]) +
                         "<br><strong>&nbsp Forward Smash:</strong>" + 
-                        "<br> &nbsp Damage: " + averages[28] + "%" + 
-                        "<br> &nbsp Startup Frames: " + averages[29] + 
-                        "<br> &nbsp Active Frames: " + averages[30] + 
-                        "<br> &nbsp Ending Frames: " + averages[31] +
+                        "<br> &nbsp Damage: " + df.format(averages[28]) + "%" + 
+                        "<br> &nbsp Startup Frames: " + df.format(averages[29])+ 
+                        "<br> &nbsp Active Frames: " + df.format(averages[30] )+ 
+                        "<br> &nbsp Ending Frames: " + df.format(averages[31]) +
                         "<br><strong>&nbsp Up Smash:</strong>" + 
-                        "<br> &nbsp Damage: " + averages[32] + "%" + 
-                        "<br> &nbsp Startup Frames: " + averages[33] + 
-                        "<br> &nbsp Active Frames: " + averages[34] + 
-                        "<br> &nbsp Ending Frames: " + averages[35] +
+                        "<br> &nbsp Damage: " + df.format(averages[32]) + "%" + 
+                        "<br> &nbsp Startup Frames: " + df.format(averages[33])+ 
+                        "<br> &nbsp Active Frames: " + df.format(averages[34]) + 
+                        "<br> &nbsp Ending Frames: " + df.format(averages[35]) +
                         "<br><strong>&nbsp Down Smash:</strong>" + 
-                        "<br> &nbsp Damage: " + averages[36] + "%" + 
-                        "<br> &nbsp Startup Frames: " + averages[37] + 
-                        "<br> &nbsp Active Frames: " + averages[38] + 
-                        "<br> &nbsp Ending Frames: " + averages[39] +
+                        "<br> &nbsp Damage: " + df.format(averages[36]) + "%" + 
+                        "<br> &nbsp Startup Frames: " + df.format(averages[37]) + 
+                        "<br> &nbsp Active Frames: " + df.format(averages[38]) + 
+                        "<br> &nbsp Ending Frames: " + df.format(averages[39]) +
                         "<br><strong>&nbsp Neutral Air:</strong>" + 
-                        "<br> &nbsp Damage: " + averages[40] + "%" + 
-                        "<br> &nbsp Startup Frames: " + averages[41] + 
-                        "<br> &nbsp Active Frames: " + averages[42] + 
-                        "<br> &nbsp Ending Frames: " + averages[43] +
+                        "<br> &nbsp Damage: " + df.format(averages[40]) + "%" + 
+                        "<br> &nbsp Startup Frames: " + df.format(averages[41]) + 
+                        "<br> &nbsp Active Frames: " + df.format(averages[42]) + 
+                        "<br> &nbsp Ending Frames: " + df.format(averages[43]) +
                         "<br><strong>&nbsp Forward Air:</strong>" + 
-                        "<br> &nbsp Damage: " + averages[44] + "%" + 
-                        "<br> &nbsp Startup Frames: " + averages[45] + 
-                        "<br> &nbsp Active Frames: " + averages[46] + 
-                        "<br> &nbsp Ending Frames: " + averages[47] +
+                        "<br> &nbsp Damage: " + df.format(averages[44]) + "%" + 
+                        "<br> &nbsp Startup Frames: " + df.format(averages[45] )+ 
+                        "<br> &nbsp Active Frames: " + df.format(averages[46]) + 
+                        "<br> &nbsp Ending Frames: " + df.format(averages[47]) +
                         "<br><strong>&nbsp Back Air:</strong>" + 
-                        "<br> &nbsp Damage: " + averages[48] + "%" + 
-                        "<br> &nbsp Startup Frames: " + averages[49] + 
-                        "<br> &nbsp Active Frames: " + averages[50] + 
-                        "<br> &nbsp Ending Frames: " + averages[51] +
+                        "<br> &nbsp Damage: " + df.format(averages[48]) + "%" + 
+                        "<br> &nbsp Startup Frames: " + df.format(averages[49]) + 
+                        "<br> &nbsp Active Frames: " + df.format(averages[50]) + 
+                        "<br> &nbsp Ending Frames: " + df.format(averages[51]) +
                         "<br><strong>&nbsp Up Air:</strong>" + 
-                        "<br> &nbsp Damage: " + averages[52] + "%" + 
-                        "<br> &nbsp Startup Frames: " + averages[53] + 
-                        "<br> &nbsp Active Frames: " + averages[54] + 
-                        "<br> &nbsp Ending Frames: " + averages[55] +
+                        "<br> &nbsp Damage: " + df.format(averages[52])+ "%" + 
+                        "<br> &nbsp Startup Frames: " + df.format(averages[53]) + 
+                        "<br> &nbsp Active Frames: " + df.format(averages[54] )+ 
+                        "<br> &nbsp Ending Frames: " + df.format(averages[55]) +
                         "<br><strong>&nbsp Down Air:</strong>" + 
-                        "<br> &nbsp Damage: " + averages[56] + "%" + 
-                        "<br> &nbsp Startup Frames: " + averages[57] + 
-                        "<br> &nbsp Active Frames: " + averages[58] + 
-                        "<br> &nbsp Ending Frames: " + averages[59] +
+                        "<br> &nbsp Damage: " + df.format(averages[56]) + "%" + 
+                        "<br> &nbsp Startup Frames: " + df.format(averages[57]) + 
+                        "<br> &nbsp Active Frames: " + df.format(averages[58] )+ 
+                        "<br> &nbsp Ending Frames: " + df.format(averages[59]) +
                         "<br><strong>&nbsp Grounded Neutral B:</strong>" + 
-                        "<br> &nbsp Damage: " + averages[60]+ "%" + 
-                        "<br> &nbsp Startup Frames: " + averages[61]+ 
-                        "<br> &nbsp Active Frames: " + averages[62] + 
-                        "<br> &nbsp Ending Frames: " + averages[63] +
+                        "<br> &nbsp Damage: " + df.format(averages[60])+ "%" + 
+                        "<br> &nbsp Startup Frames: " + df.format(averages[61])+ 
+                        "<br> &nbsp Active Frames: " + df.format(averages[62]) + 
+                        "<br> &nbsp Ending Frames: " + df.format(averages[63]) +
                         "<br><strong>&nbsp Aerial Neutral B:</strong>" + 
-                        "<br> &nbsp Damage: " + averages[64] + "%" + 
-                        "<br> &nbsp Startup Frames: " + averages[65] + 
-                        "<br> &nbsp Active Frames: " + averages[66] + 
-                        "<br> &nbsp Ending Frames: " + averages[67] +
+                        "<br> &nbsp Damage: " + df.format(averages[64]) + "%" + 
+                        "<br> &nbsp Startup Frames: " + df.format(averages[65] )+ 
+                        "<br> &nbsp Active Frames: " + df.format(averages[66]) + 
+                        "<br> &nbsp Ending Frames: " + df.format(averages[67] )+
                         "<br><strong>&nbsp Grounded Side B:</strong>" + 
-                        "<br> &nbsp Damage: " + averages[68] + "%" + 
-                        "<br> &nbsp Startup Frames: " + averages[69] + 
-                        "<br> &nbsp Active Frames: " + averages[70] + 
-                        "<br> &nbsp Ending Frames: " + averages[71] +
+                        "<br> &nbsp Damage: " + df.format(averages[68] )+ "%" + 
+                        "<br> &nbsp Startup Frames: " + df.format(averages[69] )+ 
+                        "<br> &nbsp Active Frames: " + df.format(averages[70] )+ 
+                        "<br> &nbsp Ending Frames: " + df.format(averages[71]) +
                         "<br><strong>&nbsp Aerial Side B:</strong>" + 
-                        "<br> &nbsp Damage: " + averages[72] + "%" + 
-                        "<br> &nbsp Startup Frames: " + averages[73] + 
-                        "<br> &nbsp Active Frames: " + averages[74] + 
-                        "<br> &nbsp Ending Frames: " + averages[75] +
+                        "<br> &nbsp Damage: " + df.format(averages[72]) + "%" + 
+                        "<br> &nbsp Startup Frames: " + df.format(averages[73]) + 
+                        "<br> &nbsp Active Frames: " + df.format(averages[74]) + 
+                        "<br> &nbsp Ending Frames: " + df.format(averages[75]) +
                         "<br><strong>&nbsp Grounded Up B:</strong>" + 
-                        "<br> &nbsp Damage: " + averages[76] + "%" + 
-                        "<br> &nbsp Startup Frames: " + averages[77] + 
-                        "<br> &nbsp Active Frames: " + averages[78] + 
-                        "<br> &nbsp Ending Frames: " + averages[79] +
+                        "<br> &nbsp Damage: " + df.format(averages[76]) + "%" + 
+                        "<br> &nbsp Startup Frames: " + df.format(averages[77]) + 
+                        "<br> &nbsp Active Frames: " + df.format(averages[78]) + 
+                        "<br> &nbsp Ending Frames: " + df.format(averages[79]) +
                         "<br><strong>&nbsp Aerial Up B:</strong>" + 
-                        "<br> &nbsp Damage: " + averages[80] + "%" + 
-                        "<br> &nbsp Startup Frames: " + averages[81] + 
-                        "<br> &nbsp Active Frames: " + averages[82]+ 
-                        "<br> &nbsp Ending Frames: " + averages[83] +
+                        "<br> &nbsp Damage: " + df.format(averages[80] )+ "%" + 
+                        "<br> &nbsp Startup Frames: " + df.format(averages[81]) + 
+                        "<br> &nbsp Active Frames: " + df.format(averages[82])+ 
+                        "<br> &nbsp Ending Frames: " + df.format(averages[83]) +
                         "<br><strong>&nbsp Grounded Down B:</strong>" + 
-                        "<br> &nbsp Damage: " + averages[84] + "%" + 
-                        "<br> &nbsp Startup Frames: " + averages[85] + 
-                        "<br> &nbsp Active Frames: " + averages[86] + 
-                        "<br> &nbsp Ending Frames: " + averages[87] +
+                        "<br> &nbsp Damage: " + df.format(averages[84]) + "%" + 
+                        "<br> &nbsp Startup Frames: " + df.format(averages[85]) + 
+                        "<br> &nbsp Active Frames: " + df.format(averages[86]) + 
+                        "<br> &nbsp Ending Frames: " + df.format(averages[87]) +
                         "<br><strong>&nbsp Aerial Down B:</strong>" + 
-                        "<br> &nbsp Damage: " + averages[88] + "%" + 
-                        "<br> &nbsp Startup Frames: " + averages[89] + 
-                        "<br> &nbsp Active Frames: " + averages[90] + 
-                        "<br> &nbsp Ending Frames: " + averages[91] +
+                        "<br> &nbsp Damage: " + df.format(averages[88]) + "%" + 
+                        "<br> &nbsp Startup Frames: " + df.format(averages[89] )+ 
+                        "<br> &nbsp Active Frames: " + df.format(averages[90] )+ 
+                        "<br> &nbsp Ending Frames: " + df.format(averages[91]) +
                         "<br><strong>&nbsp Standing Grab:</strong>" +
-                        "<br> &nbsp Startup Frames: " + averages[92] + 
-                        "<br> &nbsp Total Frames: " + averages[93] + 
+                        "<br> &nbsp Startup Frames: " + df.format(averages[92]) + 
+                        "<br> &nbsp Total Frames: " + df.format(averages[93]) + 
                         "<br><strong>&nbsp Dash Grab:</strong>" + 
-                        "<br> &nbsp Startup Frames: " + averages[94] + 
-                        "<br> &nbsp Total Frames: " + averages[95]+ 
+                        "<br> &nbsp Startup Frames: " + df.format(averages[94]) + 
+                        "<br> &nbsp Total Frames: " + df.format(averages[95])+ 
                         "<br><strong>&nbsp Forward Throw:</strong>" + 
-                        "<br> &nbsp Damage: " + averages[96] + "%" + 
-                        "<br> &nbsp Startup Frames: " + averages[97] + 
-                        "<br> &nbsp Active Frames: " + averages[98] + 
-                        "<br> &nbsp Ending Frames: " + averages[99] +  
+                        "<br> &nbsp Damage: " + df.format(averages[96]) + "%" + 
+                        "<br> &nbsp Startup Frames: " + df.format(averages[97]) + 
+                        "<br> &nbsp Active Frames: " + df.format(averages[98]) + 
+                        "<br> &nbsp Ending Frames: " + df.format(averages[99]) +  
                         "<br><strong>&nbsp Back Throw:</strong>" + 
-                        "<br> &nbsp Damage: " + averages[100] + "%" + 
-                        "<br> &nbsp Startup Frames: " + averages[101] + 
-                        "<br> &nbsp Active Frames: " + averages[102] + 
-                        "<br> &nbsp Ending Frames: " + averages[103] + 
+                        "<br> &nbsp Damage: " + df.format(averages[100]) + "%" + 
+                        "<br> &nbsp Startup Frames: " + df.format(averages[101]) + 
+                        "<br> &nbsp Active Frames: " + df.format(averages[102]) + 
+                        "<br> &nbsp Ending Frames: " + df.format(averages[103]) + 
                         "<br><strong>&nbsp Down Throw:</strong>" + 
-                        "<br> &nbsp Damage: " + averages[104] + "%" + 
-                        "<br> &nbsp Startup Frames: " + averages[105] + 
-                        "<br> &nbsp Active Frames: " + averages[106] + 
-                        "<br> &nbsp Ending Frames: " + averages[107] +
+                        "<br> &nbsp Damage: " + df.format(averages[104]) + "%" + 
+                        "<br> &nbsp Startup Frames: " + df.format(averages[105] )+ 
+                        "<br> &nbsp Active Frames: " + df.format(averages[106]) + 
+                        "<br> &nbsp Ending Frames: " + df.format(averages[107]) +
                         "<br><strong>&nbsp Up Throw:</strong>" + 
-                        "<br> &nbsp Damage: " + averages[108] + "%" + 
-                        "<br> &nbsp Startup Frames: " + averages[109] + 
-                        "<br> &nbsp Active Frames: " + averages[110] + 
-                        "<br> &nbsp Ending Frames: " + averages[111] +
+                        "<br> &nbsp Damage: " + df.format(averages[108]) + "%" + 
+                        "<br> &nbsp Startup Frames: " + df.format(averages[109] )+ 
+                        "<br> &nbsp Active Frames: " + df.format(averages[110]) + 
+                        "<br> &nbsp Ending Frames: " + df.format(averages[111]) +
                         "<br><strong>&nbsp Spot Dodge:</strong>" + 
-                        "<br> &nbsp Startup Frames: " + averages[112] + 
-                        "<br> &nbsp Active Frames: " + averages[113] + 
-                        "<br> &nbsp Ending Frames: " + averages[114] +
+                        "<br> &nbsp Startup Frames: " + df.format(averages[112] )+ 
+                        "<br> &nbsp Active Frames: " + df.format(averages[113]) + 
+                        "<br> &nbsp Ending Frames: " + df.format(averages[114]) +
                         "<br><strong>&nbsp Backwards Roll:</strong>" +
-                        "<br> &nbsp Startup Frames: " + averages[115] + 
-                        "<br> &nbsp Active Frames: " + averages[116] + 
-                        "<br> &nbsp Ending Frames: " + averages[117] +
+                        "<br> &nbsp Startup Frames: " + df.format(averages[115]) + 
+                        "<br> &nbsp Active Frames: " + df.format(averages[116]) + 
+                        "<br> &nbsp Ending Frames: " + df.format(averages[117]) +
                         "<br><strong>&nbsp Forwards Roll:</strong>" +
-                        "<br> &nbsp Startup Frames: " + averages[118] + 
-                        "<br> &nbsp Active Frames: " + averages[119] + 
-                        "<br> &nbsp Ending Frames: " + averages[120] +
+                        "<br> &nbsp Startup Frames: " + df.format(averages[118]) + 
+                        "<br> &nbsp Active Frames: " + df.format(averages[119]) + 
+                        "<br> &nbsp Ending Frames: " + df.format(averages[120]) +
                         "<br><strong>&nbsp Air Dodge:</strong>" + 
-                        "<br> &nbsp Startup Frames: " + averages[121] + 
-                        "<br> &nbsp Active Frames: " + averages[123] + 
-                        "<br> &nbsp Ending Frames: " + averages[124] +
-                        "<br> &nbsp Special Land Lag (Frames): " + averages[125] +
+                        "<br> &nbsp Startup Frames: " + df.format(averages[121]) + 
+                        "<br> &nbsp Active Frames: " + df.format(averages[123]) + 
+                        "<br> &nbsp Ending Frames: " + df.format(averages[124]) +
+                        "<br> &nbsp Special Land Lag (Frames): " + df.format(averages[125]) +
                         "<br><strong>&nbsp Weight:</strong>" + 
-                        averages[126] +
+                        df.format(averages[126]) +
                         "<br><strong>&nbsp Fast Fall Speed:</strong>" + 
-                        averages[127] +
+                        df.format(averages[127]) +
                         "<br><strong>&nbsp Dash Speed:</strong>" + 
-                        averages[128] +
+                        df.format(averages[128]) +
                         "<br><strong>&nbsp Run Speed:</strong>" + 
-                        averages[129] +
+                        df.format(averages[129]) +
                         "<br><strong>&nbsp Wavedash Length (rank/26):</strong>" + 
-                        averages[130] +
+                        df.format(averages[130]) +
                         "<br><strong>&nbsp PLDIF (Perfect Ledgedash Intangibility Frames):</strong>" + 
-                        averages[131] +
+                        df.format(averages[131]) +
                         "<br><strong>&nbsp Jump Squat Frames:</strong>" + 
-                        averages[132] +
+                        df.format(averages[132]) +
                         "<br><strong>&nbsp Wall Jump:</strong>" 
                 
                 
