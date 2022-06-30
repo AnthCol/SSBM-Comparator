@@ -338,27 +338,27 @@ public class Main extends Character{
             
                 System.out.println("char select clicked"); 
                 JTextPane comparePane = new JTextPane(); 
-                JScrollPane compareScroll = new JScrollPane(comparePane, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED); 
-                compareScroll.setVisible(true); 
+                JScrollPane compareScroll = new JScrollPane(comparePane, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED); 
+                
                 comparePane.setLayout(new GridBagLayout()); 
-
+               
                 GridBagConstraints constraints = new GridBagConstraints(); 
-                GridBagLayout gridbag = new GridBagLayout(); 
+              //  GridBagLayout gridbag = new GridBagLayout(); 
 
-                constraints.gridx = 0; 
+                constraints.gridx = 4; 
                 constraints.gridy = 0; 
                 constraints.fill = GridBagConstraints.BOTH; 
                 constraints.weightx = 1; 
                 constraints.weighty = 1; 
-                gridbag.setConstraints(compareScroll, constraints); 
-
+              //  gridbag.setConstraints(compareScroll, constraints); 
+                
                        
                 JTextPane char1 = new JTextPane(); 
                 char1.setContentType("text/html"); 
                 constraints.ipady = 650; 
                 constraints.weightx = 1; 
                
-                constraints.fill = GridBagConstraints.HORIZONTAL;
+                constraints.fill = GridBagConstraints.BOTH;
                 constraints.gridx = 0; 
                 constraints.gridy = 0; 
                 comparePane.add(char1, constraints);  
@@ -400,7 +400,7 @@ public class Main extends Character{
                 System.out.println("CHAR 1 ADDITION CLICKED"); 
                 JComboBox<String> char1Combo = new JComboBox<>(charOptions); 
                 //char1.removeAll(); 
-                char1.setText(fillerData); 
+                char1.setText(fillerData + "<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>."); 
                // char1Combo.setBounds((frame.getContentPane().getWidth() / 8 ) - 65, 50, 130, 30); // get content  pane of char1 width and divide it by two to centre it ?? **fix me** 
                 char1Combo.setBounds(char1.getWidth() + 65, 50, 130, 30); 
                 char1.add(char1Combo); 
@@ -435,7 +435,7 @@ public class Main extends Character{
        
                 JComboBox<String> char2Combo = new JComboBox<>(charOptions); 
                 //char2.removeAll(); 
-                char2.setText(fillerData); 
+                char2.setText(fillerData + "<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>."); 
                 char2Combo.setBounds((frame.getContentPane().getWidth() / 8 ) - 65, 50, 130, 30); 
                 char2.add(char2Combo); 
                 char2Combo.addActionListener(new ActionListener(){
@@ -461,7 +461,7 @@ public class Main extends Character{
 
                 JComboBox<String> char3Combo = new JComboBox<>(charOptions); 
                 //char3.removeAll(); 
-                char3.setText(fillerData); 
+                char3.setText(fillerData + "<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>."); 
                 char3Combo.setBounds((frame.getContentPane().getWidth() / 8 ) - 65, 50, 130, 30); 
                 char3.add(char3Combo); 
                 char3Combo.addActionListener(new ActionListener(){
@@ -488,7 +488,7 @@ public class Main extends Character{
           
                 JComboBox<String> char4Combo = new JComboBox<>(charOptions); 
                // char4.removeAll(); 
-                char4.setText(fillerData); 
+                char4.setText(fillerData + "<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>."); 
                 char4Combo.setBounds((frame.getContentPane().getWidth() / 8 ) - 65, 50, 130, 30); 
                 char4.add(char4Combo); 
                 char4Combo.addActionListener(new ActionListener(){
@@ -512,10 +512,12 @@ public class Main extends Character{
                     }
                 }); 
             
+
+                
                 comparePane.setEditable(false);
                 comparePane.setBackground(Color.LIGHT_GRAY); 
                 frame.getContentPane().removeAll();
-                frame.add(compareScroll);      
+                frame.add(compareScroll);  
                 frame.getContentPane().add(BorderLayout.NORTH, menuBar);
                 frame.setVisible(true); 
 
@@ -532,16 +534,20 @@ public class Main extends Character{
                 averagePane.setContentType("text/html"); 
                 averagePane.setBackground(Color.LIGHT_GRAY);
                 averagePane.setEditable(false); 
-                JScrollPane averageScroll = new JScrollPane(averagePane, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+                JScrollPane averageScroll = new JScrollPane(); //averagePane, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+                averageScroll.setViewportView(averagePane); 
+                averageScroll.getVerticalScrollBar().setUnitIncrement(70); 
+
                 GridBagConstraints constraints = new GridBagConstraints();  
                 JComboBox<String> charSelect = new JComboBox<>(charOptions); 
 
                 JTextPane left = new JTextPane(); 
                 JTextPane right = new JTextPane(); 
+                
 
                 
                 constraints.weightx = 5.0; 
-                constraints.fill = GridBagConstraints.HORIZONTAL;
+                constraints.fill = GridBagConstraints.BOTH;
                 constraints.ipady = 400; 
                 constraints.ipadx = 0; // 70 
                 constraints.gridx = 0; 
@@ -573,12 +579,12 @@ public class Main extends Character{
 
 
 
-                String averageString = ("<center><br><b>Averages: </b></center>");  
+                String averageString = ("<center><br><br><br><br><br><b>Averages: </b><<br><br><img src='file:images/FightingWireFramesHeadSSBM.png'><br>" + fullData);  
                 // NEED TO ADD ALL OF THE AVERAGES INTO THIS STRING LIKE : Jab 
                 // DAMAGE = ETC.  -> then add the numbers from the averages array into the string, then right.setText(averageString); and get rid of what
                 // is currently there. 
                 right.setText(averageString); 
-
+                
                 averagePane.add(right, constraints); 
 
                 charSelect.addActionListener(new ActionListener(){
@@ -611,7 +617,7 @@ public class Main extends Character{
 
 
                 frame.getContentPane().removeAll(); 
-                frame.add(averageScroll);  
+                frame.add(averageScroll, BorderLayout.CENTER); 
                 frame.getContentPane().add(BorderLayout.NORTH, menuBar); 
                 frame.setVisible(true); 
 
