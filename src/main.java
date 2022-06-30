@@ -245,7 +245,7 @@ public class Main extends Character{
         }; 
 
         // "Standing Grab", "Dash Grab", "Forward Throw", "Back Throw", "Down Throw", "Up Throw", "Spot Dodge", "Backwards Roll", "Forward Roll", "Air Dodge"
-
+        // FIX ME  ^ remove the throws from here, and add the other stuff to the attributes list **FIX ME**
         String[] attributesList = {
             "Weight", "Fast Fall Speed", "Dash Speed", "Run Speed", "Wavedash Length (rank/26)", 
             "Perfect Ledgedash Intangibility Frames", "Jump Squat", "Wall Jump"
