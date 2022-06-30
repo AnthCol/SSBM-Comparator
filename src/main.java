@@ -64,174 +64,175 @@ public class Main extends Character{
                         "<br> &nbsp Startup Frames: " + characters[index].values[1] + 
                         "<br> &nbsp Active Frames: " + characters[index].values[2] + 
                         "<br> &nbsp Ending Frames: " + characters[index].values[3] +
-                        "<br><strong>&nbsp Jab 2:</strong>" + 
-                        "<br> &nbsp Damage: " + characters[index].values[0] + "%" + 
-                        "<br> &nbsp Startup Frames: " + characters[index].values[1] + 
-                        "<br> &nbsp Active Frames: " + characters[index].values[2] + 
-                        "<br> &nbsp Ending Frames: " + characters[index].values[3] +
-                        "<br><strong>&nbsp Jab 3:</strong>" + 
-                        "<br> &nbsp Damage: " + characters[index].values[0] + "%" + 
-                        "<br> &nbsp Startup Frames: " + characters[index].values[1] + 
-                        "<br> &nbsp Active Frames: " + characters[index].values[2] + 
-                        "<br> &nbsp Ending Frames: " + characters[index].values[3] +
-                        "<br><strong>&nbsp Forward Tilt:</strong>" + 
-                        "<br> &nbsp Damage: " + characters[index].values[0] + "%" + 
-                        "<br> &nbsp Startup Frames: " + characters[index].values[1] + 
-                        "<br> &nbsp Active Frames: " + characters[index].values[2] + 
-                        "<br> &nbsp Ending Frames: " + characters[index].values[3] +
-                        "<br><strong>&nbsp Up Tilt:</strong>" + 
-                        "<br> &nbsp Damage: " + characters[index].values[0] + "%" + 
-                        "<br> &nbsp Startup Frames: " + characters[index].values[1] + 
-                        "<br> &nbsp Active Frames: " + characters[index].values[2] + 
-                        "<br> &nbsp Ending Frames: " + characters[index].values[3] +
-                        "<br><strong>&nbsp Down Tilt:</strong>" + 
-                        "<br> &nbsp Damage: " + characters[index].values[0] + "%" + 
-                        "<br> &nbsp Startup Frames: " + characters[index].values[1] + 
-                        "<br> &nbsp Active Frames: " + characters[index].values[2] + 
-                        "<br> &nbsp Ending Frames: " + characters[index].values[3] +
-                        "<br><strong>&nbsp Dash Attack:</strong>" + 
-                        "<br> &nbsp Damage: " + characters[index].values[0] + "%" + 
-                        "<br> &nbsp Startup Frames: " + characters[index].values[1] + 
-                        "<br> &nbsp Active Frames: " + characters[index].values[2] + 
-                        "<br> &nbsp Ending Frames: " + characters[index].values[3] +
-                        "<br><strong>&nbsp Forward Smash:</strong>" + 
-                        "<br> &nbsp Damage: " + characters[index].values[0] + "%" + 
-                        "<br> &nbsp Startup Frames: " + characters[index].values[1] + 
-                        "<br> &nbsp Active Frames: " + characters[index].values[2] + 
-                        "<br> &nbsp Ending Frames: " + characters[index].values[3] +
-                        "<br><strong>&nbsp Up Smash:</strong>" + 
-                        "<br> &nbsp Damage: " + characters[index].values[0] + "%" + 
-                        "<br> &nbsp Startup Frames: " + characters[index].values[1] + 
-                        "<br> &nbsp Active Frames: " + characters[index].values[2] + 
-                        "<br> &nbsp Ending Frames: " + characters[index].values[3] +
-                        "<br><strong>&nbsp Down Smash:</strong>" + 
-                        "<br> &nbsp Damage: " + characters[index].values[0] + "%" + 
-                        "<br> &nbsp Startup Frames: " + characters[index].values[1] + 
-                        "<br> &nbsp Active Frames: " + characters[index].values[2] + 
-                        "<br> &nbsp Ending Frames: " + characters[index].values[3] +
-                        "<br><strong>&nbsp Neutral Air:</strong>" + 
-                        "<br> &nbsp Damage: " + characters[index].values[0] + "%" + 
-                        "<br> &nbsp Startup Frames: " + characters[index].values[1] + 
-                        "<br> &nbsp Active Frames: " + characters[index].values[2] + 
-                        "<br> &nbsp Ending Frames: " + characters[index].values[3] +
-                        "<br><strong>&nbsp Forward Air:</strong>" + 
-                        "<br> &nbsp Damage: " + characters[index].values[0] + "%" + 
-                        "<br> &nbsp Startup Frames: " + characters[index].values[1] + 
-                        "<br> &nbsp Active Frames: " + characters[index].values[2] + 
-                        "<br> &nbsp Ending Frames: " + characters[index].values[3] +
-                        "<br><strong>&nbsp Back Air:</strong>" + 
-                        "<br> &nbsp Damage: " + characters[index].values[0] + "%" + 
-                        "<br> &nbsp Startup Frames: " + characters[index].values[1] + 
-                        "<br> &nbsp Active Frames: " + characters[index].values[2] + 
-                        "<br> &nbsp Ending Frames: " + characters[index].values[3] +
-                        "<br><strong>&nbsp Up Air:</strong>" + 
-                        "<br> &nbsp Damage: " + characters[index].values[0] + "%" + 
-                        "<br> &nbsp Startup Frames: " + characters[index].values[1] + 
-                        "<br> &nbsp Active Frames: " + characters[index].values[2] + 
-                        "<br> &nbsp Ending Frames: " + characters[index].values[3] +
-                        "<br><strong>&nbsp Down Air:</strong>" + 
-                        "<br> &nbsp Damage: " + characters[index].values[0] + "%" + 
-                        "<br> &nbsp Startup Frames: " + characters[index].values[1] + 
-                        "<br> &nbsp Active Frames: " + characters[index].values[2] + 
-                        "<br> &nbsp Ending Frames: " + characters[index].values[3] +
-                        "<br><strong>&nbsp Grounded Neutral B:</strong>" + 
-                        "<br> &nbsp Damage: " + characters[index].values[0] + "%" + 
-                        "<br> &nbsp Startup Frames: " + characters[index].values[1] + 
-                        "<br> &nbsp Active Frames: " + characters[index].values[2] + 
-                        "<br> &nbsp Ending Frames: " + characters[index].values[3] +
-                        "<br><strong>&nbsp Aerial Neutral B:</strong>" + 
-                        "<br> &nbsp Damage: " + characters[index].values[0] + "%" + 
-                        "<br> &nbsp Startup Frames: " + characters[index].values[1] + 
-                        "<br> &nbsp Active Frames: " + characters[index].values[2] + 
-                        "<br> &nbsp Ending Frames: " + characters[index].values[3] +
-                        "<br><strong>&nbsp Grounded Side B:</strong>" + 
-                        "<br> &nbsp Damage: " + characters[index].values[0] + "%" + 
-                        "<br> &nbsp Startup Frames: " + characters[index].values[1] + 
-                        "<br> &nbsp Active Frames: " + characters[index].values[2] + 
-                        "<br> &nbsp Ending Frames: " + characters[index].values[3] +
-                        "<br><strong>&nbsp Aerial Side B:</strong>" + 
-                        "<br> &nbsp Damage: " + characters[index].values[0] + "%" + 
-                        "<br> &nbsp Startup Frames: " + characters[index].values[1] + 
-                        "<br> &nbsp Active Frames: " + characters[index].values[2] + 
-                        "<br> &nbsp Ending Frames: " + characters[index].values[3] +
-                        "<br><strong>&nbsp Grounded Up B:</strong>" + 
-                        "<br> &nbsp Damage: " + characters[index].values[0] + "%" + 
-                        "<br> &nbsp Startup Frames: " + characters[index].values[1] + 
-                        "<br> &nbsp Active Frames: " + characters[index].values[2] + 
-                        "<br> &nbsp Ending Frames: " + characters[index].values[3] +
-                        "<br><strong>&nbsp Aerial Up B:</strong>" + 
-                        "<br> &nbsp Damage: " + characters[index].values[0] + "%" + 
-                        "<br> &nbsp Startup Frames: " + characters[index].values[1] + 
-                        "<br> &nbsp Active Frames: " + characters[index].values[2] + 
-                        "<br> &nbsp Ending Frames: " + characters[index].values[3] +
-                        "<br><strong>&nbsp Grounded Down B:</strong>" + 
-                        "<br> &nbsp Damage: " + characters[index].values[0] + "%" + 
-                        "<br> &nbsp Startup Frames: " + characters[index].values[1] + 
-                        "<br> &nbsp Active Frames: " + characters[index].values[2] + 
-                        "<br> &nbsp Ending Frames: " + characters[index].values[3] +
-                        "<br><strong>&nbsp Aerial Down B:</strong>" + 
-                        "<br> &nbsp Damage: " + characters[index].values[0] + "%" + 
-                        "<br> &nbsp Startup Frames: " + characters[index].values[1] + 
-                        "<br> &nbsp Active Frames: " + characters[index].values[2] + 
-                        "<br> &nbsp Ending Frames: " + characters[index].values[3] +
-                        "<br><strong>&nbsp Standing Grab:</strong>" +
-                        "<br> &nbsp Startup Frames: " + characters[index].values[1] + 
-                        "<br> &nbsp Total Frames: " + characters[index].values[2] + 
-                        "<br><strong>&nbsp Dash Grab:</strong>" + 
-                        "<br> &nbsp Startup Frames: " + characters[index].values[1] + 
-                        "<br> &nbsp Total Frames: " + characters[index].values[2] + 
-                        "<br><strong>&nbsp Forward Throw:</strong>" + 
-                        "<br> &nbsp Damage: " + characters[index].values[0] + "%" + 
-                        "<br> &nbsp Startup Frames: " + characters[index].values[1] + 
-                        "<br> &nbsp Active Frames: " + characters[index].values[2] + 
-                        "<br> &nbsp Ending Frames: " + characters[index].values[3] +  
-                        "<br><strong>&nbsp Back Throw:</strong>" + 
-                        "<br> &nbsp Damage: " + characters[index].values[0] + "%" + 
-                        "<br> &nbsp Startup Frames: " + characters[index].values[1] + 
-                        "<br> &nbsp Active Frames: " + characters[index].values[2] + 
-                        "<br> &nbsp Ending Frames: " + characters[index].values[3] + 
-                        "<br><strong>&nbsp Down Throw:</strong>" + 
-                        "<br> &nbsp Damage: " + characters[index].values[0] + "%" + 
-                        "<br> &nbsp Startup Frames: " + characters[index].values[1] + 
-                        "<br> &nbsp Active Frames: " + characters[index].values[2] + 
-                        "<br> &nbsp Ending Frames: " + characters[index].values[3] +
-                        "<br><strong>&nbsp Up Throw:</strong>" + 
-                        "<br> &nbsp Damage: " + characters[index].values[0] + "%" + 
-                        "<br> &nbsp Startup Frames: " + characters[index].values[1] + 
-                        "<br> &nbsp Active Frames: " + characters[index].values[2] + 
-                        "<br> &nbsp Ending Frames: " + characters[index].values[3] +
-                        "<br><strong>&nbsp Spot Dodge:</strong>" + 
-                        "<br> &nbsp Startup Frames: " + characters[index].values[1] + 
-                        "<br> &nbsp Active Frames: " + characters[index].values[2] + 
-                        "<br> &nbsp Ending Frames: " + characters[index].values[3] +
-                        "<br><strong>&nbsp Backwards Roll:</strong>" +
-                        "<br> &nbsp Startup Frames: " + characters[index].values[1] + 
-                        "<br> &nbsp Active Frames: " + characters[index].values[2] + 
-                        "<br> &nbsp Ending Frames: " + characters[index].values[3] +
-                        "<br><strong>&nbsp Forwards Roll:</strong>" +
-                        "<br> &nbsp Startup Frames: " + characters[index].values[1] + 
-                        "<br> &nbsp Active Frames: " + characters[index].values[2] + 
-                        "<br> &nbsp Ending Frames: " + characters[index].values[3] +
-                        "<br><strong>&nbsp Air Dodge:</strong>" + 
-                        "<br> &nbsp Startup Frames: " + characters[index].values[1] + 
-                        "<br> &nbsp Active Frames: " + characters[index].values[2] + 
-                        "<br> &nbsp Ending Frames: " + characters[index].values[3] +
-                        "<br> &nbsp Special Land Lag (Frames): " + characters[index].values[3] +
-                        "<br><strong>&nbsp Weight:</strong>" + 
-                        characters[index].values[3] +
-                        "<br><strong>&nbsp Fast Fall Speed:</strong>" + 
-                        characters[index].values[3] +
-                        "<br><strong>&nbsp Dash Speed:</strong>" + 
-                        characters[index].values[3] +
-                        "<br><strong>&nbsp Run Speed:</strong>" + 
-                        characters[index].values[3] +
-                        "<br><strong>&nbsp Wavedash Length (rank/26):</strong>" + 
-                        characters[index].values[3] +
-                        "<br><strong>&nbsp PLDIF (Perfect Ledgedash Intangibility Frames):</strong>" + 
-                        characters[index].values[3] +
-                        "<br><strong>&nbsp Jump Squat Frames:</strong>" + 
-                        characters[index].values[3] +
-                        "<br><strong>&nbsp Wall Jump:</strong>" 
+                        "<br><br><strong>&nbsp Jab 2:</strong>" + 
+                        "<br> &nbsp Damage: " + characters[index].values[4] + "%" + 
+                        "<br> &nbsp Startup Frames: " + characters[index].values[5] + 
+                        "<br> &nbsp Active Frames: " + characters[index].values[6] + 
+                        "<br> &nbsp Ending Frames: " + characters[index].values[7] +
+                        "<br><br><strong>&nbsp Jab 3:</strong>" + 
+                        "<br> &nbsp Damage: " + characters[index].values[8] + "%" + 
+                        "<br> &nbsp Startup Frames: " + characters[index].values[9] + 
+                        "<br> &nbsp Active Frames: " + characters[index].values[10] + 
+                        "<br> &nbsp Ending Frames: " + characters[index].values[11] +
+                        "<br><br><strong>&nbsp Forward Tilt:</strong>" + 
+                        "<br> &nbsp Damage: " + characters[index].values[12] + "%" + 
+                        "<br> &nbsp Startup Frames: " + characters[index].values[13] + 
+                        "<br> &nbsp Active Frames: " + characters[index].values[14] + 
+                        "<br> &nbsp Ending Frames: " + characters[index].values[15] +
+                        "<br><br><strong>&nbsp Up Tilt:</strong>" + 
+                        "<br> &nbsp Damage: " + characters[index].values[16] + "%" + 
+                        "<br> &nbsp Startup Frames: " + characters[index].values[17] + 
+                        "<br> &nbsp Active Frames: " + characters[index].values[18] + 
+                        "<br> &nbsp Ending Frames: " + characters[index].values[19] +
+                        "<br><br><strong>&nbsp Down Tilt:</strong>" + 
+                        "<br> &nbsp Damage: " + characters[index].values[20] + "%" + 
+                        "<br> &nbsp Startup Frames: " + characters[index].values[21] + 
+                        "<br> &nbsp Active Frames: " + characters[index].values[22] + 
+                        "<br> &nbsp Ending Frames: " + characters[index].values[23] +
+                        "<br><br><strong>&nbsp Dash Attack:</strong>" + 
+                        "<br> &nbsp Damage: " + characters[index].values[24] + "%" + 
+                        "<br> &nbsp Startup Frames: " + characters[index].values[25] + 
+                        "<br> &nbsp Active Frames: " + characters[index].values[26] + 
+                        "<br> &nbsp Ending Frames: " + characters[index].values[27] +
+                        "<br><br><strong>&nbsp Forward Smash:</strong>" + 
+                        "<br> &nbsp Damage: " + characters[index].values[28] + "%" + 
+                        "<br> &nbsp Startup Frames: " + characters[index].values[29] + 
+                        "<br> &nbsp Active Frames: " + characters[index].values[30] + 
+                        "<br> &nbsp Ending Frames: " + characters[index].values[31] +
+                        "<br><br><strong>&nbsp Up Smash:</strong>" + 
+                        "<br> &nbsp Damage: " + characters[index].values[32] + "%" + 
+                        "<br> &nbsp Startup Frames: " + characters[index].values[33] + 
+                        "<br> &nbsp Active Frames: " + characters[index].values[34] + 
+                        "<br> &nbsp Ending Frames: " + characters[index].values[35] +
+                        "<br><br><strong>&nbsp Down Smash:</strong>" + 
+                        "<br> &nbsp Damage: " + characters[index].values[36] + "%" + 
+                        "<br> &nbsp Startup Frames: " + characters[index].values[37] + 
+                        "<br> &nbsp Active Frames: " + characters[index].values[38] + 
+                        "<br> &nbsp Ending Frames: " + characters[index].values[39] +
+                        "<br><br><strong>&nbsp Neutral Air:</strong>" + 
+                        "<br> &nbsp Damage: " + characters[index].values[40] + "%" + 
+                        "<br> &nbsp Startup Frames: " + characters[index].values[41] + 
+                        "<br> &nbsp Active Frames: " + characters[index].values[42] + 
+                        "<br> &nbsp Ending Frames: " + characters[index].values[43] +
+                        "<br><br><strong>&nbsp Forward Air:</strong>" + 
+                        "<br> &nbsp Damage: " + characters[index].values[44] + "%" + 
+                        "<br> &nbsp Startup Frames: " + characters[index].values[45] + 
+                        "<br> &nbsp Active Frames: " + characters[index].values[46] + 
+                        "<br> &nbsp Ending Frames: " + characters[index].values[47] +
+                        "<br><br><strong>&nbsp Back Air:</strong>" + 
+                        "<br> &nbsp Damage: " + characters[index].values[48] + "%" + 
+                        "<br> &nbsp Startup Frames: " + characters[index].values[49] + 
+                        "<br> &nbsp Active Frames: " + characters[index].values[50] + 
+                        "<br> &nbsp Ending Frames: " + characters[index].values[51] +
+                        "<br><br><strong>&nbsp Up Air:</strong>" + 
+                        "<br> &nbsp Damage: " + characters[index].values[52] + "%" + 
+                        "<br> &nbsp Startup Frames: " + characters[index].values[53] + 
+                        "<br> &nbsp Active Frames: " + characters[index].values[54] + 
+                        "<br> &nbsp Ending Frames: " + characters[index].values[55] +
+                        "<br><br><strong>&nbsp Down Air:</strong>" + 
+                        "<br> &nbsp Damage: " + characters[index].values[56] + "%" + 
+                        "<br> &nbsp Startup Frames: " + characters[index].values[57] + 
+                        "<br> &nbsp Active Frames: " + characters[index].values[58] + 
+                        "<br> &nbsp Ending Frames: " + characters[index].values[59] +
+                        "<br><br><strong>&nbsp Grounded Neutral B:</strong>" + 
+                        "<br> &nbsp Damage: " + characters[index].values[60] + "%" + 
+                        "<br> &nbsp Startup Frames: " + characters[index].values[61] + 
+                        "<br> &nbsp Active Frames: " + characters[index].values[62] + 
+                        "<br> &nbsp Ending Frames: " + characters[index].values[63] +
+                        "<br><br><strong>&nbsp Aerial Neutral B:</strong>" + 
+                        "<br> &nbsp Damage: " + characters[index].values[64] + "%" + 
+                        "<br> &nbsp Startup Frames: " + characters[index].values[65] + 
+                        "<br> &nbsp Active Frames: " + characters[index].values[66] + 
+                        "<br> &nbsp Ending Frames: " + characters[index].values[67] +
+                        "<br><br><strong>&nbsp Grounded Side B:</strong>" + 
+                        "<br> &nbsp Damage: " + characters[index].values[68] + "%" + 
+                        "<br> &nbsp Startup Frames: " + characters[index].values[69] + 
+                        "<br> &nbsp Active Frames: " + characters[index].values[70] + 
+                        "<br> &nbsp Ending Frames: " + characters[index].values[71] +
+                        "<br><br><strong>&nbsp Aerial Side B:</strong>" + 
+                        "<br> &nbsp Damage: " + characters[index].values[72] + "%" + 
+                        "<br> &nbsp Startup Frames: " + characters[index].values[73] + 
+                        "<br> &nbsp Active Frames: " + characters[index].values[74] + 
+                        "<br> &nbsp Ending Frames: " + characters[index].values[75] +
+                        "<br><br><strong>&nbsp Grounded Up B:</strong>" + 
+                        "<br> &nbsp Damage: " + characters[index].values[76] + "%" + 
+                        "<br> &nbsp Startup Frames: " + characters[index].values[77] + 
+                        "<br> &nbsp Active Frames: " + characters[index].values[78] + 
+                        "<br> &nbsp Ending Frames: " + characters[index].values[79] +
+                        "<br><br><strong>&nbsp Aerial Up B:</strong>" + 
+                        "<br> &nbsp Damage: " + characters[index].values[80] + "%" + 
+                        "<br> &nbsp Startup Frames: " + characters[index].values[81] + 
+                        "<br> &nbsp Active Frames: " + characters[index].values[82] + 
+                        "<br> &nbsp Ending Frames: " + characters[index].values[83] +
+                        "<br><br><strong>&nbsp Grounded Down B:</strong>" + 
+                        "<br> &nbsp Damage: " + characters[index].values[84] + "%" + 
+                        "<br> &nbsp Startup Frames: " + characters[index].values[85] + 
+                        "<br> &nbsp Active Frames: " + characters[index].values[86] + 
+                        "<br> &nbsp Ending Frames: " + characters[index].values[87] +
+                        "<br><br><strong>&nbsp Aerial Down B:</strong>" + 
+                        "<br> &nbsp Damage: " + characters[index].values[88] + "%" + 
+                        "<br> &nbsp Startup Frames: " + characters[index].values[89] + 
+                        "<br> &nbsp Active Frames: " + characters[index].values[90] + 
+                        "<br> &nbsp Ending Frames: " + characters[index].values[91] +
+                        "<br><br><strong>&nbsp Standing Grab:</strong>" +
+                        "<br> &nbsp Startup Frames: " + characters[index].values[92] + 
+                        "<br> &nbsp Total Frames: " + characters[index].values[93] + 
+                        "<br><br><strong>&nbsp Dash Grab:</strong>" + 
+                        "<br> &nbsp Startup Frames: " + characters[index].values[94] + 
+                        "<br> &nbsp Total Frames: " + characters[index].values[95] + 
+                        "<br><br><strong>&nbsp Forward Throw:</strong>" + 
+                        "<br> &nbsp Damage: " + characters[index].values[96] + "%" + 
+                        "<br> &nbsp Startup Frames: " + characters[index].values[97] + 
+                        "<br> &nbsp Active Frames: " + characters[index].values[98] + 
+                        "<br> &nbsp Ending Frames: " + characters[index].values[99] +  
+                        "<br><br><strong>&nbsp Back Throw:</strong>" + 
+                        "<br> &nbsp Damage: " + characters[index].values[100] + "%" + 
+                        "<br> &nbsp Startup Frames: " + characters[index].values[101] + 
+                        "<br> &nbsp Active Frames: " + characters[index].values[102] + 
+                        "<br> &nbsp Ending Frames: " + characters[index].values[103] + 
+                        "<br><br><strong>&nbsp Down Throw:</strong>" + 
+                        "<br> &nbsp Damage: " + characters[index].values[104] + "%" + 
+                        "<br> &nbsp Startup Frames: " + characters[index].values[105] + 
+                        "<br> &nbsp Active Frames: " + characters[index].values[106] + 
+                        "<br> &nbsp Ending Frames: " + characters[index].values[107] +
+                        "<br><br><strong>&nbsp Up Throw:</strong>" + 
+                        "<br> &nbsp Damage: " + characters[index].values[108] + "%" + 
+                        "<br> &nbsp Startup Frames: " + characters[index].values[109] + 
+                        "<br> &nbsp Active Frames: " + characters[index].values[110] + 
+                        "<br> &nbsp Ending Frames: " + characters[index].values[111] +
+                        "<br><br><strong>&nbsp Spot Dodge:</strong>" + 
+                        "<br> &nbsp Startup Frames: " + characters[index].values[112] + 
+                        "<br> &nbsp Active Frames: " + characters[index].values[113] + 
+                        "<br> &nbsp Ending Frames: " + characters[index].values[114] +
+                        "<br><br><strong>&nbsp Backwards Roll:</strong>" +
+                        "<br> &nbsp Startup Frames: " + characters[index].values[115] + 
+                        "<br> &nbsp Active Frames: " + characters[index].values[116] + 
+                        "<br> &nbsp Ending Frames: " + characters[index].values[117] +
+                        "<br><br><strong>&nbsp Forwards Roll:</strong>" +
+                        "<br> &nbsp Startup Frames: " + characters[index].values[118] + 
+                        "<br> &nbsp Active Frames: " + characters[index].values[119] + 
+                        "<br> &nbsp Ending Frames: " + characters[index].values[120] +
+                        "<br><br><strong>&nbsp Air Dodge:</strong>" + 
+                        "<br> &nbsp Startup Frames: " + characters[index].values[121] + 
+                        "<br> &nbsp Active Frames: " + characters[index].values[122] + 
+                        "<br> &nbsp Ending Frames: " + characters[index].values[123] +
+                        "<br> &nbsp Special Land Lag (Frames): " + characters[index].values[124] +
+                        "<br><br><strong>&nbsp Weight:</strong>" + 
+                        characters[index].values[125] +
+                        "<br><br><strong>&nbsp Fast Fall Speed:</strong>" + 
+                        characters[index].values[126] +
+                        "<br><br><strong>&nbsp Dash Speed:</strong>" + 
+                        characters[index].values[127] +
+                        "<br><br><strong>&nbsp Run Speed:</strong>" + 
+                        characters[index].values[128] +
+                        "<br><br><strong>&nbsp Wavedash Length (rank/26):</strong>" + 
+                        characters[index].values[129] +
+                        "<br><br><strong>&nbsp PLDIF (Perfect Ledgedash Intangibility Frames):</strong>" + 
+                        characters[index].values[130] +
+                        "<br><br><strong>&nbsp Jump Squat Frames:</strong>" + 
+                        characters[index].values[131] +
+                        "<br><br><strong>&nbsp Wall Jump:</strong>" +
+                        characters[index].values[132] // **FIX ME - USE NUMBERS, OR USE WORDS WITH A TEMPORARY COPY OF THE STRING AND YOU ADD YES OR NO???? - FIX AFTER THE SCROLLBAR GETS FIXED 
                         
         ); 
 
@@ -587,180 +588,180 @@ public class Main extends Character{
                         "<br> &nbsp Startup Frames: " + df.format(averages[1]) + 
                         "<br> &nbsp Active Frames: " + df.format(averages[2]) + 
                         "<br> &nbsp Ending Frames: " + df.format(averages[3]) +
-                        "<br><strong>&nbsp Jab 2:</strong>" + 
+                        "<br><br><strong>&nbsp Jab 2:</strong>" + 
                         "<br> &nbsp Damage: " + df.format(averages[4]) + "%" + 
                         "<br> &nbsp Startup Frames: " + df.format(averages[5] )+ 
                         "<br> &nbsp Active Frames: " + df.format(averages[6]) + 
                         "<br> &nbsp Ending Frames: " + df.format(averages[7]) +
-                        "<br><strong>&nbsp Jab 3:</strong>" + 
+                        "<br><br><strong>&nbsp Jab 3:</strong>" + 
                         "<br> &nbsp Damage: " + df.format(averages[8]) + "%" + 
                         "<br> &nbsp Startup Frames: " + df.format(averages[9]) + 
                         "<br> &nbsp Active Frames: " + df.format(averages[10]) + 
                         "<br> &nbsp Ending Frames: " + df.format(averages[11]) +
-                        "<br><strong>&nbsp Forward Tilt:</strong>" + 
+                        "<br><br><strong>&nbsp Forward Tilt:</strong>" + 
                         "<br> &nbsp Damage: " + df.format(averages[12]) + "%" + 
                         "<br> &nbsp Startup Frames: " + df.format(averages[13]) + 
                         "<br> &nbsp Active Frames: " + df.format(averages[14]) + 
                         "<br> &nbsp Ending Frames: " + df.format(averages[15]) +
-                        "<br><strong>&nbsp Up Tilt:</strong>" + 
+                        "<br><br><strong>&nbsp Up Tilt:</strong>" + 
                         "<br> &nbsp Damage: " + df.format(averages[16]) + "%" + 
                         "<br> &nbsp Startup Frames: " + df.format(averages[17]) + 
                         "<br> &nbsp Active Frames: " + df.format(averages[18]) + 
                         "<br> &nbsp Ending Frames: " + df.format(averages[19]) +
-                        "<br><strong>&nbsp Down Tilt:</strong>" + 
+                        "<br><br><strong>&nbsp Down Tilt:</strong>" + 
                         "<br> &nbsp Damage: " + df.format(averages[20]) + "%" + 
                         "<br> &nbsp Startup Frames: " + df.format(averages[21] )+ 
                         "<br> &nbsp Active Frames: " + df.format(averages[22] )+ 
                         "<br> &nbsp Ending Frames: " + df.format(averages[23]) +
-                        "<br><strong>&nbsp Dash Attack:</strong>" + 
+                        "<br><br><strong>&nbsp Dash Attack:</strong>" + 
                         "<br> &nbsp Damage: " + df.format(averages[24]) + "%" + 
                         "<br> &nbsp Startup Frames: " + df.format(averages[25] )+ 
                         "<br> &nbsp Active Frames: " + df.format(averages[26]) + 
                         "<br> &nbsp Ending Frames: " + df.format(averages[27]) +
-                        "<br><strong>&nbsp Forward Smash:</strong>" + 
+                        "<br><br><strong>&nbsp Forward Smash:</strong>" + 
                         "<br> &nbsp Damage: " + df.format(averages[28]) + "%" + 
                         "<br> &nbsp Startup Frames: " + df.format(averages[29])+ 
                         "<br> &nbsp Active Frames: " + df.format(averages[30] )+ 
                         "<br> &nbsp Ending Frames: " + df.format(averages[31]) +
-                        "<br><strong>&nbsp Up Smash:</strong>" + 
+                        "<br><br><strong>&nbsp Up Smash:</strong>" + 
                         "<br> &nbsp Damage: " + df.format(averages[32]) + "%" + 
                         "<br> &nbsp Startup Frames: " + df.format(averages[33])+ 
                         "<br> &nbsp Active Frames: " + df.format(averages[34]) + 
                         "<br> &nbsp Ending Frames: " + df.format(averages[35]) +
-                        "<br><strong>&nbsp Down Smash:</strong>" + 
+                        "<br><br><strong>&nbsp Down Smash:</strong>" + 
                         "<br> &nbsp Damage: " + df.format(averages[36]) + "%" + 
                         "<br> &nbsp Startup Frames: " + df.format(averages[37]) + 
                         "<br> &nbsp Active Frames: " + df.format(averages[38]) + 
                         "<br> &nbsp Ending Frames: " + df.format(averages[39]) +
-                        "<br><strong>&nbsp Neutral Air:</strong>" + 
+                        "<br><br><strong>&nbsp Neutral Air:</strong>" + 
                         "<br> &nbsp Damage: " + df.format(averages[40]) + "%" + 
                         "<br> &nbsp Startup Frames: " + df.format(averages[41]) + 
                         "<br> &nbsp Active Frames: " + df.format(averages[42]) + 
                         "<br> &nbsp Ending Frames: " + df.format(averages[43]) +
-                        "<br><strong>&nbsp Forward Air:</strong>" + 
+                        "<br><br><strong>&nbsp Forward Air:</strong>" + 
                         "<br> &nbsp Damage: " + df.format(averages[44]) + "%" + 
                         "<br> &nbsp Startup Frames: " + df.format(averages[45] )+ 
                         "<br> &nbsp Active Frames: " + df.format(averages[46]) + 
                         "<br> &nbsp Ending Frames: " + df.format(averages[47]) +
-                        "<br><strong>&nbsp Back Air:</strong>" + 
+                        "<br><br><strong>&nbsp Back Air:</strong>" + 
                         "<br> &nbsp Damage: " + df.format(averages[48]) + "%" + 
                         "<br> &nbsp Startup Frames: " + df.format(averages[49]) + 
                         "<br> &nbsp Active Frames: " + df.format(averages[50]) + 
                         "<br> &nbsp Ending Frames: " + df.format(averages[51]) +
-                        "<br><strong>&nbsp Up Air:</strong>" + 
+                        "<br><br><strong>&nbsp Up Air:</strong>" + 
                         "<br> &nbsp Damage: " + df.format(averages[52])+ "%" + 
                         "<br> &nbsp Startup Frames: " + df.format(averages[53]) + 
                         "<br> &nbsp Active Frames: " + df.format(averages[54] )+ 
                         "<br> &nbsp Ending Frames: " + df.format(averages[55]) +
-                        "<br><strong>&nbsp Down Air:</strong>" + 
+                        "<br><br><strong>&nbsp Down Air:</strong>" + 
                         "<br> &nbsp Damage: " + df.format(averages[56]) + "%" + 
                         "<br> &nbsp Startup Frames: " + df.format(averages[57]) + 
                         "<br> &nbsp Active Frames: " + df.format(averages[58] )+ 
                         "<br> &nbsp Ending Frames: " + df.format(averages[59]) +
-                        "<br><strong>&nbsp Grounded Neutral B:</strong>" + 
+                        "<br><br><strong>&nbsp Grounded Neutral B:</strong>" + 
                         "<br> &nbsp Damage: " + df.format(averages[60])+ "%" + 
                         "<br> &nbsp Startup Frames: " + df.format(averages[61])+ 
                         "<br> &nbsp Active Frames: " + df.format(averages[62]) + 
                         "<br> &nbsp Ending Frames: " + df.format(averages[63]) +
-                        "<br><strong>&nbsp Aerial Neutral B:</strong>" + 
+                        "<br><br><strong>&nbsp Aerial Neutral B:</strong>" + 
                         "<br> &nbsp Damage: " + df.format(averages[64]) + "%" + 
                         "<br> &nbsp Startup Frames: " + df.format(averages[65] )+ 
                         "<br> &nbsp Active Frames: " + df.format(averages[66]) + 
                         "<br> &nbsp Ending Frames: " + df.format(averages[67] )+
-                        "<br><strong>&nbsp Grounded Side B:</strong>" + 
+                        "<br><br><strong>&nbsp Grounded Side B:</strong>" + 
                         "<br> &nbsp Damage: " + df.format(averages[68] )+ "%" + 
                         "<br> &nbsp Startup Frames: " + df.format(averages[69] )+ 
                         "<br> &nbsp Active Frames: " + df.format(averages[70] )+ 
                         "<br> &nbsp Ending Frames: " + df.format(averages[71]) +
-                        "<br><strong>&nbsp Aerial Side B:</strong>" + 
+                        "<br><br><strong>&nbsp Aerial Side B:</strong>" + 
                         "<br> &nbsp Damage: " + df.format(averages[72]) + "%" + 
                         "<br> &nbsp Startup Frames: " + df.format(averages[73]) + 
                         "<br> &nbsp Active Frames: " + df.format(averages[74]) + 
                         "<br> &nbsp Ending Frames: " + df.format(averages[75]) +
-                        "<br><strong>&nbsp Grounded Up B:</strong>" + 
+                        "<br><br><strong>&nbsp Grounded Up B:</strong>" + 
                         "<br> &nbsp Damage: " + df.format(averages[76]) + "%" + 
                         "<br> &nbsp Startup Frames: " + df.format(averages[77]) + 
                         "<br> &nbsp Active Frames: " + df.format(averages[78]) + 
                         "<br> &nbsp Ending Frames: " + df.format(averages[79]) +
-                        "<br><strong>&nbsp Aerial Up B:</strong>" + 
+                        "<br><br><strong>&nbsp Aerial Up B:</strong>" + 
                         "<br> &nbsp Damage: " + df.format(averages[80] )+ "%" + 
                         "<br> &nbsp Startup Frames: " + df.format(averages[81]) + 
                         "<br> &nbsp Active Frames: " + df.format(averages[82])+ 
                         "<br> &nbsp Ending Frames: " + df.format(averages[83]) +
-                        "<br><strong>&nbsp Grounded Down B:</strong>" + 
+                        "<br><br><strong>&nbsp Grounded Down B:</strong>" + 
                         "<br> &nbsp Damage: " + df.format(averages[84]) + "%" + 
                         "<br> &nbsp Startup Frames: " + df.format(averages[85]) + 
                         "<br> &nbsp Active Frames: " + df.format(averages[86]) + 
                         "<br> &nbsp Ending Frames: " + df.format(averages[87]) +
-                        "<br><strong>&nbsp Aerial Down B:</strong>" + 
+                        "<br><br><strong>&nbsp Aerial Down B:</strong>" + 
                         "<br> &nbsp Damage: " + df.format(averages[88]) + "%" + 
                         "<br> &nbsp Startup Frames: " + df.format(averages[89] )+ 
                         "<br> &nbsp Active Frames: " + df.format(averages[90] )+ 
                         "<br> &nbsp Ending Frames: " + df.format(averages[91]) +
-                        "<br><strong>&nbsp Standing Grab:</strong>" +
+                        "<br><br><strong>&nbsp Standing Grab:</strong>" +
                         "<br> &nbsp Startup Frames: " + df.format(averages[92]) + 
                         "<br> &nbsp Total Frames: " + df.format(averages[93]) + 
-                        "<br><strong>&nbsp Dash Grab:</strong>" + 
+                        "<br><br><strong>&nbsp Dash Grab:</strong>" + 
                         "<br> &nbsp Startup Frames: " + df.format(averages[94]) + 
                         "<br> &nbsp Total Frames: " + df.format(averages[95])+ 
-                        "<br><strong>&nbsp Forward Throw:</strong>" + 
+                        "<br><br><strong>&nbsp Forward Throw:</strong>" + 
                         "<br> &nbsp Damage: " + df.format(averages[96]) + "%" + 
                         "<br> &nbsp Startup Frames: " + df.format(averages[97]) + 
                         "<br> &nbsp Active Frames: " + df.format(averages[98]) + 
                         "<br> &nbsp Ending Frames: " + df.format(averages[99]) +  
-                        "<br><strong>&nbsp Back Throw:</strong>" + 
+                        "<br><br><strong>&nbsp Back Throw:</strong>" + 
                         "<br> &nbsp Damage: " + df.format(averages[100]) + "%" + 
                         "<br> &nbsp Startup Frames: " + df.format(averages[101]) + 
                         "<br> &nbsp Active Frames: " + df.format(averages[102]) + 
                         "<br> &nbsp Ending Frames: " + df.format(averages[103]) + 
-                        "<br><strong>&nbsp Down Throw:</strong>" + 
+                        "<br><br><strong>&nbsp Down Throw:</strong>" + 
                         "<br> &nbsp Damage: " + df.format(averages[104]) + "%" + 
                         "<br> &nbsp Startup Frames: " + df.format(averages[105] )+ 
                         "<br> &nbsp Active Frames: " + df.format(averages[106]) + 
                         "<br> &nbsp Ending Frames: " + df.format(averages[107]) +
-                        "<br><strong>&nbsp Up Throw:</strong>" + 
+                        "<br><br><strong>&nbsp Up Throw:</strong>" + 
                         "<br> &nbsp Damage: " + df.format(averages[108]) + "%" + 
                         "<br> &nbsp Startup Frames: " + df.format(averages[109] )+ 
                         "<br> &nbsp Active Frames: " + df.format(averages[110]) + 
                         "<br> &nbsp Ending Frames: " + df.format(averages[111]) +
-                        "<br><strong>&nbsp Spot Dodge:</strong>" + 
+                        "<br><br><strong>&nbsp Spot Dodge:</strong>" + 
                         "<br> &nbsp Startup Frames: " + df.format(averages[112] )+ 
                         "<br> &nbsp Active Frames: " + df.format(averages[113]) + 
                         "<br> &nbsp Ending Frames: " + df.format(averages[114]) +
-                        "<br><strong>&nbsp Backwards Roll:</strong>" +
+                        "<br><br><strong>&nbsp Backwards Roll:</strong>" +
                         "<br> &nbsp Startup Frames: " + df.format(averages[115]) + 
                         "<br> &nbsp Active Frames: " + df.format(averages[116]) + 
                         "<br> &nbsp Ending Frames: " + df.format(averages[117]) +
-                        "<br><strong>&nbsp Forwards Roll:</strong>" +
+                        "<br><br><strong>&nbsp Forwards Roll:</strong>" +
                         "<br> &nbsp Startup Frames: " + df.format(averages[118]) + 
                         "<br> &nbsp Active Frames: " + df.format(averages[119]) + 
                         "<br> &nbsp Ending Frames: " + df.format(averages[120]) +
-                        "<br><strong>&nbsp Air Dodge:</strong>" + 
+                        "<br><br><strong>&nbsp Air Dodge:</strong>" + 
                         "<br> &nbsp Startup Frames: " + df.format(averages[121]) + 
-                        "<br> &nbsp Active Frames: " + df.format(averages[123]) + 
-                        "<br> &nbsp Ending Frames: " + df.format(averages[124]) +
-                        "<br> &nbsp Special Land Lag (Frames): " + df.format(averages[125]) +
-                        "<br><strong>&nbsp Weight:</strong>" + 
+                        "<br> &nbsp Active Frames: " + df.format(averages[122]) +  
+                        "<br> &nbsp Ending Frames: " + df.format(averages[123]) +
+                        "<br> &nbsp Special Land Lag (Frames): " + df.format(averages[124]) +
+                        "<br><br><strong>&nbsp Weight:</strong>" + 
+                        df.format(averages[125]) +
+                        "<br><br><strong>&nbsp Fast Fall Speed:</strong>" + 
                         df.format(averages[126]) +
-                        "<br><strong>&nbsp Fast Fall Speed:</strong>" + 
+                        "<br><br><strong>&nbsp Dash Speed:</strong>" + 
                         df.format(averages[127]) +
-                        "<br><strong>&nbsp Dash Speed:</strong>" + 
+                        "<br><br><strong>&nbsp Run Speed:</strong>" + 
                         df.format(averages[128]) +
-                        "<br><strong>&nbsp Run Speed:</strong>" + 
+                        "<br><br><strong>&nbsp Wavedash Length (rank/26):</strong>" + 
                         df.format(averages[129]) +
-                        "<br><strong>&nbsp Wavedash Length (rank/26):</strong>" + 
+                        "<br><br><strong>&nbsp PLDIF (Perfect Ledgedash Intangibility Frames):</strong>" + 
                         df.format(averages[130]) +
-                        "<br><strong>&nbsp PLDIF (Perfect Ledgedash Intangibility Frames):</strong>" + 
+                        "<br><br><strong>&nbsp Jump Squat Frames:</strong>" + 
                         df.format(averages[131]) +
-                        "<br><strong>&nbsp Jump Squat Frames:</strong>" + 
-                        df.format(averages[132]) +
-                        "<br><strong>&nbsp Wall Jump:</strong>" 
-                
-                
-                
-                
-                
+                        "<br><br><strong>&nbsp Wall Jump:</strong>" 
                 );  
+                if (1 - averages[132] <= 0.5) averageString += "Yes";
+                else averageString += "No"; 
+
+                // **FIX ME** may want to change this, for the wall jump, it is an average of ones and zeros, maybe would genuinely be better as the number??
+                
                 // NEED TO ADD ALL OF THE AVERAGES INTO THIS STRING LIKE : Jab 
                 // DAMAGE = ETC.  -> then add the numbers from the averages array into the string, then right.setText(averageString); and get rid of what
                 // is currently there. 
