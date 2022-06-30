@@ -339,16 +339,25 @@ public class Main extends Character{
                 System.out.println("char select clicked"); 
                 JTextPane comparePane = new JTextPane(); 
                 JScrollPane compareScroll = new JScrollPane(comparePane, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED); 
-
+                compareScroll.setVisible(true); 
                 comparePane.setLayout(new GridBagLayout()); 
 
                 GridBagConstraints constraints = new GridBagConstraints(); 
-                
+                GridBagLayout gridbag = new GridBagLayout(); 
+
+                constraints.gridx = 0; 
+                constraints.gridy = 0; 
+                constraints.fill = GridBagConstraints.BOTH; 
+                constraints.weightx = 1; 
+                constraints.weighty = 1; 
+                gridbag.setConstraints(compareScroll, constraints); 
+
                        
                 JTextPane char1 = new JTextPane(); 
                 char1.setContentType("text/html"); 
                 constraints.ipady = 650; 
-                constraints.weightx = 5.0; 
+                constraints.weightx = 1; 
+               
                 constraints.fill = GridBagConstraints.HORIZONTAL;
                 constraints.gridx = 0; 
                 constraints.gridy = 0; 
@@ -390,7 +399,7 @@ public class Main extends Character{
         
                 System.out.println("CHAR 1 ADDITION CLICKED"); 
                 JComboBox<String> char1Combo = new JComboBox<>(charOptions); 
-                char1.removeAll(); 
+                //char1.removeAll(); 
                 char1.setText(fillerData); 
                // char1Combo.setBounds((frame.getContentPane().getWidth() / 8 ) - 65, 50, 130, 30); // get content  pane of char1 width and divide it by two to centre it ?? **fix me** 
                 char1Combo.setBounds(char1.getWidth() + 65, 50, 130, 30); 
@@ -405,7 +414,7 @@ public class Main extends Character{
                 char1Combo.addActionListener(new ActionListener(){
                     public void actionPerformed(ActionEvent event){
                         System.out.println("CHAR1 COMPARISION COMBO BOX CLICKED"); 
-                        char1Combo.setBounds((frame.getContentPane().getWidth() / 8 ) - 65, 50, 130, 30);
+                        //char1Combo.setBounds((frame.getContentPane().getWidth() / 8 ) - 65, 50, 130, 30);
                                 String selection = char1Combo.getSelectedItem().toString();
                                 for (int i = 0; i < 26; i++){
                                     if (selection == characters[i].charName){
@@ -419,12 +428,13 @@ public class Main extends Character{
                                 }
                                 else temp += "<br>No"; 
                                 char1.setText(temp);  
+                               
                             }
                         }); 
 
        
                 JComboBox<String> char2Combo = new JComboBox<>(charOptions); 
-                char2.removeAll(); 
+                //char2.removeAll(); 
                 char2.setText(fillerData); 
                 char2Combo.setBounds((frame.getContentPane().getWidth() / 8 ) - 65, 50, 130, 30); 
                 char2.add(char2Combo); 
@@ -445,11 +455,12 @@ public class Main extends Character{
                             }
                             else temp += "<br>No"; 
                             char2.setText(temp);  
+                            
                         }
                     }); 
 
                 JComboBox<String> char3Combo = new JComboBox<>(charOptions); 
-                char3.removeAll(); 
+                //char3.removeAll(); 
                 char3.setText(fillerData); 
                 char3Combo.setBounds((frame.getContentPane().getWidth() / 8 ) - 65, 50, 130, 30); 
                 char3.add(char3Combo); 
@@ -470,12 +481,13 @@ public class Main extends Character{
                         }
                         else temp += "<br>No"; 
                         char3.setText(temp);  
+                        
                     }
                 }); 
            
           
                 JComboBox<String> char4Combo = new JComboBox<>(charOptions); 
-                char4.removeAll(); 
+               // char4.removeAll(); 
                 char4.setText(fillerData); 
                 char4Combo.setBounds((frame.getContentPane().getWidth() / 8 ) - 65, 50, 130, 30); 
                 char4.add(char4Combo); 
@@ -496,6 +508,7 @@ public class Main extends Character{
                         }
                         else temp += "<br>No"; 
                         char4.setText(temp);  
+                        
                     }
                 }); 
             
