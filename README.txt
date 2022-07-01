@@ -15,7 +15,7 @@ It allows the user to:
     -> Active Frames
     -> Ending Frames
 - Rank (sort) character attributes (such as fast falling speed), as well as data about non-damaging moves (such as spot dodge)
-
+ 
 
 
 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< WHY WAS THIS MADE? >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
