@@ -342,62 +342,38 @@ public class Main extends Character{
             public void actionPerformed(ActionEvent event){
             
                 System.out.println("char select clicked"); 
-                JTextPane comparePane = new JTextPane(); 
-                JScrollPane compareScroll = new JScrollPane(comparePane, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED); 
-                
-                comparePane.setLayout(new GridBagLayout()); 
-               
-                GridBagConstraints constraints = new GridBagConstraints(); 
-              //  GridBagLayout gridbag = new GridBagLayout(); 
-
-                constraints.gridx = 4; 
-                constraints.gridy = 0; 
-                constraints.fill = GridBagConstraints.BOTH; 
-                constraints.weightx = 1; 
-                constraints.weighty = 1; 
-              //  gridbag.setConstraints(compareScroll, constraints); 
+                JPanel comparePanel = new JPanel(new GridLayout (0, 4));
+                JScrollPane compareScroll = new JScrollPane(comparePanel, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER); 
+   
                 
                        
                 JTextPane char1 = new JTextPane(); 
                 char1.setContentType("text/html"); 
-                constraints.ipady = 650; 
-                constraints.weightx = 1; 
-               
-                constraints.fill = GridBagConstraints.BOTH;
-                constraints.gridx = 0; 
-                constraints.gridy = 0; 
-                comparePane.add(char1, constraints);  
                 char1.setBackground(Color.LIGHT_GRAY); 
                 char1.setText("<br>"); 
                 char1.setEditable(false);
+                comparePanel.add(char1);  
 
                 JTextPane char2 = new JTextPane(); 
                 char2.setContentType("text/html");
-                constraints.gridx = 1; 
-                constraints.gridy = 0; 
-                comparePane.add(char2, constraints); 
                 char2.setBackground(Color.LIGHT_GRAY); 
                 char2.setText("<br>"); 
                 char2.setEditable(false);
+                comparePanel.add(char2);
 
                 JTextPane char3 = new JTextPane(); 
                 char3.setContentType("text/html"); 
-                constraints.gridx = 2; 
-                constraints.gridy = 0; 
-                comparePane.add(char3, constraints); 
                 char3.setBackground(Color.LIGHT_GRAY); 
                 char3.setText("<br>"); 
                 char3.setEditable(false); 
+                comparePanel.add(char3); 
 
                 JTextPane char4 = new JTextPane(); 
                 char4.setContentType("text/html"); 
-                constraints.gridx = 3; 
-                constraints.gridy = 0; 
-                comparePane.add(char4, constraints); 
                 char4.setBackground(Color.LIGHT_GRAY); 
                 char4.setText("<br>"); 
                 char4.setEditable(false);
-               
+                comparePanel.add(char4); 
                 
                 String fillerData = "<center>" + "<br><br><br><br><br>" + "<img src='file:images/FightingWireFramesHeadSSBM.png'>" +
                 "<br><br> <b> Select a Character To See Data</b>"; 
@@ -414,11 +390,12 @@ public class Main extends Character{
                 tempString = tempString + "width = '40' height ='40'>"; 
                 String compareText = "<center>" + "<br><br><br><br><br>" + tempString + "<br>" + 
                     fullData;  
-                
+                    
 
                 char1Combo.addActionListener(new ActionListener(){
                     public void actionPerformed(ActionEvent event){
                         System.out.println("CHAR1 COMPARISION COMBO BOX CLICKED"); 
+                        
                         //char1Combo.setBounds((frame.getContentPane().getWidth() / 8 ) - 65, 50, 130, 30);
                                 String selection = char1Combo.getSelectedItem().toString();
                                 for (int i = 0; i < 26; i++){
@@ -433,7 +410,7 @@ public class Main extends Character{
                                 }
                                 else temp += "<br>No"; 
                                 char1.setText(temp);  
-                               
+                                char1.select(0, 0); 
                             }
                         }); 
 
@@ -460,7 +437,7 @@ public class Main extends Character{
                             }
                             else temp += "<br>No"; 
                             char2.setText(temp);  
-                            
+                            char2.select(0, 0); 
                         }
                     }); 
 
@@ -486,6 +463,7 @@ public class Main extends Character{
                         }
                         else temp += "<br>No"; 
                         char3.setText(temp);  
+                        char3.select(0, 0); 
                         
                     }
                 }); 
@@ -509,20 +487,22 @@ public class Main extends Character{
                         }
                         String temp = compareText; 
                         if (characters[index].values[132] == 1){
-                            temp += "<br>Yes"; 
+                            temp += "&nbsp Yes"; 
                         }
-                        else temp += "<br>No"; 
+                        else temp += "&nbsp No"; 
                         char4.setText(temp);  
-                        
+                        char4.select(0, 0); 
                     }
                 }); 
             
 
                 
-                comparePane.setEditable(false);
-                comparePane.setBackground(Color.LIGHT_GRAY); 
+                
+                comparePanel.setBackground(Color.LIGHT_GRAY); 
                 frame.getContentPane().removeAll();
+                char1.select(0, 0); 
                 frame.add(compareScroll);  
+               
                 frame.getContentPane().add(BorderLayout.NORTH, menuBar);
                 frame.setVisible(true); 
 
