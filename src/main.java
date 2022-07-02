@@ -230,8 +230,8 @@ public class Main extends Character{
                         characters[index].values[130] +
                         "<br><br><strong>&nbsp Jump Squat Frames:</strong>" + 
                         characters[index].values[131] +
-                        "<br><br><strong>&nbsp Wall Jump:</strong>" +
-                        characters[index].values[132] // **FIX ME - USE NUMBERS, OR USE WORDS WITH A TEMPORARY COPY OF THE STRING AND YOU ADD YES OR NO???? - FIX AFTER THE SCROLLBAR GETS FIXED 
+                        "<br><br><strong>&nbsp Wall Jump:</strong>" //+
+                      //  characters[index].values[132] // **FIX ME - USE NUMBERS, OR USE WORDS WITH A TEMPORARY COPY OF THE STRING AND YOU ADD YES OR NO???? - FIX AFTER THE SCROLLBAR GETS FIXED 
                         
         ); 
 
@@ -535,20 +535,14 @@ public class Main extends Character{
             public void actionPerformed(ActionEvent event){
                 System.out.println("vs averages clicked"); 
                 JPanel mainPanel = new JPanel ( new GridLayout (0, 2)); 
-                //JTextPane averagePane = new JTextPane(); 
-               // GridLayout grid = new GridLayout(0,2);
-              //  averagePane.setLayout(new GridBagLayout());
-               // averagePane.setLayout(grid); 
-                //averagePane.setContentType("text/html"); 
-                //averagePane.setBackground(Color.LIGHT_GRAY);
-                //averagePane.setEditable(false); 
-
+              
+                /*FIX ME
+                 * Adding ctrl + f functionality here, or buttons along the top to skip to a certain section would be fantastic (Skip to: Aerials, and then set the scrollbar somewhere)
+                 */
 
                 JScrollPane averageScroll = new JScrollPane(mainPanel, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
                 averageScroll.getVerticalScrollBar().setUnitIncrement(16);
-                // jscroll average pane first parameter
-
-              //  GridBagConstraints constraints = new GridBagConstraints();  
+             
                 JComboBox<String> charSelect = new JComboBox<>(charOptions);
 
 
@@ -562,12 +556,7 @@ public class Main extends Character{
                 right.setEditable(false); 
 
             
-           /*     constraints.weightx = 5.0; 
-                constraints.fill = GridBagConstraints.BOTH;
-                constraints.ipady = 400; 
-                constraints.ipadx = 0; // 70 
-                constraints.gridx = 0; 
-                constraints.gridy = 0; */
+    
                 left.setContentType("text/html"); 
                 left.setBackground(Color.LIGHT_GRAY); 
                 left.setText("<center><br><br><b>&nbsp&nbsp&nbsp&nbsp Select a character:</b></center>"); 
@@ -576,14 +565,11 @@ public class Main extends Character{
                 charSelect.setBounds((frame.getContentPane().getWidth() / 4 ) - 63, 65, 135, 30); 
                 // **FIX ME** this kind of thing still wont centre properly
                 left.add(charSelect); 
-             //   averagePane.add(left, constraints); 
-
-              //  constraints.gridx = 1; 
-               // constraints.gridy = 0; 
+        
                 right.setContentType("text/html"); 
                 right.setBackground(Color.LIGHT_GRAY); 
                 right.setEditable(false); 
-               // right.setText("<center> <br><b>Averages: </b></center>");  // set this with average string
+              
                 float[] averages = new float[133]; 
 
                 for (int i = 0; i < 133; i++){
@@ -799,10 +785,12 @@ public class Main extends Character{
                         tempString = tempString + "width = '40' height ='40'>"; 
                         String compareText = "<center>" + "<br><br><br><br><br><br>" + tempString + "<br>" + 
                             fullData;  
+
+                        
                         if (characters[index].values[132] == 1){
-                            compareText += "<br>Yes"; 
+                            compareText += "&nbsp Yes"; 
                         }
-                        else compareText += "<br>No"; 
+                        else compareText += "&nbsp No"; 
                         left.setText(compareText); 
                         left.setVisible(true); 
                         left.select(0, 0); 
