@@ -534,41 +534,52 @@ public class Main extends Character{
         vsAverage.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent event){
                 System.out.println("vs averages clicked"); 
-                JTextPane averagePane = new JTextPane(); 
-                averagePane.setLayout(new GridBagLayout());
-                averagePane.setContentType("text/html"); 
-                averagePane.setBackground(Color.LIGHT_GRAY);
-                averagePane.setEditable(false); 
-                JScrollPane averageScroll = new JScrollPane(); //averagePane, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
-                averageScroll.setViewportView(averagePane); 
-                averageScroll.getVerticalScrollBar().setUnitIncrement(70); 
+                JPanel mainPanel = new JPanel ( new GridLayout (0, 2)); 
+                //JTextPane averagePane = new JTextPane(); 
+               // GridLayout grid = new GridLayout(0,2);
+              //  averagePane.setLayout(new GridBagLayout());
+               // averagePane.setLayout(grid); 
+                //averagePane.setContentType("text/html"); 
+                //averagePane.setBackground(Color.LIGHT_GRAY);
+                //averagePane.setEditable(false); 
 
-                GridBagConstraints constraints = new GridBagConstraints();  
-                JComboBox<String> charSelect = new JComboBox<>(charOptions); 
+
+                JScrollPane averageScroll = new JScrollPane(mainPanel, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+                averageScroll.getVerticalScrollBar().setUnitIncrement(16);
+                // jscroll average pane first parameter
+
+              //  GridBagConstraints constraints = new GridBagConstraints();  
+                JComboBox<String> charSelect = new JComboBox<>(charOptions);
+
 
                 JTextPane left = new JTextPane(); 
+                left.setContentType("text/html"); 
+                left.setBackground(Color.LIGHT_GRAY); 
+                left.setEditable(false); 
                 JTextPane right = new JTextPane(); 
-                
+                right.setContentType("text/html"); 
+                right.setBackground(Color.LIGHT_GRAY); 
+                right.setEditable(false); 
 
-                
-                constraints.weightx = 5.0; 
+            
+           /*     constraints.weightx = 5.0; 
                 constraints.fill = GridBagConstraints.BOTH;
                 constraints.ipady = 400; 
                 constraints.ipadx = 0; // 70 
                 constraints.gridx = 0; 
-                constraints.gridy = 0;
+                constraints.gridy = 0; */
                 left.setContentType("text/html"); 
                 left.setBackground(Color.LIGHT_GRAY); 
-                left.setText("<center><br><b>Select a character</b></center>"); 
+                left.setText("<center><br><br><b>&nbsp&nbsp&nbsp&nbsp Select a character:</b></center>"); 
                 left.setEditable(false); 
                 //charSelect.setBounds(left.getWidth() + 170, 65, 150, 30); 
                 charSelect.setBounds((frame.getContentPane().getWidth() / 4 ) - 63, 65, 135, 30); 
                 // **FIX ME** this kind of thing still wont centre properly
                 left.add(charSelect); 
-                averagePane.add(left, constraints); 
+             //   averagePane.add(left, constraints); 
 
-                constraints.gridx = 1; 
-                constraints.gridy = 0; 
+              //  constraints.gridx = 1; 
+               // constraints.gridy = 0; 
                 right.setContentType("text/html"); 
                 right.setBackground(Color.LIGHT_GRAY); 
                 right.setEditable(false); 
@@ -584,7 +595,7 @@ public class Main extends Character{
 
                 DecimalFormat df = new DecimalFormat("0.00"); 
 
-                String averageString = ("<center><br><br><br><br><br><b>Averages: </b><<br><br><img src='file:images/FightingWireFramesHeadSSBM.png'><br>" + 
+                String averageString = ("<center><br><br><br><br><b>&nbsp Averages: </b><<br><br><img src='file:images/FightingWireFramesHeadSSBM.png' width='40' height='40'><br>" + 
                 "<br><strong>&nbsp Jab 1:</strong>" + 
                         "<br> &nbsp Damage: " + df.format(averages[0]) + "%" + 
                         "<br> &nbsp Startup Frames: " + df.format(averages[1]) + 
@@ -592,7 +603,7 @@ public class Main extends Character{
                         "<br> &nbsp Ending Frames: " + df.format(averages[3]) +
                         "<br><br><strong>&nbsp Jab 2:</strong>" + 
                         "<br> &nbsp Damage: " + df.format(averages[4]) + "%" + 
-                        "<br> &nbsp Startup Frames: " + df.format(averages[5] )+ 
+                        "<br> &nbsp Startup Frames: " + df.format(averages[5]) + 
                         "<br> &nbsp Active Frames: " + df.format(averages[6]) + 
                         "<br> &nbsp Ending Frames: " + df.format(averages[7]) +
                         "<br><br><strong>&nbsp Jab 3:</strong>" + 
@@ -743,21 +754,21 @@ public class Main extends Character{
                         "<br> &nbsp Active Frames: " + df.format(averages[122]) +  
                         "<br> &nbsp Ending Frames: " + df.format(averages[123]) +
                         "<br> &nbsp Special Land Lag (Frames): " + df.format(averages[124]) +
-                        "<br><br><strong>&nbsp Weight:</strong>" + 
+                        "<br><br><strong>&nbsp Weight: &nbsp</strong>" + 
                         df.format(averages[125]) +
-                        "<br><br><strong>&nbsp Fast Fall Speed:</strong>" + 
+                        "<br><br><strong>&nbsp Fast Fall Speed: &nbsp</strong>" + 
                         df.format(averages[126]) +
-                        "<br><br><strong>&nbsp Dash Speed:</strong>" + 
+                        "<br><br><strong>&nbsp Dash Speed: &nbsp</strong>" + 
                         df.format(averages[127]) +
-                        "<br><br><strong>&nbsp Run Speed:</strong>" + 
+                        "<br><br><strong>&nbsp Run Speed: &nbsp</strong>" + 
                         df.format(averages[128]) +
-                        "<br><br><strong>&nbsp Wavedash Length (rank/26):</strong>" + 
+                        "<br><br><strong>&nbsp Wavedash Length (rank/26): &nbsp</strong>" + 
                         df.format(averages[129]) +
-                        "<br><br><strong>&nbsp PLDIF (Perfect Ledgedash Intangibility Frames):</strong>" + 
+                        "<br><br><strong>&nbsp PLDIF (Perfect Ledgedash Intangibility Frames): &nbsp</strong>" + 
                         df.format(averages[130]) +
-                        "<br><br><strong>&nbsp Jump Squat Frames:</strong>" + 
+                        "<br><br><strong>&nbsp Jump Squat Frames: &nbsp</strong>" + 
                         df.format(averages[131]) +
-                        "<br><br><strong>&nbsp Wall Jump:</strong>" 
+                        "<br><br><strong>&nbsp Wall Jump: &nbsp</strong>" 
                 );  
                 if (1 - averages[132] <= 0.5) averageString += "Yes";
                 else averageString += "No"; 
@@ -769,7 +780,7 @@ public class Main extends Character{
                 // is currently there. 
                 right.setText(averageString); 
                 
-                averagePane.add(right, constraints); 
+               // averagePane.add(right, constraints); 
 
                 charSelect.addActionListener(new ActionListener(){
                     public void actionPerformed(ActionEvent event){
@@ -794,14 +805,19 @@ public class Main extends Character{
                         else compareText += "<br>No"; 
                         left.setText(compareText); 
                         left.setVisible(true); 
+                        left.select(0, 0); 
                     }
                 });
 
 
 
+                
 
                 frame.getContentPane().removeAll(); 
-                frame.add(averageScroll, BorderLayout.CENTER); 
+                right.select(0, 0);
+                mainPanel.add(left); 
+                mainPanel.add(right); 
+                frame.add(averageScroll); //, BorderLayout.CENTER); 
                 frame.getContentPane().add(BorderLayout.NORTH, menuBar); 
                 frame.setVisible(true); 
 
