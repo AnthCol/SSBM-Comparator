@@ -216,21 +216,21 @@ public class Main extends Character{
                         "<br> &nbsp Active Frames: " + characters[index].values[122] + 
                         "<br> &nbsp Ending Frames: " + characters[index].values[123] +
                         "<br> &nbsp Special Land Lag (Frames): " + characters[index].values[124] +
-                        "<br><br><strong>&nbsp Weight:</strong>" + 
+                        "<br><br><strong>&nbsp Weight:</strong> " + 
                         characters[index].values[125] +
-                        "<br><br><strong>&nbsp Fast Fall Speed:</strong>" + 
+                        "<br><br><strong>&nbsp Fast Fall Speed:</strong> " + 
                         characters[index].values[126] +
-                        "<br><br><strong>&nbsp Dash Speed:</strong>" + 
+                        "<br><br><strong>&nbsp Dash Speed:</strong> " + 
                         characters[index].values[127] +
-                        "<br><br><strong>&nbsp Run Speed:</strong>" + 
+                        "<br><br><strong>&nbsp Run Speed:</strong> " + 
                         characters[index].values[128] +
-                        "<br><br><strong>&nbsp Wavedash Length (rank/26):</strong>" + 
+                        "<br><br><strong>&nbsp Wavedash Length (rank/26):</strong> " + 
                         characters[index].values[129] +
-                        "<br><br><strong>&nbsp PLDIF (Perfect Ledgedash Intangibility Frames):</strong>" + 
+                        "<br><br><strong>&nbsp PLDIF (Perfect Ledgedash<br> Intangibility Frames):</strong> " + 
                         characters[index].values[130] +
-                        "<br><br><strong>&nbsp Jump Squat Frames:</strong>" + 
+                        "<br><br><strong>&nbsp Jump Squat Frames:</strong> " + 
                         characters[index].values[131] +
-                        "<br><br><strong>&nbsp Wall Jump:</strong>" //+
+                        "<br><br><strong>&nbsp Wall Jump:</strong> " //+
                       //  characters[index].values[132] // **FIX ME - USE NUMBERS, OR USE WORDS WITH A TEMPORARY COPY OF THE STRING AND YOU ADD YES OR NO???? - FIX AFTER THE SCROLLBAR GETS FIXED 
                         
         ); 
@@ -344,7 +344,7 @@ public class Main extends Character{
                 System.out.println("char select clicked"); 
                 JPanel comparePanel = new JPanel(new GridLayout (0, 4));
                 JScrollPane compareScroll = new JScrollPane(comparePanel, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER); 
-   
+                compareScroll.getVerticalScrollBar().setUnitIncrement(16);
                 
                        
                 JTextPane char1 = new JTextPane(); 
@@ -381,7 +381,7 @@ public class Main extends Character{
                 System.out.println("CHAR 1 ADDITION CLICKED"); 
                 JComboBox<String> char1Combo = new JComboBox<>(charOptions); 
                 //char1.removeAll(); 
-                char1.setText(fillerData + "<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>."); 
+                char1.setText(fillerData); 
                // char1Combo.setBounds((frame.getContentPane().getWidth() / 8 ) - 65, 50, 130, 30); // get content  pane of char1 width and divide it by two to centre it ?? **fix me** 
                 char1Combo.setBounds(char1.getWidth() + 65, 50, 130, 30); 
                 char1.add(char1Combo); 
@@ -406,9 +406,9 @@ public class Main extends Character{
                                 }
                                 String temp = compareText; 
                                 if (characters[index].values[132] == 1){
-                                    temp += "<br>Yes"; 
+                                    temp += " Yes <br><br>"; 
                                 }
-                                else temp += "<br>No"; 
+                                else temp += " No <br><br>"; 
                                 char1.setText(temp);  
                                 char1.select(0, 0); 
                             }
@@ -417,7 +417,7 @@ public class Main extends Character{
        
                 JComboBox<String> char2Combo = new JComboBox<>(charOptions); 
                 //char2.removeAll(); 
-                char2.setText(fillerData + "<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>."); 
+                char2.setText(fillerData); 
                 char2Combo.setBounds((frame.getContentPane().getWidth() / 8 ) - 65, 50, 130, 30); 
                 char2.add(char2Combo); 
                 char2Combo.addActionListener(new ActionListener(){
@@ -433,9 +433,9 @@ public class Main extends Character{
                         }
                             String temp = compareText; 
                             if (characters[index].values[132] == 1){
-                                temp += "<br>Yes"; 
+                                temp += " Yes <br><br>"; 
                             }
-                            else temp += "<br>No"; 
+                            else temp += " No <br><br>"; 
                             char2.setText(temp);  
                             char2.select(0, 0); 
                         }
@@ -443,7 +443,7 @@ public class Main extends Character{
 
                 JComboBox<String> char3Combo = new JComboBox<>(charOptions); 
                 //char3.removeAll(); 
-                char3.setText(fillerData + "<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>."); 
+                char3.setText(fillerData); 
                 char3Combo.setBounds((frame.getContentPane().getWidth() / 8 ) - 65, 50, 130, 30); 
                 char3.add(char3Combo); 
                 char3Combo.addActionListener(new ActionListener(){
@@ -459,9 +459,9 @@ public class Main extends Character{
                         }
                         String temp = compareText; 
                         if (characters[index].values[132] == 1){
-                            temp += "<br>Yes"; 
+                            temp += " Yes <br><br>"; 
                         }
-                        else temp += "<br>No"; 
+                        else temp += " No <br><br>"; 
                         char3.setText(temp);  
                         char3.select(0, 0); 
                         
@@ -471,7 +471,7 @@ public class Main extends Character{
           
                 JComboBox<String> char4Combo = new JComboBox<>(charOptions); 
                // char4.removeAll(); 
-                char4.setText(fillerData + "<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>."); 
+                char4.setText(fillerData); 
                 char4Combo.setBounds((frame.getContentPane().getWidth() / 8 ) - 65, 50, 130, 30); 
                 char4.add(char4Combo); 
                 char4Combo.addActionListener(new ActionListener(){
@@ -487,9 +487,9 @@ public class Main extends Character{
                         }
                         String temp = compareText; 
                         if (characters[index].values[132] == 1){
-                            temp += "&nbsp Yes"; 
+                            temp += " Yes <br><br>"; 
                         }
-                        else temp += "&nbsp No"; 
+                        else temp += " No <br><br>"; 
                         char4.setText(temp);  
                         char4.select(0, 0); 
                     }
@@ -730,7 +730,7 @@ public class Main extends Character{
                         df.format(averages[128]) +
                         "<br><br><strong>&nbsp Wavedash Length (rank/26): &nbsp</strong>" + 
                         df.format(averages[129]) +
-                        "<br><br><strong>&nbsp PLDIF (Perfect Ledgedash Intangibility Frames): &nbsp</strong>" + 
+                        "<br><br><strong>&nbsp PLDIF (Perfect Ledgedash <br> Intangibility Frames): &nbsp</strong>" + 
                         df.format(averages[130]) +
                         "<br><br><strong>&nbsp Jump Squat Frames: &nbsp</strong>" + 
                         df.format(averages[131]) +
@@ -768,9 +768,9 @@ public class Main extends Character{
 
                         
                         if (characters[index].values[132] == 1){
-                            compareText += "&nbsp Yes"; 
+                            compareText += "&nbsp Yes <br><br>"; 
                         }
-                        else compareText += "&nbsp No"; 
+                        else compareText += "&nbsp No <br><br>"; 
                         left.setText(compareText); 
                         left.setVisible(true); 
                         left.select(0, 0); 
@@ -886,6 +886,8 @@ public class Main extends Character{
                         "<br> &nbsp Startup Frames: " + characters[index].values[1] + 
                         "<br> &nbsp Active Frames: " + characters[index].values[2] + 
                         "<br> &nbsp Ending Frames: " + characters[index].values[3] 
+
+                        // **FIX ME, NEED TO MAKE THIS COMPLETE
                         ); 
                     }
                 });
@@ -995,7 +997,9 @@ public class Main extends Character{
                                         break; 
                                     }
                                 }
-                                ranking += "#" + (i+1) + "<b>&nbsp&nbsp" + tempImage + "&nbsp" + "<i>" + characters[charIndices[i]].charName + "</i></b>: " + charVals[i] + "<br>"; 
+                                if (selection.equals("Damage")) ranking += "#" + (i+1) + "<b>&nbsp&nbsp" + tempImage + "&nbsp" + "<i>" + characters[charIndices[i]].charName + "</i></b>: " + charVals[i] + "% <br>"; 
+                                else ranking += "#" + (i+1) + "<b>&nbsp&nbsp" + tempImage + "&nbsp" + "<i>" + characters[charIndices[i]].charName + "</i></b>: " + charVals[i] + "<br>"; 
+                                
                             }
                     
                             ranking += "</center>"; 
@@ -1079,7 +1083,9 @@ public class Main extends Character{
                                         break; 
                                     }
                                 }
-                                ranking += "#" + (i+1) + "<b>&nbsp&nbsp" + tempImage + "&nbsp" + "<i>" + characters[charIndices[i]].charName + "</i></b>: " + charVals[i] + "<br>"; 
+                                if (selection.equals("Damage")) ranking += "#" + (i+1) + "<b>&nbsp&nbsp" + tempImage + "&nbsp" + "<i>" + characters[charIndices[i]].charName + "</i></b>: " + charVals[i] + "% <br>"; 
+                                else ranking += "#" + (i+1) + "<b>&nbsp&nbsp" + tempImage + "&nbsp" + "<i>" + characters[charIndices[i]].charName + "</i></b>: " + charVals[i] + "<br>"; 
+                               
                             }
                     
                             ranking += "</center>"; 
@@ -1106,18 +1112,7 @@ public class Main extends Character{
                 frame.getContentPane().add(BorderLayout.NORTH, menuBar);
                 frame.getContentPane().add(BorderLayout.CENTER, moveScroll);  
                 frame.setVisible(true); 
-                
-                /*
-                 FIX ME 
-                 This section now excludes things from grabs. 
-                 Will need to make another section for miscellaneous data, for things such as rolls, etc. 
-                 Maybe we acn just add this to the attributes tab, rather than the moves one and just make the switch statement longer?
-                 Make a bunch of menu options
-                 spotdodge startup
-                 spotdodge active
-                 etc. 
-
-                 */
+   
             }
         }); 
 
