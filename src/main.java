@@ -12,7 +12,8 @@ import java.util.Scanner;
 import java.awt.event.*; 
 //import javax.swing.plaf.metal.MetalLookAndFeel;
 
-
+// **NOTE donkey kongs cargo throw damage in the original text file is an average of the three
+// (cargo up == 7%, forward is 8%, and back == 8%)
 
 /* FIX ME recreate character class and have main extend it. 
 
