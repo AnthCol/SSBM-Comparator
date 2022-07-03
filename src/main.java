@@ -19,8 +19,12 @@ import java.awt.event.*;
 do all of the readfile stuff inside of Main's main. */
 /*
         Indices (alphabetical order):
-        0 = bowser, 1 = captain falcon, 2 = donkey kong, 3 = dr. mario, 4 = falco, 5 = fox, 6 = ganon, 7 = ICs, 8 = kirby, 9 = link, 10 = luigi, 11 = mario, 12 = marth, 
-        7 = mew2, 14 = g&w, 15 = ness, 16 = peach, 17 = pichu, 18 = pika, 19 = puff, 20 = roy, 21 = samus, 22 = sheik, 23 = yoshi, 24 = yink, 25 = zelda
+        0 = bowser, 1 = captain falcon, 2 = donkey kong, 3 = dr. mario, 
+        4 = falco, 5 = fox, 6 = ganon, 7 = ICs, 8 = kirby, 9 = link, 
+        10 = luigi, 11 = mario, 12 = marth, 
+        7 = mew2, 14 = g&w, 15 = ness, 16 = peach, 17 = pichu, 18 = pika, 
+        19 = puff, 20 = roy, 21 = samus, 22 = sheik, 23 = yoshi, 24 = yink, 
+        25 = zelda
 */
 
 // VALUE WILL BE SET AS NEGATIVE ONE IF IT IS UNAVAILABLE/INCALCULABLE
@@ -266,7 +270,7 @@ public class Main extends Character{
             "Ice Climbers", "Pikachu", "Yoshi", "Samus", 
             "Luigi", "Dr. Mario", 
             "Ganondorf", "Mario", 
-            "Donkey Kong", "Young Link", "Link",   "Mr. Game&Watch",  "Mewtwo", 
+            "Donkey Kong", "Young Link", "Link",   "Mr. Game & Watch",  "Mewtwo", 
             "Roy",   "Pichu",  "Ness",    "Zelda", 
             "Kirby",   "Bowser"
         }; 
@@ -1345,8 +1349,17 @@ class Character {
                 // **fIX ME ** NEEDS TO MAKE SURE IT READS PROPERLY 
 
                 //if (index == 1 || index == 2 || index == 3 || index == 7 || index == 14 || index == 24){ // **FIX ME, MAKE IT RELATIVE TO THE TIER LIST**
-                if (index >= 1){  
+                if (index == 1 || index == 2 || index == 3 || index == 7 || index == 24){  
                     characters[index].charName = fileReader.next(); 
+                    characters[index].charName = characters[index].charName.concat(" "); 
+                    characters[index].charName = characters[index].charName.concat(fileReader.next()); 
+                }
+                else if (index == 14){
+                    characters[index].charName = fileReader.next(); 
+                    characters[index].charName = characters[index].charName.concat(" "); 
+                    characters[index].charName = characters[index].charName.concat(fileReader.next()); 
+                    characters[index].charName = characters[index].charName.concat(" "); 
+                    characters[index].charName = characters[index].charName.concat(fileReader.next()); 
                     characters[index].charName = characters[index].charName.concat(" "); 
                     characters[index].charName = characters[index].charName.concat(fileReader.next()); 
                 }
