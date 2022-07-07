@@ -61,7 +61,7 @@ class Main extends Character{
         for (int i = 0; i < 26; i++){
             charIndices[i] = i; 
         }
-
+     
         String[] damagingMoves = {
             "Jab 1", "Jab 2", "Jab 3", "Forward Tilt", "Up Tilt", "Down Tilt", 
             "Dash Attack", "Forward Smash", "Up Smash", "Down Smash", "Neutral Air", "Forward Air", "Back Air", "Up Air", "Down Air", 
@@ -246,14 +246,13 @@ class Main extends Character{
                                 for (int i = 0; i < 26; i++){
                                     if (selection.equals(characters[i].charName)){
                                         index = i; 
-                                        i = 26; 
+                                        break; 
                                     }
                                 }
                                 String tempString = imageSources[index].substring(0, imageSources[index].length() - 1); 
                                 tempString = tempString + "width = '40' height ='40'>"; 
                                 String compareText = "<center>" + "<br><br><br><br><br>" + tempString + "<br>" + 
-                                "<br><strong>&nbsp Jab 1:</strong>" + 
-                        "<br> &nbsp Damage: " + characters[index].values[0] + "%" + 
+                                "<br><strong>&nbsp Jab 1:</strong><br> &nbsp Damage: " + characters[index].values[0] + "%" + 
                         "<br> &nbsp Startup Frames: " + characters[index].values[1] + 
                         "<br> &nbsp Active Frames: " + characters[index].values[2] + 
                         "<br> &nbsp Ending Frames: " + characters[index].values[3] +
@@ -452,7 +451,7 @@ class Main extends Character{
                         for (int i = 0; i < 26; i++){
                             if (selection.equals(characters[i].charName)){
                                 index = i; 
-                                i = 26; 
+                                break; 
                             }
                         }
                         String tempString = imageSources[index].substring(0, imageSources[index].length() - 1); 
@@ -655,7 +654,7 @@ class Main extends Character{
                         for (int i = 0; i < 26; i++){
                             if (selection.equals(characters[i].charName)){
                                 index = i; 
-                                i = 26; 
+                                break; 
                             }
                         }
                         String tempString = imageSources[index].substring(0, imageSources[index].length() - 1); 
@@ -860,7 +859,7 @@ class Main extends Character{
                         for (int i = 0; i < 26; i++){
                             if (selection.equals(characters[i].charName)){
                                 index = i; 
-                                i = 26; 
+                                break; 
                             }
                         }
                         String tempString = imageSources[index].substring(0, imageSources[index].length() - 1); 
@@ -1315,7 +1314,7 @@ class Main extends Character{
                         for (int i = 0; i < 26; i++){  
                             if (selection.equals(characters[i].charName)){
                                 index = i; // WHY IS THIS ALWAYS ZERO. MIGHT FIX ITSELF WHEN THE CHARDATAFILE IS FINISHED **FIX ME**
-                                i = 28; 
+                                break; 
                             }
                         }
                        
@@ -1600,7 +1599,7 @@ class Main extends Character{
                         for (int i = 0; i < 26; i++){  // check which character was selected 
                             if (selection.equals(characters[i].charName)){
                                 index = i; 
-                                i = 26; 
+                                break; 
                                 
                             }
                         }
@@ -1903,23 +1902,22 @@ class Main extends Character{
                         float tempFloat = 0; 
                         int tempInt = 0; 
                         float[] attributeArray = new float[27]; 
-                        
+                       
                         // bubble sort for now, switch to mergesort for the other things with th elarge values. 
 
                         for (int i = 0; i < 26; i++){
                             attributeArray[i] = characters[i].values[whichAttribute]; 
+                            System.out.println("PRINTING ATTRIBUTE ARRAY VALUES: " + attributeArray[i]); 
                         }
 
-                        // CHECK IF THESE LOOPS WORK WITH I+1 (THEY SHOULD) **FIX ME**
-
-                        // THIS WHOLE SECTION MIGHT NEED FIXING IN GENERAL, WE'LL SEE **FIX ME**
+                       
                         if (whichAttribute == 113 || whichAttribute == 116 || whichAttribute == 119 || whichAttribute == 122 ||
                         whichAttribute == 125 || whichAttribute == 126 || whichAttribute == 127 || whichAttribute == 128 ||
-                        whichAttribute == 130){
-                            for (int i = 0; i < 26; i++){
+                        whichAttribute == 130 || whichAttribute == 132){
+                            for (int i = 0; i < 25; i++){
                                 for (int x = 0; x < 25; x++){
-                                    if (attributeArray[x] >= attributeArray[x+1]){
-                                        tempFloat = attributeArray[i]; 
+                                    if (attributeArray[x] < attributeArray[x+1]){
+                                        tempFloat = attributeArray[x]; 
                                         attributeArray[x] = attributeArray[x+1]; 
                                         attributeArray[x+1] = tempFloat; 
         
@@ -1932,10 +1930,10 @@ class Main extends Character{
                             
                         }
                         else {
-                            for (int i = 0; i < 26; i++){
+                            for (int i = 0; i < 25; i++){
                                 for (int x = 0; x < 25; x++){ // optimize this   **FIX ME SOMETHING IS WRONG HERE**  
-                                    if (attributeArray[x] <= attributeArray[x+1]){
-                                        tempFloat = attributeArray[i]; 
+                                    if (attributeArray[x] > attributeArray[x+1]){
+                                        tempFloat = attributeArray[x]; 
                                         attributeArray[x] = attributeArray[x+1]; 
                                         attributeArray[x+1] = tempFloat; 
         
@@ -1973,8 +1971,9 @@ class Main extends Character{
                             else{
                                 ranking += "#" + (i+1) + "<b>&nbsp&nbsp" + tempImage + "&nbsp" + "<i>" + characters[charIndices[i]].charName + "</i></b>: " + attributeArray[i] + "<br>"; 
                             }
-                          
                         }
+
+
                         ranking += "</center><br>"; 
                         attributePane.setText(ranking); 
 
