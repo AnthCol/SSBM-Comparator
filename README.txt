@@ -88,6 +88,32 @@ Again, I may include data about character model sizes, as well as hitbox & hurtb
                 *his backthrow is especially likely to be incorrect because of the way the hitboxes are shown in the gif*
             > game and watch side b is the default animation data, not corrected for any special effects of each potential number
             > game and watch down B damage is maximum possible
+            > peach fsmash is the frame data from the gif on https://meleeframedata.com/peach calculated by hand by me - damage not included 
+            > peach turnip damage is listed as zero since there is so much variation
+            > the data refers to the pull itself, not the projectiles. The active frame of 1, is the first frame its in her hand. 
+            > pichu ftilt angle changes damage, damage listed as 8 on meleeframedata.com, not sure which one that is for. 
+            > pichu neutral B is active frames for the projectile, ending frames are likely incorrect, dont have full gif to work with atm, might look into it another time
+            > pikachu neutral B is active frames for the projectile, ending frames are correct though. 
+            > pichu/pikachu side B is no charge 
+            > pikachu up b hasno active frames or end frames because of the option to do it once or twice. see https://meleeframedata.com/pikachu for more. 
+            > no data for jigglypuff neutral b
+            > puff down b active frames may be one more than listed. Hard to tell with the gif on the website 
+            > roy neutral b damage is max charge. 
+            > samus neutral b damage is for maximum charge
+            > samus neutral b/side b/down b active frames are for the projectile, ending frames until she can move again
+            > sheiks neutral b data refers to throwing a full stack of needles, the damage is listed as 3% (which is the individual damage of each needle, although it 
+                technically changes based on distance)
+            > sheiks jab 3 is data for her rapid jab 
+            > yoshi up b active data is for the egg, ending frames are until he can act again
+            > young link rapid jab not included 
+            > young link neutral b active frames are for the projectile, ending frames are for how long it takes for him to move
+            > ^ same with side b
+            > young link down b ending frames are unlisted - incalculable with the gif - throwable after the active frames
+            > zelda side b data is for the shortest possible time it takes to cast the ability
+            > 
+
+
+
 
 <<<<<<<<<< SPECIAL THANKS TO: >>>>>>>>>>
 
