@@ -304,6 +304,35 @@ public class Main extends Character{
         imageSources[24] = "<img src='file:images/YoungLinkHeadSSBM.png'>"; 
         imageSources[25] = "<img src='file:images/ZeldaHeadSSBM.png'>"; 
 
+        String[] imageSourcesTwo = new String[26];  // I KNOW ITS DISGUSTING
+       
+        imageSourcesTwo[0] = "<img src='file:images/FoxHeadSSBM.png'>"; 
+        imageSourcesTwo[1] = "<img src='file:images/MarthHeadSSBM.png'>"; 
+        imageSourcesTwo[2] = "<img src='file:images/JigglypuffHeadSSBM.png'>"; 
+        imageSourcesTwo[3] = "<img src='file:images/FalcoHeadSSBM.png'>"; 
+        imageSourcesTwo[4] = "<img src='file:images/SheikHeadSSBM.png'>"; 
+        imageSourcesTwo[5] = "<img src='file:images/CaptainFalconHeadSSBM.png'>"; 
+        imageSourcesTwo[6] = "<img src='file:images/PeachHeadSSBM.png'>"; 
+        imageSourcesTwo[7] = "<img src='file:images/IceClimbersHeadSSBM.png'>"; 
+        imageSourcesTwo[8] = "<img src='file:images/PikachuHeadSSBM.png'>"; 
+        imageSourcesTwo[9] = "<img src='file:images/YoshiHeadSSBM.png'>"; 
+        imageSourcesTwo[10] = "<img src='file:images/SamusHeadSSBM.png'>"; 
+        imageSourcesTwo[11] = "<img src='file:images/LuigiHeadSSBM.png'>"; 
+        imageSourcesTwo[12] = "<img src='file:images/DrMarioHeadSSBM.png'>"; 
+        imageSourcesTwo[13] = "<img src='file:images/GanondorfHeadSSBM.png'>"; 
+        imageSourcesTwo[14] = "<img src='file:images/MarioHeadSSBM.png'>"; 
+        imageSourcesTwo[15] = "<img src='file:images/DonkeyKongHeadSSBM.png'>"; 
+        imageSourcesTwo[16] = "<img src='file:images/YoungLinkHeadSSBM.png'>"; 
+        imageSourcesTwo[17] = "<img src='file:images/LinkHeadSSBM.png'>"; 
+        imageSourcesTwo[18] = "<img src='file:images/MrGame&WatchHeadSSBM.png'>"; 
+        imageSourcesTwo[19] = "<img src='file:images/MewtwoHeadSSBM.png'>"; 
+        imageSourcesTwo[20] = "<img src='file:images/RoyHeadSSBM.png'>"; 
+        imageSourcesTwo[21] = "<img src='file:images/PichuHeadSSBM.png'>"; 
+        imageSourcesTwo[22] = "<img src='file:images/NessHeadSSBM.png'>"; 
+        imageSourcesTwo[23] = "<img src='file:images/ZeldaHeadSSBM.png'>"; 
+        imageSourcesTwo[24] = "<img src='file:images/KirbyHeadSSBM.png'>"; 
+        imageSourcesTwo[25] = "<img src='file:images/BowserHeadSSBM.png'>"; 
+
         JFrame frame = new JFrame("SSBM Comparator"); 
         JMenuBar menuBar = new JMenuBar();
         ImageIcon icon = new ImageIcon("./images/icon.png"); 
@@ -567,12 +596,16 @@ public class Main extends Character{
                 right.setEditable(false); 
               
                 float[] averages = new float[133]; 
-
+                int count = 0; 
                 for (int i = 0; i < 133; i++){
                     for (int x = 0; x < 26; x++){
-                        if (characters[x].values[i] != -1) averages[i] += characters[x].values[i]; 
+                        if (characters[x].values[i] != -1){
+                            averages[i] += characters[x].values[i]; 
+                        }
+                        else count++; 
                     }
-                    averages[i] /= 26; 
+                    averages[i] /= 26 - count; 
+                    count = 0; 
                 }
 
                 DecimalFormat df = new DecimalFormat("0.00"); 
@@ -823,14 +856,14 @@ public class Main extends Character{
                 tierListPane.setContentType("text/html"); 
                      String info = "<html>"+
                         "<body><center><strong><u><font size=30px>13th Official SSBM Tier List - March 29th, 2021 (Ordered)</font></u></strong><center><br><br>"+ 
-                        "<center>(S)&nbsp" + "&nbsp" + imageSources[0] +  "&nbsp" + imageSources[1] +  "&nbsp" + imageSources[2] + "&nbsp" + imageSources[3] + 
-                        "<br><br>(A)&nbsp" + "&nbsp" + imageSources[4] + "&nbsp" + imageSources[5] + "&nbsp" + imageSources[6] + 
-                        "<br><br>(B+)&nbsp" + "&nbsp" + imageSources[7] + "&nbsp" + imageSources[8] + "&nbsp" + imageSources[9] + "&nbsp" + imageSources[10] +
-                        "<br><br>(B-)&nbsp" + "&nbsp" + imageSources[11] + "&nbsp" + imageSources[12] +
-                        "<br><br>(C+)&nbsp" + "&nbsp" + imageSources[13] + "&nbsp" + imageSources[14] +
-                        "<br><br>(C-)&nbsp" + "&nbsp" + imageSources[15] + "&nbsp" + imageSources[16] + "&nbsp" + imageSources[17] + "&nbsp" + imageSources[18] +
-                        "<br><br>(D)&nbsp" + "&nbsp" + imageSources[19] + "&nbsp" + imageSources[20] + "&nbsp" + imageSources[21] + "&nbsp" + imageSources[22] + "&nbsp" + imageSources[23] +
-                        "<br><br>(F)&nbsp" + "&nbsp" + imageSources[24] + "&nbsp" + imageSources[25] +
+                        "<center>(S)&nbsp" + "&nbsp" + imageSourcesTwo[0] +  "&nbsp" + imageSourcesTwo[1] +  "&nbsp" + imageSourcesTwo[2] + "&nbsp" + imageSourcesTwo[3] + 
+                        "<br><br>(A)&nbsp" + "&nbsp" + imageSourcesTwo[4] + "&nbsp" + imageSourcesTwo[5] + "&nbsp" + imageSourcesTwo[6] + 
+                        "<br><br>(B+)&nbsp" + "&nbsp" + imageSourcesTwo[7] + "&nbsp" + imageSourcesTwo[8] + "&nbsp" + imageSourcesTwo[9] + "&nbsp" + imageSourcesTwo[10] +
+                        "<br><br>(B-)&nbsp" + "&nbsp" + imageSourcesTwo[11] + "&nbsp" + imageSourcesTwo[12] +
+                        "<br><br>(C+)&nbsp" + "&nbsp" + imageSourcesTwo[13] + "&nbsp" + imageSourcesTwo[14] +
+                        "<br><br>(C-)&nbsp" + "&nbsp" + imageSourcesTwo[15] + "&nbsp" + imageSourcesTwo[16] + "&nbsp" + imageSourcesTwo[17] + "&nbsp" + imageSourcesTwo[18] +
+                        "<br><br>(D)&nbsp" + "&nbsp" + imageSourcesTwo[19] + "&nbsp" + imageSourcesTwo[20] + "&nbsp" + imageSourcesTwo[21] + "&nbsp" + imageSourcesTwo[22] + "&nbsp" + imageSourcesTwo[23] +
+                        "<br><br>(F)&nbsp" + "&nbsp" + imageSourcesTwo[24] + "&nbsp" + imageSourcesTwo[25] +
                         "<br><br><br><br><br>" +
                         "<strong>Source:</strong> https://www.ssbwiki.com/List_of_SSBM_tier_lists_(NTSC)" +
                         "<br>" + "</center></body></html>"; 
