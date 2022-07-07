@@ -61,12 +61,25 @@ lot of time that ended up being used to re-design things.
 
 <<<<<<<<<< WHAT ARE THE LIMITATIONS OF THE PROGRAM? >>>>>>>>>>
 
-The character data only includes strong hits of moves. Moves that linger and do less damage over time, as well as moves that have weak hitboxes are not included in the 
-data set for this application. This may be something I go to allow for in the future, we'll see. 
+The character data only includes strong hits of moves. Moves that linger and do less damage over time, as well as moves that have weak hitboxes or multiple hits are not included in the 
+data set for this application (> for multiple hits, only the first hit data is shown). This may be something I go to allow for in the future, we'll see. 
 
 There are no visuals to show hitboxes of moves. As such, there is no way for the user to compare how large a hitbox is, or any data regarding that. 
 Again, I may include data about character model sizes, as well as hitbox & hurtbox sizes, but we'll see. 
 
+            **NOTES FOR THE USER:**
+            > kirbys rapid jab is jab 3
+            > falcos active frames are for the laser, the end lag is how long it takes him to get down
+            > IC's projectile stays out for 61 frames, this is not included in the data, as there
+                frame data is for the hammer that they swing out (which has a hitbox of its own, not just
+                the ice)
+            > links rapid jab is not included in the data 
+            > links arrow charge data is *without holding down b*
+            > links arrow data active frames is for the arrow itself 
+            > same goes for links boomerang + catching data is not included 
+            > links active frames for down B is how long the bomb will stick around until it explodes in his hand 
+            > luigi and mario neutral b active frames number for the fireball
+            > 
 
 <<<<<<<<<< SPECIAL THANKS TO: >>>>>>>>>>
 

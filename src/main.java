@@ -1397,7 +1397,8 @@ class Character {
 // kirbys rapid jab is jab 3
 // falcos active frames are for the laser, the end lag is how long it takes him to get down
 // IC's projectile stays out for 61 frames, this is not included in the shiz
-
+// links rapid jab is not included in the data 
+// link
 /*
     indices for float array:
     0 - jab1 dmg
