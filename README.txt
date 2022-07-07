@@ -79,6 +79,12 @@ Again, I may include data about character model sizes, as well as hitbox & hurtb
             > same goes for links boomerang + catching data is not included 
             > links active frames for down B is how long the bomb will stick around until it explodes in his hand 
             > luigi and mario neutral b active frames number for the fireball
+            > mewtwo's jab2 is rapid jab, there is no jab 3
+            > mewtwo's neutral b damage is for its maximum charge - frame data is also for minimum charge time -> active frames are not for the 
+                shadow ball but for mewtwos animation itself - the value of one may be incorrect here, it is worth checking in the future looking
+                at the hitboxes. For now assume the ball hits on frame 1 of release, and that the active frames are one. 
+            > mewtwo's throw data was calculated by hand (by me, [except for dthrow]) from looking at a gif, very likely could be incorrect by a small margin (1-2) frames. 
+                *his backthrow is especially likely to be incorrect because of the way the hitboxes are shown in the gif*
             > 
 
 <<<<<<<<<< SPECIAL THANKS TO: >>>>>>>>>>
