@@ -68,6 +68,7 @@ There are no visuals to show hitboxes of moves. As such, there is no way for the
 Again, I may include data about character model sizes, as well as hitbox & hurtbox sizes, but we'll see. 
 
             **NOTES FOR THE USER:**
+            > if a number is -1 in charData.txt or in the application itself is not available/doesnt exist/unable to be calculated (bowser down b active frames for example)
             > kirbys rapid jab is jab 3
             > falcos active frames are for the laser, the end lag is how long it takes him to get down
             > IC's projectile stays out for 61 frames, this is not included in the data, as there
@@ -85,7 +86,8 @@ Again, I may include data about character model sizes, as well as hitbox & hurtb
                 at the hitboxes. For now assume the ball hits on frame 1 of release, and that the active frames are one. 
             > mewtwo's throw data was calculated by hand (by me, [except for dthrow]) from looking at a gif, very likely could be incorrect by a small margin (1-2) frames. 
                 *his backthrow is especially likely to be incorrect because of the way the hitboxes are shown in the gif*
-            > 
+            > game and watch side b is the default animation data, not corrected for any special effects of each potential number
+            > game and watch down B damage is maximum possible
 
 <<<<<<<<<< SPECIAL THANKS TO: >>>>>>>>>>
 
