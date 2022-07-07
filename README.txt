@@ -1,5 +1,7 @@
 <<<< SSBM COMPARATOR >>>>
 
+** FIX ME (make a .md file not a .txt file)
+
 <<<<<<<<<< WHAT IS THIS? >>>>>>>>>>
 
 SSBM Comparator is a Java Swing desktop application that allows the user to view, compare and rank (sort) character data from the video game
@@ -110,8 +112,6 @@ Again, I may include data about character model sizes, as well as hitbox & hurtb
             > ^ same with side b
             > young link down b ending frames are unlisted - incalculable with the gif - throwable after the active frames
             > zelda side b data is for the shortest possible time it takes to cast the ability
-            > 
-
 
 
 
