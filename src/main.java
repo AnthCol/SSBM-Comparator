@@ -277,40 +277,47 @@ public class Main extends Character{
         }; 
 
         String[] imageSources = new String[26]; 
-       
-        imageSources[0] = "<img src='file:images/FoxHeadSSBM.png'>"; 
-        imageSources[1] = "<img src='file:images/MarthHeadSSBM.png'>"; 
-        imageSources[2] = "<img src='file:images/JigglypuffHeadSSBM.png'>"; 
-        imageSources[3] = "<img src='file:images/FalcoHeadSSBM.png'>"; 
+       /* 0 = bowser, 1 = captain falcon, 2 = donkey kong, 3 = dr. mario, 
+        4 = falco, 5 = fox, 6 = ganon, 7 = ICs, 8 = kirby, 9 = link, 
+        10 = luigi, 11 = mario, 12 = marth, 
+        7 = mew2, 14 = g&w, 15 = ness, 16 = peach, 17 = pichu, 18 = pika, 
+        19 = puff, 20 = roy, 21 = samus, 22 = sheik, 23 = yoshi, 24 = yink, 
+        25 = zelda */
+        imageSources[0] = "<img src='file:images/BowserHeadSSBM.png'>"; 
+        
+        
+        imageSources[1] = "<img src='file:images/CaptainFalconHeadSSBM.png'>"; 
+        imageSources[2] = "<img src='file:images/DonkeyKongHeadSSBM.png'>"; 
+        imageSources[3] = "<img src='file:images/DrMarioHeadSSBM.png'>"; 
 
-        imageSources[4] = "<img src='file:images/SheikHeadSSBM.png'>"; 
-        imageSources[5] = "<img src='file:images/CaptainFalconHeadSSBM.png'>"; 
-        imageSources[6] = "<img src='file:images/PeachHeadSSBM.png'>"; 
+        imageSources[4] = "<img src='file:images/FalcoHeadSSBM.png'>"; 
+        imageSources[5] = "<img src='file:images/FoxHeadSSBM.png'>"; 
+        imageSources[6] = "<img src='file:images/GanondorfHeadSSBM.png'>"; 
 
         imageSources[7] = "<img src='file:images/IceClimbersHeadSSBM.png'>"; 
-        imageSources[8] = "<img src='file:images/PikachuHeadSSBM.png'>"; 
-        imageSources[9] = "<img src='file:images/YoshiHeadSSBM.png'>"; 
-        imageSources[10] = "<img src='file:images/SamusHeadSSBM.png'>"; 
+        imageSources[8] = "<img src='file:images/KirbyHeadSSBM.png'>"; 
+        imageSources[9] = "<img src='file:images/LinkHeadSSBM.png'>"; 
+        imageSources[10] = "<img src='file:images/LuigiHeadSSBM.png'>"; 
 
-        imageSources[11] = "<img src='file:images/LuigiHeadSSBM.png'>"; 
-        imageSources[12] = "<img src='file:images/DrMarioHeadSSBM.png'>"; 
+        imageSources[11] = "<img src='file:images/MarioHeadSSBM.png'>"; 
+        imageSources[12] = "<img src='file:images/MarthHeadSSBM.png'>"; 
 
-        imageSources[13] = "<img src='file:images/GanondorfHeadSSBM.png'>"; 
-        imageSources[14] = "<img src='file:images/MarioHeadSSBM.png'>"; 
+        imageSources[13] = "<img src='file:images/MewtwoHeadSSBM.png'>"; 
+        imageSources[14] = "<img src='file:images/MrGame&WatchHeadSSBM.png'>"; 
 
-        imageSources[15] = "<img src='file:images/DonkeyKongHeadSSBM.png'>"; 
-        imageSources[16] = "<img src='file:images/YoungLinkHeadSSBM.png'>"; 
-        imageSources[17] = "<img src='file:images/LinkHeadSSBM.png'>"; 
-        imageSources[18] = "<img src='file:images/MrGame&WatchHeadSSBM.png'>"; 
+        imageSources[15] = "<img src='file:images/NessHeadSSBM.png'>"; 
+        imageSources[16] = "<img src='file:images/PeachHeadSSBM.png'>"; 
+        imageSources[17] = "<img src='file:images/PichuHeadSSBM.png'>"; 
+        imageSources[18] = "<img src='file:images/PikachuHeadSSBM.png'>"; 
 
-        imageSources[19] = "<img src='file:images/MewtwoHeadSSBM.png'>"; 
+        imageSources[19] = "<img src='file:images/JigglypuffHeadSSBM.png'>"; 
         imageSources[20] = "<img src='file:images/RoyHeadSSBM.png'>"; 
-        imageSources[21] = "<img src='file:images/PichuHeadSSBM.png'>"; 
-        imageSources[22] = "<img src='file:images/NessHeadSSBM.png'>"; 
-        imageSources[23] = "<img src='file:images/ZeldaHeadSSBM.png'>"; 
+        imageSources[21] = "<img src='file:images/SamusHeadSSBM.png'>"; 
+        imageSources[22] = "<img src='file:images/SheikHeadSSBM.png'>"; 
+        imageSources[23] = "<img src='file:images/YoshiHeadSSBM.png'>"; 
 
-        imageSources[24] = "<img src='file:images/KirbyHeadSSBM.png'>"; 
-        imageSources[25] = "<img src='file:images/BowserHeadSSBM.png'>"; 
+        imageSources[24] = "<img src='file:images/YoungLinkHeadSSBM.png'>"; 
+        imageSources[25] = "<img src='file:images/ZeldaHeadSSBM.png'>"; 
 
         JFrame frame = new JFrame("SSBM Comparator"); 
         JMenuBar menuBar = new JMenuBar();
@@ -400,22 +407,24 @@ public class Main extends Character{
                 char1Combo.addActionListener(new ActionListener(){
                     public void actionPerformed(ActionEvent event){
                         System.out.println("CHAR1 COMPARISION COMBO BOX CLICKED"); 
-                        
+                                selection = ""; 
                         //char1Combo.setBounds((frame.getContentPane().getWidth() / 8 ) - 65, 50, 130, 30);
-                                String selection = char1Combo.getSelectedItem().toString();
+                                selection += char1Combo.getSelectedItem().toString();
                                 for (int i = 0; i < 26; i++){
-                                    if (selection == characters[i].charName){
+                                    if (selection.equals(characters[i].charName)){
                                         index = i; 
                                         i = 26; 
                                     }
                                 }
                                 String temp = compareText; 
+
                                 if (characters[index].values[132] == 1){
                                     temp += " Yes <br><br>"; 
                                 }
                                 else temp += " No <br><br>"; 
                                 char1.setText(temp);  
                                 char1.select(0, 0); 
+                                selection = ""; 
                             }
                         }); 
 
@@ -429,9 +438,10 @@ public class Main extends Character{
                     public void actionPerformed(ActionEvent event){
                         
                         System.out.println("CHAR1 COMPARISION COMBO BOX CLICKED"); 
-                        String selection = char2Combo.getSelectedItem().toString();
+                        selection = ""; 
+                        selection += char2Combo.getSelectedItem().toString();
                         for (int i = 0; i < 26; i++){
-                            if (selection == characters[i].charName){
+                            if (selection.equals(characters[i].charName)){
                                 index = i; 
                                 i = 26; 
                             }
@@ -443,6 +453,7 @@ public class Main extends Character{
                             else temp += " No <br><br>"; 
                             char2.setText(temp);  
                             char2.select(0, 0); 
+                            selection = ""; 
                         }
                     }); 
 
@@ -453,11 +464,11 @@ public class Main extends Character{
                 char3.add(char3Combo); 
                 char3Combo.addActionListener(new ActionListener(){
                      public void actionPerformed(ActionEvent event){
-                        
+                        selection = ""; 
                         System.out.println("CHAR1 COMPARISION COMBO BOX CLICKED"); 
-                        String selection = char3Combo.getSelectedItem().toString(); 
+                        selection += char3Combo.getSelectedItem().toString(); 
                         for (int i = 0; i < 26; i++){
-                            if (selection == characters[i].charName){
+                            if (selection.equals(characters[i].charName)){
                                 index = i; 
                                 i = 26; 
                             }
@@ -469,7 +480,7 @@ public class Main extends Character{
                         else temp += " No <br><br>"; 
                         char3.setText(temp);  
                         char3.select(0, 0); 
-                        
+                        selection += ""; 
                     }
                 }); 
            
@@ -483,9 +494,10 @@ public class Main extends Character{
                     public void actionPerformed(ActionEvent event){
                         
                         System.out.println("CHAR1 COMPARISION COMBO BOX CLICKED"); 
-                        String selection = char4Combo.getSelectedItem().toString();
+                        selection = ""; 
+                        selection += char4Combo.getSelectedItem().toString();
                         for (int i = 0; i < 26; i++){
-                            if (selection == characters[i].charName){
+                            if (selection.equals(characters[i].charName)){
                                 index = i; 
                                 i = 26; 
                             }
@@ -497,6 +509,7 @@ public class Main extends Character{
                         else temp += " No <br><br>"; 
                         char4.setText(temp);  
                         char4.select(0, 0); 
+                        selection = ""; 
                     }
                 }); 
             
@@ -755,13 +768,13 @@ public class Main extends Character{
 
                 charSelect.addActionListener(new ActionListener(){
                     public void actionPerformed(ActionEvent event){
-                        String selection = charSelect.getSelectedItem().toString(); 
+                        selection += charSelect.getSelectedItem().toString(); 
                         System.out.println(selection + "printing selection"); 
                         int index = 0; 
                         for (int i = 0; i < 26; i++){  
-                            if (selection == characters[i].charName){
+                            if (selection.equals(characters[i].charName)){
                                 index = i; // WHY IS THIS ALWAYS ZERO. MIGHT FIX ITSELF WHEN THE CHARDATAFILE IS FINISHED **FIX ME**
-                                i = 26; 
+                                i = 28; 
                             }
                         }
                        
@@ -779,6 +792,7 @@ public class Main extends Character{
                         left.setText(compareText); 
                         left.setVisible(true); 
                         left.select(0, 0); 
+                        selection = ""; 
                     }
                 });
 
@@ -865,12 +879,12 @@ public class Main extends Character{
                 charMenu.addActionListener(new ActionListener(){
                     
                     public void actionPerformed(ActionEvent event){
-                        String selection = charMenu.getSelectedItem().toString(); 
+                        selection += charMenu.getSelectedItem().toString(); 
                         System.out.println(selection + "printing selection"); 
                         int index = 0; 
                         charMenu.setBounds((frame.getContentPane().getWidth() / 2 ) - 65, 65, 130, 30); 
                         for (int i = 0; i < 26; i++){  // check which character was selected 
-                            if (selection == characters[i].charName){
+                            if (selection.equals(characters[i].charName)){
                                 index = i; 
                                 i = 26; 
                                 
@@ -894,6 +908,7 @@ public class Main extends Character{
 
                         // **FIX ME, NEED TO MAKE THIS COMPLETE
                         ); 
+                        selection = ""; 
                     }
                 });
 
@@ -944,7 +959,7 @@ public class Main extends Character{
                     public void actionPerformed(ActionEvent event){
                         selection = rankOptions.getSelectedItem().toString(); 
                         for (int i = 0; i < 4; i++){  // check which ranking option was selected 
-                            if (selection == rankingOptions[i]){
+                            if (selection.equals(rankingOptions[i])){
                                 index = i;  // represents how many extra should be added to the original move. 
 
                                 i = 4; // break should also work
@@ -1106,11 +1121,11 @@ public class Main extends Character{
                                 // reset array for future use. 
                             }
                             movePane.select(0, 0);
-
+                            
                         }
                         
                     }
- 
+                    
                 }); 
 
                 frame.getContentPane().removeAll(); 
@@ -1141,7 +1156,7 @@ public class Main extends Character{
                     public void actionPerformed(ActionEvent event){
 
                         attributeCombo.setBounds((frame.getContentPane().getWidth() / 2 ) - 128, 25, 250, 30); 
-                        String selection = attributeCombo.getSelectedItem().toString();
+                        selection += attributeCombo.getSelectedItem().toString();
                         
                         switch(selection){
                             case "Weight": whichAttribute = 125; break;
@@ -1255,7 +1270,7 @@ public class Main extends Character{
                         }
 
                         attributePane.select(0, 0);   // ABSOLUTE GODSEND
-                        
+                        selection = ""; 
                     }
                 }); 
                 
@@ -1278,7 +1293,7 @@ public class Main extends Character{
                 JTextPane howPane = new JTextPane(); 
                 JScrollPane howScroll = new JScrollPane(howPane, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED); 
                 
-                howPane.setContentType("text/html"); 
+                howPane.setContentType("text/html"); // **FIX ME** need to update this for new features
                 howPane.setBackground(Color.LIGHT_GRAY); 
                 howPane.setEditable(false);
                 howPane.setText("<center><b><u>HOW TO USE</u></b></center>" + "" + 
