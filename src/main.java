@@ -23,7 +23,7 @@ do all of the readfile stuff inside of Main's main. */
         0 = bowser, 1 = captain falcon, 2 = donkey kong, 3 = dr. mario, 
         4 = falco, 5 = fox, 6 = ganon, 7 = ICs, 8 = kirby, 9 = link, 
         10 = luigi, 11 = mario, 12 = marth, 
-        7 = mew2, 14 = g&w, 15 = ness, 16 = peach, 17 = pichu, 18 = pika, 
+        13 = mew2, 14 = g&w, 15 = ness, 16 = peach, 17 = pichu, 18 = pika, 
         19 = puff, 20 = roy, 21 = samus, 22 = sheik, 23 = yoshi, 24 = yink, 
         25 = zelda
 */
@@ -277,45 +277,30 @@ public class Main extends Character{
         }; 
 
         String[] imageSources = new String[26]; 
-       /* 0 = bowser, 1 = captain falcon, 2 = donkey kong, 3 = dr. mario, 
-        4 = falco, 5 = fox, 6 = ganon, 7 = ICs, 8 = kirby, 9 = link, 
-        10 = luigi, 11 = mario, 12 = marth, 
-        7 = mew2, 14 = g&w, 15 = ness, 16 = peach, 17 = pichu, 18 = pika, 
-        19 = puff, 20 = roy, 21 = samus, 22 = sheik, 23 = yoshi, 24 = yink, 
-        25 = zelda */
         imageSources[0] = "<img src='file:images/BowserHeadSSBM.png'>"; 
-        
-        
         imageSources[1] = "<img src='file:images/CaptainFalconHeadSSBM.png'>"; 
         imageSources[2] = "<img src='file:images/DonkeyKongHeadSSBM.png'>"; 
         imageSources[3] = "<img src='file:images/DrMarioHeadSSBM.png'>"; 
-
         imageSources[4] = "<img src='file:images/FalcoHeadSSBM.png'>"; 
         imageSources[5] = "<img src='file:images/FoxHeadSSBM.png'>"; 
         imageSources[6] = "<img src='file:images/GanondorfHeadSSBM.png'>"; 
-
         imageSources[7] = "<img src='file:images/IceClimbersHeadSSBM.png'>"; 
         imageSources[8] = "<img src='file:images/KirbyHeadSSBM.png'>"; 
         imageSources[9] = "<img src='file:images/LinkHeadSSBM.png'>"; 
         imageSources[10] = "<img src='file:images/LuigiHeadSSBM.png'>"; 
-
         imageSources[11] = "<img src='file:images/MarioHeadSSBM.png'>"; 
         imageSources[12] = "<img src='file:images/MarthHeadSSBM.png'>"; 
-
         imageSources[13] = "<img src='file:images/MewtwoHeadSSBM.png'>"; 
         imageSources[14] = "<img src='file:images/MrGame&WatchHeadSSBM.png'>"; 
-
         imageSources[15] = "<img src='file:images/NessHeadSSBM.png'>"; 
         imageSources[16] = "<img src='file:images/PeachHeadSSBM.png'>"; 
         imageSources[17] = "<img src='file:images/PichuHeadSSBM.png'>"; 
         imageSources[18] = "<img src='file:images/PikachuHeadSSBM.png'>"; 
-
         imageSources[19] = "<img src='file:images/JigglypuffHeadSSBM.png'>"; 
         imageSources[20] = "<img src='file:images/RoyHeadSSBM.png'>"; 
         imageSources[21] = "<img src='file:images/SamusHeadSSBM.png'>"; 
         imageSources[22] = "<img src='file:images/SheikHeadSSBM.png'>"; 
         imageSources[23] = "<img src='file:images/YoshiHeadSSBM.png'>"; 
-
         imageSources[24] = "<img src='file:images/YoungLinkHeadSSBM.png'>"; 
         imageSources[25] = "<img src='file:images/ZeldaHeadSSBM.png'>"; 
 
@@ -398,10 +383,7 @@ public class Main extends Character{
                 char1Combo.setBounds(char1.getWidth() + 65, 50, 130, 30); 
                 char1.add(char1Combo); 
                 char1.setVisible(true); 
-                String tempString = imageSources[index].substring(0, imageSources[index].length() - 1); 
-                tempString = tempString + "width = '40' height ='40'>"; 
-                String compareText = "<center>" + "<br><br><br><br><br>" + tempString + "<br>" + 
-                    fullData;  
+                
                     
 
                 char1Combo.addActionListener(new ActionListener(){
@@ -416,6 +398,10 @@ public class Main extends Character{
                                         i = 26; 
                                     }
                                 }
+                                String tempString = imageSources[index].substring(0, imageSources[index].length() - 1); 
+                                tempString = tempString + "width = '40' height ='40'>"; 
+                                String compareText = "<center>" + "<br><br><br><br><br>" + tempString + "<br>" + 
+                                fullData;  
                                 String temp = compareText; 
 
                                 if (characters[index].values[132] == 1){
@@ -446,6 +432,10 @@ public class Main extends Character{
                                 i = 26; 
                             }
                         }
+                        String tempString = imageSources[index].substring(0, imageSources[index].length() - 1); 
+                                tempString = tempString + "width = '40' height ='40'>"; 
+                                String compareText = "<center>" + "<br><br><br><br><br>" + tempString + "<br>" + 
+                                fullData;  
                             String temp = compareText; 
                             if (characters[index].values[132] == 1){
                                 temp += " Yes <br><br>"; 
@@ -473,6 +463,10 @@ public class Main extends Character{
                                 i = 26; 
                             }
                         }
+                        String tempString = imageSources[index].substring(0, imageSources[index].length() - 1); 
+                                tempString = tempString + "width = '40' height ='40'>"; 
+                                String compareText = "<center>" + "<br><br><br><br><br>" + tempString + "<br>" + 
+                                fullData;  
                         String temp = compareText; 
                         if (characters[index].values[132] == 1){
                             temp += " Yes <br><br>"; 
@@ -502,6 +496,10 @@ public class Main extends Character{
                                 i = 26; 
                             }
                         }
+                        String tempString = imageSources[index].substring(0, imageSources[index].length() - 1); 
+                                tempString = tempString + "width = '40' height ='40'>"; 
+                                String compareText = "<center>" + "<br><br><br><br><br>" + tempString + "<br>" + 
+                                fullData;  
                         String temp = compareText; 
                         if (characters[index].values[132] == 1){
                             temp += " Yes <br><br>"; 
@@ -572,7 +570,7 @@ public class Main extends Character{
 
                 for (int i = 0; i < 133; i++){
                     for (int x = 0; x < 26; x++){
-                        averages[i] += characters[x].values[i]; 
+                        if (characters[x].values[i] != -1) averages[i] += characters[x].values[i]; 
                     }
                     averages[i] /= 26; 
                 }
