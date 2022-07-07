@@ -1044,7 +1044,7 @@ public class Main extends Character{
                             for (int i = 0; i < 26; i++){
                                 for (int x = 0; x < 26; x++){
                                     if (characters[charIndices[i]].charName.equals(charOptions[x])){
-                                        tempImage = imageSources[x]; 
+                                        tempImage = imageSourcesTwo[x]; 
                                         break; 
                                     }
                                 }
@@ -1130,7 +1130,7 @@ public class Main extends Character{
                             for (int i = 0; i < 26; i++){
                                 for (int x = 0; x < 26; x++){
                                     if (characters[charIndices[i]].charName.equals(charOptions[x])){
-                                        tempImage = imageSources[x]; 
+                                        tempImage = imageSourcesTwo[x]; 
                                         break; 
                                     }
                                 }
@@ -1271,7 +1271,7 @@ public class Main extends Character{
                             
                             for (int x = 0; x < 26; x++){
                                 if (characters[charIndices[i]].charName.equals(charOptions[x])){
-                                    tempImage = imageSources[x]; 
+                                    tempImage = imageSourcesTwo[x]; 
                                     break;
                                 }
                             }
