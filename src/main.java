@@ -1772,7 +1772,7 @@ class Main extends Character{
                         float tempFloat = 0; 
                         int tempInt = 0; 
                     
-                       // for (int i = 0; i <) // ***** INCOMPLETE FIX ME**********
+                            // ** FIX ME, need to get rid of the -1's (move them to the bottom)
                         if (selection.length() > 1){
                             whichAttribute = index + index2; 
                             for (int i = 0; i < 26; i++){
@@ -1780,28 +1780,46 @@ class Main extends Character{
                             }
 
                             for (int i = 0; i < 26; i++){
-                                for (int x = 0; x < 25; x++){ // maybe need to go to 25 here instead????**FIX ME**
+                                for (int x = 0; x < 25; x++){ 
                                     if (index == 0 || index == 2){
-                                        if (charVals[x] <= charVals[x+1]){
-                                            tempFloat = charVals[x]; 
-                                            charVals[x] = charVals[x+1]; 
-                                            charVals[x+1] = tempFloat; 
-    
-                                            tempInt = charIndices[x]; 
-                                            charIndices[x] = charIndices[x+1]; 
-                                            charIndices[x+1] = tempInt; 
+                                        if (charVals[x] == -1){
+                                            tempFloat = charVals[25]; 
+                                            charVals[25] = charVals[x]; 
+                                            charVals[x] = tempFloat; 
+
+                                            tempInt = charIndices[25]; 
+                                            charIndices[25] = charIndices[x]; 
+                                            charIndices[x] = tempInt;
                                         }
+                                        else{
+                                            if (charVals[x] <= charVals[x+1]){
+                                                tempFloat = charVals[x]; 
+                                                charVals[x] = charVals[x+1]; 
+                                                charVals[x+1] = tempFloat; 
+        
+                                                tempInt = charIndices[x]; 
+                                                charIndices[x] = charIndices[x+1]; 
+                                                charIndices[x+1] = tempInt; 
+                                            }
+                                        }
+                                        
                                     }
                                     else{
-                                        if (charVals[x] >= charVals[x+1]){
-                                            tempFloat = charVals[x]; 
-                                            charVals[x] = charVals[x+1]; 
-                                            charVals[x+1] = tempFloat; 
-    
-                                            tempInt = charIndices[x]; 
-                                            charIndices[x] = charIndices[x+1]; 
-                                            charIndices[x+1] = tempInt; 
+                                        if (charVals[x] != -1){
+                                            // FILL ME!
                                         }
+                                        else{
+                                            if (charVals[x] >= charVals[x+1]){
+                                                tempFloat = charVals[x]; 
+                                                charVals[x] = charVals[x+1]; 
+                                                charVals[x+1] = tempFloat; 
+        
+                                                tempInt = charIndices[x]; 
+                                                charIndices[x] = charIndices[x+1]; 
+                                                charIndices[x+1] = tempInt; 
+                                            }
+                                        }
+                                        
                                     }
                                 }
                             }
