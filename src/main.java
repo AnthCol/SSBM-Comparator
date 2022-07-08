@@ -10,14 +10,11 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner; 
 import java.awt.event.*; 
-//import javax.swing.plaf.metal.MetalLookAndFeel;
 
-// **NOTE donkey kongs cargo throw damage in the original text file is an average of the three
-// (cargo up == 7%, forward is 8%, and back == 8%)
 
-/* FIX ME recreate character class and have main extend it. 
+// **NOTE donkey kongs cargo (forward) throw damage in the original text file is an average of the three
+// (cargo up == 7%, forward is 8%, and back == 8%) **FIXME include in readme ** 
 
-do all of the readfile stuff inside of Main's main. */
 /*
         Indices (alphabetical order):
         0 = bowser, 1 = captain falcon, 2 = donkey kong, 3 = dr. mario, 
@@ -70,8 +67,6 @@ class Main extends Character{
             
         }; 
 
-        // "Standing Grab", "Dash Grab", "Forward Throw", "Back Throw", "Down Throw", "Up Throw", "Spot Dodge", "Backwards Roll", "Forward Roll", "Air Dodge"
-        // FIX ME  ^ remove the throws from here, and add the other stuff to the attributes list **FIX ME**
         String[] attributesList = {
             "Weight", "Fast Fall Speed", "Dash Speed", "Run Speed", "Wavedash Length (rank/26)", 
             "Perfect Ledgedash Intangibility Frames", "Jump Squat", "Wall Jump", "Standing Grab Startup Frames", "Standing Grab Total Frames", "Dash Grab Starting Frames", 
@@ -83,8 +78,6 @@ class Main extends Character{
         String[] rankingOptions = {
             "Damage", "Startup Frames", "Active Frames", "Ending Frames"
         };
-        // might need to move backwards and fowards roll around with air dodge so that spot dodge and air dodge are next to one another
-        // and that way it will be less scuffed, this involves using the charData.txt file entry properly as well. 
 
 
         String[] charOptions = {
@@ -189,7 +182,7 @@ class Main extends Character{
         vsCharacters.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent event){
             
-                System.out.println("char select clicked"); 
+               
                 JPanel comparePanel = new JPanel(new GridLayout (0, 4));
                 JScrollPane compareScroll = new JScrollPane(comparePanel, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER); 
                 compareScroll.getVerticalScrollBar().setUnitIncrement(16);
@@ -226,11 +219,11 @@ class Main extends Character{
                 String fillerData = "<center>" + "<br><br><br><br><br>" + "<img src='file:images/FightingWireFramesHeadSSBM.png'>" +
                 "<br><br> <b> Select a Character To See Data</b>"; 
         
-                System.out.println("CHAR 1 ADDITION CLICKED"); 
+                
                 JComboBox<String> char1Combo = new JComboBox<>(charOptions); 
-                //char1.removeAll(); 
+                
                 char1.setText(fillerData); 
-               // char1Combo.setBounds((frame.getContentPane().getWidth() / 8 ) - 65, 50, 130, 30); // get content  pane of char1 width and divide it by two to centre it ?? **fix me** 
+               
                 char1Combo.setBounds(char1.getWidth() + 65, 50, 130, 30); 
                 char1.add(char1Combo); 
                 char1.setVisible(true); 
@@ -239,20 +232,20 @@ class Main extends Character{
 
                 char1Combo.addActionListener(new ActionListener(){
                     public void actionPerformed(ActionEvent event){
-                        System.out.println("CHAR1 COMPARISION COMBO BOX CLICKED"); 
-                                selection = ""; 
-                        //char1Combo.setBounds((frame.getContentPane().getWidth() / 8 ) - 65, 50, 130, 30);
-                                selection += char1Combo.getSelectedItem().toString();
-                                for (int i = 0; i < 26; i++){
-                                    if (selection.equals(characters[i].charName)){
-                                        index = i; 
-                                        break; 
-                                    }
-                                }
-                                String tempString = imageSources[index].substring(0, imageSources[index].length() - 1); 
-                                tempString = tempString + "width = '40' height ='40'>"; 
-                                String compareText = "<center>" + "<br><br><br><br><br>" + tempString + "<br>" + 
-                                "<br><strong>&nbsp Jab 1:</strong><br> &nbsp Damage: " + characters[index].values[0] + "%" + 
+                       
+                        selection = ""; 
+                       
+                        selection += char1Combo.getSelectedItem().toString();
+                        for (int i = 0; i < 26; i++){
+                            if (selection.equals(characters[i].charName)){
+                                index = i; 
+                                break; 
+                            }
+                        }
+                        String tempString = imageSources[index].substring(0, imageSources[index].length() - 1); 
+                        tempString = tempString + "width = '40' height ='40'>"; 
+                        String compareText = "<center>" + "<br><br><br><br><br>" + tempString + "<br>" + 
+                        "<br><strong>&nbsp Jab 1:</strong><br> &nbsp Damage: " + characters[index].values[0] + "%" + 
                         "<br> &nbsp Startup Frames: " + characters[index].values[1] + 
                         "<br> &nbsp Active Frames: " + characters[index].values[2] + 
                         "<br> &nbsp Ending Frames: " + characters[index].values[3] +
@@ -424,28 +417,27 @@ class Main extends Character{
                         "<br><br><strong>&nbsp Jump Squat Frames:</strong> " + 
                         characters[index].values[131] +
                         "<br><br><strong>&nbsp Wall Jump:</strong> " ;  
-                                String temp = compareText; 
+                        String temp = compareText; 
 
-                                if (characters[index].values[132] == 1){
-                                    temp += " Yes <br><br>"; 
-                                }
-                                else temp += " No <br><br>"; 
-                                char1.setText(temp);  
-                                char1.select(0, 0); 
-                                selection = ""; 
-                            }
-                        }); 
+                        if (characters[index].values[132] == 1){
+                            temp += " Yes <br><br>"; 
+                        }
+                        else temp += " No <br><br>"; 
+                        char1.setText(temp);  
+                        char1.select(0, 0); 
+                        selection = ""; 
+                    }
+                }); 
 
        
                 JComboBox<String> char2Combo = new JComboBox<>(charOptions); 
-                //char2.removeAll(); 
+                
                 char2.setText(fillerData); 
                 char2Combo.setBounds((frame.getContentPane().getWidth() / 8 ) - 65, 50, 130, 30); 
                 char2.add(char2Combo); 
                 char2Combo.addActionListener(new ActionListener(){
                     public void actionPerformed(ActionEvent event){
                         
-                        System.out.println("CHAR1 COMPARISION COMBO BOX CLICKED"); 
                         selection = ""; 
                         selection += char2Combo.getSelectedItem().toString();
                         for (int i = 0; i < 26; i++){
@@ -455,9 +447,9 @@ class Main extends Character{
                             }
                         }
                         String tempString = imageSources[index].substring(0, imageSources[index].length() - 1); 
-                                tempString = tempString + "width = '40' height ='40'>"; 
-                                String compareText = "<center>" + "<br><br><br><br><br>" + tempString + "<br>" + 
-                                "<br><strong>&nbsp Jab 1:</strong>" + 
+                        tempString = tempString + "width = '40' height ='40'>"; 
+                        String compareText = "<center>" + "<br><br><br><br><br>" + tempString + "<br>" + 
+                        "<br><strong>&nbsp Jab 1:</strong>" + 
                         "<br> &nbsp Damage: " + characters[index].values[0] + "%" + 
                         "<br> &nbsp Startup Frames: " + characters[index].values[1] + 
                         "<br> &nbsp Active Frames: " + characters[index].values[2] + 
@@ -630,16 +622,16 @@ class Main extends Character{
                         "<br><br><strong>&nbsp Jump Squat Frames:</strong> " + 
                         characters[index].values[131] +
                         "<br><br><strong>&nbsp Wall Jump:</strong> " ;  
-                            String temp = compareText; 
-                            if (characters[index].values[132] == 1){
-                                temp += " Yes <br><br>"; 
-                            }
-                            else temp += " No <br><br>"; 
-                            char2.setText(temp);  
-                            char2.select(0, 0); 
-                            selection = ""; 
+                        String temp = compareText; 
+                        if (characters[index].values[132] == 1){
+                            temp += " Yes <br><br>"; 
                         }
-                    }); 
+                        else temp += " No <br><br>"; 
+                        char2.setText(temp);  
+                        char2.select(0, 0); 
+                        selection = ""; 
+                    }
+                }); 
 
                 JComboBox<String> char3Combo = new JComboBox<>(charOptions); 
                 //char3.removeAll(); 
@@ -649,7 +641,7 @@ class Main extends Character{
                 char3Combo.addActionListener(new ActionListener(){
                      public void actionPerformed(ActionEvent event){
                         selection = ""; 
-                        System.out.println("CHAR1 COMPARISION COMBO BOX CLICKED"); 
+                        
                         selection += char3Combo.getSelectedItem().toString(); 
                         for (int i = 0; i < 26; i++){
                             if (selection.equals(characters[i].charName)){
@@ -658,9 +650,9 @@ class Main extends Character{
                             }
                         }
                         String tempString = imageSources[index].substring(0, imageSources[index].length() - 1); 
-                                tempString = tempString + "width = '40' height ='40'>"; 
-                                String compareText = "<center>" + "<br><br><br><br><br>" + tempString + "<br>" + 
-                                "<br><strong>&nbsp Jab 1:</strong>" + 
+                        tempString = tempString + "width = '40' height ='40'>"; 
+                        String compareText = "<center>" + "<br><br><br><br><br>" + tempString + "<br>" + 
+                        "<br><strong>&nbsp Jab 1:</strong>" + 
                         "<br> &nbsp Damage: " + characters[index].values[0] + "%" + 
                         "<br> &nbsp Startup Frames: " + characters[index].values[1] + 
                         "<br> &nbsp Active Frames: " + characters[index].values[2] + 
@@ -852,8 +844,7 @@ class Main extends Character{
                 char4.add(char4Combo); 
                 char4Combo.addActionListener(new ActionListener(){
                     public void actionPerformed(ActionEvent event){
-                        
-                        System.out.println("CHAR1 COMPARISION COMBO BOX CLICKED"); 
+                       
                         selection = ""; 
                         selection += char4Combo.getSelectedItem().toString();
                         for (int i = 0; i < 26; i++){
@@ -863,9 +854,9 @@ class Main extends Character{
                             }
                         }
                         String tempString = imageSources[index].substring(0, imageSources[index].length() - 1); 
-                                tempString = tempString + "width = '40' height ='40'>"; 
-                                String compareText = "<center>" + "<br><br><br><br><br>" + tempString + "<br>" + 
-                                "<br><strong>&nbsp Jab 1:</strong>" + 
+                        tempString = tempString + "width = '40' height ='40'>"; 
+                        String compareText = "<center>" + "<br><br><br><br><br>" + tempString + "<br>" + 
+                        "<br><strong>&nbsp Jab 1:</strong>" + 
                         "<br> &nbsp Damage: " + characters[index].values[0] + "%" + 
                         "<br> &nbsp Startup Frames: " + characters[index].values[1] + 
                         "<br> &nbsp Active Frames: " + characters[index].values[2] + 
@@ -1067,7 +1058,7 @@ class Main extends Character{
 
         vsAverage.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent event){
-                System.out.println("vs averages clicked"); 
+                
                 JPanel mainPanel = new JPanel ( new GridLayout (0, 2)); 
               
                 /*FIX ME
@@ -1089,7 +1080,7 @@ class Main extends Character{
                 right.setBackground(Color.LIGHT_GRAY); 
                 right.setEditable(false); 
 
-            
+
     
                 left.setContentType("text/html"); 
                 left.setBackground(Color.LIGHT_GRAY); 
@@ -1297,28 +1288,22 @@ class Main extends Character{
                 if (1 - averages[132] <= 0.5) averageString += "Yes";
                 else averageString += "No"; 
 
-                // **FIX ME** may want to change this, for the wall jump, it is an average of ones and zeros, maybe would genuinely be better as the number??
-                
-                // NEED TO ADD ALL OF THE AVERAGES INTO THIS STRING LIKE : Jab 
-                // DAMAGE = ETC.  -> then add the numbers from the averages array into the string, then right.setText(averageString); and get rid of what
-                // is currently there. 
                 right.setText(averageString); 
-                
-               // averagePane.add(right, constraints); 
+           
 
                 charSelect.addActionListener(new ActionListener(){
                     public void actionPerformed(ActionEvent event){
                         selection += charSelect.getSelectedItem().toString(); 
-                        System.out.println(selection + "printing selection"); 
+                        
                         int index = 0; 
                         for (int i = 0; i < 26; i++){  
                             if (selection.equals(characters[i].charName)){
-                                index = i; // WHY IS THIS ALWAYS ZERO. MIGHT FIX ITSELF WHEN THE CHARDATAFILE IS FINISHED **FIX ME**
+                                index = i; 
                                 break; 
                             }
                         }
                        
-                        System.out.println("PRINTING I " + index + "PRINTING CHARNAME" + characters[index].charName); 
+                        
                         String tempString = imageSources[index].substring(0, imageSources[index].length() - 1); 
                         tempString = tempString + "width = '40' height ='40'>"; 
                         
@@ -1530,8 +1515,7 @@ class Main extends Character{
        
         tierList.addActionListener (new ActionListener(){
             public void actionPerformed(ActionEvent event){
-                System.out.println("tier list clicked"); 
-                // lines below used to be in the action listener 
+               
                 JTextPane tierListPane = new JTextPane(); 
                 JScrollPane tierListScroll = new JScrollPane(tierListPane, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED); 
                 tierListPane.setBackground(Color.LIGHT_GRAY);
@@ -1557,58 +1541,43 @@ class Main extends Character{
                 frame.setVisible(true); 
             }
         }); 
-        /*
-        Indices (alphabetical order):
-        0 = bowser, 1 = captain falcon, 2 = donkey kong, 3 = dr. mario, 4 = falco, 5 = fox, 6 = ganon, 7 = ICs, 8 = kirby, 9 = link, 10 = luigi, 11 = mario, 12 = marth, 
-        7 = mew2, 14 = g&w, 15 = ness, 16 = peach, 17 = pichu, 18 = pika, 19 = puff, 20 = roy, 21 = samus, 22 = sheik, 23 = yoshi, 24 = yink, 25 = zelda
-*/
+   
         JMenuItem indivData = new JMenuItem("Individual Character Data");  
         JTextPane textPaneIndiv = new JTextPane(); 
                 
         JComboBox<String> charMenu = new JComboBox<>(charOptions); 
-                //charMenu.addActionListener(charMenu); 
+              
         frame.pack(); 
         charMenu.setBounds((frame.getContentPane().getWidth() / 2 ) - 65, 65, 130, 30); 
         
-                /* this is a bullshit solution to get the frame centred, it would be nice in the future to make it not an absolute position 
+                /* improper centering
                 
                 **FIX ME**
                 This also has an issue where if you resize the window from another option, and then click the option to view individual character data, 
                 then you end up with the window resizing back to the original size. 
 
                 */
-       
-
         indivData.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent event){
-                System.out.println("indivData clicked"); 
-                // **FIX ME**  MIGHT NEED TO CHANGE THIS TO GRID BAG TO MAKE IT SEXY
-                
-                /*
-                if the charData.txt file reads in the characters in the order of the current tier list, then no second string needs to be created. 
-                Then you can just have the loop run, and have the index go in the order of the tier list.
-                */
 
                 charMenu.addActionListener(new ActionListener(){
                     
                     public void actionPerformed(ActionEvent event){
                         selection += charMenu.getSelectedItem().toString(); 
-                        System.out.println(selection + "printing selection"); 
+                         
                         int index = 0; 
                         charMenu.setBounds((frame.getContentPane().getWidth() / 2 ) - 65, 65, 130, 30); 
-                        for (int i = 0; i < 26; i++){  // check which character was selected 
+                        for (int i = 0; i < 26; i++){  
                             if (selection.equals(characters[i].charName)){
                                 index = i; 
                                 break; 
                                 
                             }
                         }
-                        System.out.println("PRINTING I " + index + "PRINTING CHARNAME" + characters[index].charName); 
+                     
                         
                         String tempString = imageSources[index].substring(0, imageSources[index].length() - 1); 
                         tempString = tempString + "width='40' height='40'>"; 
-                        
-                        // TEST TO SEE IF THE FILE: TYPE SHIT IN IMAGESOURCES WILL WORK WITH CSS HERE. **FIX ME** MAYBE IT WONT LOOK SO UGLY THAT WAY 
                         
                         textPaneIndiv.setText("<center><br>Select a character from the dropdown menu: </center>" +
                         "<br><br><br><br><center>*Please Note: Any value that is '-1' is either unavailable, or does not exist*</center><br>" + 
@@ -1618,8 +1587,8 @@ class Main extends Character{
                         "<br> &nbsp Startup Frames: " + characters[index].values[1] + 
                         "<br> &nbsp Active Frames: " + characters[index].values[2] + 
                         "<br> &nbsp Ending Frames: " + characters[index].values[3] 
+                            // **FIX ME ** need to make this complete 
 
-                        // **FIX ME, NEED TO MAKE THIS COMPLETE
                         ); 
                         selection = ""; 
                     }
@@ -1671,16 +1640,14 @@ class Main extends Character{
                 rankOptions.addActionListener(new ActionListener(){
                     public void actionPerformed(ActionEvent event){
                         selection = rankOptions.getSelectedItem().toString(); 
-                        for (int i = 0; i < 4; i++){  // check which ranking option was selected 
+                        for (int i = 0; i < 4; i++){  
                             if (selection.equals(rankingOptions[i])){
-                                index = i;  // represents how many extra should be added to the original move. 
-
-                                break;  // break should also work
+                                index = i;  // represents how many extra should be added to the original move.
+                                break;  
                             }
                         }
-                        // index in this case represents the 
-                        // will need to go through all of the 26 charcters -> characters[i].values[values] index += index2;
-                        float[] charVals = new float[26];  // index i will be used here 
+                    
+                      
                         float tempFloat; 
                         int tempInt; 
                         
@@ -1690,15 +1657,12 @@ class Main extends Character{
                         if (selection2.length() > 1){
                             
                             whichAttribute = index + index2; 
-                            System.out.println("PRINTING WHICH ATTRIBUTE: " + whichAttribute); 
-                            for (int i = 0; i < 26; i++){
-                                charVals[i] = characters[i].values[whichAttribute]; 
-                            }
+
                             int count = 0; 
                             for (int i = 0; i < 26; i++){
                                 if (characters[i].values[whichAttribute] != -1) count++; 
                             }
-                            System.out.println("PRINTING COUNT " + count); 
+                           
                             float[] charVals2 = new float[count]; 
                             int[] charIndices2 = new int[count]; 
                             int j = 0; 
@@ -1756,15 +1720,8 @@ class Main extends Character{
                             ranking += "</center>"; 
 
 
-                           // System.out.println("printing which " + whichAttribute); 
                             movePane.setText(ranking); 
-                            
-                            
 
-                            for (int i = 0; i < 26; i++){
-                                charIndices[i] = i; 
-                                // reset array for future use. 
-                            }
                             movePane.select(0, 0);
                         }
                         
@@ -1787,17 +1744,14 @@ class Main extends Character{
 
                        
                         
-                        float[] charVals = new float[26]; 
+                       
                         float tempFloat = 0; 
                         int tempInt = 0; 
                     
-                            // ** FIX ME, need to get rid of the -1's (move them to the bottom)
+                            
                         if (selection.length() > 1){
                             whichAttribute = index + index2; 
-                            System.out.println("PRINTING WHICH ATTRIBUTE: " + whichAttribute); 
-                            for (int i = 0; i < 26; i++){
-                                charVals[i] = characters[i].values[whichAttribute]; 
-                            }
+              
                             int count = 0; 
                             for (int i = 0; i < 26; i++){
                                 if (characters[i].values[whichAttribute] != -1) count++; 
@@ -1858,17 +1812,8 @@ class Main extends Character{
                             }
                     
                             ranking += "</center>"; 
-
-
-                           // System.out.println("printing which " + whichAttribute); 
                             movePane.setText(ranking); 
-                            
-                            
 
-                            for (int i = 0; i < 26; i++){
-                                charIndices[i] = i; 
-                                // reset array for future use. 
-                            }
                             movePane.select(0, 0);
                             
                         }
@@ -1937,13 +1882,10 @@ class Main extends Character{
 
                         float tempFloat = 0; 
                         int tempInt = 0; 
-                        float[] attributeArray = new float[27]; 
-                       
-                        // bubble sort for now, switch to mergesort for the other things with th elarge values. 
+                        float[] attributeArray = new float[26]; 
 
                         for (int i = 0; i < 26; i++){
                             attributeArray[i] = characters[i].values[whichAttribute]; 
-                            System.out.println("PRINTING ATTRIBUTE ARRAY VALUES: " + attributeArray[i]); 
                         }
 
                        
@@ -1967,7 +1909,7 @@ class Main extends Character{
                         }
                         else {
                             for (int i = 0; i < 25; i++){
-                                for (int x = 0; x < 25; x++){ // optimize this   **FIX ME SOMETHING IS WRONG HERE**  
+                                for (int x = 0; x < 25; x++){ 
                                     if (attributeArray[x] > attributeArray[x+1]){
                                         tempFloat = attributeArray[x]; 
                                         attributeArray[x] = attributeArray[x+1]; 
@@ -2038,7 +1980,7 @@ class Main extends Character{
         JMenuItem howToUse = new JMenuItem ("How To Use"); 
         howToUse.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent event){
-                System.out.println("how to use clicked"); 
+                
                 JTextPane howPane = new JTextPane(); 
                 JScrollPane howScroll = new JScrollPane(howPane, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED); 
                 
@@ -2092,7 +2034,6 @@ class Main extends Character{
         frame.getContentPane().add(BorderLayout.SOUTH, panel);
         frame.getContentPane().add(BorderLayout.NORTH, menuBar);
         frame.getContentPane().add(BorderLayout.CENTER, defaultTP);
-     //   frame.getContentPane().add(BorderLayout.EAST, vertical); 
         frame.setVisible(true);
         
     }
@@ -2104,16 +2045,12 @@ class Character {
     float[] values = new float[133]; 
 
     static void readFile (Character[] characters){
-        //Character character = new Character(); 
         int index = 0; 
         try{
             File file = new File ("./src/charData.txt"); 
             Scanner fileReader = new Scanner(file);
-            while (fileReader.hasNextLine()){  // index < 2 // THIS SHOULD PROBABLY BE HAS NEXT FLOAT 
+            while (fileReader.hasNextLine()){  
 
-                // **fIX ME ** NEEDS TO MAKE SURE IT READS PROPERLY 
-
-                //if (index == 1 || index == 2 || index == 3 || index == 7 || index == 14 || index == 24){ // **FIX ME, MAKE IT RELATIVE TO THE TIER LIST**
                 if (index == 1 || index == 2 || index == 3 || index == 7 || index == 24){  
                     characters[index].charName = fileReader.next(); 
                     characters[index].charName = characters[index].charName.concat(" "); 
@@ -2140,7 +2077,7 @@ class Character {
             fileReader.close(); 
         }   
         catch (FileNotFoundException error){
-            System.out.println("File was unable to be read"); // need to make this some sort of pop-up in the gui  ** FIX ME **
+            System.out.println("File was unable to be read"); 
             JFrame errorFrame = new JFrame(); 
             JTextPane errorText = new JTextPane(); 
             errorText.setContentType("text/html"); 
@@ -2158,11 +2095,6 @@ class Character {
     }
 }
 
-// kirbys rapid jab is jab 3
-// falcos active frames are for the laser, the end lag is how long it takes him to get down
-// IC's projectile stays out for 61 frames, this is not included in the shiz
-// links rapid jab is not included in the data 
-// link
 /*
     indices for float array:
     0 - jab1 dmg
