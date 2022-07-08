@@ -1675,7 +1675,7 @@ class Main extends Character{
                             if (selection.equals(rankingOptions[i])){
                                 index = i;  // represents how many extra should be added to the original move. 
 
-                                i = 4; // break should also work
+                                break;  // break should also work
                             }
                         }
                         // index in this case represents the 
@@ -1690,6 +1690,7 @@ class Main extends Character{
                         if (selection2.length() > 1){
                             
                             whichAttribute = index + index2; 
+                            System.out.println("PRINTING WHICH ATTRIBUTE: " + whichAttribute); 
                             for (int i = 0; i < 26; i++){
                                 charVals[i] = characters[i].values[whichAttribute]; 
                             }
@@ -1775,14 +1776,15 @@ class Main extends Character{
                         for (int i = 0; i < 28; i++){  
                             if (selection2 == damagingMoves[i]){
                                 index2 = i; 
-                                i = 33; 
+                                break; 
                             }
                         }
                         index2 *= 4; 
 
-                        if (index2 >= 24){
+                        if (index2 >= 92){
                             index2 += 4; 
-                        }
+                        } 
+
                        
                         
                         float[] charVals = new float[26]; 
@@ -1792,6 +1794,7 @@ class Main extends Character{
                             // ** FIX ME, need to get rid of the -1's (move them to the bottom)
                         if (selection.length() > 1){
                             whichAttribute = index + index2; 
+                            System.out.println("PRINTING WHICH ATTRIBUTE: " + whichAttribute); 
                             for (int i = 0; i < 26; i++){
                                 charVals[i] = characters[i].values[whichAttribute]; 
                             }
@@ -1799,7 +1802,7 @@ class Main extends Character{
                             for (int i = 0; i < 26; i++){
                                 if (characters[i].values[whichAttribute] != -1) count++; 
                             }
-                            System.out.println("PRINTING COUNT " + count); 
+                            
                             float[] charVals2 = new float[count]; 
                             int[] charIndices2 = new int[count]; 
                             int j = 0; 
