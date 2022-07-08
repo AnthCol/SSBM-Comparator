@@ -28,7 +28,7 @@ Mainly for my personal use when discussing the game with friends, or when thinki
 
 <<<<<<<<<< HOW LONG DID IT TAKE TO MAKE? >>>>>>>>>>
 
-May 10th, 2022 to **unfinished**
+May 10th, 2022 to July 8th, 2022
 
 
 
