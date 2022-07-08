@@ -1,7 +1,7 @@
 <<<< SSBM COMPARATOR >>>>
 
 ** FIX ME (make a .md file not a .txt file)
-
+** FIX ME (outdated GALINT (perfect ledgedash) information)
 <<<<<<<<<< WHAT IS THIS? >>>>>>>>>>
 
 SSBM Comparator is a Java Swing desktop application that allows the user to view, compare and rank (sort) character data from the video game
