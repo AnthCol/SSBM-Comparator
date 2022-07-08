@@ -1683,6 +1683,8 @@ class Main extends Character{
                         float[] charVals = new float[26];  // index i will be used here 
                         float tempFloat; 
                         int tempInt; 
+                        
+
 
 
                         if (selection2.length() > 1){
@@ -1691,71 +1693,62 @@ class Main extends Character{
                             for (int i = 0; i < 26; i++){
                                 charVals[i] = characters[i].values[whichAttribute]; 
                             }
-
+                            int count = 0; 
                             for (int i = 0; i < 26; i++){
-                                for (int x = 0; x < 25; x++){ // maybe need to go to 25 here instead????**FIX ME** might also only need to do x = i+1 rather than this bs
+                                if (characters[i].values[whichAttribute] != -1) count++; 
+                            }
+                            System.out.println("PRINTING COUNT " + count); 
+                            float[] charVals2 = new float[count]; 
+                            int[] charIndices2 = new int[count]; 
+                            int j = 0; 
+                            for (int i = 0; i < 26; i++){
+                                if (characters[i].values[whichAttribute] != -1){
+                                    charVals2[j] = characters[i].values[whichAttribute]; 
+                                    charIndices2[j] = i; 
+                                    j++; 
+                                }
+                            }
+                            for (int i = 0; i < count; i++){
+                                for (int x = 0; x < count - 1; x++){
                                     if (index == 0 || index == 2){
-                                        if (charVals[x] == -1){
-                                            tempFloat = charVals[25]; 
-                                            charVals[25] = charVals[x]; 
-                                            charVals[x] = tempFloat; 
-
-                                            tempInt = charIndices[25]; 
-                                            charIndices[25] = charIndices[x]; 
-                                            charIndices[x] = tempInt; 
+                                        if (charVals2[x] <= charVals2[x+1]){
+                                            tempFloat = charVals2[x]; 
+                                            charVals2[x] = charVals2[x+1]; 
+                                            charVals2[x+1] = tempFloat; 
+    
+                                            tempInt = charIndices2[x]; 
+                                            charIndices2[x] = charIndices2[x+1]; 
+                                            charIndices2[x+1] = tempInt; 
                                         }
-                                        else{
-                                            if (charVals[x] <= charVals[x+1]){
-                                                tempFloat = charVals[x]; 
-                                                charVals[x] = charVals[x+1]; 
-                                                charVals[x+1] = tempFloat; 
-        
-                                                tempInt = charIndices[x]; 
-                                                charIndices[x] = charIndices[x+1]; 
-                                                charIndices[x+1] = tempInt; 
-                                            }
-                                        }
-                                        
                                     }
                                     else{
-                                        if (charVals[x] == -1){ ////////////////////// ????? **FIX ME ONE OF THE LAST THINGS TO FIX************
-                                            tempFloat = charVals[25]; 
-                                            charVals[25] = charVals[x]; 
-                                            charVals[x] = tempFloat; 
-
-                                            tempInt = charIndices[25]; 
-                                            charIndices[25] = charIndices[x]; 
-                                            charIndices[x] = tempInt; 
+                                        if (charVals2[x] >= charVals2[x+1]){
+                                            tempFloat = charVals2[x]; 
+                                            charVals2[x] = charVals2[x+1]; 
+                                            charVals2[x+1] = tempFloat; 
+    
+                                            tempInt = charIndices2[x]; 
+                                            charIndices2[x] = charIndices2[x+1]; 
+                                            charIndices2[x+1] = tempInt; 
                                         }
-                                        else{
-                                            if (charVals[x] >= charVals[x+1]){
-                                                tempFloat = charVals[x]; 
-                                                charVals[x] = charVals[x+1]; 
-                                                charVals[x+1] = tempFloat; 
-        
-                                                tempInt = charIndices[x]; 
-                                                charIndices[x] = charIndices[x+1]; 
-                                                charIndices[x+1] = tempInt; 
-                                            }
-                                        }
-                                        
                                     }
                                     
                                 }
                             }
+  
                             String tempImage = ""; 
                             String ranking = "<br><br><br><br><br><br><br><br><center>" 
                             + "Ranking <b>" + selection + "</b> of <b>" + selection2 + "</b><br><br>"; 
 
-                            for (int i = 0; i < 26; i++){
+                            for (int i = 0; i < count; i++){
                                 for (int x = 0; x < 26; x++){
-                                    if (characters[charIndices[i]].charName.equals(charOptions[x])){
+                                    if (characters[charIndices2[i]].charName.equals(charOptions[x])){
                                         tempImage = imageSourcesTwo[x]; 
                                         break; 
                                     }
                                 }
-                                if (selection.equals("Damage")) ranking += "#" + (i+1) + "<b>&nbsp&nbsp" + tempImage + "&nbsp" + "<i>" + characters[charIndices[i]].charName + "</i></b>: " + charVals[i] + "% <br>"; 
-                                else ranking += "#" + (i+1) + "<b>&nbsp&nbsp" + tempImage + "&nbsp" + "<i>" + characters[charIndices[i]].charName + "</i></b>: " + charVals[i] + "<br>"; 
+                                if (selection.equals("Damage")) ranking += "#" + (i+1) + "<b>&nbsp&nbsp" + tempImage + "&nbsp" + "<i>" + characters[charIndices2[i]].charName + "</i></b>: " + charVals2[i] + "% <br>"; 
+                                else ranking += "#" + (i+1) + "<b>&nbsp&nbsp" + tempImage + "&nbsp" + "<i>" + characters[charIndices2[i]].charName + "</i></b>: " + charVals2[i] + "<br>"; 
                                 
                             }
                     
@@ -1802,71 +1795,63 @@ class Main extends Character{
                             for (int i = 0; i < 26; i++){
                                 charVals[i] = characters[i].values[whichAttribute]; 
                             }
-                            
+                            int count = 0; 
                             for (int i = 0; i < 26; i++){
-                                for (int x = 0; x < 25; x++){ 
-                                    if (index == 0 || index == 2){
-                                        if (charVals[x] == -1){
-                                            tempFloat = charVals[25]; 
-                                            charVals[25] = charVals[x]; 
-                                            charVals[x] = tempFloat; 
-
-                                            tempInt = charIndices[25]; 
-                                            charIndices[25] = charIndices[x]; 
-                                            charIndices[x] = tempInt; 
-                                        }
-                                        else{
-                                            if (charVals[x] <= charVals[x+1]){
-                                                tempFloat = charVals[x]; 
-                                                charVals[x] = charVals[x+1]; 
-                                                charVals[x+1] = tempFloat; 
-        
-                                                tempInt = charIndices[x]; 
-                                                charIndices[x] = charIndices[x+1]; 
-                                                charIndices[x+1] = tempInt; 
-                                            }
-                                        }
-                                        
-                                    }
-                                    else{
-                                        if (charVals[x] == -1){  ///////////////////////////////////// ** FIX ME ONE OF THE LAST THINGS TO FIX 
-                                            tempFloat = charVals[25]; 
-                                            charVals[25] = charVals[x]; 
-                                            charVals[x] = tempFloat; 
-
-                                            tempInt = charIndices[25]; 
-                                            charIndices[25] = charIndices[x]; 
-                                            charIndices[x] = tempInt; 
-                                        }
-                                        else{
-                                            if (charVals[x] >= charVals[x+1]){
-                                                tempFloat = charVals[x]; 
-                                                charVals[x] = charVals[x+1]; 
-                                                charVals[x+1] = tempFloat; 
-        
-                                                tempInt = charIndices[x]; 
-                                                charIndices[x] = charIndices[x+1]; 
-                                                charIndices[x+1] = tempInt; 
-                                            }
-                                        }
-                                        
-                                    }
+                                if (characters[i].values[whichAttribute] != -1) count++; 
+                            }
+                            System.out.println("PRINTING COUNT " + count); 
+                            float[] charVals2 = new float[count]; 
+                            int[] charIndices2 = new int[count]; 
+                            int j = 0; 
+                            for (int i = 0; i < 26; i++){
+                                if (characters[i].values[whichAttribute] != -1){
+                                    charVals2[j] = characters[i].values[whichAttribute]; 
+                                    charIndices2[j] = i; 
+                                    j++; 
                                 }
                             }
+                            for (int i = 0; i < count; i++){
+                                for (int x = 0; x < count - 1; x++){
+                                    if (index == 0 || index == 2){
+                                        if (charVals2[x] <= charVals2[x+1]){
+                                            tempFloat = charVals2[x]; 
+                                            charVals2[x] = charVals2[x+1]; 
+                                            charVals2[x+1] = tempFloat; 
+    
+                                            tempInt = charIndices2[x]; 
+                                            charIndices2[x] = charIndices2[x+1]; 
+                                            charIndices2[x+1] = tempInt; 
+                                        }
+                                    }
+                                    else{
+                                        if (charVals2[x] >= charVals2[x+1]){
+                                            tempFloat = charVals2[x]; 
+                                            charVals2[x] = charVals2[x+1]; 
+                                            charVals2[x+1] = tempFloat; 
+    
+                                            tempInt = charIndices2[x]; 
+                                            charIndices2[x] = charIndices2[x+1]; 
+                                            charIndices2[x+1] = tempInt; 
+                                        }
+                                    }
+                                    
+                                }
+                            }
+  
                             String tempImage = ""; 
                             String ranking = "<br><br><br><br><br><br><br><br><center>" 
                             + "Ranking <b>" + selection + "</b> of <b>" + selection2 + "</b><br><br>"; 
 
-                            for (int i = 0; i < 26; i++){
+                            for (int i = 0; i < count; i++){
                                 for (int x = 0; x < 26; x++){
-                                    if (characters[charIndices[i]].charName.equals(charOptions[x])){
+                                    if (characters[charIndices2[i]].charName.equals(charOptions[x])){
                                         tempImage = imageSourcesTwo[x]; 
                                         break; 
                                     }
                                 }
-                                if (selection.equals("Damage")) ranking += "#" + (i+1) + "<b>&nbsp&nbsp" + tempImage + "&nbsp" + "<i>" + characters[charIndices[i]].charName + "</i></b>: " + charVals[i] + "% <br>"; 
-                                else ranking += "#" + (i+1) + "<b>&nbsp&nbsp" + tempImage + "&nbsp" + "<i>" + characters[charIndices[i]].charName + "</i></b>: " + charVals[i] + "<br>"; 
-                               
+                                if (selection.equals("Damage")) ranking += "#" + (i+1) + "<b>&nbsp&nbsp" + tempImage + "&nbsp" + "<i>" + characters[charIndices2[i]].charName + "</i></b>: " + charVals2[i] + "% <br>"; 
+                                else ranking += "#" + (i+1) + "<b>&nbsp&nbsp" + tempImage + "&nbsp" + "<i>" + characters[charIndices2[i]].charName + "</i></b>: " + charVals2[i] + "<br>"; 
+                                
                             }
                     
                             ranking += "</center>"; 
