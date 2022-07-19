@@ -1,5 +1,23 @@
 <<<< SSBM COMPARATOR >>>>
 
+
+
+
+
+
+This README is incomplete. The project is working, but still could use a lot of updates. 
+Main thing I learned from doing this project is that it is extremely beneficial to plan out a design rather than jumping into code (which is what I did and the reason the source code is so messy). 
+If you're interested in reading more, scroll down for the rest of the README, but it hasn't been edited or anything. 
+
+
+
+_______________________________________________________________________________________________________________________________________________________________________
+
+
+
+
+
+
 ** FIX ME (make a .md file not a .txt file)
 ** FIX ME (outdated GALINT (perfect ledgedash) information)
 <<<<<<<<<< WHAT IS THIS? >>>>>>>>>>
