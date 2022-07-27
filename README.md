@@ -1,8 +1,6 @@
-<<<< SSBM COMPARATOR >>>>
+# SSBM COMPARATOR
 
-** FIX ME (make a .md file not a .txt file)
-** FIX ME (outdated GALINT (perfect ledgedash) information)
-<<<<<<<<<< WHAT IS THIS? >>>>>>>>>>
+## What is this and what can it do?
 
 SSBM Comparator is a Java Swing desktop application that allows the user to view, compare and rank (sort) character data from the video game
 Super Smash Bros. Melee. 
@@ -11,66 +9,61 @@ It allows the user to:
 - Compare the data of a character to the average of all characters
 - View the current tier list
 - View individual character data
-- Rank (sort) all of the damage moves in the game by their:
+- Rank (sort) all of the damaging moves in the game by their:
     -> Damage 
     -> Startup Frames 
     -> Active Frames
     -> Ending Frames
 - Rank (sort) character attributes (such as fast falling speed), as well as data about non-damaging moves (such as spot dodge)
- 
+
+** SEE THE YOUTUBE VIDEO OF THE APP IN USE HERE! -> (FIXME include link)**
+
+## How do I install/use it?
+
+You can head over to the "releases" section on the right of your screen, and download the .exe file from the zip there. There isn't a mini application where you choose where to install it. Just download, extract into a folder (or not) wherever you want and then create a shortcut so it's easier to find. 
+
+*Heads up* -> Make sure to update the Java version on your device to version ???? - a recent one (I wrote it on Java 18). 
+Otherwise, if you try to run the program, you will get stuck in an infinite error loop and have to 
+restart your computer. 
 
 
-<<<<<<<<<< WHY WAS THIS MADE? >>>>>>>>>>
+## Why was this made?
 
-Mainly for my personal use when discussing the game with friends, or when thinking about it on my own. 
+I made this app primarily for myself and my friend who plays this game with me. 
+Sometimes we like to chat about certain matchups/interactions/etc. and having an app like this where you could quickly look up data was ideal for that, so I made it!
 
 
+## What did I learn from doing this?
 
-<<<<<<<<<< HOW LONG DID IT TAKE TO MAKE? >>>>>>>>>>
+This was my first ever experience using Java (and Java Swing), so I learned how to use the language a little bit. I don't have the OOP part down yet though. 
+
+Outside of that, I think the most important thing that I learned from doing this project was to plan your projects out in advance. What I mean by this, is to document all the things you want to add, how you want them to look, and what programming techniques you want to use to accomplish those things. 
+I didn't do any of this, outside of having an idea of what I wanted in my head, and got to coding immediately. This resulted in source code that is much longer than it should be, and much messier than it should be. 
+
+Lastly, I learned that I really enjoy designing and creating GUI apps :) 
+
+
+## How long did it take to make? (for v1.0)
 
 May 10th, 2022 to July 8th, 2022
 
 
+## Why is the source code so ugly?
 
-<<<<<<<<<< DEMO VIDEO >>>>>>>>>>
-
-Link here: **unfinished**
-
+This is a combination of lack of Java & OOP knowledge, as well as poor planning of the app itself. Once I started programming, I found it quite easy to just keep tagging on more and more features, and once that happened the code got messy very quickly since some of the features were not planned from the start. 
 
 
-<<<<<<<<<< WHY IS THE SOURCE CODE SO GROSS? >>>>>>>>>>
+## What are the limitations and issues of this program?
+##### Some of these things might be added/fixed in the future. 
 
-This project was my self-taught introduction to Java and OOP, before writing this I only had experience with C and HTML/CSS. As such it reflects my lack of experience. 
-    -> Will I fix it?
-    Maybe. The app works as intended and runs at an acceptable speed, so there isn't a lot of motivation for me to go back 
-    and make it pretty. 
-    Honestly, I think if I were to fix it, I would rewrite the entire thing. 
-    Any updates I make to it in the future will just be to the tier list which are pretty easy changes to make. 
-    The rest of the data isn't going to change as the game and it's data has been around since late 2001. 
-    The only changes I would consider going back to make are the ones in the limitations section below (but again, they
-    would likely come with a complete rework). 
+There are a large number of limitations in this program compared to what a *perfect* version of it would be like. For me (and my friends) personal needs though, it does the job well enough. 
 
+The most important limitation with this app is that it does not include the weaker hits of moves. There are many moves where if they linger after you use them or if you hit them in a certain spot, they will do less damage, but this application only includes the data for the strong hits. 
 
+The app is also missing some graphical elements. This isn't particularly an *issue*, but it would be very nice to see gifs of the moves playing with their hit/hurtboxes showing (like on https://meleeframedata.com). 
 
-<<<<<<<<<< WHAT DID I LEARN FROM MAKING THIS? >>>>>>>>>>
-
-Like mentioned before, this was my first introduction to Java, OOP, and GUI development. On top of those things, I think the most important thing I learned
-from this experience is that if I ever am developing something this large again, make sure to plan a large chunk (or all of it) out before
-going straight into coding. I found through making this that there were a lot of times that if I planned something before hand, I would have saved myself a
-lot of time that ended up being used to re-design things. 
-
-
-
-<<<<<<<<<< WHAT ARE THE LIMITATIONS OF THE PROGRAM? >>>>>>>>>>
-
-The character data only includes strong hits of moves. Moves that linger and do less damage over time, as well as moves that have weak hitboxes or multiple hits are not included in the 
-data set for this application (> for multiple hits, only the first hit data is shown). This may be something I go to allow for in the future, we'll see. 
-
-There are no visuals to show hitboxes of moves. As such, there is no way for the user to compare how large a hitbox is, or any data regarding that. 
-Again, I may include data about character model sizes, as well as hitbox & hurtbox sizes, but we'll see. 
-
-            **NOTES FOR THE USER:**
-            > if a number is -1 in charData.txt or in the application itself is not available/doesnt exist/unable to be calculated (bowser down b active frames for example)
+Also, there are some **notes for the user** that are about very specific values below:
+> if a number is -1 in charData.txt or in the application itself is not available/doesnt exist/unable to be calculated (bowser down b active frames for example)
             > kirbys rapid jab is jab 3
             > falcos active frames are for the laser, the end lag is how long it takes him to get down
             > IC's projectile stays out for 61 frames, this is not included in the data, as there
@@ -115,12 +108,12 @@ Again, I may include data about character model sizes, as well as hitbox & hurtb
 
 
 
-<<<<<<<<<< SPECIAL THANKS TO: >>>>>>>>>>
 
+
+
+There are also some aesthetic elements that could use an upgrade (for example some dropdown menus do not centre properly on the page )
+
+## Special thanks to:
 https://www.ssbwiki.com/Category:Head_icons_(SSBM) for the character head sprites.
 
 https://meleeframedata.com and its creator Mitchell Meier (as well as all of the people that helped him make that website) for the data used to create this project. 
-
-    
-
-
