@@ -78,7 +78,7 @@ Furthermore, I also need to update the "How To Use" section shown in the video s
 
 Also, there are some **notes for the user** that are about very specific values below:
 - The data for PLDIF (Perfect Ledgedash Invincibility Frames [aka GALINT]) is outdated
-- if a number is -1 in charData.txt or in the application itself is not available/doesnt exist/unable to be calculated (bowser down b active frames for example)
+- **IMPORTANT - if a number is -1 in charData.txt or in the application itself is not available/doesnt exist/unable to be calculated (bowser down b active frames for example)**
 - kirbys rapid jab is jab 3
 - falcos active frames are for the laser, the end lag is how long it takes him to get down
 - IC's projectile stays out for 61 frames, this is not included in the data, as there frame data is for the hammer that they swing out (which has a hitbox of its own, not just the ice)
