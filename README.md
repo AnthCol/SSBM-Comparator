@@ -63,7 +63,8 @@ The most important limitation with this app is that it does not include the weak
 The app is also missing some graphical elements. This isn't particularly an *issue*, but it would be very nice to see gifs of the moves playing with their hit/hurtboxes showing (like on https://meleeframedata.com). 
 
 Also, there are some **notes for the user** that are about very specific values below:
-> if a number is -1 in charData.txt or in the application itself is not available/doesnt exist/unable to be calculated (bowser down b active frames for example)
+            > The data for PLDIF (Perfect Ledgedash Invincibility Frames [aka GALINT]) is outdated
+            > if a number is -1 in charData.txt or in the application itself is not available/doesnt exist/unable to be calculated (bowser down b active frames for example)
             > kirbys rapid jab is jab 3
             > falcos active frames are for the laser, the end lag is how long it takes him to get down
             > IC's projectile stays out for 61 frames, this is not included in the data, as there
