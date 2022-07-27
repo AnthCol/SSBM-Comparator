@@ -16,7 +16,8 @@ It allows the user to:
     -> Ending Frames
 - Rank (sort) character attributes (such as fast falling speed), as well as data about non-damaging moves (such as spot dodge)
 
-** SEE THE YOUTUBE VIDEO OF THE APP IN USE HERE! -> (FIXME include link)**
+Check out the demo video below! (please also see limitations section of this README for certain sections of this video).
+<iframe width="560" height="315" src="https://www.youtube.com/embed/J__8x26bR50" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ----
 
@@ -69,6 +70,9 @@ There are a large number of limitations in this program compared to what a *perf
 The most important limitation with this app is that it does not include the weaker hits of moves. There are many moves where if they linger after you use them or if you hit them in a certain spot, they will do less damage, but this application only includes the data for the strong hits. 
 
 The app is also missing some graphical elements. This isn't particularly an *issue*, but it would be very nice to see gifs of the moves playing with their hit/hurtboxes showing (like on https://meleeframedata.com). 
+
+Like mentioned previously in the README, in the video you see me click on the "weight" attribute twice. That is a problem that I need to fix so that it displays the correct values on the initial click in that section *after* ranking damaging moves. 
+Furthermore, I also need to update the "How To Use" section, so that it displays correct information (most currently is correct, but there are a few things that need to be changed). 
 
 Also, there are some **notes for the user** that are about very specific values below:
 - The data for PLDIF (Perfect Ledgedash Invincibility Frames [aka GALINT]) is outdated
