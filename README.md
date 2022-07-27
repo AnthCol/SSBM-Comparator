@@ -61,7 +61,7 @@ This is a combination of lack of Java & OOP knowledge, as well as poor planning 
 
 
 ## What are the limitations and issues of this program?
-### Some of these things might be added/fixed in the future. 
+### __Some of these things might be added/fixed in the future.__ 
 
 There are a large number of limitations in this program compared to what a *perfect* version of it would be like. For me (and my friends) personal needs though, it does the job well enough. 
 
@@ -70,42 +70,42 @@ The most important limitation with this app is that it does not include the weak
 The app is also missing some graphical elements. This isn't particularly an *issue*, but it would be very nice to see gifs of the moves playing with their hit/hurtboxes showing (like on https://meleeframedata.com). 
 
 Also, there are some **notes for the user** that are about very specific values below:
-> The data for PLDIF (Perfect Ledgedash Invincibility Frames [aka GALINT]) is outdated
-> if a number is -1 in charData.txt or in the application itself is not available/doesnt exist/unable to be calculated (bowser down b active frames for example)
-> kirbys rapid jab is jab 3
-> falcos active frames are for the laser, the end lag is how long it takes him to get down
-> IC's projectile stays out for 61 frames, this is not included in the data, as there frame data is for the hammer that they swing out (which has a hitbox of its own, not just the ice)
-> links rapid jab is not included in the data 
-> links arrow charge data is *without holding down b*
-> links arrow data active frames is for the arrow itself 
-> same goes for links boomerang + catching data is not included 
-> links active frames for down B is how long the bomb will stick around until it explodes in his hand 
-> luigi and mario neutral b active frames number for the fireball
-> mewtwo's jab2 is rapid jab, there is no jab 3
-> mewtwo's neutral b damage is for its maximum charge - frame data is also for minimum charge time -> active frames are not for the shadow ball but for mewtwos animation itself - the value of one may be incorrect here, it is worth checking in the future looking at the hitboxes. For now assume the ball hits on frame 1 of release, and that the active frames are one. 
-> mewtwo's throw data was calculated by hand (by me, [except for dthrow]) from looking at a gif, very likely could be incorrect by a small margin (1-2) frames *his backthrow is especially likely to be incorrect because of the way the hitboxes are shown in the gif*.
-> game and watch side b is the default animation data, not corrected for any special effects of each potential number
-> game and watch down B damage is maximum possible
-> peach fsmash is the frame data from the gif on https://meleeframedata.com/peach calculated by hand by me - damage not included 
-> peach turnip damage is listed as zero since there is so much variation
-> the data refers to the pull itself, not the projectiles. The active frame of 1, is the first frame its in her hand. 
-> pichu ftilt angle changes damage, damage listed as 8 on meleeframedata.com, not sure which one that is for. 
-> pichu neutral B is active frames for the projectile, ending frames are likely incorrect, dont have full gif to work with atm, might look into it another time
-> pikachu neutral B is active frames for the projectile, ending frames are correct though. 
-> pichu/pikachu side B is no charge 
-> pikachu up b hasno active frames or end frames because of the option to do it once or twice. see https://meleeframedata.com/pikachu for more. 
-> no data for jigglypuff neutral b
-> puff down b active frames may be one more than listed. Hard to tell with the gif on the website 
-> roy neutral b damage is max charge. 
-> samus neutral b damage is for maximum charge
-> samus neutral b/side b/down b active frames are for the projectile, ending frames until she can move again
-> sheiks neutral b data refers to throwing a full stack of needles, the damage is listed as 3% (which is the individual damage of each needle, although it technically changes based on distance)
-> sheiks jab 3 is data for her rapid jab 
-> yoshi up b active data is for the egg, ending frames are until he can act again
-> young link rapid jab not included 
-> young link neutral b active frames are for the projectile, ending frames are for how long it takes for him to move (same goes for his side b)
-> young link down b ending frames are unlisted - incalculable with the gif - throwable after the active frames
-> zelda side b data is for the shortest possible time it takes to cast the ability
+- The data for PLDIF (Perfect Ledgedash Invincibility Frames [aka GALINT]) is outdated
+- if a number is -1 in charData.txt or in the application itself is not available/doesnt exist/unable to be calculated (bowser down b active frames for example)
+- kirbys rapid jab is jab 3
+- falcos active frames are for the laser, the end lag is how long it takes him to get down
+- IC's projectile stays out for 61 frames, this is not included in the data, as there frame data is for the hammer that they swing out (which has a hitbox of its own, not just the ice)
+- links rapid jab is not included in the data 
+- links arrow charge data is *without holding down b*
+- links arrow data active frames is for the arrow itself 
+- same goes for links boomerang + catching data is not included 
+- links active frames for down B is how long the bomb will stick around until it explodes in his hand 
+- luigi and mario neutral b active frames number for the fireball
+- mewtwo's jab2 is rapid jab, there is no jab 3
+- mewtwo's neutral b damage is for its maximum charge - frame data is also for minimum charge time -> active frames are not for the shadow ball but for mewtwos animation itself - the value of one may be incorrect here, it is worth checking in the future looking at the hitboxes. For now assume the ball hits on frame 1 of release, and that the active frames are one. 
+- mewtwo's throw data was calculated by hand (by me, [except for dthrow]) from looking at a gif, very likely could be incorrect by a small margin (1-2) frames *his backthrow is especially likely to be incorrect because of the way the hitboxes are shown in the gif*.
+- game and watch side b is the default animation data, not corrected for any special effects of each potential number
+- game and watch down B damage is maximum possible
+- peach fsmash is the frame data from the gif on https://meleeframedata.com/peach calculated by hand by me - damage not included 
+- peach turnip damage is listed as zero since there is so much variation
+- the data refers to the pull itself, not the projectiles. The active frame of 1, is the first frame its in her hand. 
+- pichu ftilt angle changes damage, damage listed as 8 on meleeframedata.com, not sure which one that is for. 
+- pichu neutral B is active frames for the projectile, ending frames are likely incorrect, dont have full gif to work with atm, might look into it another time
+- pikachu neutral B is active frames for the projectile, ending frames are correct though. 
+- pichu/pikachu side B is no charge 
+- pikachu up b hasno active frames or end frames because of the option to do it once or twice. see https://meleeframedata.com/pikachu for more. 
+- no data for jigglypuff neutral b
+- puff down b active frames may be one more than listed. Hard to tell with the gif on the website 
+- roy neutral b damage is max charge. 
+- samus neutral b damage is for maximum charge
+- samus neutral b/side b/down b active frames are for the projectile, ending frames until she can move again
+- sheiks neutral b data refers to throwing a full stack of needles, the damage is listed as 3% (which is the individual damage of each needle, although it technically changes based on distance)
+- sheiks jab 3 is data for her rapid jab 
+- yoshi up b active data is for the egg, ending frames are until he can act again
+- young link rapid jab not included 
+- young link neutral b active frames are for the projectile, ending frames are for how long it takes for him to move (same goes for his side b)
+- young link down b ending frames are unlisted - incalculable with the gif - throwable after the active frames
+- zelda side b data is for the shortest possible time it takes to cast the ability
 
 
 There are also some aesthetic elements that could use an upgrade (for example some dropdown menus do not centre properly on the page )
