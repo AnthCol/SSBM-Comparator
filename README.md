@@ -61,7 +61,7 @@ This is a combination of lack of Java & OOP knowledge, as well as poor planning 
 ----
 
 ## What are the limitations and issues of this program?
-### <u>Some of these things might be added/fixed in the future.<u/> 
+### <u>Some of these things might be added/fixed in the future.</u> 
 
 
 There are a large number of limitations in this program compared to what a *perfect* version of it would be like. For me (and my friends) personal needs though, it does the job well enough. 
