@@ -18,6 +18,7 @@ It allows the user to:
 
 Check out the demo video below!
 Please also see limitations section of this README as it makes reference to certain sections of this video. 
+
 https://youtu.be/J__8x26bR50
 
 ----
