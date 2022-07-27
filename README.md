@@ -18,24 +18,24 @@ It allows the user to:
 
 ** SEE THE YOUTUBE VIDEO OF THE APP IN USE HERE! -> (FIXME include link)**
 
-
+----
 
 ## How do I install/use it?
 
 You can head over to the "releases" section on the right of your screen (or alternatively, click here: https://github.com/AnthCol/SSBM-Comparator/releases/tag/v1.0), and download the .exe file from the zip there. There isn't a mini application where you choose where to install it. Just download, extract into a folder (or not) wherever you want and then create a shortcut so it's easier to find. 
 
-*Heads up* -> Make sure to update the Java version on your device to version ???? - a recent one (I wrote it on Java 18). 
+**Heads up (WARNING)** -> Make sure to update the Java version on your device to version ???? - a recent one (I wrote it on Java 18). 
 Otherwise, if you try to run the program, you will get stuck in an infinite error loop and have to 
 restart your computer. 
 
-
+----
 
 ## Why was this made?
 
 I made this app primarily for myself and my friend who plays this game with me. 
 Sometimes we like to chat about certain matchups/interactions/etc. and having an app like this where you could quickly look up data was ideal for that, so I made it!
 
-
+----
 
 ## What did I learn from doing this?
 
@@ -46,22 +46,23 @@ I didn't do any of this, outside of having an idea of what I wanted in my head, 
 
 Lastly, I learned that I really enjoy designing and creating GUI apps :) 
 
-
+----
 
 ## How long did it take to make? (for v1.0)
 
 May 10th, 2022 to July 8th, 2022
 
-
+----
 
 ## Why is the source code so ugly?
 
 This is a combination of lack of Java & OOP knowledge, as well as poor planning of the app itself. Once I started programming, I found it quite easy to just keep tagging on more and more features, and once that happened the code got messy very quickly since some of the features were not planned from the start. 
 
-
+----
 
 ## What are the limitations and issues of this program?
-### __Some of these things might be added/fixed in the future.__ 
+### <u>Some of these things might be added/fixed in the future.<u/> 
+
 
 There are a large number of limitations in this program compared to what a *perfect* version of it would be like. For me (and my friends) personal needs though, it does the job well enough. 
 
@@ -110,7 +111,7 @@ Also, there are some **notes for the user** that are about very specific values 
 
 There are also some aesthetic elements that could use an upgrade (for example some dropdown menus do not centre properly on the page )
 
-
+----
 
 ## Special thanks to:
 https://www.ssbwiki.com/Category:Head_icons_(SSBM) for the character head sprites.
