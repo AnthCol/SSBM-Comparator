@@ -1,0 +1,19 @@
+plugins {
+    id 'java'
+}
+
+repositories {
+    mavenCentral()
+}
+
+jar {
+    manifest {
+        attributes 'Main-Class': 'SSBM_COMPARATOR.src.ui.MainGUI'
+    }
+}
+
+task run;
+run.doFirst {
+    println "java -jar build/libs/A3.jar"
+}
+
