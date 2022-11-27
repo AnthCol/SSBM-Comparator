@@ -14,6 +14,6 @@ jar {
 
 task run;
 run.doFirst {
-    println "java -jar build/libs/A3.jar"
+    println "java -jar build/libs/SSBM_COMPARATOR.jar"
 }
 
