@@ -32,9 +32,4 @@ public class Character {
         misc = new float[8]; 
     }
 
-
-    
-
-
-
 }

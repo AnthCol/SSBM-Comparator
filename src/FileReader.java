@@ -16,23 +16,24 @@ public class FileReader {
     public void readCharData(Character[] characters){
         for (Character current : characters){
             current.characterName = br.nextLine();  // name 
-            variableLoop(current.jabs, 3, 4);  // jabs 
-            variableLoop(current.tilts, 3, 4); // tilts
+            variableLoop(current.jabs, current.jabs.size(), current.jabs[0].size());  // jabs 
+            variableLoop(current.tilts, current.tilts.size(), current.tilts[0].size()); // tilts
             for (int i = 0; i < 4; i++){ // READ HERE BECAUSE 1D ARRAY     // dash attack
                 current.dashAttack[i] = Integer.parseInt(br.nextLine()); 
             } 
-            variableLoop(current.smashAttacks, 3, 4);     // smash attacks
-            variableLoop(current.aerials, 5, 4);    // aerials
-            variableLoop(current.specialAttacksGrounded, 5, 4);     // specialAttacksGroudned
-            variableLoop(current.specialAttacksAerial, 5, 4);     // specialATtacksAerial
-            variableLoop(current.grabs, 2, 2);    // grabs
-            variableLoop(current.grabThrows, 4, 3);    // grabthrows
-            variableLoop(current.dodgesRolls, 4, 4);     // dodges & rolls
-            for (int i = 0; i < 8; i++){// READ HERE BECAUSE FLOATS     // misc
+            variableLoop(current.smashAttacks, current.smashAttacks.size(), current.smashAttacks[0].size());     // smash attacks
+            variableLoop(current.aerials, current.aerials.size(), current.aerials[0].size());    // aerials
+            variableLoop(current.specialAttacksGrounded, current.specialAttacksGrounded.size(), current.specialAttacksGrounded[0].size());     // specialAttacksGroudned
+            variableLoop(current.specialAttacksAerial, current.specialAttacksAerial.size(), current.specialAttacksAerial[0].size());     // specialATtacksAerial
+            variableLoop(current.grabs, current.grabs.size(), current.grabs[0].size());    // grabs
+            variableLoop(current.grabThrows, current.grabThrows.size(), current.grabThrows[0].size());    // grabthrows
+            variableLoop(current.dodgesRolls, current.dodgesRolls.size(), current.dodgesRolles[0].size());     // dodges & rolls
+            for (int i = 0; i < 8; i++){      // READ HERE BECAUSE FLOATS     // misc
                 current.misc[i] = Float.parseFloat(br.nextLine()); 
             }
-
         }
+
+        return; 
     }
 
 
@@ -43,5 +44,5 @@ public class FileReader {
             }
         }
     }
-    
+
 }
