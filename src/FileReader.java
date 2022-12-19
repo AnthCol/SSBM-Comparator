@@ -18,7 +18,7 @@ public class FileReader {
             current.characterName = br.nextLine();  // name 
             variableLoop(current.jabs, current.jabs.size(), current.jabs[0].size());  // jabs 
             variableLoop(current.tilts, current.tilts.size(), current.tilts[0].size()); // tilts
-            for (int i = 0; i < 4; i++){ // READ HERE BECAUSE 1D ARRAY     // dash attack
+            for (int i = 0; i < current.dashAttack.size(); i++){ // READ HERE BECAUSE 1D ARRAY     // dash attack
                 current.dashAttack[i] = Integer.parseInt(br.nextLine()); 
             } 
             variableLoop(current.smashAttacks, current.smashAttacks.size(), current.smashAttacks[0].size());     // smash attacks
@@ -27,8 +27,8 @@ public class FileReader {
             variableLoop(current.specialAttacksAerial, current.specialAttacksAerial.size(), current.specialAttacksAerial[0].size());     // specialATtacksAerial
             variableLoop(current.grabs, current.grabs.size(), current.grabs[0].size());    // grabs
             variableLoop(current.grabThrows, current.grabThrows.size(), current.grabThrows[0].size());    // grabthrows
-            variableLoop(current.dodgesRolls, current.dodgesRolls.size(), current.dodgesRolles[0].size());     // dodges & rolls
-            for (int i = 0; i < 8; i++){      // READ HERE BECAUSE FLOATS     // misc
+            variableLoop(current.dodgesRolls, current.dodgesRolls.size(), current.dodgesRolls[0].size());     // dodges & rolls
+            for (int i = 0; i < current.misc.size(); i++){      // READ HERE BECAUSE FLOATS     // misc
                 current.misc[i] = Float.parseFloat(br.nextLine()); 
             }
         }
@@ -38,8 +38,8 @@ public class FileReader {
 
 
     private void variableLoop(int[][] array, int outer, int inner){
-        for (int i = 0; i < inner; i++){
-            for (int x = 0; x < outer; x++){
+        for (int i = 0; i < outer; i++){
+            for (int x = 0; x < inner; x++){
                 array[i][x] = Integer.parseInt(br.nextLine()); 
             }
         }

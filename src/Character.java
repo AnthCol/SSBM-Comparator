@@ -1,6 +1,36 @@
 package src; 
 
 
+/*
+ * FIXME
+ * 
+ * 
+ * Maybe make toString() methods here?
+ * 
+ */
+
+/*
+ * FIXME
+ * 
+ * Make a character screen where you select a character and then show how every single one of their damaging moves
+ * ranks amongst the whole cast
+ * 
+ * Something like:
+ * Ness
+ * Picture
+ * Select: (speed or damage)
+ * 
+ * Jab: 2nd
+ * 
+ * 
+ * Dtilt: 1st
+ * 
+ * 
+ * type of thing 
+ * 
+ */
+
+
 
 public class Character {
     private String characterName; 

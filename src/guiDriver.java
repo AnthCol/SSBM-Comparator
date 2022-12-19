@@ -3,14 +3,14 @@ package src;
 import java.awt.*; 
 import javax.swing.*; 
 
-public class guiDriver extends JFrame{
+public class GUIDriver extends JFrame{
     public static final int WIDTH = 600; 
     public static final int HEIGHT = 500; 
 
     private Container contentPane; 
 
 
-    public guiDriver(){
+    public GUIDriver(){
         super(); 
         setDefaults(); 
         setMainContain(); 
@@ -21,6 +21,15 @@ public class guiDriver extends JFrame{
 
     public static void main(String[] args){
         // FIXME
+        Character[] characters = new Character[26]; 
+        FileReader fr = new FileReader(); 
+        fr.readCharData(characters); 
+
+        GUIDriver gui = new GUIDriver(); 
+        gui.setVisible(true); 
+
+
+
     }
 
 
@@ -36,17 +45,35 @@ public class guiDriver extends JFrame{
         contentPane = getContentPane(); 
         contentPane.setSize(WIDTH, HEIGHT); 
         contentPane.setLayout(new BorderLayout()); 
-        // can do LOADING SCREEN HERE BASICALLY JUST THE STARTING STUFF WHATEVER WE WANT WHEN THE PROGRAM LOADS FIXME
+
+
+
         contentPane.setVisible(true); 
     }
+    
+
+
 
     private JMenuBar createMenu(){
         JMenuBar menubar = new JMenuBar(); 
-        /*
-         * FIXME
-         * add JMenu items here to list them across the top 
-         * 
-         */
+        JMenu singChar = new JMenu("Single Character"); 
+        JMenu compare = new JMenu("Compare"); 
+        JMenu rank = new JMenu("Rank"); 
+        JMenu tierList = new JMenu("Tier List"); 
+
+        menubar.add(singChar); 
+        menubar.add(compare); 
+        menubar.add(rank); 
+        menubar.add(tierList); 
+
+
+        singChar.addActionListener(e->FIXME()); // FIXME
+        compare.addActionListener(e->FIXEME());
+        rank.addActionListener(e->FIXME()); 
+        tierList.addActionListener(e->FIXME());
+
+
+        return (menubar); 
     }
     
 
