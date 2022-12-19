@@ -2,6 +2,7 @@ package src;
 
 import java.io.BufferedReader; 
 import java.io.FileNotFoundException; 
+import java.io.IOException;
 
 import java.nio.file.FileSystems;
 import java.nio.file.Files;
@@ -19,13 +20,35 @@ public class FileReader {
 
     public FileReader(){
         path = FileSystems.getDefault().getPath("assets", "charData.txt"); 
-        br = Files.newBufferedReader(path); 
     }
 
     public void readCharData(Character[] characters){
 
         try{
-            readFile(characters); 
+            br = Files.newBufferedReader(path); 
+
+
+            for (Character current : characters){
+                // FIXME
+                current.setCharName(br.readLine()); //characterName = br.readLine();  // name 
+                System.out.println(current.characterName + "   yeah"); 
+
+                variableLoop(current.jabs, current.jabs.length, current.jabs[0].length);  // jabs 
+                variableLoop(current.tilts, current.tilts.length, current.tilts[0].length); // tilts
+                for (int i = 0; i < current.dashAttack.length; i++){ // READ HERE BECAUSE 1D ARRAY     // dash attack
+                    current.dashAttack[i] = Integer.parseInt(br.readLine()); 
+                } 
+                variableLoop(current.smashAttacks, current.smashAttacks.length, current.smashAttacks[0].length);     // smash attacks
+                variableLoop(current.aerials, current.aerials.length, current.aerials[0].length);    // aerials
+                variableLoop(current.specialAttacksGrounded, current.specialAttacksGrounded.length, current.specialAttacksGrounded[0].length);     // specialAttacksGroudned
+                variableLoop(current.specialAttacksAerial, current.specialAttacksAerial.length, current.specialAttacksAerial[0].length);     // specialATtacksAerial
+                variableLoop(current.grabs, current.grabs.length, current.grabs[0].length);    // grabs
+                variableLoop(current.grabThrows, current.grabThrows.length, current.grabThrows[0].length);    // grabthrows
+                variableLoop(current.dodgesRolls, current.dodgesRolls.length, current.dodgesRolls[0].length);     // dodges & rolls
+                for (int i = 0; i < current.misc.length; i++){      // READ HERE BECAUSE FLOATS     // misc
+                    current.misc[i] = Float.parseFloat(br.readLine()); 
+                }
+            }
         }
         catch(FileNotFoundException e){
             // FIXME JOptionPane to let the user know
@@ -46,34 +69,16 @@ public class FileReader {
         return; 
     }
 
-
-    private void readFile(Character[] characters){
-    
-        for (Character current : characters){
-            current.characterName = br.nextLine();  // name 
-            variableLoop(current.jabs, current.jabs.length, current.jabs[0].length);  // jabs 
-            variableLoop(current.tilts, current.tilts.length, current.tilts[0].length); // tilts
-            for (int i = 0; i < current.dashAttack.length; i++){ // READ HERE BECAUSE 1D ARRAY     // dash attack
-                current.dashAttack[i] = Integer.parseInt(br.nextLine()); 
-            } 
-            variableLoop(current.smashAttacks, current.smashAttacks.length, current.smashAttacks[0].length);     // smash attacks
-            variableLoop(current.aerials, current.aerials.length, current.aerials[0].length);    // aerials
-            variableLoop(current.specialAttacksGrounded, current.specialAttacksGrounded.length, current.specialAttacksGrounded[0].length);     // specialAttacksGroudned
-            variableLoop(current.specialAttacksAerial, current.specialAttacksAerial.length, current.specialAttacksAerial[0].length);     // specialATtacksAerial
-            variableLoop(current.grabs, current.grabs.length, current.grabs[0].length);    // grabs
-            variableLoop(current.grabThrows, current.grabThrows.length, current.grabThrows[0].length);    // grabthrows
-            variableLoop(current.dodgesRolls, current.dodgesRolls.length, current.dodgesRolls[0].length);     // dodges & rolls
-            for (int i = 0; i < current.misc.length; i++){      // READ HERE BECAUSE FLOATS     // misc
-                current.misc[i] = Float.parseFloat(br.nextLine()); 
+    private void variableLoop(int[][] array, int outer, int inner/*, BufferedReader br */){
+        try{
+            for (int i = 0; i < outer; i++){
+                for (int x = 0; x < inner; x++){
+                    array[i][x] = Integer.parseInt(br.readLine()); 
+                }
             }
         }
-    }
-
-    private void variableLoop(int[][] array, int outer, int inner){
-        for (int i = 0; i < outer; i++){
-            for (int x = 0; x < inner; x++){
-                array[i][x] = Integer.parseInt(br.nextLine()); 
-            }
+        catch (IOException e){
+            System.out.println(e.getMessage()); 
         }
     }
 

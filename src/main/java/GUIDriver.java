@@ -33,6 +33,8 @@ public class GUIDriver extends JFrame{
     public static void main(String[] args){
         // FIXME
         Character[] characters = new Character[26]; 
+
+        //FIXME need to figure out a method to read the files. 
         FileReader fr = new FileReader(); 
         fr.readCharData(characters); 
 
