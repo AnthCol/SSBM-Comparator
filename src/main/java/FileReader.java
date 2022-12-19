@@ -29,10 +29,7 @@ public class FileReader {
 
 
             for (Character current : characters){
-                // FIXME
-                current.setCharName(br.readLine()); //characterName = br.readLine();  // name 
-                System.out.println(current.characterName + "   yeah"); 
-
+                current.characterName = br.readLine(); //name
                 variableLoop(current.jabs, current.jabs.length, current.jabs[0].length);  // jabs 
                 variableLoop(current.tilts, current.tilts.length, current.tilts[0].length); // tilts
                 for (int i = 0; i < current.dashAttack.length; i++){ // READ HERE BECAUSE 1D ARRAY     // dash attack
@@ -49,6 +46,8 @@ public class FileReader {
                     current.misc[i] = Float.parseFloat(br.readLine()); 
                 }
             }
+
+            br.close(); 
         }
         catch(FileNotFoundException e){
             // FIXME JOptionPane to let the user know
