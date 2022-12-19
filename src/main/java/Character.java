@@ -33,18 +33,20 @@ package src;
 
 
 public class Character {
-    private String characterName; 
-    private int[][] jabs;
-    private int[][] tilts;
-    private int[] dashAttack;
-    private int[][] smashAttacks;
-    private int[][] aerials;
-    private int[][] specialAttacksGrounded; 
-    private int[][] specialAttacksAerial;
-    private int[][] grabs; 
-    private int[][] grabThrows; 
-    private int[][] dodgesRolls; 
-    private float[] misc; 
+
+    // FIXME make these private later 
+    public String characterName; 
+    public int[][] jabs;
+    public int[][] tilts;
+    public int[] dashAttack;
+    public int[][] smashAttacks;
+    public int[][] aerials;
+    public int[][] specialAttacksGrounded; 
+    public int[][] specialAttacksAerial;
+    public int[][] grabs; 
+    public int[][] grabThrows; 
+    public int[][] dodgesRolls; 
+    public float[] misc; 
 
 
     public Character(){

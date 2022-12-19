@@ -1,7 +1,18 @@
 package src; 
 
-import java.awt.*; 
-import javax.swing.*; 
+import javax.swing.JFrame; 
+import javax.swing.JButton; 
+import javax.swing.JPanel; 
+
+import java.awt.Dimension; 
+import java.awt.Container; 
+import java.awt.GridLayout; 
+import java.awt.BorderLayout; 
+
+import javax.swing.JMenuBar; 
+import javax.swing.JMenu; 
+import javax.swing.JMenuItem; 
+import javax.swing.JOptionPane;
 
 public class GUIDriver extends JFrame{
     public static final int WIDTH = 600; 
@@ -13,7 +24,7 @@ public class GUIDriver extends JFrame{
     public GUIDriver(){
         super(); 
         setDefaults(); 
-        setMainContain(); 
+        setMainContainer(); 
         setSize(WIDTH, HEIGHT); 
         pack(); 
     }
@@ -29,13 +40,14 @@ public class GUIDriver extends JFrame{
         gui.setVisible(true); 
 
 
+        
 
     }
 
 
     private void setDefaults(){
         contentPane = getContentPane(); 
-        contentPane.setPreferredSize(getPreferredSize(new Dimension(WIDTH, HEIGHT)));
+        contentPane.setPreferredSize(new Dimension(WIDTH, HEIGHT)); 
         setSize(WIDTH, HEIGHT); // might not need this if we have preferred size 
         setTitle("SSBM COMPARATOR"); 
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -68,7 +80,7 @@ public class GUIDriver extends JFrame{
 
 
         singChar.addActionListener(e->FIXME()); // FIXME
-        compare.addActionListener(e->FIXEME());
+        compare.addActionListener(e->FIXME());
         rank.addActionListener(e->FIXME()); 
         tierList.addActionListener(e->FIXME());
 
@@ -76,5 +88,8 @@ public class GUIDriver extends JFrame{
         return (menubar); 
     }
     
+    private void FIXME(){
+        return; 
+    }
 
 }
