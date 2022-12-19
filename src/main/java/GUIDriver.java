@@ -34,6 +34,7 @@ public class GUIDriver extends JFrame{
     public static void main(String[] args){
 
         Character[] characters = new Character[26]; 
+        
         for (int i = 0; i < 26; i++) characters[i] = new Character(); 
 
         GUIDriver gui = new GUIDriver(); 
@@ -41,9 +42,7 @@ public class GUIDriver extends JFrame{
 
         fr.readCharData(characters); 
         gui.setVisible(true); 
-        
 
-        
     }
 
 
