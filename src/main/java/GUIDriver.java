@@ -1,14 +1,20 @@
 package src; 
 
-import javax.swing.JFrame; 
+import javax.swing.JFrame;
 import javax.swing.JButton; 
-import javax.swing.JPanel; 
+import javax.swing.JPanel;
 import javax.swing.JMenuBar; 
 import javax.swing.JMenu; 
 import javax.swing.JMenuItem; 
 import javax.swing.JOptionPane;
+import javax.swing.UIManager;
+import javax.swing.BorderFactory;
+import javax.swing.border.EtchedBorder;
+import javax.swing.border.BevelBorder;
+import javax.swing.plaf.FontUIResource;
 
-
+import java.awt.Font; 
+import java.awt.Color; 
 import java.awt.Dimension; 
 import java.awt.Container; 
 import java.awt.GridLayout; 
@@ -32,16 +38,15 @@ public class GUIDriver extends JFrame{
 
 
     public static void main(String[] args){
-
-        Character[] characters = new Character[26]; 
-        
-        for (int i = 0; i < 26; i++) characters[i] = new Character(); 
-
         GUIDriver gui = new GUIDriver(); 
         FileReader fr = new FileReader(); 
+        Character[] characters = new Character[26]; 
 
-        fr.readCharData(characters); 
+        for (int i = 0; i < 26; i++) characters[i] = new Character(); 
+
         gui.setVisible(true); 
+        fr.readCharData(characters); 
+        
 
     }
 
@@ -58,7 +63,8 @@ public class GUIDriver extends JFrame{
         contentPane = getContentPane(); 
         contentPane.setSize(WIDTH, HEIGHT); 
         contentPane.setLayout(new BorderLayout()); 
-
+        
+        contentPane.add(createMenu(), BorderLayout.NORTH); 
 
 
         contentPane.setVisible(true); 
@@ -69,18 +75,24 @@ public class GUIDriver extends JFrame{
 
     private JMenuBar createMenu(){
         JMenuBar menubar = new JMenuBar(); 
-        JMenu singChar = new JMenu("Single Character"); 
-        JMenu compare = new JMenu("Compare"); 
-        JMenu rank = new JMenu("Rank"); 
-        JMenu tierList = new JMenu("Tier List"); 
+        JButton singChar = new JButton("Single Character"); 
+        JButton compare = new JButton("Compare"); 
+        JButton rank = new JButton("Rank"); 
+        JButton tierList = new JButton("Tier List"); 
+
+        setMenuBarStyle(menubar); 
+        setButtonStyle(singChar); 
+        setButtonStyle(compare); 
+        setButtonStyle(rank); 
+        setButtonStyle(tierList); 
+    
 
         menubar.add(singChar); 
         menubar.add(compare); 
         menubar.add(rank); 
         menubar.add(tierList); 
 
-
-        singChar.addActionListener(e->FIXME()); // FIXME
+        singChar.addActionListener(e->FIXME()); 
         compare.addActionListener(e->FIXME());
         rank.addActionListener(e->FIXME()); 
         tierList.addActionListener(e->FIXME());
@@ -88,8 +100,21 @@ public class GUIDriver extends JFrame{
 
         return (menubar); 
     }
+
+    private void setMenuBarStyle(JMenuBar mb){
+        mb.setBackground(Color.GREEN.darker().darker().darker().darker()); 
+    }
+
+    private void setButtonStyle(JButton b){
+        // change these to RGB values later and make it pretty 
+        b.setBackground(Color.GREEN.darker().darker().darker().darker()); 
+        b.setForeground(Color.LIGHT_GRAY.brighter());
+        b.setFocusPainted(false); 
+        b.setFont(new Font("Bierstadt", Font.PLAIN, 12)); 
+    }
     
     private void FIXME(){
+        System.out.println("FIXME"); 
         return; 
     }
 
