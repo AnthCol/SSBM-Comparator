@@ -28,8 +28,7 @@ public class FileReader {
             br = Files.newBufferedReader(path); 
 
             for (Character current : characters){
-                current.characterName = br.readLine(); //name
-                System.out.println("printing char name: " + current.characterName); 
+                current.characterName = br.readLine(); //name 
                 variableNestedLoop(current.jabs, current.jabs.length, current.jabs[0].length);  // jabs 
                 variableNestedLoop(current.tilts, current.tilts.length, current.tilts[0].length); // tilts
                 variableSingleLoop(current.dashAttack, current.dashAttack.length); 
@@ -48,7 +47,8 @@ public class FileReader {
                 // Options:
                 // -> Make every single value a floating point for every character. 
                 // -> Make DK throw the median (8%, since the throws are 7%, 8%, and 8%)
-               
+                // FOR NOW IT HAS BEEN CHANGED TO 8 (final decision will be made after the GUI stuff is done)
+                // line 366 in charData.txt
                 variableNestedLoop(current.grabs, current.grabs.length, current.grabs[0].length);    // grabs
                 variableNestedLoop(current.grabThrows, current.grabThrows.length, current.grabThrows[0].length);    // grabthrows
                 variableNestedLoop(current.dodgesRolls, current.dodgesRolls.length, current.dodgesRolls[0].length);     // dodges & rolls
@@ -108,7 +108,6 @@ public class FileReader {
             for (int i = 0; i < outer; i++){
                 for (int x = 0; x < inner; x++){
                     array[i][x] = Integer.parseInt(br.readLine()); 
-                    System.out.println(array[i][x]); 
                 }
             }
         }
