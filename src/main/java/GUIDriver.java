@@ -32,22 +32,18 @@ public class GUIDriver extends JFrame{
 
 
     public static void main(String[] args){
-        // FIXME
-        Character[] characters = new Character[26]; 
-        
-        for (int i = 0; i < 26; i++) characters[i] = new Character(); 
-        
 
-        //FIXME need to figure out a method to read the files. 
-        FileReader fr = new FileReader(); 
-        fr.readCharData(characters); 
+        Character[] characters = new Character[26]; 
+        for (int i = 0; i < 26; i++) characters[i] = new Character(); 
 
         GUIDriver gui = new GUIDriver(); 
+        FileReader fr = new FileReader(); 
+
+        fr.readCharData(characters); 
         gui.setVisible(true); 
-
-
         
 
+        
     }
 
 
