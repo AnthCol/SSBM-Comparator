@@ -9,12 +9,15 @@ import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
 import javax.swing.UIManager;
 import javax.swing.BorderFactory;
-import javax.swing.border.EtchedBorder;
-import javax.swing.border.BevelBorder;
-import javax.swing.plaf.FontUIResource;
+import javax.swing.border.EmptyBorder;
 
+
+import java.awt.event.MouseEvent; 
+import java.awt.event.MouseAdapter; 
+import java.awt.event.MouseListener; 
 import java.awt.Font; 
 import java.awt.Color; 
+import java.awt.Paint; 
 import java.awt.Dimension; 
 import java.awt.Container; 
 import java.awt.GridLayout; 
@@ -26,6 +29,19 @@ public class GUIDriver extends JFrame{
     public static final int HEIGHT = 500; 
 
     private Container contentPane; 
+
+    /* MEMBER VARIABLES WILL GO HERE FIXME
+     * Class extends JFrame
+     * class class = new class(); 
+     * then based on buttons, set these classes as the main ones; 
+     * 
+    */
+
+    private Color buttonBackgroundColour = Color.BLACK; 
+    private Color buttonForegroundColour = Color.LIGHT_GRAY.brighter(); 
+    private Color buttonHoverColour = Color.LIGHT_GRAY; 
+    private Color menuBarColour = Color.BLACK; 
+    private Color frameBackgroundColour = Color.BLACK; 
 
 
     public GUIDriver(){
@@ -39,21 +55,21 @@ public class GUIDriver extends JFrame{
 
     public static void main(String[] args){
         GUIDriver gui = new GUIDriver(); 
-        FileReader fr = new FileReader(); 
+        FileReader fr = new FileReader();  
         Character[] characters = new Character[26]; 
+        for (int i = 0; i < characters.length; i++) characters[i] = new Character(); 
 
-        for (int i = 0; i < 26; i++) characters[i] = new Character(); 
 
+        fr.readCharData(characters);
         gui.setVisible(true); 
-        fr.readCharData(characters); 
-        
-
+    
     }
 
 
     private void setDefaults(){
         contentPane = getContentPane(); 
         contentPane.setPreferredSize(new Dimension(WIDTH, HEIGHT)); 
+        contentPane.setBackground(frameBackgroundColour);
         setSize(WIDTH, HEIGHT); // might not need this if we have preferred size 
         setTitle("SSBM COMPARATOR"); 
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -65,7 +81,7 @@ public class GUIDriver extends JFrame{
         contentPane.setLayout(new BorderLayout()); 
         
         contentPane.add(createMenu(), BorderLayout.NORTH); 
-
+        // contentPane.add()?
 
         contentPane.setVisible(true); 
     }
@@ -81,12 +97,12 @@ public class GUIDriver extends JFrame{
         JButton tierList = new JButton("Tier List"); 
 
         setMenuBarStyle(menubar); 
+
         setButtonStyle(singChar); 
         setButtonStyle(compare); 
         setButtonStyle(rank); 
         setButtonStyle(tierList); 
     
-
         menubar.add(singChar); 
         menubar.add(compare); 
         menubar.add(rank); 
@@ -97,22 +113,46 @@ public class GUIDriver extends JFrame{
         rank.addActionListener(e->FIXME()); 
         tierList.addActionListener(e->FIXME());
 
+        mouseHover(singChar); 
+        mouseHover(compare); 
+        mouseHover(rank); 
+        mouseHover(tierList); 
+
 
         return (menubar); 
     }
 
+
+
     private void setMenuBarStyle(JMenuBar mb){
-        mb.setBackground(Color.GREEN.darker().darker().darker().darker()); 
+        mb.setBackground(menuBarColour); 
+
+  //      mb.setBorderPainted(false); 
     }
 
     private void setButtonStyle(JButton b){
-        // change these to RGB values later and make it pretty 
-        b.setBackground(Color.GREEN.darker().darker().darker().darker()); 
-        b.setForeground(Color.LIGHT_GRAY.brighter());
+        // change to RGB values later to make it pretty 
+        b.setBackground(buttonBackgroundColour); 
+        b.setForeground(buttonForegroundColour);
         b.setFocusPainted(false); 
+        b.setBorderPainted(false); 
         b.setFont(new Font("Bierstadt", Font.PLAIN, 12)); 
     }
+
+    private void mouseHover(JButton b){
+        b.addMouseListener(new MouseAdapter(){
+            @Override
+            public void mouseEntered (MouseEvent e){
+                b.setBackground(buttonHoverColour); 
+            }
+            @Override
+            public void mouseExited (MouseEvent e){
+                b.setBackground(buttonBackgroundColour); 
+            } 
+        }); 
+    }
     
+
     private void FIXME(){
         System.out.println("FIXME"); 
         return; 

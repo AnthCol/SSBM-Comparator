@@ -36,8 +36,9 @@ public class FileReader {
                 variableNestedLoop(current.aerials, current.aerials.length, current.aerials[0].length);    // aerials
                
                
-                // FIXME -> for these two, we will need alternating logic. 
-                // File was setup so that its Grounded, Aerial, Grounded, Aerial. 
+                // FIXME -> for these two, we will need alternating logic logical not
+                // File was setup so that its Grounded, Aerial, Grounded, Aerial CHANGE THIS 
+                // LAST TO DO BECAUSE IT'S A PAIN FIXME FIXME FIXME
                 // so a custom loop here will be needed since manually changing the file is a pain. 
                 variableNestedLoop(current.specialAttacksGrounded, current.specialAttacksGrounded.length, current.specialAttacksGrounded[0].length);     // specialAttacksGroudned
                 variableNestedLoop(current.specialAttacksAerial, current.specialAttacksAerial.length, current.specialAttacksAerial[0].length);     // specialATtacksAerial
