@@ -1,5 +1,10 @@
 package src; 
 
+import src.ui.TierListUI; 
+import src.ui.CompareUI; 
+import src.ui.SingleCharacterUI; 
+import src.ui.RankUI; 
+
 import javax.swing.JFrame;
 import javax.swing.JButton; 
 import javax.swing.JPanel;
@@ -10,7 +15,6 @@ import javax.swing.JOptionPane;
 import javax.swing.UIManager;
 import javax.swing.BorderFactory;
 import javax.swing.border.EmptyBorder;
-
 
 import java.awt.event.MouseEvent; 
 import java.awt.event.MouseAdapter; 
@@ -24,18 +28,17 @@ import java.awt.GridLayout;
 import java.awt.BorderLayout; 
 
 
+
 public class GUIDriver extends JFrame{
-    public static final int WIDTH = 600; 
+    public static final int WIDTH = 700; 
     public static final int HEIGHT = 500; 
 
     private Container contentPane; 
 
-    /* MEMBER VARIABLES WILL GO HERE FIXME
-     * Class extends JFrame
-     * class class = new class(); 
-     * then based on buttons, set these classes as the main ones; 
-     * 
-    */
+    private SingleCharacterUI scui; 
+    private CompareUI cui; 
+    private RankUI rui; 
+    private TierListUI tlui; 
 
     private Color buttonBackgroundColour = Color.BLACK; 
     private Color buttonForegroundColour = Color.LIGHT_GRAY.brighter(); 
@@ -46,6 +49,10 @@ public class GUIDriver extends JFrame{
 
     public GUIDriver(){
         super(); 
+        scui = new SingleCharacterUI(); 
+        cui = new CompareUI(); 
+        rui = new RankUI(); 
+        tlui = new TierListUI(); 
         setDefaults(); 
         setMainContainer(); 
         setSize(WIDTH, HEIGHT); 
@@ -70,7 +77,11 @@ public class GUIDriver extends JFrame{
         contentPane = getContentPane(); 
         contentPane.setPreferredSize(new Dimension(WIDTH, HEIGHT)); 
         contentPane.setBackground(frameBackgroundColour);
+
+        // the default here will be single character FIXME
+
         setSize(WIDTH, HEIGHT); // might not need this if we have preferred size 
+        contentPane.setFont(new Font("Bierstadt", Font.PLAIN, 12)); 
         setTitle("SSBM COMPARATOR"); 
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
@@ -78,15 +89,19 @@ public class GUIDriver extends JFrame{
     private void setMainContainer(){
         contentPane = getContentPane(); 
         contentPane.setSize(WIDTH, HEIGHT); 
+
         contentPane.setLayout(new BorderLayout()); 
-        
         contentPane.add(createMenu(), BorderLayout.NORTH); 
-        // contentPane.add()?
-
+        
+        contentPane.add(scui.basicInfo(), BorderLayout.WEST); 
+        contentPane.add(scui.moveData(), BorderLayout.CENTER); 
+        contentPane.add(scui.singleCharRankings(), BorderLayout.EAST); 
+        
         contentPane.setVisible(true); 
-    }
-    
 
+    }
+
+    
 
 
     private JMenuBar createMenu(){
@@ -108,10 +123,10 @@ public class GUIDriver extends JFrame{
         menubar.add(rank); 
         menubar.add(tierList); 
 
-        singChar.addActionListener(e->FIXME()); 
-        compare.addActionListener(e->FIXME());
-        rank.addActionListener(e->FIXME()); 
-        tierList.addActionListener(e->FIXME());
+        singChar.addActionListener(e->singCharDisplay()); 
+        compare.addActionListener(e->compareDisplay());
+        rank.addActionListener(e->rankDisplay()); 
+        tierList.addActionListener(e->tierListDisplay());
 
         mouseHover(singChar); 
         mouseHover(compare); 
@@ -124,11 +139,76 @@ public class GUIDriver extends JFrame{
 
 
 
+
+
+    private void singCharDisplay(){
+        contentPane = getContentPane(); 
+
+        clearLayout(); 
+        contentPane.add(scui.basicInfo(), BorderLayout.WEST); 
+        contentPane.add(scui.moveData(), BorderLayout.CENTER); 
+        contentPane.add(scui.singleCharRankings(), BorderLayout.EAST); 
+        contentPane.validate(); 
+        contentPane.repaint(); 
+
+    }
+    private void compareDisplay(){
+        contentPane = getContentPane(); 
+
+        clearLayout(); 
+
+        contentPane.validate(); 
+        contentPane.repaint(); 
+
+
+
+  //      contentPane.add(); 
+
+    }
+    private void rankDisplay(){
+        contentPane = getContentPane(); 
+
+        clearLayout(); 
+        contentPane.validate(); 
+        contentPane.repaint(); 
+
+   //     contentPane.add(); 
+    }
+    private void tierListDisplay(){
+        contentPane = getContentPane(); 
+
+        clearLayout(); 
+        contentPane.validate(); 
+        contentPane.repaint(); 
+
+
+    //    contentPane.add(); 
+    }
+
+    private void clearLayout(/*Container contentPane*/){
+        contentPane = getContentPane(); 
+      //  BorderLayout layout = (BorderLayout)contentPane.getLayout(); 
+       // if (layout.contentPane.remove(layout.getLayoutComponent(BorderLayout.WEST)); 
+        //layout.getLayoutComponent(BorderLayout.WEST)); 
+     //   contentPane.remove(layout.getLayoutComponent(BorderLayout.CENTER)); 
+     //   contentPane.remove(layout.getLayoutComponent(BorderLayout.EAST)); 
+        
+
+        contentPane.removeAll(); 
+        contentPane.add(createMenu(), BorderLayout.NORTH);
+    }
+
+
+
+
+
     private void setMenuBarStyle(JMenuBar mb){
         mb.setBackground(menuBarColour); 
-
-  //      mb.setBorderPainted(false); 
+        // gradient :( FIXME
+     //   mb.setBorderPainted(false); 
     }
+    
+
 
     private void setButtonStyle(JButton b){
         // change to RGB values later to make it pretty 
@@ -152,10 +232,5 @@ public class GUIDriver extends JFrame{
         }); 
     }
     
-
-    private void FIXME(){
-        System.out.println("FIXME"); 
-        return; 
-    }
 
 }
