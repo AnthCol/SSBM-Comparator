@@ -7,6 +7,6 @@ import javax.swing.JPanel;
 
 
 
-public class TierListUI extends JFrame{
+public class TierListUI{
     // load the images before showing anything FIXME 
 }

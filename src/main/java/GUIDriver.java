@@ -11,27 +11,22 @@ import javax.swing.JPanel;
 import javax.swing.JMenuBar; 
 import javax.swing.JMenu; 
 import javax.swing.JMenuItem; 
-import javax.swing.JOptionPane;
-import javax.swing.UIManager;
-import javax.swing.BorderFactory;
-import javax.swing.border.EmptyBorder;
 
 import java.awt.event.MouseEvent; 
 import java.awt.event.MouseAdapter; 
 import java.awt.event.MouseListener; 
 import java.awt.Font; 
 import java.awt.Color; 
-import java.awt.Paint; 
+import java.awt.Paint;  // might be able to remove this 
 import java.awt.Dimension; 
 import java.awt.Container; 
-import java.awt.GridLayout; 
 import java.awt.BorderLayout; 
 
 
 
 public class GUIDriver extends JFrame{
-    public static final int WIDTH = 700; 
-    public static final int HEIGHT = 500; 
+    private static final int WIDTH = 700; 
+    private static final int HEIGHT = 500; 
 
     private Container contentPane; 
 
@@ -92,7 +87,6 @@ public class GUIDriver extends JFrame{
 
         contentPane.setLayout(new BorderLayout()); 
         contentPane.add(createMenu(), BorderLayout.NORTH); 
-        
         contentPane.add(scui.basicInfo(), BorderLayout.WEST); 
         contentPane.add(scui.moveData(), BorderLayout.CENTER); 
         contentPane.add(scui.singleCharRankings(), BorderLayout.EAST); 
@@ -185,21 +179,11 @@ public class GUIDriver extends JFrame{
     //    contentPane.add(); 
     }
 
-    private void clearLayout(/*Container contentPane*/){
+    private void clearLayout(){
         contentPane = getContentPane(); 
-      //  BorderLayout layout = (BorderLayout)contentPane.getLayout(); 
-       // if (layout.contentPane.remove(layout.getLayoutComponent(BorderLayout.WEST)); 
-        //layout.getLayoutComponent(BorderLayout.WEST)); 
-     //   contentPane.remove(layout.getLayoutComponent(BorderLayout.CENTER)); 
-     //   contentPane.remove(layout.getLayoutComponent(BorderLayout.EAST)); 
-        
-
         contentPane.removeAll(); 
         contentPane.add(createMenu(), BorderLayout.NORTH);
     }
-
-
-
 
 
     private void setMenuBarStyle(JMenuBar mb){

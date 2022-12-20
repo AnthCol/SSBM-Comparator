@@ -1,6 +1,5 @@
 package src.ui; 
 
-import javax.swing.JFrame;
 import javax.swing.JButton; 
 import javax.swing.JPanel;
 import javax.swing.JLabel; 
@@ -14,13 +13,14 @@ import java.awt.Container;
 
 public class SingleCharacterUI{
 
+    private Color bg = Color.BLACK; 
 
 
     public JPanel basicInfo(){
         JPanel infoPanel = new JPanel(); 
-
         JLabel label = new JLabel("Basic"); 
         
+        infoPanel.setBackground(bg); 
         infoPanel.add(label); 
 
         return (infoPanel); 
@@ -30,6 +30,7 @@ public class SingleCharacterUI{
         JPanel dataPanel = new JPanel(); 
         JLabel label = new JLabel("Data"); 
 
+        dataPanel.setBackground(bg); 
         dataPanel.add(label); 
 
         return (dataPanel); 
@@ -39,6 +40,7 @@ public class SingleCharacterUI{
         JPanel rankingPanel = new JPanel(); 
         JLabel label = new JLabel("Ranking"); 
 
+        rankingPanel.setBackground(bg);
         rankingPanel.add(label); 
 
         return (rankingPanel); 
