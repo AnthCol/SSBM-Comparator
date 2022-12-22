@@ -29,6 +29,7 @@ public class Character {
     // FIXME maybe make these private later? with setters?
     // FIXME maybe make some toString() methods somewhere 
     public String characterName; 
+    public String spritePath; 
     public int[][] jabs;
     public int[][] tilts;
     public int[] dashAttack;
@@ -46,6 +47,7 @@ public class Character {
 
     public Character(){
         characterName = new String(); 
+        spritePath = new String(); 
         jabs = new int[3][4]; 
         tilts = new int[3][4]; 
         dashAttack = new int[4]; 

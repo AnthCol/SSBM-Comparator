@@ -5,6 +5,8 @@ import src.ui.CompareUI;
 import src.ui.SingleCharacterUI; 
 import src.ui.RankUI; 
 
+import java.util.ArrayList; 
+
 import javax.swing.JFrame;
 import javax.swing.JButton; 
 import javax.swing.JPanel;
@@ -21,7 +23,13 @@ import java.awt.Paint;  // might be able to remove this
 import java.awt.Dimension; 
 import java.awt.Container; 
 import java.awt.BorderLayout; 
+import java.awt.image.BufferedImage; 
 
+
+/* TODO:
+ * add sprite paths to the charData.txt file so that they can read into character objects
+ * 
+ */
 
 
 public class GUIDriver extends JFrame{
@@ -29,6 +37,10 @@ public class GUIDriver extends JFrame{
     private static final int HEIGHT = 500; 
 
     private Container contentPane; 
+
+    private ArrayList<String> charNames; 
+    private ArrayList<BufferedImage> sprites_paths; 
+    private Character[] characters; 
 
     private SingleCharacterUI scui; 
     private CompareUI cui; 
@@ -42,12 +54,31 @@ public class GUIDriver extends JFrame{
     private Color frameBackgroundColour = Color.BLACK; 
 
 
-    public GUIDriver(){
+    // FIXME maybe this constructor is too big? 
+    // It doesn't really cause any problems and isn't super complex, but there might be a better
+    // way to organize this (maybe do more work in main?)
+   public GUIDriver(){
         super(); 
-        scui = new SingleCharacterUI(); 
-        cui = new CompareUI(); 
-        rui = new RankUI(); 
-        tlui = new TierListUI(); 
+
+        sprites = new ArrayList<String>(); 
+        charNames = new ArrayList<String>(); 
+        fr = new FileReader(); 
+        characters = new Character[26]; 
+
+        for (int i = 0; i < characters.length; i++) characters[i] = new Character(); 
+
+        fr.readCharData(characters); 
+
+        for (int i = 0; i < characters.length; i++){
+            gui.charNames.add(characters[i].characterName);
+            gui.sprites.add(characters[i].spritePath); 
+        }
+
+        scui = new SingleCharacterUI(sprites, charNames); 
+        cui = new CompareUI(sprites, charNames); 
+        rui = new RankUI(sprites, charNames); 
+        tlui = new TierListUI(sprites, charNames); 
+        
         setDefaults(); 
         setMainContainer(); 
         setSize(WIDTH, HEIGHT); 
@@ -57,14 +88,7 @@ public class GUIDriver extends JFrame{
 
     public static void main(String[] args){
         GUIDriver gui = new GUIDriver(); 
-        FileReader fr = new FileReader();  
-        Character[] characters = new Character[26]; 
-        for (int i = 0; i < characters.length; i++) characters[i] = new Character(); 
-
-
-        fr.readCharData(characters);
         gui.setVisible(true); 
-    
     }
 
 
@@ -87,16 +111,13 @@ public class GUIDriver extends JFrame{
 
         contentPane.setLayout(new BorderLayout()); 
         contentPane.add(createMenu(), BorderLayout.NORTH); 
-        contentPane.add(scui.basicInfo(), BorderLayout.WEST); 
+        contentPane.add(scui.basicInfo(charNames), BorderLayout.WEST); 
         contentPane.add(scui.moveData(), BorderLayout.CENTER); 
         contentPane.add(scui.singleCharRankings(), BorderLayout.EAST); 
         
         contentPane.setVisible(true); 
 
     }
-
-    
-
 
     private JMenuBar createMenu(){
         JMenuBar menubar = new JMenuBar(); 
@@ -127,13 +148,8 @@ public class GUIDriver extends JFrame{
         mouseHover(rank); 
         mouseHover(tierList); 
 
-
         return (menubar); 
     }
-
-
-
-
 
     private void singCharDisplay(){
         contentPane = getContentPane(); 
@@ -146,31 +162,27 @@ public class GUIDriver extends JFrame{
         contentPane.repaint(); 
 
     }
+
+    // TODO:
     private void compareDisplay(){
         contentPane = getContentPane(); 
-
         clearLayout(); 
-
         contentPane.validate(); 
         contentPane.repaint(); 
 
-
-
-  //      contentPane.add(); 
-
     }
+    // TODO:
     private void rankDisplay(){
         contentPane = getContentPane(); 
-
         clearLayout(); 
         contentPane.validate(); 
         contentPane.repaint(); 
 
    //     contentPane.add(); 
     }
+    // TODO:
     private void tierListDisplay(){
         contentPane = getContentPane(); 
-
         clearLayout(); 
         contentPane.validate(); 
         contentPane.repaint(); 
@@ -192,8 +204,6 @@ public class GUIDriver extends JFrame{
      //   mb.setBorderPainted(false); 
     }
     
-
-
     private void setButtonStyle(JButton b){
         // change to RGB values later to make it pretty 
         b.setBackground(buttonBackgroundColour); 

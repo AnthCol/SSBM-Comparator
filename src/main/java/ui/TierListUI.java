@@ -8,5 +8,11 @@ import javax.swing.JPanel;
 
 
 public class TierListUI{
-    // load the images before showing anything FIXME 
+    private ArrayList<String> charNames; 
+    private ArrayList<BufferedImage> spritePaths; 
+
+    public TierListUI(ArrayList<String> name, ArrayList<BufferedImage> sprite){
+        charNames = name; 
+        spritePaths = sprite; 
+    }
 }
