@@ -10,11 +10,13 @@ import javax.swing.JPanel;
 import java.awt.image.BufferedImage; 
 
 public class CompareUI {
-    private ArrayList<String> charNames; 
-    private ArrayList<BufferedImage> spritePaths; 
+    private Character[] characters; 
 
-    public CompareUI(ArrayList<String> name, ArrayList<BufferedImage> sprite){
-        charNames = name; 
-        spritePaths = sprite; 
+    public CompareUI(Character[] chars){
+        characters = new Character[26]; 
+        for (int i = 0; i < characters.length; i++){
+            characters[i] = new Character(); 
+            characters[i] = chars[i]; 
+        }
     }
 }

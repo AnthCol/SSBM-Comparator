@@ -23,12 +23,14 @@ public class SingleCharacterUI{
 
     private Color bg = Color.BLACK; 
 
-    private ArrayList<String> charNames; 
-    private ArrayList<BufferedImage> spritePaths; 
+    private Character[] characters; 
 
-    public SingleCharacterUI(ArrayList<String> name, ArrayList<BufferedImage> sprite){
-        charNames = name; 
-        spritePaths = sprite; 
+    public SingleCharacterUI(Character[] chars){
+        characters = new Character[26]; 
+        for (int i = 0; i < characters.length; i++){
+            characters[i] = new Character(); 
+            characters[i] = chars[i]; 
+        }
     }
 
     public JPanel basicInfo(){
@@ -36,7 +38,7 @@ public class SingleCharacterUI{
         
 
 
-        JComboBox comboxbox = new JComboBox(charNames); 
+       // JComboBox comboxbox = new JComboBox(charNames); 
 
         infoPanel.setBackground(bg); 
         infoPanel.add(label); 
