@@ -29,7 +29,7 @@ public class Character {
     // FIXME maybe make these private later? with setters?
     // FIXME maybe make some toString() methods somewhere 
     public String characterName; 
-    public String spritePath; 
+    public String spritePath;  // printing path: assets\charData.txt
     public int[][] jabs;
     public int[][] tilts;
     public int[] dashAttack;
@@ -43,7 +43,9 @@ public class Character {
     public int[] airDodge; 
     public float[] misc; 
 
-    
+    public String getCharName(){
+        return characterName; 
+    }
 
     public Character(){
         characterName = new String(); 

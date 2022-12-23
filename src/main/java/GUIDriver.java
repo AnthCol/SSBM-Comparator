@@ -37,9 +37,6 @@ public class GUIDriver extends JFrame{
     private static final int HEIGHT = 500; 
 
     private Container contentPane; 
-
-    private ArrayList<String> charNames; 
-    private ArrayList<BufferedImage> sprites_paths; 
     private Character[] characters; 
 
     private SingleCharacterUI scui; 
@@ -53,32 +50,17 @@ public class GUIDriver extends JFrame{
     private Color menuBarColour = Color.BLACK; 
     private Color frameBackgroundColour = Color.BLACK; 
 
-
-    // FIXME maybe this constructor is too big? 
-    // It doesn't really cause any problems and isn't super complex, but there might be a better
-    // way to organize this (maybe do more work in main?)
    public GUIDriver(){
         super(); 
-
-        sprites = new ArrayList<String>(); 
-        charNames = new ArrayList<String>(); 
-        fr = new FileReader(); 
+        FileReader fr = new FileReader(); 
         characters = new Character[26]; 
-
         for (int i = 0; i < characters.length; i++) characters[i] = new Character(); 
-
         fr.readCharData(characters); 
-
-        for (int i = 0; i < characters.length; i++){
-            gui.charNames.add(characters[i].characterName);
-            gui.sprites.add(characters[i].spritePath); 
-        }
-
-        scui = new SingleCharacterUI(sprites, charNames); 
-        cui = new CompareUI(sprites, charNames); 
-        rui = new RankUI(sprites, charNames); 
-        tlui = new TierListUI(sprites, charNames); 
-        
+        fr = null; // garbage collector 
+        scui = new SingleCharacterUI(characters); 
+        cui = new CompareUI(characters); 
+        rui = new RankUI(characters); 
+        tlui = new TierListUI(characters); 
         setDefaults(); 
         setMainContainer(); 
         setSize(WIDTH, HEIGHT); 
@@ -111,7 +93,7 @@ public class GUIDriver extends JFrame{
 
         contentPane.setLayout(new BorderLayout()); 
         contentPane.add(createMenu(), BorderLayout.NORTH); 
-        contentPane.add(scui.basicInfo(charNames), BorderLayout.WEST); 
+        contentPane.add(scui.basicInfo(), BorderLayout.WEST); 
         contentPane.add(scui.moveData(), BorderLayout.CENTER); 
         contentPane.add(scui.singleCharRankings(), BorderLayout.EAST); 
         

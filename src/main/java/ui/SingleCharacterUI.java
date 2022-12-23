@@ -1,12 +1,14 @@
 package src.ui; 
 
+import src.Character; 
+
 import java.util.ArrayList; 
 
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JPanel;
 import javax.swing.JLabel; 
-
+import javax.imageio.ImageIO;
 
 import java.awt.Font; 
 import java.awt.Color; 
@@ -15,33 +17,37 @@ import java.awt.Dimension;
 import java.awt.Container; 
 import java.awt.image.BufferedImage; 
 
+import java.nio.file.FileSystems; 
+import java.nio.file.Files; 
+import java.nio.file.Path; 
+import java.io.File;
+
 
 // https://stackoverflow.com/questions/299495/how-to-add-an-image-to-a-jpanel
 
 
 public class SingleCharacterUI{
 
-    private Color bg = Color.BLACK; 
+    private Color bg = Color.BLACK;
 
-    private Character[] characters; 
+    private JComboBox <String> names; 
+    private BufferedImage[] images; 
 
-    public SingleCharacterUI(Character[] chars){
-        characters = new Character[26]; 
+    public SingleCharacterUI(Character[] characters){
+        names = new JComboBox<>(); 
+        images = new BufferedImage[26]; 
+
         for (int i = 0; i < characters.length; i++){
-            characters[i] = new Character(); 
-            characters[i] = chars[i]; 
+            names.addItem(characters[i].characterName); 
+       //     images[i] = ImageIO.read(new File(characters[i].spritePath)); 
         }
     }
 
+
     public JPanel basicInfo(){
         JPanel infoPanel = new JPanel(); 
-        
-
-
-       // JComboBox comboxbox = new JComboBox(charNames); 
-
+        infoPanel.add(names); 
         infoPanel.setBackground(bg); 
-        infoPanel.add(label); 
 
         return (infoPanel); 
     }
