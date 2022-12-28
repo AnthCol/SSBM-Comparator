@@ -41,16 +41,36 @@ public class FileReader {
                 // File was setup so that its Grounded, Aerial, Grounded, Aerial CHANGE THIS 
                 // LAST TO DO BECAUSE IT'S A PAIN FIXME FIXME FIXME
                 // so a custom loop here will be needed since manually changing the file is a pain. 
-                variableNestedLoop(current.specialAttacksGrounded, current.specialAttacksGrounded.length, current.specialAttacksGrounded[0].length);     // specialAttacksGroudned
-                variableNestedLoop(current.specialAttacksAerial, current.specialAttacksAerial.length, current.specialAttacksAerial[0].length);     // specialATtacksAerial
+
+
+                // outer loop: neutral, side, down, up  -> b attacks
+                for (int i = 0; i < current.specialAttacksGrounded.length; i++){
+                    for (int j = 0, x = 0, g = 0, a = 0; x < current.specialAttacksGrounded[i].length + current.specialAttacksAerial[i].length; x++, j ^= 1){
+                        if (j == 1){
+                            current.specialAttacksGrounded[i][g] = Integer.parseInt(br.readLine()); 
+                            g++; 
+                        }
+                        else{
+                            current.specialAttacksGrounded[i][a] = Integer.parseInt(br.readLine()); 
+                            a++; 
+                        }
+                    }
+                }
+
+                
+           //     variableNestedLoop(current.specialAttacksGrounded, current.specialAttacksGrounded.length, current.specialAttacksGrounded[0].length);     // specialAttacksGroudned
+            //     variableNestedLoop(current.specialAttacksAerial, current.specialAttacksAerial.length, current.specialAttacksAerial[0].length);     // specialATtacksAerial
                
-                // FIXME Donkey Kong forward throw has three damages 7, 8 and 8. 
+                // FIXME [MIGHT BE BETTER TO JUST LEAVE IT AS 8 SINCE THE HIGHEST DAMAGE VALUES ARE USED ELSEWHERE THROUGHOUT THE PROJECT]
+                // Donkey Kong forward throw has three damages 7, 8 and 8.
+                // TODO: make not of this change on the README 
                 // In the charData.txt file the average is calculated. 
                 // Options:
                 // -> Make every single value a floating point for every character. 
                 // -> Make DK throw the median (8%, since the throws are 7%, 8%, and 8%)
                 // FOR NOW IT HAS BEEN CHANGED TO 8 (final decision will be made after the GUI stuff is done)
                 // line 366 in charData.txt
+
                 variableNestedLoop(current.grabs, current.grabs.length, current.grabs[0].length);    // grabs
                 variableNestedLoop(current.grabThrows, current.grabThrows.length, current.grabThrows[0].length);    // grabthrows
                 variableNestedLoop(current.dodgesRolls, current.dodgesRolls.length, current.dodgesRolls[0].length);     // dodges & rolls
