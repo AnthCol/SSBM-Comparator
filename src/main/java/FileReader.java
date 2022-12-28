@@ -45,15 +45,11 @@ public class FileReader {
 
                 // outer loop: neutral, side, down, up  -> b attacks
                 for (int i = 0; i < current.specialAttacksGrounded.length; i++){
-                    for (int j = 0, x = 0, g = 0, a = 0; x < current.specialAttacksGrounded[i].length + current.specialAttacksAerial[i].length; x++, j ^= 1){
-                        if (j == 1){
-                            current.specialAttacksGrounded[i][g] = Integer.parseInt(br.readLine()); 
-                            g++; 
-                        }
-                        else{
-                            current.specialAttacksGrounded[i][a] = Integer.parseInt(br.readLine()); 
-                            a++; 
-                        }
+                    for (int x = 0; x < current.specialAttacksGrounded.length; x++){
+                        current.specialAttacksGrounded[i][x] = Integer.parseInt(br.readLine()); 
+                    }
+                    for (int x = 0; x < current.specialAttacksAerial.length; x++){
+                        current.specialATtacksAerial[i][x] = Integer.parseInt(br.readLine()); 
                     }
                 }
 
