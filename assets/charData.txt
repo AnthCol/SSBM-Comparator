@@ -1,4 +1,5 @@
 Bowser
+assets/BowserHeadSSBM.png
 5
 7
 3
@@ -133,6 +134,7 @@ Bowser
 8
 0
 Captain Falcon
+assets/CaptainFalconHeadSSBM.png
 2
 3
 3
@@ -267,6 +269,7 @@ Captain Falcon
 4
 1
 Donkey Kong
+assets/DonkeyKongHeadSSBM.png
 4
 5
 3
@@ -401,6 +404,7 @@ Donkey Kong
 5
 -1
 Dr. Mario
+assets/DrMarioHeadSSBM.png
 4
 2
 2
@@ -535,6 +539,7 @@ Dr. Mario
 4
 0
 Falco
+assets/FalcoHeadSSBM.png
 4
 2
 2
@@ -669,6 +674,7 @@ Falco
 5
 1
 Fox
+assets/FoxHeadSSBM.png
 4
 2
 2
@@ -803,6 +809,7 @@ Fox
 3
 1
 Ganondorf
+assets/GanondorfHeadSSBM.png
 8
 3
 3
@@ -937,6 +944,7 @@ Ganondorf
 6
 0
 Ice Climbers
+assets/IceClimbersHeadSSBM.png
 2
 4
 4
@@ -1071,6 +1079,7 @@ Ice Climbers
 3
 0
 Kirby
+assets/KirbyHeadSSBM.png
 3
 3
 2
@@ -1205,6 +1214,7 @@ Kirby
 3
 0
 Link
+assets/LinkHeadSSBM.png
 5
 6
 3
@@ -1339,6 +1349,7 @@ Link
 6
 0
 Luigi
+assets/LuigiHeadSSBM.png
 3
 2
 2
@@ -1473,6 +1484,7 @@ Luigi
 4
 0
 Mario
+assets/MarioHeadSSBM.png
 3
 2
 2
@@ -1607,6 +1619,7 @@ Mario
 4
 1
 Marth
+assets/MarthHeadSSBM.png
 6
 4
 4
@@ -1741,6 +1754,7 @@ Marth
 4
 0
 Mewtwo
+assets/MewtwoHeadSSBM.png
 6
 8
 1
@@ -1875,6 +1889,7 @@ Mewtwo
 5
 0
 Mr. Game & Watch
+assets/MrGame&WatchHeadSSBM.png
 3
 4
 3
@@ -2009,6 +2024,7 @@ Mr. Game & Watch
 4
 0
 Ness
+assets/NessHeadSSBM.png
 3
 3
 2
@@ -2143,6 +2159,7 @@ Ness
 4
 0
 Peach
+assets/PeachHeadSSBM.png
 3
 2
 2
@@ -2277,6 +2294,7 @@ Peach
 5
 0
 Pichu
+assets/PichuHeadSSBM.png
 2
 2
 2
@@ -2411,6 +2429,7 @@ Pichu
 3
 1
 Pikachu
+assets/PikachuHeadSSBM.png
 2
 2
 2
@@ -2545,6 +2564,7 @@ Pikachu
 3
 0
 Jigglypuff
+assets/JigglypuffHeadSSBM.png
 3
 5
 2
@@ -2679,6 +2699,7 @@ Jigglypuff
 5
 0
 Roy
+assets/RoyHeadSSBM.png
 6
 4
 4
@@ -2813,6 +2834,7 @@ Roy
 5
 0
 Samus
+assets/SamusHeadSSBM.png
 3
 3
 2
@@ -2947,6 +2969,7 @@ Samus
 3
 1
 Sheik
+assets/SheikHeadSSBM.png
 4
 2
 2
@@ -3081,6 +3104,7 @@ Sheik
 3
 1
 Yoshi
+assets/YoshiHeadSSBM.png
 3
 3
 3
@@ -3215,6 +3239,7 @@ Yoshi
 5
 0
 Young Link
+assets/YoungLinkHeadSSBM.png
 3
 6
 3
@@ -3349,6 +3374,7 @@ Young Link
 4
 1
 Zelda
+assets/ZeldaHeadSSBM.png
 2
 11
 7

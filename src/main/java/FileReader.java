@@ -29,7 +29,7 @@ public class FileReader {
 
             for (Character current : characters){
                 current.characterName = br.readLine(); //name 
-               // current.spritePath = br.readLine(); 
+                current.spritePath = br.readLine(); 
                 variableNestedLoop(current.jabs, current.jabs.length, current.jabs[0].length);  // jabs 
                 variableNestedLoop(current.tilts, current.tilts.length, current.tilts[0].length); // tilts
                 variableSingleLoop(current.dashAttack, current.dashAttack.length); 
