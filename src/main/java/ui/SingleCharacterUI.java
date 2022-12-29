@@ -13,7 +13,7 @@ import javax.swing.JLabel;
 import javax.swing.ImageIcon;
 
 
-
+import java.awt.Component; 
 import java.awt.Font; 
 import java.awt.Color; 
 import java.awt.Paint; 
@@ -40,7 +40,7 @@ public class SingleCharacterUI{
     private JLabel pic; // ?? FIXME
 
     private String currentSelection; 
-    private int currentPathIndex; 
+    private int currentPathIndex;  // need to set to zero?
 
     private JPanel infoPanel; 
     private JPanel rankingPanel; 
@@ -50,37 +50,17 @@ public class SingleCharacterUI{
         infoPanel = new JPanel(); 
         dataPanel = new JPanel(); 
         rankingPanel = new JPanel(); 
-
-
-        currentPathIndex = 0; 
-
-
-        names = new JComboBox<>(); 
-        styleComboBox(); 
-
-
-        names.addActionListener(e->setSelectionAndPath(characters));
-        names.addItemListener(e->updateEverything()); 
-
-        images = new BufferedImage[26];
-        try{
-            for (int i = 0; i < characters.length; i++){
-                names.addItem(characters[i].characterName); 
-                images[i] = ImageIO.read(new File(characters[i].spritePath)); 
-            }
-        } 
-        catch (IOException e){
-            System.out.println(e); 
-            System.exit(0); 
-        }
+        initializeComboBox(); 
+        initializeBufferedImages(); 
     }
-
 
 
     public JPanel basicInfo(){
         pic = new JLabel(new ImageIcon(images[currentPathIndex])); 
         infoPanel.add(pic); 
+        pic.setAlignmentX(CENTER_ALIGNMENT); 
         infoPanel.add(names); 
+        names.setAlignmentX(CENTER_ALIGNMENT); 
         infoPanel.setBackground(bg); 
 
         return (infoPanel); 
@@ -127,22 +107,39 @@ public class SingleCharacterUI{
 
 
 
+
         infoPanel.revalidate(); 
-        infoPanel.repaint(); 
         dataPanel.revalidate(); 
-        dataPanel.repaint(); 
         rankingPanel.revalidate(); 
+
+        infoPanel.repaint(); 
+        dataPanel.repaint(); 
         rankingPanel.repaint(); 
 
     }
 
 
-    private void styleComboBox(){
+    private void initializeComboBox(){
+        names = new JComboBox<>(); 
+        names.addActionListener(e->setSelectionAndPath(characters));
+        names.addItemListener(e->updateEverything()); 
         names.setFont(new Font("Bierdstadt", Font.PLAIN, 12)); 
         names.border(false);
-        names.buttonShadow(false); 
-        names.buttonHighlight(false); 
         names.setBackground(Color.WHITE); 
         names.setForeground(Color.BLACK); 
+    }
+
+    private void initializeBufferedImages(){
+        images = new BufferedImage[26];
+        try{
+            for (int i = 0; i < characters.length; i++){
+                names.addItem(characters[i].characterName); 
+                images[i] = ImageIO.read(new File(characters[i].spritePath)); 
+            }
+        } 
+        catch (IOException e){
+            System.out.println(e); 
+            System.exit(0); 
+        }
     }
 }
