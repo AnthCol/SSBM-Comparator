@@ -3,12 +3,16 @@ package src.ui;
 import src.Character; 
 
 import java.util.ArrayList; 
+import java.io.IOException; 
+import javax.imageio.ImageIO;
 
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JPanel;
 import javax.swing.JLabel; 
-import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
+
+
 
 import java.awt.Font; 
 import java.awt.Color; 
@@ -33,19 +37,49 @@ public class SingleCharacterUI{
     private JComboBox <String> names; 
     private BufferedImage[] images; 
 
-    public SingleCharacterUI(Character[] characters){
-        names = new JComboBox<>(); 
-        images = new BufferedImage[26]; 
+    private JLabel pic; // ?? FIXME
 
-        for (int i = 0; i < characters.length; i++){
-            names.addItem(characters[i].characterName); 
-       //     images[i] = ImageIO.read(new File(characters[i].spritePath)); 
+    private String currentSelection; 
+    private int currentPathIndex; 
+
+    private JPanel infoPanel; 
+    private JPanel rankingPanel; 
+    private JPanel dataPanel; 
+
+    public SingleCharacterUI(Character[] characters){
+        infoPanel = new JPanel(); 
+        dataPanel = new JPanel(); 
+        rankingPanel = new JPanel(); 
+
+
+        currentPathIndex = 0; 
+
+
+        names = new JComboBox<>(); 
+        styleComboBox(); 
+
+
+        names.addActionListener(e->setSelectionAndPath(characters));
+        names.addItemListener(e->updateEverything()); 
+
+        images = new BufferedImage[26];
+        try{
+            for (int i = 0; i < characters.length; i++){
+                names.addItem(characters[i].characterName); 
+                images[i] = ImageIO.read(new File(characters[i].spritePath)); 
+            }
+        } 
+        catch (IOException e){
+            System.out.println(e); 
+            System.exit(0); 
         }
     }
 
 
+
     public JPanel basicInfo(){
-        JPanel infoPanel = new JPanel(); 
+        pic = new JLabel(new ImageIcon(images[currentPathIndex])); 
+        infoPanel.add(pic); 
         infoPanel.add(names); 
         infoPanel.setBackground(bg); 
 
@@ -53,7 +87,6 @@ public class SingleCharacterUI{
     }
 
     public JPanel moveData(){
-        JPanel dataPanel = new JPanel(); 
         JLabel label = new JLabel("Data"); 
 
         dataPanel.setBackground(bg); 
@@ -63,7 +96,6 @@ public class SingleCharacterUI{
     }
 
     public JPanel singleCharRankings(){
-        JPanel rankingPanel = new JPanel(); 
         JLabel label = new JLabel("Ranking"); 
 
         rankingPanel.setBackground(bg);
@@ -73,4 +105,44 @@ public class SingleCharacterUI{
     }
 
 
+
+
+
+
+    private void setSelectionAndPath(Character[] characters){
+
+        currentSelection = (String)names.getSelectedItem(); 
+
+        for (int i = 0; i < characters.length; i++){
+            if (currentSelection.equals(characters[i].characterName)){
+                currentPathIndex = i; 
+          //      updateLabel(characters); 
+                break; 
+            }
+        }
+    }
+
+    private void updateEverything(){
+        
+
+
+
+        infoPanel.revalidate(); 
+        infoPanel.repaint(); 
+        dataPanel.revalidate(); 
+        dataPanel.repaint(); 
+        rankingPanel.revalidate(); 
+        rankingPanel.repaint(); 
+
+    }
+
+
+    private void styleComboBox(){
+        names.setFont(new Font("Bierdstadt", Font.PLAIN, 12)); 
+        names.border(false);
+        names.buttonShadow(false); 
+        names.buttonHighlight(false); 
+        names.setBackground(Color.WHITE); 
+        names.setForeground(Color.BLACK); 
+    }
 }

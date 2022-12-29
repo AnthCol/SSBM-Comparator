@@ -49,13 +49,13 @@ public class FileReader {
                         current.specialAttacksGrounded[i][x] = Integer.parseInt(br.readLine()); 
                     }
                     for (int x = 0; x < current.specialAttacksAerial.length; x++){
-                        current.specialATtacksAerial[i][x] = Integer.parseInt(br.readLine()); 
+                        current.specialAttacksAerial[i][x] = Integer.parseInt(br.readLine()); 
                     }
                 }
 
                 
            //     variableNestedLoop(current.specialAttacksGrounded, current.specialAttacksGrounded.length, current.specialAttacksGrounded[0].length);     // specialAttacksGroudned
-            //     variableNestedLoop(current.specialAttacksAerial, current.specialAttacksAerial.length, current.specialAttacksAerial[0].length);     // specialATtacksAerial
+          //     variableNestedLoop(current.specialAttacksAerial, current.specialAttacksAerial.length, current.specialAttacksAerial[0].length);     // specialATtacksAerial
                
                 // FIXME [MIGHT BE BETTER TO JUST LEAVE IT AS 8 SINCE THE HIGHEST DAMAGE VALUES ARE USED ELSEWHERE THROUGHOUT THE PROJECT]
                 // Donkey Kong forward throw has three damages 7, 8 and 8.
