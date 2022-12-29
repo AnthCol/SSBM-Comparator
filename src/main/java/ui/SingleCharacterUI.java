@@ -13,13 +13,19 @@ import javax.swing.JLabel;
 import javax.swing.ImageIcon;
 
 
+
+
+
 import java.awt.Component; 
 import java.awt.Font; 
 import java.awt.Color; 
 import java.awt.Paint; 
 import java.awt.Dimension; 
 import java.awt.Container; 
+import java.awt.BorderLayout; 
+import java.awt.CardLayout; 
 import java.awt.image.BufferedImage; 
+
 
 import java.nio.file.FileSystems; 
 import java.nio.file.Files; 
@@ -48,6 +54,7 @@ public class SingleCharacterUI{
 
     public SingleCharacterUI(Character[] characters){
         infoPanel = new JPanel(); 
+        infoPanel.setLayout(new CardLayout()); 
         dataPanel = new JPanel(); 
         rankingPanel = new JPanel(); 
         initializeComboBox(characters); 
@@ -58,9 +65,16 @@ public class SingleCharacterUI{
     public JPanel basicInfo(){
         pic = new JLabel(new ImageIcon(images[currentPathIndex])); 
         infoPanel.add(pic); 
-        pic.setAlignmentX(java.awt.Component.CENTER_ALIGNMENT); 
+        infoPanel.add(new JLabel("\n\n")); 
+
+        // need to find a way to *change* the picture
+        // as of right now every time you leave and come back it just adds the picture. 
+        // FIXME
+
+
+     //   pic.setAlignmentX(java.awt.Component.CENTER_ALIGNMENT); 
         infoPanel.add(names); 
-        names.setAlignmentX(java.awt.Component.CENTER_ALIGNMENT); 
+     //   names.setAlignmentX(java.awt.Component.CENTER_ALIGNMENT); 
         infoPanel.setBackground(bg); 
 
         return (infoPanel); 
@@ -96,7 +110,7 @@ public class SingleCharacterUI{
         for (int i = 0; i < characters.length; i++){
             if (currentSelection.equals(characters[i].characterName)){
                 currentPathIndex = i; 
-          //      updateLabel(characters); 
+                updateEverything(); 
                 break; 
             }
         }
@@ -104,8 +118,9 @@ public class SingleCharacterUI{
 
     private void updateEverything(){
         
-        System.out.println(names.getSelectedItem()); 
-
+      //  infoPanel.remove(pic); 
+      //  pic = new JLabel(new ImageIcon(images[currentPathIndex])); 
+      //  infoPanel.add(pic); 
 
 
         infoPanel.revalidate(); 
@@ -121,8 +136,7 @@ public class SingleCharacterUI{
 
     private void initializeComboBox(Character[] characters){
         names = new JComboBox<>(); 
-        names.addActionListener(e->setSelectionAndPath(characters));
-        names.addItemListener(e->updateEverything()); 
+        names.addItemListener(e->setSelectionAndPath(characters)); 
         names.setFont(new Font("Bierdstadt", Font.PLAIN, 12)); 
       //  names.border(false);
         names.setBackground(Color.WHITE); 
