@@ -50,17 +50,17 @@ public class SingleCharacterUI{
         infoPanel = new JPanel(); 
         dataPanel = new JPanel(); 
         rankingPanel = new JPanel(); 
-        initializeComboBox(); 
-        initializeBufferedImages(); 
+        initializeComboBox(characters); 
+        initializeBufferedImages(characters); 
     }
 
 
     public JPanel basicInfo(){
         pic = new JLabel(new ImageIcon(images[currentPathIndex])); 
         infoPanel.add(pic); 
-        pic.setAlignmentX(CENTER_ALIGNMENT); 
+        pic.setAlignmentX(java.awt.Component.CENTER_ALIGNMENT); 
         infoPanel.add(names); 
-        names.setAlignmentX(CENTER_ALIGNMENT); 
+        names.setAlignmentX(java.awt.Component.CENTER_ALIGNMENT); 
         infoPanel.setBackground(bg); 
 
         return (infoPanel); 
@@ -104,7 +104,7 @@ public class SingleCharacterUI{
 
     private void updateEverything(){
         
-
+        System.out.println(names.getSelectedItem()); 
 
 
 
@@ -119,17 +119,17 @@ public class SingleCharacterUI{
     }
 
 
-    private void initializeComboBox(){
+    private void initializeComboBox(Character[] characters){
         names = new JComboBox<>(); 
         names.addActionListener(e->setSelectionAndPath(characters));
         names.addItemListener(e->updateEverything()); 
         names.setFont(new Font("Bierdstadt", Font.PLAIN, 12)); 
-        names.border(false);
+      //  names.border(false);
         names.setBackground(Color.WHITE); 
         names.setForeground(Color.BLACK); 
     }
 
-    private void initializeBufferedImages(){
+    private void initializeBufferedImages(Character[] characters){
         images = new BufferedImage[26];
         try{
             for (int i = 0; i < characters.length; i++){
