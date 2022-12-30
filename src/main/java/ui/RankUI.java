@@ -12,6 +12,10 @@ import javax.swing.JPanel;
 import java.awt.image.BufferedImage; 
 
 public class RankUI {
+
+
+
+    
     public RankUI(Character[] character){
 
     }

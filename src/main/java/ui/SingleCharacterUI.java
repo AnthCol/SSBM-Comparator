@@ -24,6 +24,8 @@ import java.awt.Dimension;
 import java.awt.Container; 
 import java.awt.BorderLayout; 
 import java.awt.CardLayout; 
+import java.awt.GridBagLayout; 
+import java.awt.GridBagConstraints; 
 import java.awt.image.BufferedImage; 
 
 
@@ -54,7 +56,7 @@ public class SingleCharacterUI{
 
     public SingleCharacterUI(Character[] characters){
         infoPanel = new JPanel(); 
-        infoPanel.setLayout(new CardLayout()); 
+        infoPanel.setLayout(new GridBagLayout()); 
         dataPanel = new JPanel(); 
         rankingPanel = new JPanel(); 
         initializeComboBox(characters); 
@@ -64,16 +66,18 @@ public class SingleCharacterUI{
 
     public JPanel basicInfo(){
         pic = new JLabel(new ImageIcon(images[currentPathIndex])); 
-        infoPanel.add(pic); 
-        infoPanel.add(new JLabel("\n\n")); 
+        GridBagConstraints c = new GridBagConstraints(); 
+        c.gridx = 0; 
+        c.gridy = 0; 
+        infoPanel.add(pic, c); 
+
+        c.gridx = 0; 
+        c.gridy = 1; 
 
         // need to find a way to *change* the picture
         // as of right now every time you leave and come back it just adds the picture. 
         // FIXME
-
-
-     //   pic.setAlignmentX(java.awt.Component.CENTER_ALIGNMENT); 
-        infoPanel.add(names); 
+        infoPanel.add(names, c); 
      //   names.setAlignmentX(java.awt.Component.CENTER_ALIGNMENT); 
         infoPanel.setBackground(bg); 
 
