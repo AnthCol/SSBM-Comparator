@@ -1,9 +1,5 @@
 # SSBM COMPARATOR
 
-
-
-# **CURRENTLY BEING REWRITTEN - OLD README BELOW**
-
 ## What is this and what can it do?
 
 SSBM Comparator is a Java Swing desktop application that allows the user to view, compare and rank (sort) character data from the video game
